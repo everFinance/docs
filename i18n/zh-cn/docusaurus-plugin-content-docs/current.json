@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "(待翻译) Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorial.category.Tutorial - Basics": {
+    "message": "(待翻译) Tutorial - Basics",
+    "description": "The label for category Tutorial - Basics in sidebar tutorial"
+  },
+  "sidebar.tutorial.category.Tutorial - Extras": {
+    "message": "(待翻译) Tutorial - Extras",
+    "description": "The label for category Tutorial - Extras in sidebar tutorial"
+  }
+}

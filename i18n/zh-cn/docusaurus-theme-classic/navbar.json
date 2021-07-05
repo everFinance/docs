@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "(待翻译) Everpay Docs",
+    "description": "The title in the navbar"
+  },
+  "item.label.Tutorial": {
+    "message": "(待翻译) Tutorial",
+    "description": "Navbar item with label Tutorial"
+  },
+  "item.label.everpay": {
+    "message": "(待翻译) everpay",
+    "description": "Navbar item with label everpay"
+  },
+  "item.label.GitHub": {
+    "message": "(待翻译) GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
