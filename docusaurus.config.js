@@ -109,9 +109,9 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'everpay-js/hello',
+          docId: 'everpay/intro',
           position: 'left',
-          label: 'everpay-js',
+          label: 'everpay',
         },
         {
           type: 'localeDropdown',
