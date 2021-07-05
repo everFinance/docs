@@ -7,17 +7,17 @@ const trailingSlash = false
 module.exports = {
   // 站点元数据
   title: 'Everpay Docs',
-  url: 'https://docs.everpay.io',
+  // url: 'https://docs.everpay.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
 
   // 部署 github 配置
   // https://docusaurus.io/zh-CN/docs/deployment#deploying-to-github-pages
-  // organizationName: 'everFinance', // Usually your GitHub org/user name.
-  // projectName: 'docs', // Usually your repo name.
-  // url: 'https://everFinance.everpay.io',
-  // baseUrl: '/docs/',
-  // trailingSlash,
+  organizationName: 'everFinance', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
+  url: 'https://everFinance.everpay.io',
+  baseUrl: '/',
+  trailingSlash,
 
   // 一般部署至托管商需要：结尾斜杠，不同的服务托管商需要
   // https://docusaurus.io/zh-CN/docs/deployment#trailing-slashes
@@ -130,12 +130,8 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/everFinance/docs',
             },
           ],
         },
