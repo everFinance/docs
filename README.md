@@ -43,7 +43,7 @@ yarn run write-translations -- --locale zh-cn --messagePrefix '(待翻译) '
 mkdir -p i18n/zh-cn/docusaurus-plugin-content-docs/current &&
 cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current
 ```
-
+ 
 ### pages markdown、mdx
 ```bash
 mkdir -p i18n/zh-ch/docusaurus-plugin-content-pages
