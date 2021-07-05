@@ -1,21 +1,98 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const trailingSlash = false
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
+  // 站点元数据
   title: 'Everpay Docs',
-  tagline: 'Welcome to everPay developer documentation site',
   url: 'https://docs.everpay.io',
   baseUrl: '/',
+  favicon: 'img/favicon.ico',
+
+  // 部署 github 配置
+  // https://docusaurus.io/zh-CN/docs/deployment#deploying-to-github-pages
+  // organizationName: 'everFinance', // Usually your GitHub org/user name.
+  // projectName: 'docs', // Usually your repo name.
+  // url: 'https://everFinance.everpay.io',
+  // baseUrl: '/docs/',
+  // trailingSlash,
+
+  // 一般部署至托管商需要：结尾斜杠，不同的服务托管商需要
+  // https://docusaurus.io/zh-CN/docs/deployment#trailing-slashes
+  // https://docusaurus.io/zh-CN/docs/docusaurus.config.js#trailing-slash
+  // trailingSlash
+
+
+  tagline: 'Welcome to everPay developer documentation site',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'everFinance', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-cn'],
   },
+
+
+  // 预设配置
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+
+        // 传递至 @docusaurus/plugin-content-docs
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: ({locale, versionDocsDirPath, docPath}) => {
+            // if (locale !== 'en') {
+            //   return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+            // }
+            return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
+          },
+        },
+        // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用）
+        blog: false,
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash,
+        }
+      },
+    ],
+  ],
+
+  plugins: [
+    '@docusaurus/plugin-google-gtag',
+
+    // tutorial
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     // id: 'tutorial', // 忽略 => 默认实例
+    //     path: 'tutorial',
+    //     routeBasePath: 'tutorial',
+    //     sidebarPath: require.resolve('./sidebarsTutorial.js'),
+    //     // ... 其他设置
+    //   },
+    // ],
+    // everpay-js
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'everpay-js',
+    //     path: 'everpay-js',
+    //     routeBasePath: 'everpay-js',
+    //     sidebarPath: require.resolve('./sidebarsEverpayJS.js'),
+    //     // ... 其他设置
+    //   },
+    // ],
+  ],
+
+  // 主题
+  // themes:
   themeConfig: {
     navbar: {
       title: 'Everpay Docs',
@@ -26,11 +103,16 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'tutorial/intro',
           position: 'left',
           label: 'Tutorial',
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'doc',
+          docId: 'everpay-js/hello',
+          position: 'left',
+          label: 'everpay-js',
+        },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -91,27 +173,9 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    gtag: {
+      trackingID: 'GTM-PZ2J4TP',
+      anonymizeIP: false,
+    },
   },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-    ],
-  ],
 };
