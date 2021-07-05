@@ -13,7 +13,7 @@
   },
   "link.item.label.Tutorial": {
     "message": "(待翻译) Tutorial",
-    "description": "The label of footer link with label=Tutorial linking to /docs/intro"
+    "description": "The label of footer link with label=Tutorial linking to /docs/everpay/intro"
   },
   "link.item.label.Stack Overflow": {
     "message": "(待翻译) Stack Overflow",

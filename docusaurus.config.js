@@ -47,9 +47,9 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
-            // if (locale !== 'en') {
-            //   return `https://crowdin.com/project/docusaurus-v2/${locale}`;
-            // }
+            if (locale !== 'en') {
+              return `https://github.com/everFinance/docs/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
+            }
             return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
           },
         },
@@ -62,33 +62,6 @@ module.exports = {
         }
       },
     ],
-  ],
-
-  plugins: [
-    '@docusaurus/plugin-google-gtag',
-
-    // tutorial
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     // id: 'tutorial', // 忽略 => 默认实例
-    //     path: 'tutorial',
-    //     routeBasePath: 'tutorial',
-    //     sidebarPath: require.resolve('./sidebarsTutorial.js'),
-    //     // ... 其他设置
-    //   },
-    // ],
-    // everpay-js
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'everpay-js',
-    //     path: 'everpay-js',
-    //     routeBasePath: 'everpay-js',
-    //     sidebarPath: require.resolve('./sidebarsEverpayJS.js'),
-    //     // ... 其他设置
-    //   },
-    // ],
   ],
 
   // 主题
@@ -132,7 +105,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/docs/everpay/intro',
             },
           ],
         },
