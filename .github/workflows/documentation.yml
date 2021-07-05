@@ -42,7 +42,7 @@ jobs:
           GIT_USER: git
         run: |
           git config --global user.email "xaber.twt@gmail.com"
-          git config --global user.name "gh-actions"
+          git config --global user.name "Xaber20110202"
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
