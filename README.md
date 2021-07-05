@@ -44,6 +44,7 @@ mkdir -p i18n/zh-cn/docusaurus-plugin-content-docs/current &&
 cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current
 ```
 
+
 ### pages markdown、mdx
 ```bash
 mkdir -p i18n/zh-ch/docusaurus-plugin-content-pages
