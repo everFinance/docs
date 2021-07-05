@@ -53,7 +53,7 @@ module.exports = {
             return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
           },
         },
-        // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用）
+        // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用） 
         blog: false,
         sitemap: {
           changefreq: 'weekly',
