@@ -7,7 +7,14 @@
   width: 100%;
 }
 
-.featureSvg {
+.link {
+  color: inherit;
+}
+.link:hover {
+  text-decoration: none;
+}
+
+.featureImg {
   height: 200px;
   width: 200px;
 }
