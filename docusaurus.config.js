@@ -6,7 +6,7 @@ const trailingSlash = false
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   // 站点元数据
-  title: 'Everpay Docs',
+  title: 'everPay Docs',
   // url: 'https://docs.everpay.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -68,7 +68,7 @@ module.exports = {
   // themes:
   themeConfig: {
     navbar: {
-      title: 'Everpay Docs',
+      title: 'everPay Docs',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -84,7 +84,7 @@ module.exports = {
           type: 'doc',
           docId: 'everpay/intro',
           position: 'left',
-          label: 'everpay',
+          label: 'everPay',
         },
         {
           type: 'localeDropdown',
@@ -105,7 +105,11 @@ module.exports = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/everpay/intro',
+              to: '/docs/tutorial/intro',
+            },
+            {
+              label: 'everPay',
+              to: '/docs/everPay/intro',
             },
           ],
         },
@@ -113,16 +117,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Twitter',
+              href: 'https://twitter.com/FinanceEver',
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.gg/WM5MQZGVPF',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Medium',
+              href: 'https://medium.com/everfinance',
             },
           ],
         },
