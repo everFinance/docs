@@ -24,8 +24,6 @@ module.exports = {
   // https://docusaurus.io/zh-CN/docs/docusaurus.config.js#trailing-slash
   // trailingSlash
 
-
-  tagline: 'Welcome to everPay developer documentation site',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {

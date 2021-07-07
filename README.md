@@ -47,9 +47,9 @@ cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current
 
 ### pages markdown、mdx
 ```bash
-mkdir -p i18n/zh-ch/docusaurus-plugin-content-pages
-cp -r src/pages/**.md i18n/zh-ch/docusaurus-plugin-content-pages
-cp -r src/pages/**.mdx i18n/zh-ch/docusaurus-plugin-content-pages
+mkdir -p i18n/zh-cn/docusaurus-plugin-content-pages
+cp -r src/pages/**.md i18n/zh-cn/docusaurus-plugin-content-pages
+cp -r src/pages/**.mdx i18n/zh-cn/docusaurus-plugin-content-pages
 ```
 
 ### 本地预览

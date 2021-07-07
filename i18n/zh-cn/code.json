@@ -1,169 +1,237 @@
 {
-  "Docusaurus Tutorial - 5min ⏱️": {
-    "message": "(待翻译) Docusaurus Tutorial - 5min ⏱️"
-  },
   "theme.NotFound.title": {
-    "message": "(待翻译) Page Not Found",
+    "message": "未找到页面",
     "description": "The title of the 404 page"
   },
   "theme.NotFound.p1": {
-    "message": "(待翻译) We could not find what you were looking for.",
+    "message": "我们无法找到您所寻找的页面。",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "(待翻译) Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "请联系将您引向此 URL 的网站所有者，并告诉他/她们此链接已不可用。",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "(待翻译) Close",
+    "message": "关闭",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "(待翻译) Blog list page navigation",
+    "message": "博客列表页面导航",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "(待翻译) Newer Entries",
+    "message": "较新文章",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "(待翻译) Older Entries",
+    "message": "较早文章",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "(待翻译) Blog post page navigation",
-    "description": "The ARIA label for the blog posts pagination"
-  },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "(待翻译) Newer Post",
-    "description": "The blog post button label to navigate to the newer/previous post"
-  },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "(待翻译) Older Post",
-    "description": "The blog post button label to navigate to the older/next post"
-  },
   "theme.blog.post.readingTime.plurals": {
-    "message": "(待翻译) One min read|{readingTime} min read",
+    "message": "{readingTime} 分钟阅读",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.tags.tagsListLabel": {
-    "message": "(待翻译) Tags:",
+    "message": "标签：",
     "description": "The label alongside a tag list"
   },
   "theme.blog.post.readMore": {
-    "message": "(待翻译) Read More",
+    "message": "阅读更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "博文页面导航",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "较新文章",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "较早文章",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "(待翻译) Blog recent posts navigation",
+    "message": "Blog recent posts navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "(待翻译) Tags",
+    "message": "标签",
     "description": "The title of the tag list page"
   },
   "theme.blog.post.plurals": {
-    "message": "(待翻译) One post|{count} posts",
+    "message": "一篇博文| {count} 篇博文",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "(待翻译) {nPosts} tagged with \"{tagName}\"",
+    "message": "标记为 \"{tagName}\" 的{nPosts}",
     "description": "The title of the page for a blog tag"
   },
   "theme.tags.tagsPageLink": {
-    "message": "(待翻译) View All Tags",
+    "message": "查看所有标签",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "(待翻译) Copy code to clipboard",
+    "message": "复制代码",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.copied": {
-    "message": "(待翻译) Copied",
+    "message": "已复制",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "(待翻译) Copy",
+    "message": "复制",
     "description": "The copy button label on code blocks"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "(待翻译) Expand sidebar",
+    "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "(待翻译) Expand sidebar",
+    "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "(待翻译) Docs pages navigation",
+    "message": "文档页面导航",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "(待翻译) Previous",
+    "message": "上篇文档",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "(待翻译) Next",
+    "message": "下篇文档",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "(待翻译) Collapse sidebar",
+    "message": "折叠侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "(待翻译) Collapse sidebar",
+    "message": "折叠侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.responsiveCloseButtonLabel": {
-    "message": "(待翻译) Close menu",
+    "message": "关闭菜单",
     "description": "The ARIA label for close button of mobile doc sidebar"
   },
   "theme.docs.sidebar.responsiveOpenButtonLabel": {
-    "message": "(待翻译) Open menu",
+    "message": "打开菜单",
     "description": "The ARIA label for open button of mobile doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "(待翻译) Sidebar navigation",
+    "message": "Sidebar navigation",
     "description": "The ARIA label for documentation menu"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "(待翻译) This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "message": "这是尚未发布的 {siteTitle} {versionLabel} 版本文档。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "(待翻译) This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "message": "这是已不再积极维护的 {siteTitle} {versionLabel} 版本文档。",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "(待翻译) For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "message": "要查看最新版本，请参阅{latestVersionLink}（{versionLabel}）。",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "(待翻译) latest version",
+    "message": "最新文档",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "(待翻译) Edit this page",
+    "message": "编辑此页",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "(待翻译) Direct link to heading",
+    "message": "直接链接到标题",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": "(待翻译)  on {date}",
+    "message": "于 {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": "(待翻译)  by {user}",
+    "message": " 由 {user} 撰写",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "(待翻译) Last updated{atDate}{byUser}",
+    "message": "上次更新{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.common.skipToMainContent": {
-    "message": "(待翻译) Skip to main content",
+    "message": "跳转至主内容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "找到一篇文档|找到 {count} 篇文档",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "\"{query}\" 的搜索结果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "搜索文档",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "在此处键入您的搜索内容",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "搜索",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "搜索由 Algolia 驱动",
+    "description": "The ARIA label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "未找到结果",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "正在搜索……",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "搜索",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.PwaReloadPopup.info": {
+    "message": "发现新版本",
+    "description": "The text for PWA reload popup"
+  },
+  "theme.PwaReloadPopup.refreshButtonText": {
+    "message": "刷新",
+    "description": "The text for PWA reload button"
+  },
+  "theme.PwaReloadPopup.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of PWA reload popup"
+  },
+  "theme.Playground.result": {
+    "message": "结果",
+    "description": "The result label of the live codeblocks"
+  },
+  "theme.Playground.liveEditor": {
+    "message": "实时编辑器",
+    "description": "The live editor label of the live codeblocks"
+  },
+  "everPay Tutorial - 5min ⏱️": {
+    "message": "五分钟体验 everPay 开发者工具"
+  },
+  "Learn how to use everPay development tools.": {
+    "message": "快速了解 everPay 开发者工具"
+  },
+  "Includes everPay server-side API documentation and client-side (nodeJS/Web) tools.": {
+    "message": "everPay 服务端API 与客户端（nodeJS/Web）工具"
+  },
+  "everPay Docs": {
+    "message": "everPay 文档"
+  },
+  "Welcome to everPay developer documentation site": {
+    "message": "欢迎来的 everPay 开发者文档"
   }
 }

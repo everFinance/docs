@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './HomepageFeatures.module.css';
+import Translate from '@docusaurus/Translate';
 
 const FeatureList = [
   {
@@ -9,9 +10,9 @@ const FeatureList = [
     to: 'docs/tutorial/intro',
     src: require('../../static/img/sharding.png').default,
     description: (
-      <>
+      <Translate>
         Learn how to use everPay development tools.
-      </>
+      </Translate>
     ),
   },
   {
@@ -19,9 +20,9 @@ const FeatureList = [
     to: 'docs/everpay/intro',
     src: require('../../static/img/dev.png').default,
     description: (
-      <>
+      <Translate>
         Includes everPay server-side API documentation and client-side (nodeJS/Web) tools.
-      </>
+      </Translate>
     ),
   },
 ];
