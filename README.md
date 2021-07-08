@@ -29,4 +29,4 @@ This command starts a local development server and opens up a browser window. Mo
 ### 注意事项
 1. 因为我们编写的是中文文档，要翻译成默认的英文文档。我们需要在 `i18n/zh-cn/docusaurus-plugin-content-docs/current` 文件下，创建相应目录，来编写文档。
 2. 预览使用 `yarn start --locale zh-cn`
-3. 要翻译的时候，将整体文档拷贝至 `docs 对应目录下` （作为中文）
+3. 要翻译的时候，将整体文档拷贝至 `docs 对应目录下` （作为英文待翻译文档）
