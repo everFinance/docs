@@ -67,7 +67,7 @@ const everpay = new Everpay({
 })
 ```
 
-### 为什么 要使用 'use_wallet'？
+## 为什么 要使用 'use_wallet'？
 
 1. [arweave-js](https://github.com/ArweaveTeam/arweave-js) 也支持在浏览器端使用 `'use_wallet'` 作为 `jwk` 参数，来使用 arconnect 获取 arweave 钱包地址，以及进行 arweave 转账、签名。详见[arweave-js Search · use_wallet](https://github.com/ArweaveTeam/arweave-js/search?q=use_wallet)
 2. everpay-js 集成了 [arweave-js](https://github.com/ArweaveTeam/arweave-js)，来进行 arweave 转账，使用 `'use_wallet'` 可让 [arweave-js](https://github.com/ArweaveTeam/arweave-js) 去调用 [arconnect](https://arconnect.io/)，从而减少开发者适配 [arconnect](https://arconnect.io/) 的成本。
