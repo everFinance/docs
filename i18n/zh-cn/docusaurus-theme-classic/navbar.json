@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "item.label.Tutorial": {
-    "message": "新手指南",
+    "message": "指南",
     "description": "Navbar item with label Tutorial"
   },
   "item.label.GitHub": {
@@ -14,5 +14,13 @@
   "item.label.API": {
     "message": "API",
     "description": "Navbar item with label API"
+  },
+  "item.label.Server API": {
+    "message": "(待翻译) Server API",
+    "description": "Navbar item with label Server API"
+  },
+  "item.label.Everpay JS": {
+    "message": "(待翻译) Everpay JS",
+    "description": "Navbar item with label Everpay JS"
   }
 }

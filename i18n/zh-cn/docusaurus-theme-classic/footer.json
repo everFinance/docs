@@ -12,7 +12,7 @@
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Tutorial": {
-    "message": "新手指南",
+    "message": "指南",
     "description": "The label of footer link with label=Tutorial linking to /docs/tutorial/intro"
   },
   "link.item.label.Discord": {
@@ -35,12 +35,16 @@
     "message": "Copyright © 2021 everFinance, Inc. Built with Docusaurus.",
     "description": "The footer copyright"
   },
-  "link.item.label.API": {
-    "message": "API",
-    "description": "The label of footer link with label=API linking to /docs/api/intro"
-  },
   "link.item.label.Medium": {
     "message": "Medium",
     "description": "The label of footer link with label=Medium linking to https://medium.com/everfinance"
+  },
+  "link.item.label.Server API": {
+    "message": "Server API",
+    "description": "The label of footer link with label=Server API linking to /docs/server-api/intro"
+  },
+  "link.item.label.Everpay JS": {
+    "message": "Everpay JS",
+    "description": "The label of footer link with label=Everpay JS linking to /docs/everpay-js/intro"
   }
 }

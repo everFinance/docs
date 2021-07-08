@@ -16,12 +16,22 @@ const FeatureList = [
     ),
   },
   {
-    title: 'API',
-    to: 'docs/everpay/intro',
+    title: 'Server API',
+    to: 'docs/server-api/intro',
     src: require('../../static/img/dev.png').default,
     description: (
       <Translate>
-        Includes everPay server-side API documentation and client-side (nodeJS/Web) tools.
+        everPay server-side API documentation.
+      </Translate>
+    ),
+  },
+  {
+    title: 'Everpay JS',
+    to: 'docs/everpay-js/intro',
+    src: require('../../static/img/dev.png').default,
+    description: (
+      <Translate>
+        everPay client-side (nodeJS/Web) tools.
       </Translate>
     ),
   },
