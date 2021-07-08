@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="docs/everpay/intro">
-            <Translate>everPay Tutorial - 5min ⏱️</Translate>
+            <Translate>everPay Tutorial</Translate>
           </Link>
         </div>
       </div>

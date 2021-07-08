@@ -16,11 +16,11 @@
     "description": "Navbar item with label API"
   },
   "item.label.Server API": {
-    "message": "(待翻译) Server API",
+    "message": "Server API",
     "description": "Navbar item with label Server API"
   },
   "item.label.Everpay JS": {
-    "message": "(待翻译) Everpay JS",
+    "message": "Everpay JS",
     "description": "Navbar item with label Everpay JS"
   }
 }

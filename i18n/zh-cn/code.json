@@ -219,14 +219,11 @@
     "message": "实时编辑器",
     "description": "The live editor label of the live codeblocks"
   },
-  "everPay Tutorial - 5min ⏱️": {
-    "message": "五分钟体验 everPay 开发者工具"
+  "everPay Tutorial": {
+    "message": "快速了解 everPay"
   },
   "Learn how to use everPay development tools.": {
     "message": "快速了解 everPay 开发者工具"
-  },
-  "Includes everPay server-side API documentation and client-side (nodeJS/Web) tools.": {
-    "message": "everPay 服务端API 与客户端（nodeJS/Web）工具"
   },
   "everPay Docs": {
     "message": "everPay 文档"
@@ -235,9 +232,9 @@
     "message": "欢迎来的 everPay 开发者文档"
   },
   "everPay server-side API documentation.": {
-    "message": "(待翻译) everPay server-side API documentation."
+    "message": "everPay 服务端API"
   },
   "everPay client-side (nodeJS/Web) tools.": {
-    "message": "(待翻译) everPay client-side (nodeJS/Web) tools."
+    "message": "everPay 客户端（nodeJS/Web）工具"
   }
 }

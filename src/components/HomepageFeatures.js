@@ -18,7 +18,7 @@ const FeatureList = [
   {
     title: 'Server API',
     to: 'docs/server-api/intro',
-    src: require('../../static/img/dev.png').default,
+    src: require('../../static/img/compute.png').default,
     description: (
       <Translate>
         everPay server-side API documentation.
@@ -39,7 +39,7 @@ const FeatureList = [
 
 function Feature({src, title, description, to}) {
   return (
-    <Link className={clsx('col col--6', styles.link)} to={to}>
+    <Link className={clsx('col col--4', styles.link)} to={to}>
       <div className="text--center">
         <img className={styles.featureImg} alt={title} src={src} />
       </div>
