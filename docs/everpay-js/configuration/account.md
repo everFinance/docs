@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # account
@@ -21,8 +21,7 @@ const everpay = new Everpay({
 })
 // 查询 账户 0x26361130d5d6E798E9319114643AF8c868412859 在 everpay 正式环境上的 ETH 资产余额
 everpay.balance({
-  symbol: 'ETH',
-  chainType: 'ethereum'
+  symbol: 'ETH'
 })
 ```
 
@@ -36,7 +35,6 @@ const everpay = new Everpay({
 // 查询 另一个账户 0x2ca81e1253f9426c62Df68b39a22A377164eeC92 在 everpay 正式环境上的 ETH 资产余额
 everpay.balance({
   symbol: 'ETH',
-  chainType: 'ethereum',
   account: '0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
 })
 ```
