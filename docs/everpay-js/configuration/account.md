@@ -6,9 +6,8 @@ sidebar_position: 2
 
 ## 配置项功能
 
-<!-- TODO: 基础查询API 链接 -->
-* 当调用 everpay-js 基础查询API 时，此 `account` 配置项作为默认的 account 参数，传递给 基础查询API
-* 当调用 everpay-js 操作类API （everpay充值、转账、提现）时，此 `account` 配置项 **必须传递，并且满足如下钱包地址之一**
+* 当调用 everpay-js [基础查询API](../basic-api/intro) 时，此 `account` 配置项作为默认的 account 参数，传递给 基础查询API
+* 当调用 everpay-js [操作类API](../operate-api/intro) （everpay充值、转账、提现）时，此 `account` 配置项 **必须传递，并且满足如下钱包地址之一**
     * 与 ethConnectedSigner 对应的 ethereum 钱包地址一致
     * 与 arJWK 对应的 arweave 钱包地址一致
 
