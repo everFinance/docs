@@ -47,9 +47,7 @@ const everpay = new Everpay({
 ```
 
 :::danger 私钥泄漏风险
-
 此方式在代码中明文传递私钥，存在安全风险
-
 :::
 
 ## 与 arJWK 配置项的冲突

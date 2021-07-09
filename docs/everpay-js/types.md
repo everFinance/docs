@@ -159,7 +159,7 @@ export interface EverpayTransaction {
 ## TxsResult
 ```ts
 export interface TxsResult {
-  accid: string
+  accid?: string
   currentPage: number
   totalPages: number
   txs: EverpayTransaction[]
