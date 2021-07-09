@@ -71,9 +71,11 @@ export interface Token {
 export interface EverpayInfo {
   ethLocker: string
   arLocker: string
-  owner: string
   ethChainID: string
   feeRecipient: string
+  owner: string
+  everRootHash: string
+  rootHash: string
   tokenList: Token[]
 }
 ```
@@ -167,7 +169,6 @@ export interface TxsResult {
 ## BalanceParams
 ```ts
 export interface BalanceParams {
-  chainType: ChainType
   symbol: string
   account?: string
 }
