@@ -194,9 +194,18 @@ export interface BalanceItem {
 ## DepositParams
 ```ts
 export interface DepositParams {
-  chainType: ChainType
   symbol: string
   amount: string
+}
+```
+
+## TransferParams
+```ts
+export interface TransferParams {
+  symbol: string
+  amount: string
+  data?: Record<string, unknown>
+  to: string
 }
 ```
 
@@ -223,13 +232,6 @@ export interface TxsParams {
 export interface TxsByAccountParams {
   page: number
   account?: string
-}
-```
-
-## TransferParams
-```ts
-export interface TransferParams extends WithdrawParams {
-  to: string
 }
 ```
 
