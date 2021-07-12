@@ -185,7 +185,11 @@ const hashPersonalMessage = function (message: Buffer): Buffer {
 
 const personalMsgHash = hashPersonalMessage(Buffer.from(message))
 
-sig = await signMessageAsync(config.arJWK as ArJWK, personalMsgHash)
+const sig = await signMessageAsync(config.arJWK as ArJWK, personalMsgHash)
+const everPayTx = {
+  ...everpayTxWithoutSig,
+  sig
+}
 ```
 
 伪代码参考来源：[everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
