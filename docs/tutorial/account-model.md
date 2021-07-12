@@ -4,8 +4,6 @@ sidebar_position: 3
 
 # 账户模型
 
-## 介绍
-
 everPay 账户支持以太坊钱包 或 Arweave钱包进行连接。
 
 用户通过以太坊钱包 或 Arweave钱包连接后，在 everPay 上的账户，与连接时使用的钱包 “区块链地址” 一致。
