@@ -8,9 +8,8 @@ sidebar_position: 2
 获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
 
 ## 参数
-无
-## 返回
-[EverpayInfo](../../everpay-js/types#everpayinfo)
+`{{endpoint}}/info`
+
 ## 示例
 
 ```bash
@@ -28,39 +27,39 @@ curl --location --request GET 'https://api-dev.everpay.io/info'
   "owner": "dQzTM9hXV5MD1fRniOKI3MvPF_-8b2XDLmpfcMN9hi8",
   "rootHash": "0x622a1d82bea49b55781a97401d3a8c816e89ed79df9809cc7f8e06e2af2d863f",
   "tokenList": [
-      {
-          "tag": "arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
-          "id": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
-          "symbol": "AR",
-          "decimals": 12,
-          "totalSupply": "1371970463702",
-          "chainType": "arweave,ethereum",
-          "chainID": "0,42",
-          "burnFee": "15000",
-          "transferFee": "0"
-      },
-      {
-          "tag": "ethereum-eth-0x0000000000000000000000000000000000000000",
-          "id": "0x0000000000000000000000000000000000000000",
-          "symbol": "ETH",
-          "decimals": 18,
-          "totalSupply": "43630547196159703549",
-          "chainType": "ethereum",
-          "chainID": "42",
-          "burnFee": "20000000000000000",
-          "transferFee": "0"
-      },
-      {
-          "tag": "ethereum-usdt-0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee",
-          "id": "0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee",
-          "symbol": "USDT",
-          "decimals": 6,
-          "totalSupply": "101315553998270991",
-          "chainType": "ethereum",
-          "chainID": "42",
-          "burnFee": "80000000",
-          "transferFee": "0"
-      }
+    {
+      "tag": "arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
+      "id": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
+      "symbol": "AR",
+      "decimals": 12,
+      "totalSupply": "1371970463702",
+      "chainType": "arweave,ethereum",
+      "chainID": "0,42",
+      "burnFee": "15000",
+      "transferFee": "0"
+    },
+    {
+      "tag": "ethereum-eth-0x0000000000000000000000000000000000000000",
+      "id": "0x0000000000000000000000000000000000000000",
+      "symbol": "ETH",
+      "decimals": 18,
+      "totalSupply": "43630547196159703549",
+      "chainType": "ethereum",
+      "chainID": "42",
+      "burnFee": "20000000000000000",
+      "transferFee": "0"
+    },
+    {
+      "tag": "ethereum-usdt-0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee",
+      "id": "0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee",
+      "symbol": "USDT",
+      "decimals": 6,
+      "totalSupply": "101315553998270991",
+      "chainType": "ethereum",
+      "chainID": "42",
+      "burnFee": "80000000",
+      "transferFee": "0"
+    }
   ]
 }
 ```
