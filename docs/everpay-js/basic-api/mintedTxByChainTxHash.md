@@ -9,7 +9,7 @@ sidebar_position: 8
 
 例如一笔 everPay 充值交易，可通过 `chainTxHash` 查询该笔交易记录，如果该笔 everPay 交易记录存在，即可认为充值已到账。
 
-<!-- TODO: 详细交易状态流程图，见 Tutorial -->
+<!-- TODO: 详细交易状态流程图，见 Guide -->
 
 ## 参数
 string

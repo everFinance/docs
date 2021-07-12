@@ -74,9 +74,9 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'tutorial/intro',
+          docId: 'guide/intro',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Guide',
         },
         {
           type: 'doc',
@@ -108,8 +108,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/tutorial/intro',
+              label: 'Guide',
+              to: '/docs/guide/intro',
             },
             {
               label: 'Server API',

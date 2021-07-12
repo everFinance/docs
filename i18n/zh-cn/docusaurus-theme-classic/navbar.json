@@ -3,9 +3,9 @@
     "message": "everPay 文档",
     "description": "The title in the navbar"
   },
-  "item.label.Tutorial": {
+  "item.label.Guide": {
     "message": "指南",
-    "description": "Navbar item with label Tutorial"
+    "description": "Navbar item with label Guide"
   },
   "item.label.GitHub": {
     "message": "GitHub",
