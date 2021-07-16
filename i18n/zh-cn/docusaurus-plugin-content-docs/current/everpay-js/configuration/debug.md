@@ -39,6 +39,6 @@ const everpay = new Everpay({})
 const everpay = new Everpay()
 ```
 
-:::caution 测试环境
-
+:::caution 正式环境
 当使用 everPay 正式环境，如开发者使用 Ethereum 账户连接，充值、提现的API 调用，会使用 Ethereum mainnet 网络进行。
+:::
