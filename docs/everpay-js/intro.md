@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# 介绍
-everpay-js 作为 everPay 客户端开发工具，方便开发者进行 nodeJS、web 端 everPay 集成，来进行 everPay 的支付。
+# Introduction
+everpay-js is a everPay client development tool for developers to integrate everPay on nodeJS and web to make everPay payments.
 
-当前 Everpay 账户支持 ethereum, arweave 账户模型，开发者可使用 ethereum, arweave 钱包来访问和操作 Everpay 账户。
+Currently everPay account supports ethereum, arweave account model, developers can use ethereum, arweave wallet to access and operate Everpay account.
