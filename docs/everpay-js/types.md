@@ -2,9 +2,9 @@
 sidebar_position: 6
 ---
 
-# 类型
+# Types
 
-以下类型，都可通过 typescript 从 everpay-js 中 `import`
+The following types can be `imported` from everpay-js via typescript
 
 ## ChainType
 
@@ -20,7 +20,7 @@ export enum ChainType {
 export type ArJWK = JWKInterface | 'use_wallet'
 ```
 
-其中 `JWKInterface` 来源于 [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
+`JWKInterface` is sourced from [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
 
 ## EthereumTransaction
 ```ts
@@ -28,7 +28,7 @@ import { TransactionResponse as EthereumTransaction } from '@ethersproject/abstr
 export { EthereumTransaction }
 ```
 
-`TransactionResponse` 来源于 [ethers.js TransactionResponse](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionResponse)
+`TransactionResponse` is sourced from [ethers.js TransactionResponse](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionResponse)
 
 ## ArweaveTransaction
 
@@ -36,10 +36,10 @@ export { EthereumTransaction }
 import { TransactionInterface as ArweaveTransaction } from 'arweave/node/lib/transaction'
 export { ArweaveTransaction }
 ```
-`TransactionInterface` 来源于 [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
+`TransactionInterface` is sourced from [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
 
 ## Config
-`Everpay` 构造函数配置项
+`Everpay` constructor configuration items
 
 ```ts
 export interface Config {
@@ -50,7 +50,7 @@ export interface Config {
 }
 ```
 
-`Signer` 来源于 [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
+`Signer` is sourced from [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
 
 ## Token
 ```ts
@@ -127,10 +127,10 @@ enum EverpayActionWithDeposit {
 ## EverpayTransactionStatus
 ```ts
 enum EverpayTransactionStatus {
-  // deposit 下，经过对应区块数量 confirm
-  // mint、burn，后端接收到信息，会先 confirmed
+  // deposit(mint) transaction, after the corresponding number of blocks confirm, status will be confirmed
+  // withdraw(burn) transaction, the backend receives the everPay Tx and status will be confirmed first
   confirmed = 'confirmed',
-  // JSON 文件存储交易打包完成，变成 packaged
+  // transaction status will be packaged only after everPay Tx storaged on arweave blockchain
   packaged = 'packaged'
 }
 ```
@@ -138,8 +138,7 @@ enum EverpayTransactionStatus {
 ## EverpayTransaction
 ```ts
 export interface EverpayTransaction {
-  // a transaction that everpay json saved to ar
-  id: string
+  id: string // an arweave tx, which stored the everPay Tx information on the arweave blockchain
   nonce: number
   action: EverpayActionWithDeposit
   from: string

@@ -127,10 +127,10 @@ enum EverpayActionWithDeposit {
 ## EverpayTransactionStatus
 ```ts
 enum EverpayTransactionStatus {
-  // deposit 下，经过对应区块数量 confirm
-  // mint、burn，后端接收到信息，会先 confirmed
+  // deposit(mint) transaction, after the corresponding number of blocks confirm, status will be confirmed
+  // withdraw(burn) transaction, the backend receives the everPay Tx and status will be confirmed first
   confirmed = 'confirmed',
-  // JSON 文件存储交易打包完成，变成 packaged
+  // transaction status will be packaged only after everPay Tx storaged on arweave blockchain
   packaged = 'packaged'
 }
 ```
@@ -138,8 +138,7 @@ enum EverpayTransactionStatus {
 ## EverpayTransaction
 ```ts
 export interface EverpayTransaction {
-  // a transaction that everpay json saved to ar
-  id: string
+  id: string // an arweave tx, which stored the everPay Tx information on the arweave blockchain
   nonce: number
   action: EverpayActionWithDeposit
   from: string
@@ -237,7 +236,7 @@ export interface TxsByAccountParams {
 
 ## TransferOrWithdrawResult
 ```ts
-// 注：此类型没有 export
+// Note: This type does not have an export
 interface PostEverpayTxResult {
   status: string
 }

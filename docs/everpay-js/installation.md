@@ -2,20 +2,20 @@
 sidebar_position: 2
 ---
 
-# 安装与使用
+## Installation and usage
 
-## 安装
-### 使用 yarn 安装
+## Installation
+### Using yarn
 ```console
 yarn add everpay
 ```
 
-### 使用 npm 安装
+### Using yarn
 ```console
 npm install everpay
 ```
 
-## 使用
+## Usage
 
 ### es module
 ```js
