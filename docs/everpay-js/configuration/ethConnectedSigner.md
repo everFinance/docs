@@ -6,21 +6,21 @@ sidebar_position: 4
 
 ## Configuration item function
 
-此配置项用于通过 ethereum 钱包 来操作 everPay ethereum 账户模型的 账户，对该账户进行
+This configuration item is used to operate the everPay ethereum account model account via ethereum wallet and to do the following for the account
 
-* 充值：使用 `ethConnectedSigner` 进行 ethereum 转账 至 everPay 多签合约地址
-* 转账：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限
-* 提现：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限
+* deposit: transfer assets on ethereum blockchain to everPay multi-signature contract address using `ethConnectedSigner`
+* transfer: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account
+* withdraw: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account
 
-## 如何配置
+## How to configure
 
-everpay-js 集成了 [ethers.js](https://docs.ethers.io/v5/) 用于 ethereum 签名、发送交易。
+everpay-js integrates with [ethers.js](https://docs.ethers.io/v5/) for ethereum signing, sending transactions.
 
-此配置项也使用 [ethers.js#Signer](https://docs.ethers.io/v5/api/signer/#Signer) 作为参数类型。
+This configuration item also uses [ethers.js#Signer](https://docs.ethers.io/v5/api/signer/#Signer) as parameter type.
 
-### ethereum Dapp 浏览器: imToken / MetaMask 等
+### ethereum wallet: imToken/MetaMask, etc.
 
-参考 [ethers.js Connecting to Ethereum: Metamask](https://docs.ethers.io/v5/getting-started/#getting-started--connecting)
+Reference from [ethers.js Connecting to Ethereum: Metamask](https://docs.ethers.io/v5/getting-started/#getting-started--connecting)
 
 ```ts
 const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -33,7 +33,7 @@ const everpay = new Everpay({
 
 ### RPC API + privateKey
 
-参考 [ethers.js Wallet API](https://docs.ethers.io/v5/api/signer/#Wallet)
+Reference from [ethers.js Wallet API](https://docs.ethers.io/v5/api/signer/#Wallet)
 
 ```js
 const address = 'YOUR ADDRESS'
@@ -46,12 +46,12 @@ const everpay = new Everpay({
 })
 ```
 
-:::danger 私钥泄漏风险
-此方式在代码中明文传递私钥，存在安全风险
+:::danger Private key leakage risk
+This method passes the private key explicitly in the code, which is a security risk
 :::
 
-## 与 arJWK 配置项的冲突
-`ethConnectedSigner` 用于 ethereum 账户模型的 everPay 账户操作，而 `arJWK` 用于 arweave 账户模型的 everPay 账户操作。同一个 Everpay 实例，**只能使用一个账户模型**，但开发者可以创建 多个 Everpay 实例，来进行更复杂应用的开发。
+## Conflicts with arJWK configuration items
+`ethConnectedSigner` is used for everPay account operations for the ethereum account model, while `arJWK` is used for everPay account operations for the arweave account model. **Only one account model can be used for the same Everpay instance**, but developers can create multiple Everpay instances for more complex applications.
 
 ```js
 const ethEverpay = new Everpay({
@@ -65,6 +65,5 @@ const arEverpay = new Everpay({
 })
 ```
 
-## 与 account 配置项的关系
-
-当需要进行 everPay 账户（ethereum 账户模型）操作时，`account` 参数必须与 `ethConnectedSigner` 对应的 ethereum 钱包地址一致
+## Relationship to account configuration items
+When you need to call everpay-js operation-api, `account` parameter is required. And when it is an ethereum account model, the `account` parameter must match the ethereum wallet address corresponding to `ethConnectedSigner`.

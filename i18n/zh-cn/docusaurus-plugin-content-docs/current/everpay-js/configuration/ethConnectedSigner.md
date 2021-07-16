@@ -18,7 +18,7 @@ everpay-js 集成了 [ethers.js](https://docs.ethers.io/v5/) 用于 ethereum 签
 
 此配置项也使用 [ethers.js#Signer](https://docs.ethers.io/v5/api/signer/#Signer) 作为参数类型。
 
-### ethereum Dapp 浏览器: imToken / MetaMask 等
+### ethereum 钱包: imToken / MetaMask 等
 
 参考 [ethers.js Connecting to Ethereum: Metamask](https://docs.ethers.io/v5/getting-started/#getting-started--connecting)
 
