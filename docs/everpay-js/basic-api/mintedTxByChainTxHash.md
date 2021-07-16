@@ -4,31 +4,31 @@ sidebar_position: 8
 
 # mintedTxByChainTxHash
 
-## 功能
-通过区块链 **充值** 的交易记录 `chainTxHash` 获取 everPay 上对应的 everPay 充值交易记录。
+## Function
+Get the everPay deposit transaction on everPay using `chainTxHash` which is the `txHash` of **deposit** transaction on the blockchain.
 
-例如一笔 everPay 充值交易，可通过 `chainTxHash` 查询该笔交易记录，如果该笔 everPay 交易记录存在，即可认为充值已到账。
+For example, for an everPay deposit transaction, you can query the transaction record by `chainTxHash`, and if the everPay transaction record exists, you can assume that the deposit has arrived.
 
 <!-- TODO: 详细交易状态流程图，见 Guide -->
 
-## 参数
+## Parameter
 string
 
 :::info
-此处 string 为 `chainTxHash` string
+This string is the `chainTxHash` string
 :::
 
 :::danger
-仅可通过 `chainTxHash` 查询充值的 everPay 交易记录，无法查询提现的 everPay 交易记录。例如：
-* ethereum 充值交易，etherum 充值的 etherum txHash 为 `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`，此笔 everPay 充值交易记录可通过此 API 获取
-* everPay 提现交易，最终提现至用户 ethereum 钱包地址的交易 txHash 为 `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`，此笔 everPay 提现交易记录无法通过此 API 获取
+Only everPay transaction for deposit can be queryed by `chainTxHash`, but not everPay transaction for withdraw. For example
+* an ethereum deposit transaction, etherum txHash for etherum deposit is `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`, this everPay deposit transaction record can be accessed through this API
+* everPay withdraw transaction, the txHash of the final withdraw to user ethereum wallet address is `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`, this everPay withdraw transaction record cannot be accessed through This API
 :::
 
-## 返回
+## Return
 [EverpayTransaction](../types#everpaytransaction)
 
 <!-- TODO: 在 server api 里面，需要描述清楚各字段意义；或者后端接口需要重新改造后返回 -->
-## 示例
+## Example
 
 ```js
 const chainTxHash = '0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae'
@@ -36,7 +36,7 @@ const everpay = new Everpay({ debug: true })
 everpay.mintedTxByChainTxHash(chainTxHash).then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```js
 {
   "tx": {

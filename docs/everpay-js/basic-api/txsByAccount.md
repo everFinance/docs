@@ -4,15 +4,15 @@ sidebar_position: 6
 
 # txsByAccount
 
-## 功能
+## Function
 Get the transactions corresponding to `account` on everPay by paging
 
-## 参数
+## Parameter
 [TxsByAccountParams](../types#txsbyaccountparams)
-## 返回
+## Return
 [TxsResult](../types#txsresult)
 
-## 示例
+## Example
 
 ```js
 const everpay1 = new Everpay({ debug: true })
@@ -27,7 +27,7 @@ const everpay3 = new Everpay({ account: '0x2ca81e1253f9426c62Df68b39a22A377164ee
 everpay3.txsByAccount({ account: '0x26361130d5d6E798E9319114643AF8c868412859', page: 1 }).then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```js
 {
   currentPage: 1,
@@ -79,5 +79,5 @@ everpay3.txsByAccount({ account: '0x26361130d5d6E798E9319114643AF8c868412859', p
 ```
 
 :::info
-`txsByAccount` 接口获取 everPay 上 对应账户的交易记录，返回结果中存在 `accId` 字段。
+The `txsByAccount` interface gets the transactions of the corresponding account on everPay, with the `accId` field in the returned result.
 :::
