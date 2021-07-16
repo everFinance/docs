@@ -41,8 +41,8 @@ export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): s
 |---|---|
 |tokenSymbol|代币名称|
 |action|`'mint'`代表充值；`'transfer'`代表转账；`'burn'`代表提现。其中 `'mint'`的 everPayTx 由 everPay 服务生成，用户侧只使用 `'transfer'` 和 `'burn'`|
-|from|当前 everPay 账户名|
-|to|当是转账时，`to` 为另一个 everPay 账户名；当是提现交易时，`to` 为要提现至的区块链钱包地址|
+|from|当前 everPay 账户 ID|
+|to|当是转账时，`to` 为另一个 everPay 账户 ID；当是提现交易时，`to` 为要提现至的区块链钱包地址|
 |amount|需要转账、提现的资产数额，需要经过 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，需要经过 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |feeRecipient|通过 [everpay server info API](../server-api/basic-api/info) 接口获取|
