@@ -46,7 +46,7 @@ const transferAsync = async (ethConnectedSigner: Signer, {
 ### 通过 everpay-js
 everpay-js 现已封装开源，内部集成了 ethers.js，开发者无需关心 `Token decimals`，易于集成与使用。
 
-使用 everpay-js 进行充值，可参考：[everpay-js deposit](../../everpay-js/operate-api/deposit#ethereum-钱包-1)。
+使用 everpay-js 进行充值，可参考：[everpay-js deposit](../../everpay-js/operation-api/deposit#ethereum-钱包-1)。
 
 
 ## Arweave 账户模型
@@ -80,4 +80,4 @@ const transferAsync = async (arJWK: ArJWK, {
 ### 通过 everpay-js
 everpay-js 现已封装开源，内部集成了 arweave.js、arConnect，开发者无需关心 `Token decimals`，易于集成与使用。
 
-使用 everpay-js 进行充值，可参考：[everpay-js deposit](../../everpay-js/operate-api/deposit#arweave-钱包-1)。
+使用 everpay-js 进行充值，可参考：[everpay-js deposit](../../everpay-js/operation-api/deposit#arweave-钱包-1)。

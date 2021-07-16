@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # ethConnectedSigner
 
-## 配置项功能
+## Configuration item function
 
 此配置项用于通过 ethereum 钱包 来操作 everPay ethereum 账户模型的 账户，对该账户进行
 
