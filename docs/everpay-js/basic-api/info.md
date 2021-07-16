@@ -4,21 +4,21 @@ sidebar_position: 2
 
 # info
 
-## 功能
-获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
+## Function
+Get basic information about everPay service, e.g. `arLocker` represents arweave locking address, `ethLocker` represents etherum chain locking contract.
 
-## 参数
-无
-## 返回
+## Parameter
+None
+## Return
 [EverpayInfo](../types#everpayinfo)
-## 示例
+## Example
 
 ```js
 const everpay = new Everpay({ debug: true })
 everpay.info().then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```json
 {
   "arLocker": "bX7sKd1s8L6PxUHxK-UPCfus7duyVFdf0J1lm90zehc",

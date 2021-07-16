@@ -4,42 +4,38 @@ sidebar_position: 4
 
 # balance
 
-## 功能
-获取 对应 `account` 在 everPay 上的 指定代币 的资产余额
+## Function
+Get the asset balance of the specified token on everPay for the corresponding `account`.
 
-## 参数
+## Parameter
 [BalanceParams](../types#balanceparams)
-## 返回
+## Return
 string
 
 :::info
-
-余额字符串
-
+A balance string
 :::
 
-## 示例
+## Example
 
 ```js
 const everpay1 = new Everpay({ debug: true })
 everpay1.balance({ account: '0x26361130d5d6E798E9319114643AF8c868412859', symbol: 'ar' }).then(console.log)
 
-// 或者
+// Or
 const everpay2 = new Everpay({ account: '0x26361130d5d6E798E9319114643AF8c868412859', debug: true })
 everpay.balance({ symbol: 'ar' }).then(console.log)
 
-// 或者 覆盖默认 account
+// Or override default account
 const everpay3 = new Everpay({ account: '0x2ca81e1253f9426c62Df68b39a22A377164eeC92', debug: true })
 everpay3.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859', symbol: 'ar' }).then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```js
 '0.000765727502'
 ```
 
 :::info
-
-`symbol` 大小写兼容
-
+`symbol` is case compatible.
 :::

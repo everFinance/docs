@@ -4,29 +4,29 @@ sidebar_position: 3
 
 # balances
 
-## 功能
-获取 对应 `account` 在 everPay 上的所有资产信息
+## Function
+Get all assets on everPay for the corresponding `account`.
 
-## 参数
+## Parameter
 [BalancesParams](../types#balancesparams)
-## 返回
+## Return
 [BalanceItem](../types#balanceitem)[]
-## 示例
+## Example
 
 ```js
 const everpay1 = new Everpay({ debug: true })
 everpay1.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859' }).then(console.log)
 
-// 或者
+// Or
 const everpay2 = new Everpay({ account: '0x26361130d5d6E798E9319114643AF8c868412859', debug: true })
 everpay.balances().then(console.log)
 
-// 或者 覆盖默认 account
+// Or override default account
 const everpay3 = new Everpay({ account: '0x2ca81e1253f9426c62Df68b39a22A377164eeC92', debug: true })
 everpay3.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859' }).then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```js
 [
   {
@@ -51,7 +51,5 @@ everpay3.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859' }).the
 ```
 
 :::info
-
-`balance` 字段表示的数量，经过 `decimals` format 处理。开发者无需关心 `decimals`，便可与 everPay 轻松集成。
-
+The quantity represented by the `balance` field is processed by the `decimals` format. Developers can easily integrate with everPay without caring about `decimals`.
 :::

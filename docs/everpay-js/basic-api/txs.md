@@ -4,22 +4,22 @@ sidebar_position: 5
 
 # txs
 
-## 功能
-everPay 上所有交易记录，通过 分页 形式获取
+## Function
+Get all transactions on everPay accessed by paging
 
-## 参数
+## Parameter
 [TxsParams](../types#txsparams)
-## 返回
+## Return
 [TxsResult](../types#txsresult)
 
-## 示例
+## Example
 
 ```js
 const everpay = new Everpay({ debug: true })
 everpay.txs({ page: 1 }).then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```js
 {
   currentPage: 1,
@@ -51,5 +51,5 @@ everpay.txs({ page: 1 }).then(console.log)
 ```
 
 :::info
-`txs` 接口获取 everPay 上所有交易记录，返回结果中没有 `accId` 字段。
+The `txs` interface gets all transactions on everPay without the `accId` field in the returned result.
 :::

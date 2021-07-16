@@ -12,7 +12,7 @@ This configuration item is used to operate the everPay arweave account model acc
 * transfer: use `arJWK` to call arweave `RSA-PSS SHA-256` sign to secure access to the everPay account
 * withdraw: use `arJWK` to call arweave `RSA-PSS SHA-256` sign to secure access to the everPay account
 
-## 配置项类型
+## Configuration item function
 everpay-js integrates with [arweave-js](https://github.com/ArweaveTeam/arweave-js) for signing and sending transactions with arweave.
 
 Configuration item type

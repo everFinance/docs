@@ -5,7 +5,7 @@ sidebar_position: 6
 # txsByAccount
 
 ## 功能
-everPay 上对应 `account` 的交易记录，通过 分页 形式获取
+通过分页获取everPay上的对应 `account` 的交易记录
 
 ## 参数
 [TxsByAccountParams](../types#txsbyaccountparams)

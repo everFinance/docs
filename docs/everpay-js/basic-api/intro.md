@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# 介绍
+# Introduction
 
-在 创建 Everpay 实例时，无需传递 `account`, `ethConnectedSigner`, `arJWK` 甚至任意参数都不进行传递，也可进行 基础查询API 的调用。
+When creating an Everpay instance, the basic query API can be called without passing `account`, `ethConnectedSigner`, `arJWK` or even any parameters.
 
-例如：
+For example.
 
 ```js
 const everpay = new Everpay()
