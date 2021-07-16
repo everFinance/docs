@@ -10,7 +10,7 @@ sidebar_position: 2
 
 ## 测试环境
 
-Everpay JS 支持使用测试环境进行开发调试，只需要将 `debug` 参数设置为 `true`，即可使用 everPay 测试环境。
+everpay-js 支持使用测试环境进行开发调试，只需要将 `debug` 参数设置为 `true`，即可使用 everPay 测试环境。
 
 ```js
 const everpay = new Everpay({
