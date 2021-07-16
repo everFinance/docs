@@ -139,11 +139,15 @@ module.exports = {
           ],
         },
         {
-          title: 'More',
+          title: 'GitHub',
           items: [
             {
-              label: 'GitHub',
+              label: 'Docs',
               href: 'https://github.com/everFinance/docs',
+            },
+            {
+              label: 'Everpay JS',
+              href: 'https://github.com/everFinance/everpay-js',
             },
           ],
         },
