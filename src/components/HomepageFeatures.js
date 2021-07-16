@@ -15,23 +15,23 @@ const FeatureList = [
       </Translate>
     ),
   },
+  // {
+  //   title: 'Server API',
+  //   to: 'docs/server-api/intro',
+  //   src: require('../../static/img/compute.png').default,
+  //   description: (
+  //     <Translate>
+  //       everPay server-side API documentation.
+  //     </Translate>
+  //   ),
+  // },
   {
-    title: 'Server API',
-    to: 'docs/server-api/intro',
-    src: require('../../static/img/compute.png').default,
-    description: (
-      <Translate>
-        everPay server-side API documentation.
-      </Translate>
-    ),
-  },
-  {
-    title: 'Everpay JS',
-    to: 'docs/everpay-js/intro',
+    title: 'Documentation',
+    to: 'docs/documentation/account-model',
     src: require('../../static/img/dev.png').default,
     description: (
       <Translate>
-        everPay client-side (nodeJS/Web) tools.
+        Documentation
       </Translate>
     ),
   },
@@ -39,7 +39,7 @@ const FeatureList = [
 
 function Feature({src, title, description, to}) {
   return (
-    <Link className={clsx('col col--4', styles.link)} to={to}>
+    <Link className={clsx('col col--6', styles.link)} to={to}>
       <div className="text--center">
         <img className={styles.featureImg} alt={title} src={src} />
       </div>

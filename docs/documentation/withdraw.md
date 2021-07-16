@@ -1,10 +1,10 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 ---
 # 提现
 
 ## 介绍
-everPay 提现指 everPay 账户通过连接的钱包（MetaMask、imToken、ArConnect等）经过提现操作，密码学签名验证后，将该账户在 everPay 上的资产，提现至 资产支持的区块链地址上。
+提现指将 everPay 账户中的有效余额，提现到原生链的操作。
 
 ## 生成 everPay 提现交易的 everPayTx
 详见：[everPay 交易](./everpay-tx)

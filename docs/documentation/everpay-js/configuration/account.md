@@ -40,4 +40,4 @@ everpay.balance({
 ```
 
 ## Operation API Example
-See [ethConnectedSigner](/docs/everpay-js/configuration/ethConnectedSigner) or [arJWK](/docs/everpay-js/configuration/arJWK) for details.
+See [ethConnectedSigner](./ethConnectedSigner) or [arJWK](./arJWK) for details.

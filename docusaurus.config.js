@@ -80,15 +80,9 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'server-api/intro',
+          docId: 'documentation/account-model',
           position: 'left',
-          label: 'Server API',
-        },
-        {
-          type: 'doc',
-          docId: 'everpay-js/intro',
-          position: 'left',
-          label: 'Everpay JS',
+          label: 'Documentation',
         },
         {
           type: 'localeDropdown',
@@ -112,13 +106,9 @@ module.exports = {
               to: '/docs/guide/intro',
             },
             {
-              label: 'Server API',
-              to: '/docs/server-api/intro',
-            },
-            {
-              label: 'Everpay JS',
-              to: '/docs/everpay-js/intro',
-            },
+              label: 'Documentation',
+              to: '/docs/documentation/account-model',
+            }
           ],
         },
         {
