@@ -9,8 +9,10 @@ Get all assets on everPay for the corresponding `account`.
 
 ## Parameter
 [BalancesParams](../types#balancesparams)
+
 ## Return
 [BalanceItem](../types#balanceitem)[]
+
 ## Example
 
 ```js

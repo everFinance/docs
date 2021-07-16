@@ -9,6 +9,7 @@ Get the asset balance of the specified token on everPay for the corresponding `a
 
 ## Parameter
 [BalanceParams](../types#balanceparams)
+
 ## Return
 string
 

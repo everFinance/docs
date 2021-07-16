@@ -4,26 +4,26 @@ sidebar_position: 7
 
 # txByHash
 
-## 功能
-每一笔 everPay 交易，都有一个唯一的 `everHash` 字符串。通过 `everHash` 查询该笔交易的具体信息。
+## Function
+Each everPay transaction has a unique `everHash` string. Use `everHash` to look up the details of the transaction.
 
-例如一笔 普通提现（非快速提现） 交易，可通过 `everHash` 查询该笔交易详情：
-* `id` 不为空字符串，代表该笔 普通提现 交易，是否已经被记录到 arweave 区块链上，**确保了账本的正确性**
-* `targetChainTxHash` 不为空，代表该笔 普通提现 交易，在用户要提现的区块链上，多签钱包/锁仓地址，已经发送交易并且已经打包完成，**用户提现的资产已到账**。
+For example, for a normal withdraw (not fast withdraw), you can query the transaction details via `everHash`
+* when the `id` is not an empty string, which means whether the transaction has been recorded on the arweave blockchain, **which ensures the correctness of the ledger**
+* when the `targetChainTxHash` is not empty, it means the transaction has been sent and packaged on the blockchain where the user wants to withdraw, **the assets withdrawn by the user have arrived**.
 
 <!-- TODO: 详细交易状态流程图，见 Guide -->
 
-## 参数
+## Parameter
 `{{endpoint}}/tx/{{everHash}}`
 
 <!-- TODO: 在 server api 里面，需要描述清楚各字段意义；或者后端接口需要重新改造后返回 -->
-## 示例
+## Example
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/tx/0x999fb4266c33b87fe706d5f964692f3db8e755d08280da43f076c229e0a821f8'
 ```
 
-## 示例返回
+## Example return
 ```json
 {
   "tx": {
