@@ -14,12 +14,7 @@ everPay 即是一个将所有数据存储在 Arweave 的去中心化可信应用
 
 基于存储计算范式打造的 everPay，具备互联网级别的应用体验，具备和各条区块链之间互联互通的能力。
 
-## 中文延伸阅读
+## 延伸阅读
 * [图灵机的纸带：简析 Arweave 存储计算新范式](https://www.chainnews.com/articles/977293418486.htm)
 * [存储计算范式探索：简析跨链支付协议 everPay 运行机制](https://www.chainnews.com/articles/660420352962.htm)
 * [从共识机制谈起，探讨区块链应用范式的变迁](https://www.chainnews.com/articles/071093360415.htm)
-
-## English Extended Readings
-* [A Storage-based Computation Paradigm Enabled by Arweave](https://medium.com/everfinance/a-storage-based-computation-paradigm-enabled-by-arweave-de799ae8c424)
-* [everPay: A Trusted Cross-chain Payment Protocol](https://medium.com/everfinance/everpay-a-trusted-cross-chain-payment-protocol-eba4a0af7d66)
-* [Evolution of the Blockchain Application Model along with Changing Consensus](https://medium.com/everfinance/evolution-of-the-blockchain-application-model-along-with-changing-consensus-755e4ae407a7)
