@@ -2,19 +2,19 @@
 sidebar_position: 2
 ---
 
-# 交易结构
-everPay 有自己独立的交易格式，所有的 everPay 交易都将存储在 arweave 区块链上，供所有人验证。
+# Transaction Structure
+everPay has its own separate transaction format and all everPay transactions will be stored on the arweave blockchain for everyone to verify.
 
-everPay 的每一笔交易都以一个唯一标识：everHash。
+Each transaction in everPay is uniquely identified by a single identifier: everHash.
 
-目前 everPay 有三个类型的交易：
+Currently everPay has three types of transactions.
 
-* 充值：经过用户充值的区块链交易记录确认相应区块后，bot 会生成一笔 `'mint'` 的交易存储在 arweave 上
-* 转账：用户签名的转账交易，将 Token 余额转移到收款人账户
-* 提现：用户签名的提现交易，交易会被 everPay 的 DAO 成员进行验证，通过 DAO 提交提现提案，并在以太坊或者 Arweave 进行提现执行
+* Deposit: after the blockchain transaction record of user recharge confirms the corresponding block, bot generates a `'mint'` transaction to be stored on arweave
+* Transfer: A user-signed transfer transaction that transfers the Token balance to the recipient's account
+* Withdraw: User-signed withdrawal transaction, the transaction will be verified by everPay's DAO members, and the withdrawal proposal will be submitted through DAO and executed in Ether or Arweave
 
-## 交易签名内容
-不管是以太坊 PersonalSign 还是 Arweava 的 RSS 签名，签署的交易均使用相同的签名规范。
+## Transaction signature content
+Signed transactions use the same signature specification, regardless of whether they are signed by PersonalSign in Ether or RSS in Arweave.
 
 ```ts
 export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): string => {
@@ -37,29 +37,29 @@ export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): s
 }
 ```
 
-其中 EverpayTxWithoutSig 可参考 [everpay-js types#EverpayTxWithoutSig](./everpay-js/types#everpaytxwithoutsig)
+Where `EverpayTxWithoutSig` can be found in [everpay-js types#EverpayTxWithoutSig](./everpay-js/types#everpaytxwithoutsig)
 
-## 交易签名详细字段描述
+## Transaction Signature Detail Field Description
 
-|字段|描述|
+|Field|Description|
 |---|---|
-|tokenSymbol|代币名称|
-|action|`'mint'`代表充值；`'transfer'`代表转账；`'burn'`代表提现|
-|from|签署交易的当前 everPay 账户 ID|
-|to|转账时，`to` 为另一个 everPay 账户 ID；提现时，`to` 为要提现至的区块链钱包地址|
-|amount|转账金额或提现金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
-|fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款地址，通过 [everpay server info API](./server-api/basic-api/info) 接口获取|
-|nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [everpay server info API](./server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token id 匹配|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。**当当前账户是 arweave 账户模型时，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证|
-|version|交易版本 `'v1'`|
+|tokenSymbol|token name|
+|action|`'mint'` for deposit; `'transfer'` for transfer; `'burn'` for withdraw|
+|from|the current everPay account ID that signed the transaction|
+|to|for transfers, `to` is the other everPay account ID; for withdrawals, `to` is the blockchain wallet address to withdraw to|
+|amount|the amount to be transferred or withdrawn, type uint; `decimals` processing is required to set this, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing|
+|fee| Handling fee, type uint. decimals are required, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it will be 100000 |
+|feeRecipient|fee payment address, via the [everpay server info API](./server-api/basic-api/info) interface to get|
+|nonce|unix milliseconds|
+|tokenID|via [everpay server info API](./server-api/basic-api/info) interface, must match the token id corresponding to `tokenSymbol`|
+|data|transfer additional information, user-defined JSON data, processed by `JSON.stringify()` and passed. **When the current account is the arweave account model, `{"arOwner": "current arweave address's owner(public key)"}`** is passed for RSA-PSS sha256 verify|
+|version|transaction version `'v1'`|
 
-## 不同账户模型的签名生成
-### ethereum 账户模型
-通过 ethereum personalSign 签名
+## Signature generation for different account models
+### Ethereum account model
+Signing via ethereum `personalSign`
 
-#### 通过 ethers.js 生成签名与 everPay Tx
+#### Generate signature with everPay Tx via ethers.js
 ```ts
 const everpayTxWithoutSig = {
   tokenSymbol: 'usdt',
@@ -104,13 +104,13 @@ const everPayTx = {
 }
 ```
 
-伪代码参考来源：[everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
+Pseudocode reference source: [everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
 
 
-### arweave 账户模型
-通过 arweave RSA-PSS sha256 签名
+### Arweave account model
+Signing via arweave RSA-PSS sha256
 
-#### 通过 arweave.js 生成签名与 everPay Tx
+#### Generate signature with everPay Tx via arweave.js
 ```ts
 const everpayTxWithoutSig = {
   tokenSymbol: 'ar',
@@ -196,14 +196,14 @@ const everPayTx = {
 }
 ```
 
-伪代码参考来源：[everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
+Pseudocode reference source: [everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
 
 :::danger
-arweave 用于 RSA-PSS sha256 签名的 message，需要经过 Ethereum `hashPersonalMessage` 处理，来统一 everPay 后端服务的验证规范。
+arweave messages signed with RSA-PSS sha256 need to be processed by Ethereum `hashPersonalMessage` to unify the authentication specification of everPay backend service.
 :::
 
-## 交易唯一标识：everHash
-每一笔 everPay Tx 交易的 everHash 都是唯一的，`everHash` 的生成如下：
+## Unique transaction identifier: everHash
+The everHash of every everPay Tx transaction is unique, `everHash` is generated as follows.
 
 ```ts
 // cp from: https://github.com/ethereumjs/ethereumjs-util/blob/ebf40a0fba8b00ba9acae58405bca4415e383a0d/src/signature.ts#L168

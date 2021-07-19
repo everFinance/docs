@@ -14,7 +14,7 @@ everPay 的每一笔交易都以一个唯一标识：everHash。
 * 提现：用户签名的提现交易，交易会被 everPay 的 DAO 成员进行验证，通过 DAO 提交提现提案，并在以太坊或者 Arweave 进行提现执行
 
 ## 交易签名内容
-不管是以太坊 PersonalSign 还是 Arweava 的 RSS 签名，签署的交易均使用相同的签名规范。
+不管是以太坊 PersonalSign 还是 Arweave 的 RSS 签名，签署的交易均使用相同的签名规范。
 
 ```ts
 export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): string => {
@@ -37,7 +37,7 @@ export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): s
 }
 ```
 
-其中 EverpayTxWithoutSig 可参考 [everpay-js types#EverpayTxWithoutSig](./everpay-js/types#everpaytxwithoutsig)
+其中 `EverpayTxWithoutSig` 可参考 [everpay-js types#EverpayTxWithoutSig](./everpay-js/types#everpaytxwithoutsig)
 
 ## 交易签名详细字段描述
 
