@@ -27,6 +27,7 @@ This command starts a local development server and opens up a browser window. Mo
 **注意：预览时，只能预览一种语言。例如 yarn run start 启动的是，默认的 docs 文件夹内容。**
 
 ### 注意事项
-1. 因为我们编写的是中文文档，要翻译成默认的英文文档。我们需要在 `i18n/zh-cn/docusaurus-plugin-content-docs/current` 文件下，创建相应目录，来编写文档。
-2. 预览使用 `yarn start --locale zh-cn`
-3. 要翻译的时候，将整体文档拷贝至 `docs 对应目录下` （作为英文待翻译文档）
+1. 因为我们编写的是中文文档，要翻译成默认的英文文档。我们需要先在 docs 底下编写中文，中文内容确定后
+2. 拷贝至 `i18n/zh-cn/docusaurus-plugin-content-docs/current` 文件相应目录
+3. 在原有 docs 底下原始目录翻译英文
+4. 预览中文使用 `yarn start --locale zh-cn`
