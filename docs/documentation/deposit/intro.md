@@ -2,16 +2,16 @@
 sidebar_position: 1
 ---
 
-# 介绍
+# Introduction
 
-不同类型区块链的钱包地址在 everPay 上，都对应一个 everPay 账户，everPay 账户 ID 与该钱包在对应区块链的钱包地址一致。用户无需额外在 everPay 进行账户注册，目前 everPay 已支持所有 Ethereum 和 Arweave 的有效账户。
+The wallet addresses of different types of blockchains on everPay correspond to one everPay account. everPay account ID is the same as the wallet address of that wallet on the corresponding blockchain. Users do not need to register an additional account with everPay. everPay currently supports all valid accounts of Ethereum and Arweave.
 
-例如：
-* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 在 everPay 上对应的账户 ID 即为 0x26361130d5d6E798E9319114643AF8c868412859
-* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 在 everPay 上对应的账户 ID 即为 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo
+For example
+* Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859 has the same account ID on everPay as 0x26361130d5d6E798E9319114643AF8c868412859
+* Arweave wallet 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo on everPay, the corresponding account ID is 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHX
 
-充值的行为，即向 everPay 对应的区块链 多签合约 / 门限签名管理的钱包进行区块链转账。
+The act of deposit, i.e. blockchain transfer to everPay's corresponding blockchain multi-signature contract / threshold signature managed wallet.
 
-例如：
-* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 给 everPay 在 Ethereum 上的多签合约转账 0.1 USDT，everPay 的后端服务监测到该笔入账，并等待6个区块确认，即会在 everPay 上，标记此 0x26361130d5d6E798E9319114643AF8c868412859 everPay 账户 资产增加 0.1 USDT
-* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 给 everPay 在 Arweave 管理的门限签名钱包地址转账 0.1 AR，everPay 的后端服务监测到该笔入账，并等待15个区块确认，即会在 everPay 上，标记此 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo everPay 账户 资产增加 0.1 AR
+Example.
+* Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859 transfers 0.1 USDT to everPay's multisignature contract on Ethereum, everPay's backend service monitors the entry and waits for 6 blocks to confirm it, i.e. it will mark, on everPay This 0x26361130d5d6E798E9319114643AF8c868412859 everPay account assets increased by 0.1 USDT
+* Arweave wallet 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo transfers 0.1 AR to everPay's threshold signature wallet address managed by Arweave, everPay's backend service monitors the entry and waits for 15 block confirmations, i.e. it will mark this 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo on everPay The 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo everPay account assets will be increased by 0.1 AR

@@ -2,19 +2,19 @@
 sidebar_position: 5
 ---
 
-# 转账
+# Transfer
 
-## 介绍
+## Introduction
 
-转账指两个 everPay 账户之间发生的转账行为，任意两个 everPay 账户之间都可以进行转账，甚至可以将以太坊地址的资产转移到 Arweave 地址。
+A transfer is a transfer that occurs between two everPay accounts. Any two everPay accounts can transfer funds between them, even transferring assets from an Ethereum address to an Arweave address.
 
-everPay 通过区块链密码学签名验证来确保转账的安全性。
+everPay ensures the security of transfers through blockchain cryptographic signature verification.
 
-## 生成 everPay 转账交易的 everPayTx
-详见：[everPay 交易](./everpay-tx)
+## Generate everPayTx for everPay transfer transactions
+See: [everPay 交易](./everpay-tx)
 
-## 将 everPayTx 发送至 everPay 服务器
-详见：[everpay server tx API](./server-api/operation-api/tx)，everPay 服务器在接收到 `everPayTx` 后，经过密码学签名验证，余额实时更新的同时，将该笔 `everPayTx`存储至 arweave 区块链上。
+## Send everPayTx to everPay server
+See: [everpay server tx API](./server-api/operation-api/tx), everPay server stores the `everPayTx` on the arweave blockchain after receiving the `everPayTx`, verified by cryptographic signature, and the balance is updated in real time.
 
-## 账户余额更新
-通过 [everpay server balances API](./server-api/basic-api/balances) 获取钱包对应的 everPay 账户，在everPay 上的资产信息。资产实时更新
+## Account balance update
+via the [everpay server balances API](./server-api/basic-api/balances)  to get the asset information on everPay for the wallet's corresponding everPay account. Real-time asset updates
