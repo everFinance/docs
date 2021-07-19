@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 介绍
 
-每个区块链钱包（当前支持 Ethereum、Arweave 区块链）在 everPay 上，都对应一个 everPay 账户，everPay 账户 ID 与 该钱包在对应区块链的钱包地址一致。
+不同类型区块链的钱包地址在 everPay 上，都对应一个 everPay 账户，everPay 账户 ID 与该钱包在对应区块链的钱包地址一致。用户无需额外在 everPay 进行账户注册，目前 everPay 已支持所有 Ethereum 和 Arweave 的有效账户。
 
 例如：
 * Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 在 everPay 上对应的账户 ID 即为 0x26361130d5d6E798E9319114643AF8c868412859

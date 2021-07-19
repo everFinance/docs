@@ -11,6 +11,6 @@ English：
 * [everPay: A Trusted Cross-chain Payment Protocol](https://medium.com/everfinance/everpay-a-trusted-cross-chain-payment-protocol-eba4a0af7d66)
 
 :::info
-* everPay 后端服务 Server API，即承担文中 协调者 (Coordinator) 的角色
+* everPay 后端服务 Server API，承担文中 协调者 (Coordinator) 的角色
 * TODO: 检测者
 :::
