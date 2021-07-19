@@ -7,8 +7,8 @@ const run = async () => {
   await exec(`docusaurus write-translations --locale zh-cn --messagePrefix '(待翻译) '`)
 
   // docs
-  await exec('mkdir -p i18n/zh-cn/docusaurus-plugin-content-docs/current')
-  await exec('cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current')
+  // await exec('mkdir -p i18n/zh-cn/docusaurus-plugin-content-docs/current')
+  // await exec('cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current')
 
   // pages
   // await exec('mkdir -p i18n/zh-cn/docusaurus-plugin-content-pages')

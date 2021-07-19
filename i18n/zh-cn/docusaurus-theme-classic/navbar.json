@@ -22,5 +22,9 @@
   "item.label.Everpay JS": {
     "message": "Everpay JS",
     "description": "Navbar item with label Everpay JS"
+  },
+  "item.label.Documentation": {
+    "message": "(待翻译) Documentation",
+    "description": "Navbar item with label Documentation"
   }
 }

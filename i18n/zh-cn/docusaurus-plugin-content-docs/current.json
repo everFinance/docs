@@ -30,5 +30,33 @@
   "sidebar.everpay-js.category.Configuration": {
     "message": "配置项",
     "description": "The label for category Configuration in sidebar everpay-js"
+  },
+  "sidebar.guide.category.Quick Start": {
+    "message": "快速开始",
+    "description": "The label for category Quick Start in sidebar guide"
+  },
+  "sidebar.documentation.category.Deposit": {
+    "message": "充值",
+    "description": "The label for category Deposit in sidebar documentation"
+  },
+  "sidebar.documentation.category.Server API": {
+    "message": "Server API",
+    "description": "The label for category Server API in sidebar documentation"
+  },
+  "sidebar.documentation.category.Basic API": {
+    "message": "基础查询API",
+    "description": "The label for category Basic API in sidebar documentation"
+  },
+  "sidebar.documentation.category.Operation API": {
+    "message": "操作类API",
+    "description": "The label for category Operation API in sidebar documentation"
+  },
+  "sidebar.documentation.category.everpay-js": {
+    "message": "everpay-js",
+    "description": "The label for category everpay-js in sidebar documentation"
+  },
+  "sidebar.documentation.category.Configuration": {
+    "message": "配置项",
+    "description": "The label for category Configuration in sidebar documentation"
   }
 }

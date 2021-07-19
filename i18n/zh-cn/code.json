@@ -236,5 +236,8 @@
   },
   "everPay client-side (nodeJS/Web) tools.": {
     "message": "everPay 客户端（nodeJS/Web）工具"
+  },
+  "Documentation": {
+    "message": "Documentation"
   }
 }
