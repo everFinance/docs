@@ -8,11 +8,11 @@ everPay 是基于存储计算范式实现的跨链支付结算协议，任何开
 
 everPay 目前支持的链包括：Ethereum 和 Arweave。
 
-### everPay 支持代币列表：
+### everPay 支持代币列表
 
 | 代币名称 | 合约地址                                   | 支持的链          |
 | -------- | ------------------------------------------ | ----------------- |
-| AR       | 0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543 | arweave，ethereum |
+| AR       | 0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543 | arweave, ethereum |
 | ETH      | /                                          | ethereum          |
 | WBTC     | 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 | ethereum          |
 | USDT     | 0xdac17f958d2ee523a2206206994597c13d831ec7 | ethereum          |

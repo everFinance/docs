@@ -2,15 +2,15 @@
 sidebar_position: 3
 ---
 
-# 快速开始
-使用 everpay-js 快速开始
+# Quick Start
+Get started quickly with everpay-js
 
-## 安装
+## Installation
 ```bash
 yarn add everpay
 ```
 
-## 初始化
+## Initialization
 ```js
 import Everpay from 'everpay'
 
@@ -22,7 +22,7 @@ const everpay = new Everpay({
 })
 ```
 
-## 进行充值
+## Make a deposit
 
 ```js
 everpay.deposit({
@@ -31,7 +31,7 @@ everpay.deposit({
 }).then(console.log)
 ```
 
-## 进行转账
+## Make a transfer
 ```js
 everpay.transfer({
   symbol: 'USDT',
@@ -40,7 +40,7 @@ everpay.transfer({
 }).then(console.log)
 ```
 
-## 进行提现
+## Make a withdraw
 ```js
 everpay.transfer({
   symbol: 'USDT',
