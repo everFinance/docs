@@ -20,6 +20,6 @@ everPay 目前支持的链包括：Ethereum 和 Arweave。
 | DAI      | 0x6b175474e89094c44da98b954eedeac495271d0f | ethereum          |
 | UNI      | 0x1f9840a85d5af5bf1d1762f925bdaddc4201f984 | ethereum          |
 
-代币详细信息可以通过 [/info](../server-api/basic-api/info) 接口获得。
+代币详细信息可以通过 [/info](../documentation/server-api/basic-api/info) 接口获得。
 
 本教程详细介绍 everPay 实现机制，以及充值、提现、转账具体的细节，开发者可以通过本教程对 everPay 有一个完整且清晰的认识，方便进行 everPay 的集成。

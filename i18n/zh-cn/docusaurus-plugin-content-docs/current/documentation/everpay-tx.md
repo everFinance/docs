@@ -33,7 +33,7 @@ export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): s
 }
 ```
 
-其中 EverpayTxWithoutSig 可参考 [everpay-js types#EverpayTxWithoutSig](../../everpay-js/types#everpaytxwithoutsig)
+其中 EverpayTxWithoutSig 可参考 [everpay-js types#EverpayTxWithoutSig](./everpay-js/types#everpaytxwithoutsig)
 
 ## everPay 签名详细字段描述
 
@@ -45,9 +45,9 @@ export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): s
 |to|当是转账时，`to` 为另一个 everPay 账户 ID；当是提现交易时，`to` 为要提现至的区块链钱包地址|
 |amount|需要转账、提现的资产数额，需要经过 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，需要经过 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
-|feeRecipient|通过 [everpay server info API](../server-api/basic-api/info) 接口获取|
+|feeRecipient|通过 [everpay server info API](./server-api/basic-api/info) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [everpay server info API](../server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token id 匹配|
+|tokenID|通过 [everpay server info API](./server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token id 匹配|
 |data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。**当当前账户是 arweave 账户模型时，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证|
 |version|hard code `'v1'`|
 

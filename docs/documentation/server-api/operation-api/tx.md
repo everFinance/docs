@@ -13,7 +13,7 @@ On the user side, only the following will be generated.
 * `burn` everPay Tx for withdraw transaction
 
 ## Signature generation with everPay Tx
-See [everPay Tx](../../guide/everpay-tx) for details.
+See [everPay Tx](../../everpay-tx) for details.
 
 ## Send to everPay tx interface
 

@@ -13,7 +13,7 @@ sidebar_position: 2
 * 提现的 `burn` everPay Tx
 
 ## 签名与 everPay Tx 生成
-详见 [everPay 交易](../../guide/everpay-tx)
+详见 [everPay 交易](../../everpay-tx)
 
 ## 发送至 everPay tx 接口
 

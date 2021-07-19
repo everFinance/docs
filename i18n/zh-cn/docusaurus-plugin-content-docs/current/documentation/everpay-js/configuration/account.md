@@ -40,4 +40,4 @@ everpay.balance({
 ```
 
 ## 操作类API 示例
-详见 [ethConnectedSigner](/docs/everpay-js/configuration/ethConnectedSigner) 或 [arJWK](/docs/everpay-js/configuration/arJWK) 配置项
+详见 [ethConnectedSigner](./ethConnectedSigner) 或 [arJWK](./arJWK) 配置项

@@ -6,10 +6,10 @@ sidebar_position: 2
 
 ## Ethereum 账户模型
 ### imToken / MetaMask 等区块链钱包
-1. 通过 [everpay server info API](../../server-api/basic-api/info) 获取 everPay 在 Ethereum 的多签合约地址 `ethLocker`
+1. 通过 [everpay server info API](../server-api/basic-api/info) 获取 everPay 在 Ethereum 的多签合约地址 `ethLocker`
 2. 通过 imToken / MetaMask 等区块链钱包 工具，给该 `ethLocker` 多签合约地址转账想要充值的资产与数量
 3. 等待 该笔交易 6 个区块确认
-4. 通过 [everpay server balances API](../../server-api/basic-api/balances) 获取此钱包对应的 everPay 账户，在everPay 上的资产信息
+4. 通过 [everpay server balances API](../server-api/basic-api/balances) 获取此钱包对应的 everPay 账户，在everPay 上的资产信息
 
 ### 通过 ethers.js
 伪代码参考来源：[everpay-js src/lib/ethereum.ts#L14](https://github.com/everFinance/everpay-js/blob/main/src/lib/ethereum.ts#L14)
