@@ -9,7 +9,7 @@ module.exports = {
   title: 'everPay Docs',
   // url: 'https://docs.everpay.io',
   baseUrl: '/',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.ico',
 
   // 部署 github 配置
   // https://docusaurus.io/zh-CN/docs/deployment#deploying-to-github-pages
@@ -67,10 +67,11 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'everPay Docs',
-      // logo: {
-      //   alt: 'My Site Logo',
-      //   src: 'img/favicon.png',
-      // },
+      logo: {
+        alt: 'everPay Logo',
+        src: 'img/logo-black.svg',
+        srcDark: 'img/logo-white.svg'
+      },
       items: [
         {
           type: 'doc',
