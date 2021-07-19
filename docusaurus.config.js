@@ -136,7 +136,7 @@ module.exports = {
               href: 'https://github.com/everFinance/docs',
             },
             {
-              label: 'Everpay JS',
+              label: 'everpay-js',
               href: 'https://github.com/everFinance/everpay-js',
             },
           ],

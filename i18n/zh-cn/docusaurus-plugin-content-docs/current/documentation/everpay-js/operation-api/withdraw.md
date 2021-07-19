@@ -40,6 +40,7 @@ const everpay = new Everpay({
 everpay.withdraw({
   symbol: 'ar',
   amount: '0.000012',
+  chainType: 'arweave',
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
 }).then(console.log)
 

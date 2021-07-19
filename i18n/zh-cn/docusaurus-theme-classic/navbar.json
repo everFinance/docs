@@ -19,12 +19,12 @@
     "message": "Server API",
     "description": "Navbar item with label Server API"
   },
-  "item.label.Everpay JS": {
-    "message": "Everpay JS",
-    "description": "Navbar item with label Everpay JS"
+  "item.label.everpay-js": {
+    "message": "everpay-js",
+    "description": "Navbar item with label everpay-js"
   },
   "item.label.Documentation": {
-    "message": "(待翻译) Documentation",
+    "message": "文档",
     "description": "Navbar item with label Documentation"
   }
 }

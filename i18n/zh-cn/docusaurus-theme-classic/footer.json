@@ -43,9 +43,9 @@
     "message": "Server API",
     "description": "The label of footer link with label=Server API linking to /docs/server-api/intro"
   },
-  "link.item.label.Everpay JS": {
-    "message": "Everpay JS",
-    "description": "The label of footer link with label=Everpay JS linking to https://github.com/everFinance/everpay-js"
+  "link.item.label.everpay-js": {
+    "message": "everpay-js",
+    "description": "The label of footer link with label=everpay-js linking to https://github.com/everFinance/everpay-js"
   },
   "link.title.GitHub": {
     "message": "GitHub",
@@ -56,7 +56,7 @@
     "description": "The label of footer link with label=Docs linking to https://github.com/everFinance/docs"
   },
   "link.item.label.Documentation": {
-    "message": "(待翻译) Documentation",
+    "message": "文档",
     "description": "The label of footer link with label=Documentation linking to /docs/documentation/account-model"
   }
 }

@@ -12,5 +12,4 @@ English：
 
 :::info
 * everPay 后端服务 Server API，承担文中 协调者 (Coordinator) 的角色
-* TODO: 检测者
 :::

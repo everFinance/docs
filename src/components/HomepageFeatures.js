@@ -11,7 +11,7 @@ const FeatureList = [
     src: require('../../static/img/sharding.png').default,
     description: (
       <Translate>
-        Learn how to use everPay development tools.
+        Get a quick overview of everPay with this guide
       </Translate>
     ),
   },
@@ -31,7 +31,7 @@ const FeatureList = [
     src: require('../../static/img/dev.png').default,
     description: (
       <Translate>
-        Documentation
+        everPay Full Documentation
       </Translate>
     ),
   },
