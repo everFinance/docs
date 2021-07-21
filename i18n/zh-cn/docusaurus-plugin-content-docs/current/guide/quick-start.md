@@ -42,7 +42,7 @@ everpay.transfer({
 
 ## 进行提现
 ```js
-everpay.transfer({
+everpay.withdraw({
   symbol: 'USDT',
   amount: '5.26',
   chainType: 'ethereum',

@@ -42,7 +42,7 @@ everpay.transfer({
 
 ## Make a withdraw
 ```js
-everpay.transfer({
+everpay.withdraw({
   symbol: 'USDT',
   amount: '5.26',
   chainType: 'ethereum',
