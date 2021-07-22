@@ -7,7 +7,6 @@ const trailingSlash = false
 module.exports = {
   // 站点元数据
   title: 'everPay Docs',
-  // url: 'https://docs.everpay.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
 
@@ -15,7 +14,7 @@ module.exports = {
   // https://docusaurus.io/zh-CN/docs/deployment#deploying-to-github-pages
   organizationName: 'everFinance', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
-  url: 'https://everFinance.everpay.io',
+  url: 'https://docs.everpay.io',
   baseUrl: '/',
   trailingSlash,
 
