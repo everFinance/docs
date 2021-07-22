@@ -66,11 +66,11 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'everPay Docs',
-      logo: {
-        alt: 'everPay Logo',
-        src: 'img/logo-black.svg',
-        srcDark: 'img/logo-white.svg'
-      },
+      // logo: {
+      //   alt: 'everPay Logo',
+      //   src: 'img/logo-black.svg',
+      //   srcDark: 'img/logo-white.svg'
+      // },
       items: [
         {
           type: 'doc',
