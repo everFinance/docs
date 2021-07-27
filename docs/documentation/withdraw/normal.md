@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 ---
-# Withdraw
+# Normal Withdraw
 
 ## Introduction
 Withdraw is the operation of withdrawing the active balance from everPay account to the native chain.

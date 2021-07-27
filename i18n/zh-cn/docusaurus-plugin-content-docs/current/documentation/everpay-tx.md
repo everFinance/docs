@@ -52,7 +52,7 @@ export const getEverpayTxMessage = (everpayTxWithoutSig: EverpayTxWithoutSig): s
 |feeRecipient|手续费收款地址，通过 [everpay server info API](./server-api/basic-api/info) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
 |tokenID|通过 [everpay server info API](./server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token id 匹配|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。**当当前账户是 arweave 账户模型时，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证|
+|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。**当当前账户是 arweave 账户模型时，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证。此外，用户可通过 `data` 自定义实现一些复杂功能，例如 [快速提现](./withdraw/quick)|
 |version|交易版本 `'v1'`|
 
 ## 不同账户模型的签名生成
