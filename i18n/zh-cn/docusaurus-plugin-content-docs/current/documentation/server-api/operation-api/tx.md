@@ -9,7 +9,7 @@ sidebar_position: 2
 所有 everPay 的交易，都会生成 everPay Tx 并通过 `POST` 请求发送至 `tx` API，经过 everPay 后端服务验证。
 
 在用户侧，只会生成：
-* 转账的 `transfer` everPay Tx
+* 转账的 `transfer` everPay Tx
 * 提现的 `burn` everPay Tx
 
 ## 签名与 everPay Tx 生成
