@@ -1,15 +1,15 @@
 ---
-sidebar_position: 6
+sidebar_position: 1
 ---
-# Normal Withdraw
+# 普通提现
 
-## Introduction
-Withdraw is the operation of withdrawing the active balance from everPay account to the native chain.
+提现指将 everPay 账户中的有效余额，提现到原生链的操作。
 
-## Generate everPayTx for everPay withdrawal transactions
-See: [everPay 交易](./everpay-tx)
+## 生成 everPay 提现交易的 everPayTx
+详见：[everPay 交易](../everpay-tx)
 
-## Send everPayTx to everPay server
-See: [everpay server tx API](./server-api/operation-api/tx). The everPay server receives the `everPayTx`, verifies the cryptographic signature, and stores the `everPayTx` on the arweave blockchain.
-## everPay multi-signature wallet transfer to user's withdrawal wallet address
-After everPay server confirms that the `everPayTx` is stored on the arweave blockchain, it transfers token to the user's withdrawal wallet address via the multi-signature wallet.
+## 将 everPayTx 发送至 everPay 服务器
+详见：[everpay server tx API](../server-api/operation-api/tx)，everPay 服务器在接收到 `everPayTx` 后，经过密码学签名验证，将该笔 `everPayTx`存储至 arweave 区块链上。
+
+## everPay 多签钱包给用户提现钱包地址转账
+everPay 服务器在确认该笔 `everPayTx` 存储至 arweave 区块链上之后，通过多签钱包，给用户提现钱包地址转账。

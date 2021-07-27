@@ -3,26 +3,26 @@ sidebar_position: 3
 ---
 
 # transfer
-## Function
-Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when do transfering,
+## 功能
+根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在转账时：
 
-* Internal build [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
-* Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
-* Send the everpay tx to everPay backend server for signature verification
-* The backend server verifies it and updates the user's asset balance. And store the everPay transaction record on the arweave blockchain
+* 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
+* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)
+* 将信息发送给 everPay 后端服务器，进行签名验证
+* 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上
 
 :::info
-Any everPay account can transfer any of its assets on everPay to other everPay accounts, regardless of whether the everPay account to be transferred is an ethereum or arweave account model. For example.
-* `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay account of arweave account model can transfer AR, ETH, USDT to `0x26361130d5d6E798E9319114643AF8c868412859` everPay account of ethereum account model
-* and vice versa
+任意 everPay 账户均支持将任意其在 everPay 上的资产转账给其他 everPay 账户，无论要转账给的 everPay 账户是 ethereum 还是 arweave 账户模型。例如：
+* arweave 账户模型的 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay 账户，可向 ethereum 账户模型的`0x26361130d5d6E798E9319114643AF8c868412859` everPay 账户，转账 AR、ETH、USDT
+* 反之亦然
 :::
-## Parameter
+## 参数
 [TransferParams](../types#transferparams)
 
-## Return
+## 返回
 [TransferOrWithdrawResult](../types#transferorwithdrawresult)
-## Example
-### From ethereum account
+## 示例
+### ethereum 账户给其他账户转账
 ```ts
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
@@ -38,7 +38,7 @@ everpay.transfer({
   data: { hello: 'world', this: 'is everpay' }
 }).then(console.log)
 
-/* Returned result
+/* 示例返回
 {
   status: 'ok',
   everpayTx: {
@@ -63,7 +63,7 @@ everpay.transfer({
 
 ```
 
-### From arweave account
+### arweave 账户给其他账户转账
 ```ts
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
@@ -77,7 +77,7 @@ everpay.transfer({
   to: '0x26361130d5d6E798E9319114643AF8c868412859'
 }).then(console.log)
 
-/* Returned result
+/* 示例返回
 {
   status: 'ok',
   everpayTx: {
@@ -101,5 +101,5 @@ everpay.transfer({
 */
 ```
 :::caution
-When an arweave account makes a transfer to another account, the data will have the JSON string `arOwner`, which is the `public key`, will be used for RSA-PSS sha256 signature verification.
+arweave 账户给其他账户进行转账操作时，data 会有 `arOwner` 的JSON 串，即 `public key`，其会用于 RSA-PSS sha256 的签名验证。
 :::

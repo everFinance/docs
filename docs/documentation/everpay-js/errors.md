@@ -2,11 +2,11 @@
 sidebar_position: 7
 ---
 
-# Errors
-## Introduction
-Error returns are built in, including some arConnect special handling errors.
+# 错误
+## 介绍
+内置了错误返回，包括部分 arConnect 特殊处理的错误。
 
-## Error messages
+## 错误信息
 
 ```ts
 export enum ERRORS {
@@ -26,7 +26,7 @@ export enum ERRORS {
 }
 ```
 
-## arConnect Special Handling Errors
+## arConnect 特殊处理的错误
 ```ts
 enum ERRORS {
   PLEASE_INSTALL_ARCONNECT = 'PLEASE_INSTALL_ARCONNECT',
@@ -40,5 +40,5 @@ enum ERRORS {
 }
 ```
 :::danger
-Due to some current issues with arConnect, everPay team has customized some arConnect errors
+因 arConnect 当前问题较多，当前在 arConnect 基础上，放置了一些错误
 :::

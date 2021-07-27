@@ -2,11 +2,12 @@
 sidebar_position: 2
 ---
 
-# Environment
+# 环境
 
-## Development environment
-endpoint: https://api-dev.everpay.io
+## 测试环境
+* endpoint: https://api-dev.everpay.io
+* expressEndpoint: https://express-dev.everpay.io
 
-## Production environment
-
-endpoint: https://api.everpay.io
+## 正式环境
+* endpoint: https://api.everpay.io
+* expressEndpoint: https://express.everpay.io

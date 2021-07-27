@@ -2,9 +2,9 @@
 sidebar_position: 6
 ---
 
-# Types
+# 类型
 
-The following types can be `imported` from everpay-js via typescript
+以下类型，都可通过 typescript 从 everpay-js 中 `import`
 
 ## ChainType
 
@@ -20,7 +20,7 @@ export enum ChainType {
 export type ArJWK = JWKInterface | 'use_wallet'
 ```
 
-`JWKInterface` is sourced from [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
+其中 `JWKInterface` 来源于 [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
 
 ## EthereumTransaction
 ```ts
@@ -28,7 +28,7 @@ import { TransactionResponse as EthereumTransaction } from '@ethersproject/abstr
 export { EthereumTransaction }
 ```
 
-`TransactionResponse` is sourced from [ethers.js TransactionResponse](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionResponse)
+`TransactionResponse` 来源于 [ethers.js TransactionResponse](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionResponse)
 
 ## ArweaveTransaction
 
@@ -36,10 +36,10 @@ export { EthereumTransaction }
 import { TransactionInterface as ArweaveTransaction } from 'arweave/node/lib/transaction'
 export { ArweaveTransaction }
 ```
-`TransactionInterface` is sourced from [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
+`TransactionInterface` 来源于 [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
 
 ## Config
-`Everpay` constructor configuration items
+`Everpay` 构造函数配置项
 
 ```ts
 export interface Config {
@@ -50,7 +50,7 @@ export interface Config {
 }
 ```
 
-`Signer` is sourced from [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
+`Signer` 来源于 [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
 
 ## Token
 ```ts
@@ -236,7 +236,7 @@ export interface TxsByAccountParams {
 
 ## TransferOrWithdrawResult
 ```ts
-// 注：此类型没有 export
+// Note: This type does not have an export
 interface PostEverpayTxResult {
   status: string
 }

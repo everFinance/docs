@@ -26,7 +26,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-cn',
     locales: ['en', 'zh-cn'],
   },
 

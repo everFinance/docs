@@ -3,22 +3,22 @@ sidebar_position: 2
 ---
 
 # deposit
-## Function
+## 功能
 
-Call the corresponding (plugin) wallet transfer function to deposit to the everPay account according to the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created
+根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值
 
-## Parameter
+## 参数
 [DepositParams](../types#depositparams)
 
-## Return
-### ethereum wallet
-When deposit with an ethereum wallet (using the `ethConnectedSigner` configuration) returns [EthereumTransaction](../types#ethereumtransaction)
+## 返回
+### ethereum 钱包
+当使用 ethereum 钱包充值时（使用 `ethConnectedSigner` 配置） 返回[EthereumTransaction](../types#ethereumtransaction)
 
-### arweave wallet
-When deposit with an arweave wallet (using the `arJWK` configuration) returns [ArweaveTransaction](../types#arweavetransaction)
+### arweave 钱包
+当使用 arweave 钱包充值时（使用 `arJWK` 配置） 返回[ArweaveTransaction](../types#arweavetransaction)
 
-## Example
-### ethereum wallet
+## 示例
+### ethereum 钱包
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
@@ -32,7 +32,7 @@ everpay.deposit({
   amount: '5.26'
 }).then(console.log)
 
-/* Returnd result
+/* 返回结果
 {
   nonce: 199,
   gasPrice: BigNumber { _hex: '0x02540be400', _isBigNumber: true },
@@ -52,7 +52,7 @@ everpay.deposit({
 */
 ```
 
-### arweave wallet
+### arweave 钱包
 
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
@@ -66,7 +66,7 @@ everpay.deposit(
   amount: '0.01'
 }).then(console.log)
 
-/* Returnd result
+/* 返回结果
 {
   format: 2,
   id: 'mOnlcsKK58D_XHLoeNKhuyZWm4s1xg9P0QP-YVwJVNk',

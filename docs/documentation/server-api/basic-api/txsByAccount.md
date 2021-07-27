@@ -4,19 +4,19 @@ sidebar_position: 6
 
 # txsByAccount
 
-## Function
-Get the transactions corresponding to `account` on everPay by paging
+## 功能
+everPay 上对应 `account` 的交易记录，通过 分页 形式获取
 
-## Parameter
+## 参数
 `{{endpoint}}/txs{{account}}?page={{page}}`
 
-## Example
+## 示例
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/txs/0x26361130d5d6E798E9319114643AF8c868412859?page=1'
 ```
 
-## Example return
+## 示例返回
 ```js
 {
   "accid": "0x26361130d5d6E798E9319114643AF8c868412859",

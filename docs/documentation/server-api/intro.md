@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# 介绍
 
-everPay backend service, you can get everPay basic information, account balance, transaction records and perform everPay transaction sending function through everPay Server API.
+everPay 后端服务，可通过 everPay Server、Express API 获取 everPay 基本信息、账户余额、交易记录，以及进行 everPay 交易发送功能。

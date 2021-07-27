@@ -2,12 +2,14 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# 介绍
 
-Request everPay Server API base query service using GET request without wallet signature operation.
+无需通过钱包签名操作，使用 GET 请求，即可请求 everPay Server、Express API 基础查询服务。
 
-For example,
+例如：
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/info'
+
+curl --location --request GET 'https://express-dev.everpay.io/withdraw/info'
 ```

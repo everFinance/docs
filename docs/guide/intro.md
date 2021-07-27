@@ -2,15 +2,15 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# 介绍
 
-everPay is a cross-chain payment settlement protocol based on the storage based computation paradigm. everPay can be called by any developer or merchant through the API for token payment settlement. everPay is transparent, reliable, real-time transactions, and fast settlement. With everPay, ordinary users can deposit their ETH and ERC20 tokens on Ethereum to everPay and experience real-time payment settlement.
+everPay 是基于存储计算范式实现的跨链支付结算协议，任何开发者或商户都可以通过 API 调用 everPay 实现代币支付结算。everPay 具备透明可信，实时交易，快速结算的特性。使用 everPay，普通用户可以将 Ethereum 上的 ETH，ERC20 代币充值到 everPay，体验实时的支付结算。
 
-The chains that everPay currently supports include Ethereum and Arweave.
+everPay 目前支持的链包括：Ethereum 和 Arweave。
 
-### everPay Support Token List
+### everPay 支持代币列表
 
-| Token Symbol | Contract Address                                   | Supported Chains          |
+| 代币名称 | 合约地址                                   | 支持的链          |
 | -------- | ------------------------------------------ | ----------------- |
 | AR       | 0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543 | arweave, ethereum |
 | ETH      | /                                          | ethereum          |
@@ -20,6 +20,6 @@ The chains that everPay currently supports include Ethereum and Arweave.
 | DAI      | 0x6b175474e89094c44da98b954eedeac495271d0f | ethereum          |
 | UNI      | 0x1f9840a85d5af5bf1d1762f925bdaddc4201f984 | ethereum          |
 
-Token details can be obtained via the [/info](../documentation/server-api/basic-api/info) interface.
+代币详细信息可以通过 [/info](../documentation/server-api/basic-api/info) 接口获得。
 
-This tutorial provides a detailed introduction to everPay implementation mechanism, as well as the details of deposit, withdrawal and transfer, so that developers can have a complete and clear understanding of everPay and facilitate everPay integration.
+本教程详细介绍 everPay 实现机制，以及充值、提现、转账具体的细节，开发者可以通过本教程对 everPay 有一个完整且清晰的认识，方便进行 everPay 的集成。

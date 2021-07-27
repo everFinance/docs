@@ -4,19 +4,19 @@ sidebar_position: 2
 
 # info
 
-## Function
-Get basic information about everPay service, e.g. `arLocker` represents arweave locking address, `ethLocker` represents etherum chain locking contract.
+## 功能
+获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
 
-## Parameter
+## 参数
 `{{endpoint}}/info`
 
-## Example
+## 示例
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/info'
 ```
 
-## Example return
+## 示例返回
 ```json
 {
   "arLocker": "bX7sKd1s8L6PxUHxK-UPCfus7duyVFdf0J1lm90zehc",

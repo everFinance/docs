@@ -4,19 +4,19 @@ sidebar_position: 3
 
 # balances
 
-## Function
-Get all assets on everPay for the corresponding `account`.
+## 功能
+获取 对应 `account` 在 everPay 上的所有资产信息
 
-## Parameter
+## 参数
 `{{endpoint}}/balances/{{account}}`
 
-## Example
+## 示例
 
 ```js
 curl --location --request GET 'https://api-dev.everpay.io/balances/0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
 ```
 
-## Example return
+## 示例返回
 ```json
 {
   "accid": "0x2ca81e1253f9426c62Df68b39a22A377164eeC92",
