@@ -6,32 +6,22 @@ import Translate from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: 'Guide',
-    to: 'docs/guide/intro',
+    title: '指南',
+    to: 'docs/guide/quick-start/overview',
     src: require('../../static/img/sharding.png').default,
     description: (
       <Translate>
-        Get a quick overview of everPay with this guide
+        了解、深入 everPay 协议
       </Translate>
     ),
   },
-  // {
-  //   title: 'Server API',
-  //   to: 'docs/server-api/intro',
-  //   src: require('../../static/img/compute.png').default,
-  //   description: (
-  //     <Translate>
-  //       everPay server-side API documentation.
-  //     </Translate>
-  //   ),
-  // },
   {
-    title: 'Documentation',
-    to: 'docs/documentation/account-model',
+    title: 'SDK',
+    to: 'docs/sdk/intro',
     src: require('../../static/img/dev.png').default,
     description: (
       <Translate>
-        everPay Full Documentation
+        everPay 服务端接口与客户端 SDK
       </Translate>
     ),
   },

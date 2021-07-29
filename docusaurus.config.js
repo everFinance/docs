@@ -44,7 +44,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
-            if (locale !== 'en') {
+            if (locale === 'en') {
               return `https://github.com/everFinance/docs/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
             }
             return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
@@ -74,15 +74,15 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'guide/intro',
+          docId: 'guide/quick-start/overview',
           position: 'left',
-          label: 'Guide',
+          label: '指南',
         },
         {
           type: 'doc',
-          docId: 'documentation/account-model',
+          docId: 'sdk/intro',
           position: 'left',
-          label: 'Documentation',
+          label: 'SDK',
         },
         {
           type: 'localeDropdown',
@@ -103,11 +103,11 @@ module.exports = {
           items: [
             {
               label: 'Guide',
-              to: '/docs/guide/intro',
+              to: '/docs/guide/quick-start/overview',
             },
             {
-              label: 'Documentation',
-              to: '/docs/documentation/account-model',
+              label: 'SDK',
+              to: '/docs/sdk/intro',
             }
           ],
         },
