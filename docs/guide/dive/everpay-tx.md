@@ -13,7 +13,7 @@ everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同
 |---|---|
 |tokenSymbol|代币名称|
 |action|<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li></ul>|
-|from|签署交易的当前 everPay 账户 ID|
+|from|签名交易的当前 everPay 账户 ID|
 |to|<ul><li>转账时，`to` 为另一个 everPay 账户 ID</li><li>提现时，`to` 为要提现至的区块链钱包地址</li></ul>|
 |amount|转账金额或提现金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |

@@ -16,7 +16,7 @@ everPay 通过区块链密码学签名验证来确保转账的安全性。
 |---|---|
 |tokenSymbol|代币名称|
 |action|`'transfer'`代表转账|
-|from|签署交易的当前 everPay 账户 ID|
+|from|签名交易的当前 everPay 账户 ID|
 |to|转账时，`to` 为另一个 everPay 账户 ID|
 |amount|转账金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |

@@ -13,7 +13,7 @@ sidebar_position: 6
 |---|---|
 |tokenSymbol|代币名称|
 |action|`'burn'`代表提现|
-|from|签署交易的当前 everPay 账户 ID|
+|from|签名交易的当前 everPay 账户 ID|
 |to|提现时，`to` 为要提现至的区块链钱包地址|
 |amount|提现金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
@@ -52,7 +52,7 @@ sidebar_position: 6
 |---|---|
 |tokenSymbol|代币名称|
 |action|`'transfer'` 代表转账。**快速提现通过 everPay 转账实现**|
-|from|签署交易的当前 everPay 账户 ID|
+|from|签名交易的当前 everPay 账户 ID|
 |to|快速提现的做市商 everPay 账户 ID（通过 [expressInfo API](../../sdk/server-api/basic-api/expressinfo) 获取）|
 |amount|转账金额（快速提现金额），类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 转账手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
