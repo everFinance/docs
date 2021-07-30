@@ -16,10 +16,10 @@ sidebar_position: 2
 |arLocker|everPay AR 原生代币锁仓地址|
 |ethChainID|当前以太坊网络 ID|
 |ethLocker|everPay 以太坊区块链ETH、erc20 Token 锁仓合约地址|
-|everRootHash|TODO|
+|everRootHash| everPay 系统交易指纹，通过当前所有交易 everHash 逐笔进行 keccak256 获得|
 |feeRecipient|everPay 手续费收款账户 ID|
 |owner|负责将 everPay 交易记录存储至 Arweave 区块链的钱包地址|
-|rootHash|TODO|
+|rootHash|everPay 系统交易指纹，通过当前所有交易 everHash 与 id 逐笔进行 keccak256 获得|
 |tokenList|见如下 [Token 字段描述](#Token-字段描述)|
 
 ### Token 字段描述

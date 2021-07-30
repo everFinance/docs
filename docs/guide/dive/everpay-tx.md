@@ -344,8 +344,9 @@ const verified = arweave.crypto.verify(
 }
 ```
 
-### 时间戳
-TODO
+### nonce
+* `nonce` 为用户在客户端生成，everPay 服务器可接收与服务器时间上下 100s 的误差
+* 用户每次提交 everPay 的交易，`nonce` 必须比该用户上一笔 `nonce` 数值大
 
 ## 交易记录
 提交至 everPay 服务器，经过签名校验通过的 everPay 交易，可以通过 everPay 接口获取交易记录。
