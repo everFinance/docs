@@ -4,8 +4,6 @@ sidebar_position: 5
 
 # 转账
 
-## 内容概述
-
 转账指两个 everPay 账户之间发生的转账行为，任意两个 everPay 账户之间都可以进行转账，甚至可以将以太坊的资产转移到 Arweave 账户上。
 
 everPay 通过区块链密码学签名验证来确保转账的安全性。

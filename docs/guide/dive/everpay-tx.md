@@ -4,7 +4,6 @@ sidebar_position: 3
 
 # 交易
 
-## 内容概述
 everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同的格式，签署相同的签名规范，存储在 arweave 区块链上，供所有人验证。
 
 ## Schema

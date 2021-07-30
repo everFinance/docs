@@ -4,7 +4,6 @@ sidebar_position: 2
 
 # 账户模型
 
-## 内容概述
 
 everPay 账户支持以太坊钱包 或 Arweave 钱包进行连接。
 
