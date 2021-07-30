@@ -4,9 +4,13 @@ sidebar_position: 2
 
 # 使用 everpay-js 快速集成
 
+everpay-js 为开发者封装了 everPay 协议的大部分接口，您可以使用 everpay-js 快速将 everPay 协议集成到你的应用页面。使用 everpay-js 可以在您的应用中快速完成 everPay 支付结算。
+
 ## 系统要求
 
-Node Version >= 14
+Node Version >= 14(TODO:URL)
+
+最新版本的 etherjs(TODO:URL)
 
 ## 安装
 ```bash
@@ -26,6 +30,11 @@ import Everpay from 'everpay'
 
 
 ## 初始化
+
+初始化需要注入 ethereum，这里选择 etherjs 进行初始化。
+
+使用 MetaMask 等以太坊钱包可以快速的链接 everPay(TODO:URL)。也可以使用 ArConnect 连接 everPay。
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
@@ -37,6 +46,8 @@ const everpay = new Everpay({
 
 ## 充值
 
+填写需要充值的 token symbol 和 amount，调用下面的接口完成充值：
+
 ```js
 everpay.deposit({
   symbol: 'USDT',
@@ -44,7 +55,16 @@ everpay.deposit({
 }).then(console.log)
 ```
 
+** 注意：**
+
+- ** Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块。**
+
+- ** everPay 支持 AR 跨链，初始化注入 ethereum 则充值调用的是 WAR（ERC20），初始化注入 arconnect 则充值调用的是 AR（native）。**
+
 ## 转账
+
+注入的钱包已经拥有 token 就可以进行转账。填写需要转账的 symbol 和 amount，调用下面的接口完成转账：
+
 ```js
 everpay.transfer({
   symbol: 'USDT',
@@ -54,6 +74,9 @@ everpay.transfer({
 ```
 
 ## 提现
+
+将 everPay 中的资产提出，回到原生链。注入的钱包有足够的 token 余额可以进行提现。填写需要转账的 symbol、amount、chainType 以及提现收款地址：
+
 ```js
 everpay.withdraw({
   symbol: 'USDT',
