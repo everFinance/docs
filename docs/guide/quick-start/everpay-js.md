@@ -8,9 +8,8 @@ everpay-js 为开发者封装了 everPay 协议的大部分接口，您可以使
 
 ## 系统要求
 
-Node Version >= 14(TODO:URL)
-
-最新版本的 etherjs(TODO:URL)
+* `Node Version >= 14`，推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 或 [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） 来管理 Node 版本
+* [ethers.js](https://docs.ethers.io/v5/)，推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 ## 安装
 ```bash
@@ -31,9 +30,9 @@ import Everpay from 'everpay'
 
 ## 初始化
 
-初始化需要注入 ethereum，这里选择 etherjs 进行初始化。
+使用以太坊钱包连接，初始化需要注入 `ethConnectedSigner`，开发者需要使用 [ethers.js](https://github.com/ethers-io/ethers.js) 进行初始化。
 
-使用 MetaMask 等以太坊钱包可以快速的链接 everPay(TODO:URL)。也可以使用 ArConnect 连接 everPay。
+使用 MetaMask 等以太坊钱包可以快速的连接 everPay。
 
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -43,6 +42,8 @@ const everpay = new Everpay({
   ethConnectedSigner: signer
 })
 ```
+
+使用 Arweave 钱包连接，初始化需要注入 `arJWK`，更多信息可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK)
 
 ## 充值
 
@@ -55,11 +56,10 @@ everpay.deposit({
 }).then(console.log)
 ```
 
-** 注意：**
-
-- ** Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块。**
-
-- ** everPay 支持 AR 跨链，初始化注入 ethereum 则充值调用的是 WAR（ERC20），初始化注入 arconnect 则充值调用的是 AR（native）。**
+:::info
+* Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块
+* everPay 支持 AR 跨链，初始化注入 ethereum 则充值调用的是 WAR（ERC20），初始化注入 arconnect 则充值调用的是 AR（native）
+:::
 
 ## 转账
 
