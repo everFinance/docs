@@ -6,7 +6,7 @@ const trailingSlash = false
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   // 站点元数据
-  title: 'everPay Docs',
+  title: 'everPay 文档',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
 
@@ -65,7 +65,7 @@ module.exports = {
   // themes:
   themeConfig: {
     navbar: {
-      title: 'everPay Docs',
+      title: 'everPay 文档',
       // logo: {
       //   alt: 'everPay Logo',
       //   src: 'img/logo-black.svg',
@@ -102,7 +102,7 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Guide',
+              label: '指南',
               to: '/docs/guide/quick-start/overview',
             },
             {
@@ -132,7 +132,7 @@ module.exports = {
           title: 'GitHub',
           items: [
             {
-              label: 'Docs',
+              label: '文档',
               href: 'https://github.com/everFinance/docs',
             },
             {
