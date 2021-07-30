@@ -99,7 +99,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
               label: '指南',
@@ -112,7 +112,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Community',
+          title: '社群',
           items: [
             {
               label: 'Twitter',
@@ -132,7 +132,7 @@ module.exports = {
           title: 'GitHub',
           items: [
             {
-              label: '文档',
+              label: 'docs',
               href: 'https://github.com/everFinance/docs',
             },
             {

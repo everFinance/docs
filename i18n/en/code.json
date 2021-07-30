@@ -133,7 +133,7 @@
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
     "message": "要查看最新版本，请参阅{latestVersionLink}（{versionLabel}）。",
-    "description": "The label used to tell the user to check the latest version"
+    "description": "The label userd to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新文档",
@@ -245,6 +245,9 @@
   },
   "everPay Full Documentation": {
     "message": "everPay 完整文档"
+  },
+  "指南": {
+    "message": "Guide"
   },
   "了解、深入 everPay 协议": {
     "message": "Understand and dive into everPay protocol"

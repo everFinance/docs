@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# 系统简述
+# System Overview
 
-## 内容概述
+## Content Summary
 
 everPay 是基于存储计算范式实现的跨链支付结算协议，任何开发者或商户都可以通过 API 调用 everPay 实现代币支付结算。
 
