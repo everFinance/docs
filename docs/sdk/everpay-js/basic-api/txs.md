@@ -12,6 +12,9 @@ everPay 上所有交易记录，通过 分页 形式获取
 ## 返回
 [TxsResult](../types#txsresult)
 
+## 字段
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/everpay-tx#交易记录)
+
 ## 示例
 
 ```js

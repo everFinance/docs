@@ -10,6 +10,8 @@ everPay 上对应 `account` 的交易记录，通过 分页 形式获取
 ## 参数
 `{{endpoint}}/txs{{account}}?page={{page}}`
 
+## 字段
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/everpay-tx#交易记录)
 ## 示例
 
 ```bash

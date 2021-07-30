@@ -10,6 +10,17 @@ sidebar_position: 9
 ## 参数
 `{{expressEndpoint}}/withdraw/info`
 
+:::info
+`expressInfo` 的接口 endpoint 为 `expressEndpoint`
+:::
+
+### Token 字段描述
+|字段|描述|
+|---|---|
+|address|快速提现做市商 everPay 账户 ID|
+|withdrawTimeCost|预计快速提现完成时间（秒）|
+|tokens|<ul><li>`tokenTag`</li><li>`withdrawFee` 代表快速提现需要扣除的手续费</li><li>`walletBalance` 代表做市商钱包该资产可快速提现的额度</li></ul>|
+
 ## 示例
 
 ```bash
