@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# 使用 everpay-js 快速集成
+# Quick integration
 
-## 系统要求
+## System Requirement
 
 Node Version >= 14
 
-## 安装
+## Installation
 ```bash
 yarn add everpay
 
@@ -17,7 +17,7 @@ yarn add everpay
 npm install everpay
 ```
 
-## 引入
+## Import
 ```js
 import Everpay from 'everpay'
 // or
@@ -25,7 +25,7 @@ import Everpay from 'everpay'
 ```
 
 
-## 初始化
+## Initialization
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
@@ -35,7 +35,7 @@ const everpay = new Everpay({
 })
 ```
 
-## 充值
+## Deposit
 
 ```js
 everpay.deposit({
@@ -44,7 +44,7 @@ everpay.deposit({
 }).then(console.log)
 ```
 
-## 转账
+## Transfer
 ```js
 everpay.transfer({
   symbol: 'USDT',
@@ -53,7 +53,7 @@ everpay.transfer({
 }).then(console.log)
 ```
 
-## 提现
+## Withdraw
 ```js
 everpay.withdraw({
   symbol: 'USDT',
@@ -63,5 +63,5 @@ everpay.withdraw({
 }).then(console.log)
 ```
 
-## 示例参考
-更多示例可参考 [everpay-js 单元测试用例](https://github.com/everFinance/everpay-js/tree/main/test)
+## Example reference
+More examples can be found in [everpay-js unit test cases](https://github.com/everFinance/everpay-js/tree/main/test)
