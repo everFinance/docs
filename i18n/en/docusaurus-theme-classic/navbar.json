@@ -1,11 +1,7 @@
 {
   "title": {
-    "message": "everPay 文档",
+    "message": "everPay Docs",
     "description": "The title in the navbar"
-  },
-  "item.label.Guide": {
-    "message": "指南",
-    "description": "Navbar item with label Guide"
   },
   "item.label.GitHub": {
     "message": "GitHub",
@@ -23,8 +19,12 @@
     "message": "everpay-js",
     "description": "Navbar item with label everpay-js"
   },
-  "item.label.Documentation": {
-    "message": "文档",
-    "description": "Navbar item with label Documentation"
+  "item.label.指南": {
+    "message": "Guide",
+    "description": "Navbar item with label 指南"
+  },
+  "item.label.SDK": {
+    "message": "SDK",
+    "description": "Navbar item with label SDK"
   }
 }

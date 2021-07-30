@@ -6,7 +6,7 @@ const trailingSlash = false
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   // 站点元数据
-  title: 'everPay 文档',
+  title: 'everPay Docs',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
 
@@ -65,7 +65,7 @@ module.exports = {
   // themes:
   themeConfig: {
     navbar: {
-      title: 'everPay 文档',
+      title: 'everPay Docs',
       // logo: {
       //   alt: 'everPay Logo',
       //   src: 'img/logo-black.svg',

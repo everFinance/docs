@@ -133,7 +133,7 @@
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
     "message": "要查看最新版本，请参阅{latestVersionLink}（{versionLabel}）。",
-    "description": "The label userd to tell the user that he's browsing an unmaintained doc version"
+    "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "最新文档",
@@ -245,5 +245,20 @@
   },
   "everPay Full Documentation": {
     "message": "everPay 完整文档"
+  },
+  "了解、深入 everPay 协议": {
+    "message": "Understand and dive into everPay protocol"
+  },
+  "everPay 服务端接口与客户端 SDK": {
+    "message": "everPay server-side interface and client-side SDK"
+  },
+  "everPay 文档": {
+    "message": "everPay Docs"
+  },
+  "欢迎来的 everPay 开发者文档": {
+    "message": "Welcome to everPay developer documentation site"
+  },
+  "快速开始": {
+    "message": "Quick Start"
   }
 }

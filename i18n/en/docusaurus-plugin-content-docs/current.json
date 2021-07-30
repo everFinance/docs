@@ -60,7 +60,39 @@
     "description": "The label for category Configuration in sidebar documentation"
   },
   "sidebar.documentation.category.Withdraw": {
-    "message": "(待翻译) Withdraw",
+    "message": "Withdraw",
     "description": "The label for category Withdraw in sidebar documentation"
+  },
+  "sidebar.guide.category.快速开始": {
+    "message": "Quick Start",
+    "description": "The label for category 快速开始 in sidebar guide"
+  },
+  "sidebar.guide.category.深入理解": {
+    "message": "Dive",
+    "description": "The label for category 深入理解 in sidebar guide"
+  },
+  "sidebar.guide.category.延伸": {
+    "message": "Extended Reading",
+    "description": "The label for category 延伸 in sidebar guide"
+  },
+  "sidebar.sdk.category.Server API": {
+    "message": "Server API",
+    "description": "The label for category Server API in sidebar sdk"
+  },
+  "sidebar.sdk.category.基础查询接口": {
+    "message": "Basic Query API",
+    "description": "The label for category 基础查询接口 in sidebar sdk"
+  },
+  "sidebar.sdk.category.操作类接口": {
+    "message": "Operation API",
+    "description": "The label for category 操作类接口 in sidebar sdk"
+  },
+  "sidebar.sdk.category.everpay-js": {
+    "message": "everpay-js",
+    "description": "The label for category everpay-js in sidebar sdk"
+  },
+  "sidebar.sdk.category.配置项": {
+    "message": "Configuration",
+    "description": "The label for category 配置项 in sidebar sdk"
   }
 }
