@@ -30,9 +30,7 @@ import Everpay from 'everpay'
 
 ## 初始化
 
-使用以太坊钱包连接，初始化需要注入 `ethConnectedSigner`，开发者需要使用 [ethers.js](https://github.com/ethers-io/ethers.js) 进行初始化。
-
-使用 MetaMask 等以太坊钱包可以快速的连接 everPay。
+使用以太坊钱包连接，初始化需要注入 `ethConnectedSigner`，开发者需要使用 [ethers.js](https://github.com/ethers-io/ethers.js) 进行创建。
 
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -43,7 +41,9 @@ const everpay = new Everpay({
 })
 ```
 
-使用 Arweave 钱包连接，初始化需要注入 `arJWK`，更多信息可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK)
+`ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner)。
+
+如开发者使用 Arweave 钱包连接，初始化需要注入 `arJWK`，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
 
 ## 充值
 
@@ -58,7 +58,7 @@ everpay.deposit({
 
 :::info
 * Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块
-* everPay 支持 AR 跨链，初始化注入 ethereum 则充值调用的是 WAR（ERC20），初始化注入 arconnect 则充值调用的是 AR（native）
+* everPay 支持 AR 跨链，初始化注入 `ethConnectedSigner` 则充值调用的是 WAR（ERC20），初始化注入 `arJWK` 则充值调用的是 AR（native）
 :::
 
 ## 转账
