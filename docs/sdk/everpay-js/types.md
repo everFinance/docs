@@ -80,6 +80,20 @@ export interface EverpayInfo {
 }
 ```
 
+## ExpressInfo
+```ts
+interface ExpressTokenItem {
+  tokenTag: string
+  withdrawFee: string
+  walletBalance: string
+}
+export interface ExpressInfo {
+  address: string
+  withdrawTimeCost: number
+  tokens: ExpressTokenItem[]
+}
+```
+
 ## EverpayAction
 ```ts
 export enum EverpayAction {
@@ -152,6 +166,12 @@ export interface EverpayTransaction {
   status: EverpayTransactionStatus
   timestamp: number
   targetChainTxHash?: string
+  express: {
+    chainTxHash: string
+    withdrawFee: string
+    refundEverHash: string
+    err: string
+  }
 }
 ```
 
@@ -214,6 +234,8 @@ export interface WithdrawParams {
   chainType: ChainType
   symbol: string
   amount: string
+  fee?: string
+  quickMode?: boolean
   data?: Record<string, unknown>
   to?: string
 }
