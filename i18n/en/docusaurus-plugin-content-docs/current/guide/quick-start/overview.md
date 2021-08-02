@@ -2,30 +2,30 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Brief Description
 
 everPay is a cross-chain token payment protocol that provides real-time and inexpensive token payment capabilities for users and merchants. The protocol is based on the stored computing paradigm and is transparent, trustworthy, efficient and fast. The protocol has no entry requirements and any developer or merchant can integrate everPay protocol via API.
 
 Individual users can use [everpay.io](https://everpay.io) to access everPay UI for easy and fast blockchain token payments. Developers can quickly integrate the everPay protocol using the SDK.
 
-all transactions are done by off-chain smart contracts and all transaction records are stored on Arweave, which can be downloaded and verified by anyone. See: [Stored Computing Paradigm for more information](../refrence/storage-based-computation-paradigm).
+All transactions are done by off-chain smart contracts and all transaction records are stored on Arweave, which can be downloaded and verified by anyone. For more information, see: [Stored Computing Paradigm for more information](../refrence/storage-based-computation-paradigm).
 
-everPay currently supports the following chains: Ethereum and Arweave. everPay allows regular users to top up ETH and ERC20 tokens on Ethereum to everPay and experience real-time payment settlement. You can also recharge AR from Arweave to everPay for payment settlement, or even cross-chain AR to Ethereum to generate Wrapped AR (WAR).
+EverPay currently supports the following chains: Ethereum and Arweave, and regular users can top up their ETH and ERC20 tokens on Ethereum to everPay to experience real-time payment settlement. You can also top up AR from Arweave to everPay for payment settlement, or even cross-chain AR to Ethereum to generate Wrapped AR (WAR).
 
-## Locker Addresses
+## Locked Position Address
 
-everPay's assets correspond 1:1 to on-chain assets, and we use multi-signature contracts to lock assets on Ethereum and threshold signature technology on Arweave.
+The assets of everPay correspond 1:1 to the assets on the chain, and we use multi-signature contracts to lock the assets on Ethereum and threshold signature technology to lock the assets on Arweave.
 
-| Blockchain | Locker Address                                   |
+| Blockchain | Locked Position Address                  |
 | -------- | ------------------------------------------ |
 | Ethereum | [0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
 | Arweave  | [dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys](https://viewblock.io/arweave/address/dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys)|
 
-## everPay Support Token List
+## Supported tokens list
 
-The tokens currently supported by everPay includes:
+The tokens currently supported on everPay includes:
 
-| Token Symbol | Contract Address                                   | Supported Chains          |
+| Token Name | Contract Address                         | Supported Chains          |
 | -------- | ------------------------------------------ | ----------------- |
 | (W)AR    | [0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543](https://etherscan.io/address/0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543) | arweave, ethereum |
 | ETH      | /                                          | ethereum          |

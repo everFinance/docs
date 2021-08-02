@@ -2,11 +2,16 @@
 sidebar_position: 2
 ---
 
-# Quick integration
+# Quick integration with everpay-js
 
-## System Requirement
+everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用页面。使用 everpay-js 可以在应用中快速完成 everPay 支付结算。
 
-Node Version >= 14
+everpay-js encapsulates most of the interfaces of everPay protocol for developers, developers can use everpay-js to quickly integrate everPay protocol into application pages. Using everpay-js, you can quickly complete everPay payment settlement in your application.
+
+## System Requirements
+
+* `Node Version >= 14`， it is recommended to use [`nvm`](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） to manage Node versions
+* [ethers.js](https://docs.ethers.io/v5/) recommended to use [the same version ethers.js inside the everpay-js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 ## Installation
 ```bash
@@ -26,6 +31,9 @@ import Everpay from 'everpay'
 
 
 ## Initialization
+
+To connect using an ethereum wallet, initialization requires the injection of `ethConnectedSigner`, which developers need to create using [ethers.js](https://github.com/ethers-io/ethers.js).
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
@@ -35,7 +43,13 @@ const everpay = new Everpay({
 })
 ```
 
+For more information on how to create `ethConnectedSigner`, please visit [SDK - everpay-js - Configuration - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner).
+
+If the developer uses Arweave wallet connection, the initialization needs to inject `arJWK`, you can browse [SDK - everpay-js - Configuration - `arJWK`](../../sdk/everpay-js/configuration/arJWK) for configuration.
+
 ## Deposit
+
+Fill in the token symbol and amount to be recharged, and call the following interface to complete the recharge.
 
 ```js
 everpay.deposit({
@@ -44,7 +58,15 @@ everpay.deposit({
 }).then(console.log)
 ```
 
+:::info
+* Ethereum requires 6 blocks for recharge, Arweave requires 15 blocks for recharge
+* everPay supports AR cross-chain, initialization injection `ethConnectedSigner` will call WAR (ERC20) for recharge, initialization injection `arJWK` will call AR (native) for recharge
+:::
+
 ## Transfer
+
+When the everPay account that corresponds to the injected wallet already has assets, you can make an everPay transfer. Fill in the symbol and amount to be transferred and call the following interface to complete the transfer.
+
 ```js
 everpay.transfer({
   symbol: 'USDT',
@@ -53,7 +75,10 @@ everpay.transfer({
 }).then(console.log)
 ```
 
-## Withdraw
+## Withdrawal
+
+Withdraw the assets from everPay back to the native chain. When the everPay account that corresponds to the injected wallet already has assets, you can withdraw assets from everPay. Fill in the symbol, amount, chainType and withdrawal address to withdraw, and call the following interface to withdraw.
+
 ```js
 everpay.withdraw({
   symbol: 'USDT',
