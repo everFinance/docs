@@ -11,6 +11,8 @@ sidebar_position: 3
 * 将信息发送给 everPay 后端服务器，进行签名验证
 * 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上
 
+开发者可浏览 [指南 - 深入理解 - 交易](../../../guide/dive/everpay-tx) 章节获取更多信息。
+
 :::info
 任意 everPay 账户均支持将任意其在 everPay 上的资产转账给其他 everPay 账户，无论要转账给的 everPay 账户是 ethereum 还是 arweave 账户模型。例如：
 * arweave 账户模型的 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay 账户，可向 ethereum 账户模型的`0x26361130d5d6E798E9319114643AF8c868412859` everPay 账户，转账 AR、ETH、USDT

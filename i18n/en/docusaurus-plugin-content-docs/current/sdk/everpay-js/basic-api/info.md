@@ -10,7 +10,11 @@ sidebar_position: 2
 ## 参数
 无
 ## 返回
+### 返回类型
 [EverpayInfo](../types#everpayinfo)
+
+### 返回字段
+字段信息可查看 [Server API - 基础查询接口 - info - 返回字段](../../server-api/basic-api/info#返回字段)
 ## 示例
 
 ```js

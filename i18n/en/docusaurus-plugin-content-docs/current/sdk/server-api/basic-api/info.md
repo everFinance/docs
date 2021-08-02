@@ -10,7 +10,7 @@ sidebar_position: 2
 ## 参数
 `{{endpoint}}/info`
 
-## 字段
+## 返回字段
 |字段|描述|
 |---|---|
 |arLocker|everPay AR 原生代币锁仓地址|
@@ -20,7 +20,7 @@ sidebar_position: 2
 |feeRecipient|everPay 手续费收款账户 ID|
 |owner|负责将 everPay 交易记录存储至 Arweave 区块链的钱包地址|
 |rootHash|everPay 系统交易指纹，通过当前所有交易 everHash 与 id 逐笔进行 keccak256 获得|
-|tokenList|见如下 [Token 字段描述](#Token-字段描述)|
+|tokenList|everPay 支持的资产列表。单一币种字段，见如下 [Token 字段描述](#Token-字段描述)|
 
 ### Token 字段描述
 |字段|描述|

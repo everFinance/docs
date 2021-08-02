@@ -10,6 +10,20 @@ sidebar_position: 3
 ## 参数
 `{{endpoint}}/balances/{{account}}`
 
+## 返回字段
+|字段|描述|
+|---|---|
+|accid|everPay 账户 ID|
+|balances|该 everPay 账户在 everPay 的资产列表，单一币种余额字段，见如下 [BalanceItem 字段描述](#balanceitem-字段描述)|
+
+### BalanceItem 字段描述
+|字段|描述|
+|---|---|
+|tag|由 [Token](./info#token-字段描述) `chainType`, `symbol`, `id` 通过 `-` 组合|
+|amount|资产余额，类型为 uint|
+|decimals| |
+
+
 ## 示例
 
 ```js

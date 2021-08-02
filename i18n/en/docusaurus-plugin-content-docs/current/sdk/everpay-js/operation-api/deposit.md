@@ -12,10 +12,10 @@ sidebar_position: 2
 
 ## 返回
 ### ethereum 钱包
-当使用 ethereum 钱包充值时（使用 `ethConnectedSigner` 配置） 返回[EthereumTransaction](../types#ethereumtransaction)
+当使用 ethereum 钱包充值时（使用 `ethConnectedSigner` 配置） 返回 [EthereumTransaction](../types#ethereumtransaction)
 
 ### arweave 钱包
-当使用 arweave 钱包充值时（使用 `arJWK` 配置） 返回[ArweaveTransaction](../types#arweavetransaction)
+当使用 arweave 钱包充值时（使用 `arJWK` 配置） 返回 [ArweaveTransaction](../types#arweavetransaction)
 
 ## 示例
 ### ethereum 钱包

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # System Overview
 
-## 架构
+## Structure
 TODO
 
 ## Coordinator

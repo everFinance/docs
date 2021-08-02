@@ -18,7 +18,7 @@ sidebar_position: 8
 * everPay 提现交易，最终提现至用户 ethereum 钱包地址的交易 txHash 为 `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`，此笔 everPay 提现交易记录无法通过此 API 获取
 :::
 
-## 字段
+## 返回字段
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/everpay-tx#交易记录)
 
 ## 示例
