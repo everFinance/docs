@@ -290,7 +290,6 @@ const signature = await signMessageAsync(config.arJWK as ArJWK, everHash)
 Pseudocode reference source: [everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
 
 :::danger
-* 用于 arweave RSA-PSS sha256 签名的是 `everHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string` 才是 `signature`
 * For arweave RSA-PSS sha256 signature is `everHash` Buffer, the result needs to be further converted by `Arweave.utils.bufferTob64Url` to get `base64 string` which is `signature`.
 :::
 
