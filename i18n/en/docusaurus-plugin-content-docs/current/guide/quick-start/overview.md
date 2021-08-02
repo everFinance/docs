@@ -8,7 +8,7 @@ everPay is a cross-chain token payment protocol that provides real-time and inex
 
 Individual users can use [everpay.io](https://everpay.io) to access everPay UI for easy and fast blockchain token payments. Developers can quickly integrate the everPay protocol using the SDK.
 
-all transactions are done by off-chain smart contracts and all transaction records are stored on Arweave, which can be downloaded and verified by anyone. See: [Stored Computing Paradigm for more information](../TODO).
+all transactions are done by off-chain smart contracts and all transaction records are stored on Arweave, which can be downloaded and verified by anyone. See: [Stored Computing Paradigm for more information](../refrence/storage-based-computation-paradigm).
 
 everPay currently supports the following chains: Ethereum and Arweave. everPay allows regular users to top up ETH and ERC20 tokens on Ethereum to everPay and experience real-time payment settlement. You can also recharge AR from Arweave to everPay for payment settlement, or even cross-chain AR to Ethereum to generate Wrapped AR (WAR).
 

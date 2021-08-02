@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 使用 everpay-js 快速集成
 
-everpay-js 为开发者封装了 everPay 协议的大部分接口，您可以使用 everpay-js 快速将 everPay 协议集成到你的应用页面。使用 everpay-js 可以在您的应用中快速完成 everPay 支付结算。
+everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用页面。使用 everpay-js 可以在应用中快速完成 everPay 支付结算。
 
 ## 系统要求
 
@@ -63,7 +63,7 @@ everpay.deposit({
 
 ## 转账
 
-注入的钱包已经拥有 token 就可以进行转账。填写需要转账的 symbol 和 amount，调用下面的接口完成转账：
+注入的钱包，对应 everPay 账户已经拥有 token 就可以进行 everPay 转账。填写需要转账的 symbol 和 amount，调用下面的接口完成转账：
 
 ```js
 everpay.transfer({
@@ -75,7 +75,7 @@ everpay.transfer({
 
 ## 提现
 
-将 everPay 中的资产提出，回到原生链。注入的钱包有足够的 token 余额可以进行提现。填写需要转账的 symbol、amount、chainType 以及提现收款地址：
+将 everPay 中的资产提出，回到原生链。注入的钱包，对应 everPay 账户已经拥有 token 就可以进行 everPay 提现。填写需要提现的 symbol、amount、chainType 以及提现收款地址：
 
 ```js
 everpay.withdraw({

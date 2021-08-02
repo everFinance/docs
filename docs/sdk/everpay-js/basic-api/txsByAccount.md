@@ -10,9 +10,10 @@ sidebar_position: 6
 ## 参数
 [TxsByAccountParams](../types#txsbyaccountparams)
 ## 返回
+### 返回类型
 [TxsResult](../types#txsresult)
 
-## 字段
+### 返回字段
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/everpay-tx#交易记录)
 
 ## 示例

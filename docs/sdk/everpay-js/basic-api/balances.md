@@ -10,7 +10,16 @@ sidebar_position: 3
 ## 参数
 [BalancesParams](../types#balancesparams)
 ## 返回
+### 返回类型
 [BalanceItem](../types#balanceitem)[]
+
+### 返回字段
+|字段|描述|
+|---|---|
+|chainType|该资产支持充值、提现的区块链，如支持多个区块链充值、提现，以 `,` 分隔开|
+|symbol|该资产名称|
+|address|该资产区块链合约地址，如如支持多个区块链充值、提现，以 `,` 分隔开，顺序与 `chainType` 中区块链名称顺序保持一致|
+|balance|该资产余额，非 uint 类型，已经过 `decimals` 处理|
 ## 示例
 
 ```js
