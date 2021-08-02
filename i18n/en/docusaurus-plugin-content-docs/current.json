@@ -30,5 +30,9 @@
   "sidebar.sdk.category.配置项": {
     "message": "Configuration",
     "description": "The label for category 配置项 in sidebar sdk"
+  },
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
   }
 }
