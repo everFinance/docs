@@ -4,8 +4,6 @@ sidebar_position: 2
 
 # Quick integration with everpay-js
 
-everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用页面。使用 everpay-js 可以在应用中快速完成 everPay 支付结算。
-
 everpay-js encapsulates most of the interfaces of everPay protocol for developers, developers can use everpay-js to quickly integrate everPay protocol into application pages. Using everpay-js, you can quickly complete everPay payment settlement in your application.
 
 ## System Requirements

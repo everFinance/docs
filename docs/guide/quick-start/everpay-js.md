@@ -45,6 +45,8 @@ const everpay = new Everpay({
 
 如开发者使用 Arweave 钱包连接，初始化需要注入 `arJWK`，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
 
+TODO: ArConnect
+
 ## 充值
 
 填写需要充值的 token symbol 和 amount，调用下面的接口完成充值：
