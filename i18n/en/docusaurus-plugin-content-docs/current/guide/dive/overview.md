@@ -4,14 +4,6 @@ sidebar_position: 1
 
 # System Overview
 
-## Structure
-TODO
+[everPay: A Trusted Cross-chain Payment Protocol](https://medium.com/everfinance/everpay-a-trusted-cross-chain-payment-protocol-eba4a0af7d66)
 
-## Coordinator
-TODO
-
-## Watchman
-TODO
-
-## Detector
-TODO
+<!-- TODO: -->
