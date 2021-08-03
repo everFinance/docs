@@ -37,7 +37,7 @@ sidebar_position: 2
 
 :::danger
 * 以太坊地址大小写兼容，**Arweave 地址，大小写不兼容**
-* everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/everpay-tx#schema)
+* everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/transaction#schema)
 :::
 
 ## 示例

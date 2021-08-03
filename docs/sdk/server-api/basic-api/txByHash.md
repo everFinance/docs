@@ -16,7 +16,7 @@ sidebar_position: 7
 `{{endpoint}}/tx/{{everHash}}`
 
 ## 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/everpay-tx#交易记录)
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
 ## 示例
 
 ```bash

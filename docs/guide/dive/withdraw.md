@@ -22,11 +22,11 @@ sidebar_position: 6
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|提现时，`chainType` 为要提现至的区块链名称，必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **匹配**。例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainType` 字段为 `arweave,ethereum`，开发者需要指定提现至哪个区块链，`arweave`为 Arweave 区块链，`ethereum` 为以太坊区块链。|
 |chainID|提现时，`chainID` 为要提现至的区块链网络 ID，必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **匹配**。例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainID` 字段为 `0,1`，开发者指定提现至哪个区块链，`chainID` 也需要使用对应的值，`0`为 Arweave 区块链网络 ID，`1` 为以太坊区块链网络 ID|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。<ul><li>**当前账户为 arweave 账户模型，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证</li><li>此外，用户可通过 `data` 自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)</li></ul>|
+|data|**当前账户为 arweave 账户模型，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证|
 |version|交易版本 `'v1'`|
 
 ### 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 深入理解 - 交易](./everpay-tx#messagedata) 章节获取更多信息。
+开发者可浏览 [指南 - 深入理解 - 交易](./transaction#messagedata) 章节获取更多信息。
 
 ## 快速提现
 ### 目的
@@ -38,8 +38,9 @@ sidebar_position: 6
 1. 用户将 everPay 的资产 通过 everPay 转账给做市商 everPay 账户
 2. 做市商接收到该笔 everPay 转账后，将用户要提现的资产，通过原生区块链转账给用户
 
-### 注意事项
+:::info
 当前仅支持快速提现资产至以太坊区块链
+:::
 
 ### Schema 说明
 :::caution
@@ -74,4 +75,4 @@ sidebar_position: 6
 |withdrawFee|快速提现手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。通过 [expressInfo API](../../sdk/server-api/basic-api/expressinfo) 获取|
 
 ### 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 深入理解 - 交易](./everpay-tx#messagedata) 章节获取更多信息。
+开发者可浏览 [指南 - 深入理解 - 交易](./transaction#messagedata) 章节获取更多信息。

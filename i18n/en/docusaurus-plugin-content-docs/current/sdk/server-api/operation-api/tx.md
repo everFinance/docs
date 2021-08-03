@@ -15,7 +15,7 @@ sidebar_position: 2
 * path `{{endpoint}}/tx`
 * Post data `everpayTx`
 
-关于 `Schema` 生成、签名，以及交易记录获取，请阅读 [指南 - 深入理解 - 交易](../../../guide/dive/everpay-tx)
+关于 `Schema` 生成、签名，以及交易记录获取，请阅读 [指南 - 深入理解 - 交易](../../../guide/dive/transaction)
 
 ### 示例
 ```bash

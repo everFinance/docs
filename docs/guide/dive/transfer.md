@@ -27,4 +27,4 @@ everPay 通过区块链密码学签名验证来确保转账的安全性。
 |version|交易版本 `'v1'`|
 
 ## 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 深入理解 - 交易](./everpay-tx#messagedata) 章节获取更多信息。
+开发者可浏览 [指南 - 深入理解 - 交易](./transaction#messagedata) 章节获取更多信息。

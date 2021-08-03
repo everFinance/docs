@@ -2,76 +2,77 @@
 sidebar_position: 6
 ---
 
-# 提现
+# Withdraw
 
-## 普通提现
-提现指将 everPay 账户中的有效余额，提现到原生链的操作。
+## Normal Withdrawal
+Withdrawal means withdrawing the valid balance in your everPay account to your native chain.
 
-### Schema 说明
+### Schema
 
-|字段|描述|
+|Field|Description|
 |---|---|
-|tokenSymbol|代币名称|
-|action|`'burn'`代表提现|
-|from|签名交易的当前 everPay 账户 ID|
-|to|提现时，`to` 为要提现至的区块链钱包地址|
-|amount|提现金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
-|fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../sdk/server-api/basic-api/info) 接口获取|
-|nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|提现时，`chainType` 为要提现至的区块链名称，必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **匹配**。例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainType` 字段为 `arweave,ethereum`，开发者需要指定提现至哪个区块链，`arweave`为 Arweave 区块链，`ethereum` 为以太坊区块链。|
-|chainID|提现时，`chainID` 为要提现至的区块链网络 ID，必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **匹配**。例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainID` 字段为 `0,1`，开发者指定提现至哪个区块链，`chainID` 也需要使用对应的值，`0`为 Arweave 区块链网络 ID，`1` 为以太坊区块链网络 ID|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。<ul><li>**当前账户为 arweave 账户模型，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证</li><li>此外，用户可通过 `data` 自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)</li></ul>|
-|version|交易版本 `'v1'`|
+|tokenSymbol|Token Symbol|
+|action|`'burn'` for withdraw|
+|from|the current everPay account ID that signed the transaction|
+|to|When withdrawing, `to` is the blockchain wallet address to withdraw to|
+|amount|Withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it is 100000|
+|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing |
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../sdk/server-api/basic-api/info) interface to get|
+|nonce|unix milliseconds|
+|tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.|
+|chainID|When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethernet blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also need to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethernet blockchain network ID|
+|data|**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication|
+|version|transaction version `'v1'`|
 
-### 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 深入理解 - 交易](./everpay-tx#messagedata) 章节获取更多信息。
+### Transaction signature, sending and record acquisition
+Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.
 
-## 快速提现
-### 目的
-因普通提现需要先经过 everPay 交易确认在 arweave 区块链打包，通过 DAO 提交提现提案，并在以太坊或者 Arweave 进行提现执行。
+## Quick Withdrawal
+### Purpose
+Since normal withdrawal need to be packaged in the arweave blockchain after everPay transaction confirmation, submit the withdrawal proposal via DAO, and execute the withdrawal on ethereum or arweave blockchain.
 
-在这个过程中，需要等待较长时间，以及消耗的矿工费用较高。everPay 团队联系了外部做市商团队，通过 **everPay 转账** 实现了快速提现，达到节省用户提现的时间和费用成本的目的。
+In this process, it takes a long time to wait and consumes high miner fees. everPay team contacted an external market maker team to achieve quick withdrawal through **everPay transfer** to save users' time and cost of withdrawals.
 
-### 实现方式
-1. 用户将 everPay 的资产 通过 everPay 转账给做市商 everPay 账户
-2. 做市商接收到该笔 everPay 转账后，将用户要提现的资产，通过原生区块链转账给用户
+### Implementation
+1. the user transfers everPay's assets to the Market Maker everPay account via everPay
+2. the market maker receives the everPay transfer and transfers the assets to be withdrawn to the user via the native blockchain
 
-### 注意事项
-当前仅支持快速提现资产至以太坊区块链
-
-### Schema 说明
-:::caution
-* 快速提现通过 everPay 转账实现，`Schema` 定义与转账一致
-* `to` 需要设置为做市商 everPay 账户 ID（通过 [expressInfo API](../../sdk/server-api/basic-api/expressinfo) 获取）
-* 通过 `data` 定义特殊字段，达成快速提现的目的
+:::info
+Only quick withdrawals to the ethereum blockchain are currently supported
 :::
 
-|字段|描述|
-|---|---|
-|tokenSymbol|代币名称|
-|action|`'transfer'` 代表转账。**快速提现通过 everPay 转账实现**|
-|from|签名交易的当前 everPay 账户 ID|
-|to|快速提现的做市商 everPay 账户 ID（通过 [expressInfo API](../../sdk/server-api/basic-api/expressinfo) 获取）|
-|amount|转账金额（快速提现金额），类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
-|fee| 转账手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../sdk/server-api/basic-api/info) 接口获取|
-|nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
-|chainID|转账时，`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。<ul><li>[快速提现 `data` 字段说明](#快速提现-data-字段说明)</li><li>**当前账户为 arweave 账户模型，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证</li></ul>|
-|version|交易版本 `'v1'`|
+### Schema
+:::caution
+* Quick withdrawal is implemented via everPay transfer, `Schema` definition is the same as the transfer
+* `to` needs to be set to the market maker everPay account ID (via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get)
+* Define special fields via `data` for quick withdrawal purposes
+:::
 
-### 快速提现 data 字段说明
+|Field|Description|
+|---|---|
+|tokenSymbol|Token Symbol|
+|action|`'transfer'` for transfer|
+|from|the current everPay account ID that signed the transaction|
+|to|Market Maker everPay account ID for quick withdrawals (via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get)|
+|amount|Transfer amount (quick withdrawal amount), type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it is 100000|
+|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing |
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../sdk/server-api/basic-api/info) interface to get|
+|nonce|unix milliseconds|
+|tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**|
+|chainID|When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**|
+|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in.<ul><li>**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication</li></ul>|
+|version|transaction version `'v1'`|
+
+### Quick Withdrawal data field description
 |字段|描述|
 |---|---|
 |appId|`'express'`|
 |withdrawAction|`'pay'`|
-|withdrawChainType|`ethereum` 快速提现到的区块链，当前只支持`'ethereum'`|
-|withdrawTo|快速提现到的区块链钱包地址|
-|withdrawFee|快速提现手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。通过 [expressInfo API](../../sdk/server-api/basic-api/expressinfo) 获取|
+|withdrawChainType|`'ethereum'`. Blockchain for quick withdrawals to, currently only `'ethereum'` is supported|
+|withdrawTo|Blockchain wallet address for quick withdrawals to|
+|withdrawFee|Quick withdrawal fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing. 通过 via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get|
 
-### 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 深入理解 - 交易](./everpay-tx#messagedata) 章节获取更多信息。
+### Transaction signature, sending and record acquisition
+Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.
