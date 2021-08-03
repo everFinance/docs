@@ -8,8 +8,8 @@ everpay-js encapsulates most of the interfaces of everPay protocol for developer
 
 ## System Requirements
 
-* `Node Version >= 14`， it is recommended to use [`nvm`](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） to manage Node versions
-* [ethers.js](https://docs.ethers.io/v5/) recommended to use [the same version ethers.js inside the everpay-js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
+* `Node Version >= 14`. It is recommended to use [`nvm`](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） to manage Node versions
+* [ethers.js](https://docs.ethers.io/v5/) (only required when connecting with an ethereum wallet). It is recommended to use [the same version ethers.js inside the everpay-js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 ## Installation
 ```bash
@@ -30,6 +30,8 @@ import Everpay from 'everpay'
 
 ## Initialization
 
+### Connecting with an ethereum wallet
+
 To connect using an ethereum wallet, initialization requires the injection of `ethConnectedSigner`, which developers need to create using [ethers.js](https://github.com/ethers-io/ethers.js).
 
 ```js
@@ -43,7 +45,19 @@ const everpay = new Everpay({
 
 For more information on how to create `ethConnectedSigner`, please visit [SDK - everpay-js - Configuration - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner).
 
-If the developer uses Arweave wallet connection, the initialization needs to inject `arJWK`, you can browse [SDK - everpay-js - Configuration - `arJWK`](../../sdk/everpay-js/configuration/arJWK) for configuration.
+### Connecting with an arweave wallet
+
+If the developer uses Arweave wallet connection, the initialization needs to inject `arJWK`. When using the browser [ArConnect](https://arconnect.io/) wallet, injecting `arJWK: 'use_wallet'` will do the trick.
+
+```ts
+const arAddress = await window.arweaveWallet.getActiveAddress()
+const everpay = new Everpay({
+  account: arAddress,
+  arJWK: 'use_wallet',
+})
+```
+
+`arJWK` also supports the private key format, you can browse [SDK - everpay-js - Configuration - `arJWK`](../../sdk/everpay-js/configuration/arJWK) for configuration.
 
 ## Deposit
 

@@ -8,8 +8,8 @@ everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可
 
 ## 系统要求
 
-* `Node Version >= 14`，推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 或 [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） 来管理 Node 版本
-* [ethers.js](https://docs.ethers.io/v5/)，推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
+* `Node Version >= 14`。推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 或 [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） 来管理 Node 版本
+* [ethers.js](https://docs.ethers.io/v5/)（只有在使用以太坊钱包连接时需要）。推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 ## 安装
 ```bash
@@ -30,7 +30,9 @@ import Everpay from 'everpay'
 
 ## 初始化
 
-使用以太坊钱包连接，初始化需要注入 `ethConnectedSigner`，开发者需要使用 [ethers.js](https://github.com/ethers-io/ethers.js) 进行创建。
+### 使用以太坊钱包连接
+
+初始化需要注入 `ethConnectedSigner`，开发者需要使用 [ethers.js](https://github.com/ethers-io/ethers.js) 进行创建。
 
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -43,9 +45,20 @@ const everpay = new Everpay({
 
 `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner)。
 
-如开发者使用 Arweave 钱包连接，初始化需要注入 `arJWK`，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
 
-TODO: ArConnect
+### 使用 Arweave 钱包连接
+初始化需要注入 `arJWK`，当使用浏览器 [ArConnect](https://arconnect.io/) 钱包时，注入 `arJWK: 'use_wallet'` 即可。
+
+```ts
+const arAddress = await window.arweaveWallet.getActiveAddress()
+const everpay = new Everpay({
+  account: arAddress,
+  arJWK: 'use_wallet',
+})
+```
+
+`arJWK` 也支持私钥格式，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
+
 
 ## 充值
 
