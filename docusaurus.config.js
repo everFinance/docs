@@ -28,6 +28,16 @@ module.exports = {
   i18n: {
     defaultLocale: 'zh-cn',
     locales: ['en', 'zh-cn'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      'zh-cn': {
+        label: '简体中文',
+        direction: 'ltr',
+      },
+    },
   },
 
 
