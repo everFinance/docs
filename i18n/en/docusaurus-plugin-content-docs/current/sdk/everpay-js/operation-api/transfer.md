@@ -11,6 +11,8 @@ Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the
 * Send the everpay tx to everPay backend server for signature verification
 * The backend server verifies it and updates the user's asset balance. And store the everPay transaction record on the arweave blockchain
 
+Developers can visit the [Guide - Dive - Transaction](../../../guide/dive/transaction) section for more information.
+
 :::info
 Any everPay account can transfer any of its assets on everPay to other everPay accounts, regardless of whether the everPay account to be transferred is an ethereum or arweave account model. For example.
 * `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay account of arweave account model can transfer AR, ETH, USDT to `0x26361130d5d6E798E9319114643AF8c868412859` everPay account of ethereum account model
