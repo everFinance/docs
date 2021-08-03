@@ -1,6 +1,8 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+[https://docs.everpay.io](https://docs.everpay.io)
+
+This website is, built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ## Installation
 
@@ -18,7 +20,7 @@ yarn i18n
 ```console
 yarn start
 
-##
+## En
 yarn start --locale en
 ```
 
