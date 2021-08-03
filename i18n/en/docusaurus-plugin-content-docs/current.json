@@ -1,0 +1,38 @@
+{
+  "sidebar.guide.category.快速开始": {
+    "message": "Quick Start",
+    "description": "The label for category 快速开始 in sidebar guide"
+  },
+  "sidebar.guide.category.深入理解": {
+    "message": "Dive",
+    "description": "The label for category 深入理解 in sidebar guide"
+  },
+  "sidebar.guide.category.延伸": {
+    "message": "Refrence",
+    "description": "The label for category 延伸 in sidebar guide"
+  },
+  "sidebar.sdk.category.Server API": {
+    "message": "Server API",
+    "description": "The label for category Server API in sidebar sdk"
+  },
+  "sidebar.sdk.category.基础查询接口": {
+    "message": "Basic Query API",
+    "description": "The label for category 基础查询接口 in sidebar sdk"
+  },
+  "sidebar.sdk.category.操作类接口": {
+    "message": "Operation API",
+    "description": "The label for category 操作类接口 in sidebar sdk"
+  },
+  "sidebar.sdk.category.everpay-js": {
+    "message": "everpay-js",
+    "description": "The label for category everpay-js in sidebar sdk"
+  },
+  "sidebar.sdk.category.配置项": {
+    "message": "Configuration",
+    "description": "The label for category 配置项 in sidebar sdk"
+  },
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  }
+}

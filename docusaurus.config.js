@@ -26,7 +26,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-cn',
     locales: ['en', 'zh-cn'],
   },
 
@@ -44,7 +44,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
-            if (locale !== 'en') {
+            if (locale === 'en') {
               return `https://github.com/everFinance/docs/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
             }
             return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
@@ -74,15 +74,15 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'guide/intro',
+          docId: 'guide/quick-start/overview',
           position: 'left',
-          label: 'Guide',
+          label: '指南',
         },
         {
           type: 'doc',
-          docId: 'documentation/account-model',
+          docId: 'sdk/intro',
           position: 'left',
-          label: 'Documentation',
+          label: 'SDK',
         },
         {
           type: 'localeDropdown',
@@ -99,20 +99,20 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Guide',
-              to: '/docs/guide/intro',
+              label: '指南',
+              to: '/docs/guide/quick-start/overview',
             },
             {
-              label: 'Documentation',
-              to: '/docs/documentation/account-model',
+              label: 'SDK',
+              to: '/docs/sdk/intro',
             }
           ],
         },
         {
-          title: 'Community',
+          title: '社群',
           items: [
             {
               label: 'Twitter',
@@ -132,7 +132,7 @@ module.exports = {
           title: 'GitHub',
           items: [
             {
-              label: 'Docs',
+              label: 'docs',
               href: 'https://github.com/everFinance/docs',
             },
             {

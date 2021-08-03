@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "everPay Docs",
+    "description": "The title in the navbar"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Server API": {
+    "message": "Server API",
+    "description": "Navbar item with label Server API"
+  },
+  "item.label.everpay-js": {
+    "message": "everpay-js",
+    "description": "Navbar item with label everpay-js"
+  },
+  "item.label.指南": {
+    "message": "Guide",
+    "description": "Navbar item with label 指南"
+  },
+  "item.label.SDK": {
+    "message": "SDK",
+    "description": "Navbar item with label SDK"
+  }
+}
