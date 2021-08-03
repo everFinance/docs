@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # txsByAccount
@@ -10,7 +10,11 @@ Get the transactions corresponding to `account` on everPay by paging
 ## Parameter
 [TxsByAccountParams](../types#txsbyaccountparams)
 ## Return
+### Return Type
 [TxsResult](../types#txsresult)
+
+### Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
 ## Example
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # balances
@@ -11,7 +11,17 @@ Get all assets on everPay for the corresponding `account`.
 [BalancesParams](../types#balancesparams)
 
 ## Return
+
+### Return Type
 [BalanceItem](../types#balanceitem)[]
+
+### Return Fields
+|Field|Description|
+|---|---|
+|chainType|Supported blockchains to top-ups and withdrawals, separated by `,`|
+|symbol|Token symbol|
+|id|Token ID, usually the token erc20 contract address, separated by `,` if it supports multiple blockchain top-ups and withdrawals|
+|balance|Token balance, already processed by, not type uint|
 
 ## Example
 

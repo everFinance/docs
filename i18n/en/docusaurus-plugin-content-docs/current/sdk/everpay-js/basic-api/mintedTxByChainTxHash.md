@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # mintedTxByChainTxHash
@@ -23,7 +23,12 @@ Only everPay transaction for deposit can be queryed by `chainTxHash`, but not ev
 :::
 
 ## Return
+
+### Return Type
 [EverpayTransaction](../types#everpaytransaction)
+
+### Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
 ## Example
 

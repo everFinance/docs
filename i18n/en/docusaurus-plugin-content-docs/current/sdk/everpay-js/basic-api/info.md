@@ -10,7 +10,12 @@ Get basic information about everPay service, e.g. `arLocker` represents arweave 
 ## Parameter
 None
 ## Return
+### Return Type
 [EverpayInfo](../types#everpayinfo)
+
+### Return Fields
+Field information can be viewed in [SDK - Server API - Basic Query API - info - Return Fields](../../server-api/basic-api/info#return-fields)
+
 ## Example
 
 ```js

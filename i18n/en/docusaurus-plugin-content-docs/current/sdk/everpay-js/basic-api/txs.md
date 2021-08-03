@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # txs
@@ -10,7 +10,11 @@ Get all transactions on everPay accessed by paging
 ## Parameter
 [TxsParams](../types#txsparams)
 ## Return
+### Return Type
 [TxsResult](../types#txsresult)
+
+### Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
 ## Example
 
