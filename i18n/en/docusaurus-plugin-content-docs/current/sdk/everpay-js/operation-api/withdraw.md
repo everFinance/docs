@@ -5,20 +5,31 @@ sidebar_position: 4
 # withdraw
 ## Function
 
-Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when do withdrawing,
+Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created,
 
-* Internal build [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
-* Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
-* Send the everpay tx to everPay backend server for signature verification
-* The everPay transaction record is stored on the arweave blockchain after the backend server passes the verification
-* Wait for the arweave blockchain to finish storing the everPay transaction record and ensure the correctness of the account
-* Multi-sign wallet/locker address, give the user the withdrawal address and withdraw the corresponding amount (after fees) of asset tokens
+* When using Normal Withdrawal:
+  * Internal build **Normal Withdrawal** [Schema](../../../guide/dive/withdraw#schema)
+  * Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
+  * Send the everpay tx to everPay backend server for signature verification
+  * The everPay transaction record is stored on the arweave blockchain after the backend server passes the verification
+  * Wait for the arweave blockchain to finish storing the everPay transaction record and ensure the correctness of the account
+  * Multi-sign wallet/locker address, give the user the withdrawal address and withdraw the corresponding amount (after fees) of asset tokens
+  * For more information, please read [Guide - Dive - Withdraw](../../../guide/dive/withdraw)
+* When using Quick Withdrawal:
+  * Internal build **Quick Withdrawal** [Schema](../../../guide/dive/withdraw#schema-1)
+  * Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
+  * Send the everpay tx to everPay backend server for signature verification
+  * The market maker account receives assets after the verification by everPay backend server
+  * Market maker transfers the corresponding amount (after fees) of asset tokens to the user's withdrawal wallet address via native blockchain transfer
+  * For more information, please read [Guide - Dive - Withdraw - Quick Withdrawal](../../../guide/dive/withdraw#quick-withdrawal)
+
 
 :::info
 Any everPay account can withdraw assets on everPay to blockchain wallets that everPay currently supported, for example
 * USDT on everPay currently supports ethereum blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw USDT to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`
 * The current AR on everPay supports ethereum, arweave blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw AR to arweave wallet ` 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` and also to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`.
-* For more blockchains that tokens are supported for withdrawal to, see [`basic api - info`](../basic-api/info)
+* For more blockchains that tokens are supported for withdrawal to, see [Basic api - info](../basic-api/info)
+* For more blockchains that tokens are supported for quick withdrawal to, see [Basic api - expressInfo](../basic-api/expressinfo)
 :::
 
 ## Parameter
