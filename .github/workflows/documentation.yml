@@ -8,6 +8,7 @@ on:
 
 jobs:
   checks:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -17,11 +18,11 @@ jobs:
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
+            yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+            npm ci
           else
-          npm i
+            npm i
           fi
           npm run build
   gh-release:
@@ -43,10 +44,10 @@ jobs:
           git config --global user.email "xaber.twt@gmail.com"
           git config --global user.name "Xaber20110202"
           if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
+            yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+            npm ci
           else
-          npm i
+            npm i
           fi
           npm run deploy
