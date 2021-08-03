@@ -10,7 +10,7 @@ Get the asset balance of the specified token on everPay for the corresponding `a
 ## Parameter
 `{{endpoint}}/balance/{{tokenTag}}/{{account}}`
 
-## Return Field
+## Return Fields
 |Field|Description|
 |---|---|
 |accid|everPay Account ID|

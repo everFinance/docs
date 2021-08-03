@@ -10,7 +10,7 @@ Get basic information about everPay service, e.g. `arLocker` represents the lock
 ## Parameter
 `{{endpoint}}/info`
 
-## Return Field
+## Return Fields
 |Field|Description|
 |---|---|
 |arLocker|everPay AR native token locked position address on arweave blockchain|
