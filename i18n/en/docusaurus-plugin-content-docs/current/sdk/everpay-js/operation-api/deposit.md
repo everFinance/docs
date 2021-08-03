@@ -3,11 +3,11 @@ sidebar_position: 2
 ---
 
 # deposit
-## 功能
+## Function
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值
 
-## 参数
+## Parameter
 [DepositParams](../types#depositparams)
 
 ## 返回
@@ -17,7 +17,7 @@ sidebar_position: 2
 ### arweave 钱包
 当使用 arweave 钱包充值时（使用 `arJWK` 配置） 返回 [ArweaveTransaction](../types#arweavetransaction)
 
-## 示例
+## Example
 ### ethereum 钱包
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)

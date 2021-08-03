@@ -4,12 +4,12 @@ sidebar_position: 8
 
 # mintedTxByChainTxHash
 
-## 功能
+## Function
 通过区块链 **充值** 的交易记录 `chainTxHash` 获取 everPay 上对应的 everPay 充值交易记录。
 
 例如一笔 everPay 充值交易，可通过 `chainTxHash` 查询该笔交易记录，如果该笔 everPay 交易记录存在，即可认为充值已到账。
 
-## 参数
+## Parameter
 string
 
 :::info
@@ -26,9 +26,9 @@ string
 ### 返回类型
 [EverpayTransaction](../types#everpaytransaction)
 
-### 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
-## 示例
+### Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
+## Example
 
 ```js
 const chainTxHash = '0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae'
@@ -36,7 +36,7 @@ const everpay = new Everpay({ debug: true })
 everpay.mintedTxByChainTxHash(chainTxHash).then(console.log)
 ```
 
-## 示例返回
+## Example Return
 ```js
 {
   "id": "MbsBUeBypea_OZFe4rPKqSQ5GIzHCnFSDgO4kYcnBOc",

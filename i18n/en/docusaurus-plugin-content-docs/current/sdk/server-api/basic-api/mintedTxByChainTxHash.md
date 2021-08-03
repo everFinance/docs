@@ -4,30 +4,30 @@ sidebar_position: 8
 
 # mintedTxByChainTxHash
 
-## 功能
-通过区块链 **充值** 的交易记录 `chainTxHash` 获取 everPay 上对应的 everPay 充值交易记录。
+## Function
+Get the everPay deposit transaction on everPay using `chainTxHash` which is the `txHash` of **deposit** transaction on the blockchain.
 
-例如一笔 everPay 充值交易，可通过 `chainTxHash` 查询该笔交易记录，如果该笔 everPay 交易记录存在，即可认为充值已到账。
+For example, for an everPay deposit transaction, you can query the transaction record by `chainTxHash`, and if the everPay transaction record exists, you can assume that the deposit has arrived.
 
-## 参数
+## Parameter
 `{{everpay}}/minted/{{chainTxHash}}`
 
 :::danger
-仅可通过 `chainTxHash` 查询充值的 everPay 交易记录，无法查询提现的 everPay 交易记录。例如：
-* ethereum 充值交易，etherum 充值的 etherum txHash 为 `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`，此笔 everPay 充值交易记录可通过此 API 获取
-* everPay 提现交易，最终提现至用户 ethereum 钱包地址的交易 txHash 为 `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`，此笔 everPay 提现交易记录无法通过此 API 获取
+Only everPay transaction records for deposit can be queryed by `chainTxHash`, but not everPay transaction records for withdrawal. For example
+* ethereum deposit transaction, the etherum txHash of etherum deposit is `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`, this everPay deposit transaction record can be accessed through this API
+* everPay withdrawal transaction, the txHash of the final withdrawal to user ethereum wallet address is `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`, this everPay withdrawal transaction record cannot be accessed through this API
 :::
 
-## 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
+## Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
-## 示例
+## Example
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/minted/0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae'
 ```
 
-## 示例返回
+## Example Return
 ```js
 {
   "tx": {

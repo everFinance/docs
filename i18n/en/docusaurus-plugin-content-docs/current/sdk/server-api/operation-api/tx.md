@@ -4,20 +4,20 @@ sidebar_position: 2
 
 # tx
 
-## 功能
+## Function
 
-所有 everPay 的交易，都会生成 everPay 交易并通过 `POST` 请求发送至 `tx` API，经过 everPay 后端服务验证。
+For all everPay transactions, everPay Tx is generated and sent to `tx` API via `POST` request, which is validated by everPay backend service.
 
-在用户侧，只会生成：
-* 转账的 `transfer` everPay 交易
-* 提现的 `burn` everPay 交易
-### 参数
+On the user side, only the following will be generated.
+* `transfer` everPay Tx for transfer transaction
+* `burn` everPay Tx for withdraw transaction
+### Parameter
 * path `{{endpoint}}/tx`
 * Post data `everpayTx`
 
-关于 `Schema` 生成、签名，以及交易记录获取，请阅读 [指南 - 深入理解 - 交易](../../../guide/dive/transaction)
+For `Schema` generation, signatures, and transaction record acquisition, please read [Guide - Dive - Transaction](../../../guide/dive/transaction)
 
-### 示例
+### Example
 ```bash
 curl --location --request POST 'https://api-dev.everpay.io/tx' \
 --header 'Content-Type: application/json' \
@@ -39,7 +39,7 @@ curl --location --request POST 'https://api-dev.everpay.io/tx' \
 }'
 ```
 
-### 示例返回
+### Example Return
 
 ```json
 {

@@ -4,21 +4,21 @@ sidebar_position: 5
 
 # txs
 
-## 功能
-everPay 上所有交易记录，通过 分页 形式获取
+## Function
+Get all transactions on everPay accessed by paging
 
-## 参数
+## Parameter
 `{{endpoint}}/txs?page={{page}}`
 
-## 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
-## 示例
+## Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
+## Example
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/txs?page=1'
 ```
 
-## 示例返回
+## Example Return
 ```js
 {
   currentPage: 1,

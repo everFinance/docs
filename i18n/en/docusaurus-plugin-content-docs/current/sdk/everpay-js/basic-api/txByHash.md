@@ -4,14 +4,14 @@ sidebar_position: 7
 
 # txByHash
 
-## 功能
+## Function
 每一笔 everPay 交易，都有一个唯一的 `everHash` 字符串。通过 `everHash` 查询该笔交易的具体信息。
 
 例如一笔 普通提现（非快速提现） 交易，可通过 `everHash` 查询该笔交易详情：
 * `id` 不为空字符串，代表该笔 普通提现 交易，是否已经被记录到 arweave 区块链上，**确保了账本的正确性**
 * `targetChainTxHash` 不为空，代表该笔 普通提现 交易，在用户要提现的区块链上，多签钱包/锁仓地址，已经发送交易并且已经打包完成，**用户提现的资产已到账**。
 
-## 参数
+## Parameter
 string
 
 :::info
@@ -21,9 +21,9 @@ string
 ### 返回类型
 [EverpayTransaction](../types#everpaytransaction)
 
-### 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
-## 示例
+### Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
+## Example
 
 ```js
 const everHash = '0x999fb4266c33b87fe706d5f964692f3db8e755d08280da43f076c229e0a821f8'
@@ -31,7 +31,7 @@ const everpay = new Everpay({ debug: true })
 everpay.txByHash(everHash).then(console.log)
 ```
 
-## 示例返回
+## Example Return
 ```js
 {
   "id": "bTpNVdf65ZDdKhWZElS1yg0g9xV_F4y41t7q56NAJqU",

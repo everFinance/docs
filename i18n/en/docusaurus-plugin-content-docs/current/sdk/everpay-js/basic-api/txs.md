@@ -4,26 +4,26 @@ sidebar_position: 5
 
 # txs
 
-## 功能
+## Function
 everPay 上所有交易记录，通过 分页 形式获取
 
-## 参数
+## Parameter
 [TxsParams](../types#txsparams)
 ## 返回
 ### 返回类型
 [TxsResult](../types#txsresult)
 
-### 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
+### Return Fields
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
-## 示例
+## Example
 
 ```js
 const everpay = new Everpay({ debug: true })
 everpay.txs({ page: 1 }).then(console.log)
 ```
 
-## 示例返回
+## Example Return
 ```js
 {
   currentPage: 1,

@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 
 # withdraw
-## 功能
+## Function
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在提现时：
 
@@ -27,13 +27,13 @@ sidebar_position: 4
 * 更多的代币支持提现至的区块链，可查阅 [`基础查询API - info接口`](../basic-api/info)
 :::
 
-## 参数
+## Parameter
 [WithdrawParams](../types#withdrawparams)
 
 ## 返回
 [TransferOrWithdrawResult](../types#transferorwithdrawresult)
 
-## 示例
+## Example
 ### ethereum 账户普通提现 AR 至 arweave 钱包地址
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)

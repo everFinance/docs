@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 
 # transfer
-## 功能
+## Function
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在转账时：
 
 * 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
@@ -18,12 +18,12 @@ sidebar_position: 3
 * arweave 账户模型的 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay 账户，可向 ethereum 账户模型的`0x26361130d5d6E798E9319114643AF8c868412859` everPay 账户，转账 AR、ETH、USDT
 * 反之亦然
 :::
-## 参数
+## Parameter
 [TransferParams](../types#transferparams)
 
 ## 返回
 [TransferOrWithdrawResult](../types#transferorwithdrawresult)
-## 示例
+## Example
 ### ethereum 账户给其他账户转账
 ```ts
 const provider = new ethers.providers.Web3Provider(window.ethereum)

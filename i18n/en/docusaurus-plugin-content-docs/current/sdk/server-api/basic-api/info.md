@@ -4,49 +4,49 @@ sidebar_position: 2
 
 # info
 
-## 功能
-获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
+## Function
+Get basic information about everPay service, e.g. `arLocker` represents the locked position address on arweave blockchain, `ethLocker` represents the locked position contract on etherum blockchain.
 
-## 参数
+## Parameter
 `{{endpoint}}/info`
 
-## 返回字段
-|字段|描述|
+## Return Field
+|Field|Description|
 |---|---|
-|arLocker|everPay AR 原生代币锁仓地址|
-|ethChainID|当前以太坊网络 ID|
-|ethLocker|everPay 以太坊区块链ETH、erc20 Token 锁仓合约地址|
-|everRootHash| everPay 系统交易指纹，通过当前所有交易 everHash 逐笔进行 keccak256 获得|
-|feeRecipient|everPay 手续费收款账户 ID|
-|owner|负责将 everPay 交易记录存储至 Arweave 区块链的钱包地址|
-|rootHash|everPay 系统交易指纹，通过当前所有交易 everHash 与 id 逐笔进行 keccak256 获得|
-|tokenList|everPay 支持的资产列表。单一币种字段，见如下 [Token 字段描述](#Token-字段描述)|
+|arLocker|everPay AR native token locked position address on arweave blockchain|
+|ethChainID|Current Ethereum network ID|
+|ethLocker|everPay locked position contract on ethereum blockchain|
+|everRootHash| everPay system transaction fingerprint, obtained by keccak256 of all current transactions everHash on a per-transaction basis|
+|feeRecipient|everPay fee collection account ID|
+|owner|An everPay arweave address, responsible for storing everPay transaction records to the arweave blockchain|
+|rootHash|everPay system transaction fingerprint, obtained by keccak256 of all current transactions everHash and id on a per-transaction basis|
+|tokenList|The list of tokens supported by everPay. Single token fields, see below [Token field description](#token-field-description)|
 
-### Token 字段描述
-|字段|描述|
+### Token field description
+|Field|Description|
 |---|---|
-|tag|由 `chainType`, `symbol`, `id` 通过 `-` 组合|
-|id|Token ID，通常为 Token erc20 合约地址，如支持多个区块链充值提现，以 `,` 隔开|
-|symbol|Token Symbol|
+|tag|combined by `chainType`, `symbol`, `id` via `-`|
+|id|Token ID, usually the token erc20 contract address, separated by `,` if it supports multiple blockchain top-ups and withdrawals|
+|symbol|Token symbol|
 |decimals|Token decimals|
-|totalSupply|everPay 上，Token 资产总量|
-|chainType|Token 所支持的区块链，如支持多个区块链充值提现，以 `,` 隔开|
-|chainID|Token 所支持的区块链网络 ID，如支持多个区块链充值提现，以 `,` 隔开|
-|burnFee|**普通提现**该 Token 需要支付的手续费|
-|transferFee|everPay 转账该 Token 需要支付的手续费|
+|totalSupply|The total amount of token assets on everPay|
+|chainType|Supported blockchains to top-ups and withdrawals, separated by `,`|
+|chainID|Supported blockchain network IDs to top-ups and withdrawals, separated by `,`|
+|burnFee|The fee should to be paid for the **everPay normal withdrawal**|
+|transferFee|The fee should to be paid for the everPay transfer|
 
 :::danger
-* 以太坊地址大小写兼容，**Arweave 地址，大小写不兼容**
-* everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/transaction#schema)
+* Ethereum addresses are case-compatible, **arweave addresses are case-incompatible**
+* everPay recommends developers to assemble [`Schema`](../../../guide/dive/transaction#schema) using the Token information returned by this info API.
 :::
 
-## 示例
+## Example
 
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/info'
 ```
 
-## 示例返回
+## Example Return
 ```json
 {
   "arLocker": "bX7sKd1s8L6PxUHxK-UPCfus7duyVFdf0J1lm90zehc",
