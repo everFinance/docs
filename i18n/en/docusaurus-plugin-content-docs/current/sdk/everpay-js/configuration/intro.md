@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# 介绍
+# Introduction
 
-everpay-js 创建 Everpay 实例的配置项，配置项包含：`debug`, `account`, `ethConnectedSigner`, `arJWK`。配置项类型为 [`Config`](../types#config)
+everpay-js creates configuration items for Everpay instances. Configuration items contain: `debug`, `account`, `ethConnectedSigner`, `arJWK`. The configuration type is [`Config`](../types#config)

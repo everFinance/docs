@@ -4,13 +4,13 @@ sidebar_position: 2
 
 # debug
 
-## 配置项功能
+## Configuration item function
 
-用于 测试、正式 环境选择。
+Used for development and production environment selection.
 
-## 测试环境
+## Development environment
 
-everpay-js 支持使用测试环境进行开发调试，只需要将 `debug` 参数设置为 `true`，即可使用 everPay 测试环境。
+everpay-js supports using development environment for development debugging, just set `debug` parameter to `true` and you can use everPay development environment.
 
 ```js
 const everpay = new Everpay({
@@ -18,14 +18,14 @@ const everpay = new Everpay({
 })
 ```
 
-:::caution 测试环境
-1. 当使用 everPay 测试环境，如开发者使用 Ethereum 账户连接，充值、提现的API 调用，会使用 Ethereum Kovan 网络进行。
-2. 因 Arweave 没有测试网络，即使使用 everPay 测试环境，everPay 充值、提现的API 调用，Arweave 仍然使用主网进行。
+:::caution Development environment
+1. When using everPay development environment, if the developer connects with Ethereum account, API calls for deposit and withdraw will be made using Ethereum Kovan network.
+2. Since Arweave does not have a test network, even when using everPay development environment, the API calls for everPay deposit and withdraw will still be made by Arweave using the main network.
 :::
 
-## 正式环境
+## Production environment
 
-当需要使用 everPay 正式环境时，只需要将 `debug` 参数设置为 `false`，或不传递，即可使用 everPay 正式环境。
+When you need to use everPay production environment, just set the `debug` parameter to `false` or don't pass it, then it will be production environment.
 
 ```js
 const everpay = new Everpay({
@@ -39,6 +39,6 @@ const everpay = new Everpay({})
 const everpay = new Everpay()
 ```
 
-:::caution 正式环境
-当使用 everPay 正式环境，如开发者使用 Ethereum 账户连接，充值、提现的API 调用，会使用 Ethereum mainnet 网络进行。
+:::caution production environment
+When using everPay production environment, such as developers using Ethereum account connection, API calls for deposit and withdraw will be made using Ethereum mainnet network.
 :::

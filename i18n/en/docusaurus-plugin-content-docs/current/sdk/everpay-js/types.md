@@ -2,9 +2,9 @@
 sidebar_position: 6
 ---
 
-# 类型
+# Types
 
-以下类型，都可通过 typescript 从 everpay-js 中 `import`
+The following types can be `imported` from everpay-js via typescript
 
 ## ChainType
 
@@ -20,7 +20,7 @@ export enum ChainType {
 export type ArJWK = JWKInterface | 'use_wallet'
 ```
 
-其中 `JWKInterface` 来源于 [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
+`JWKInterface` is sourced from [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
 
 ## EthereumTransaction
 ```ts
@@ -28,7 +28,7 @@ import { TransactionResponse as EthereumTransaction } from '@ethersproject/abstr
 export { EthereumTransaction }
 ```
 
-`TransactionResponse` 来源于 [ethers.js TransactionResponse](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionResponse)
+`TransactionResponse` is sourced from [ethers.js TransactionResponse](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionResponse)
 
 ## ArweaveTransaction
 
@@ -36,10 +36,10 @@ export { EthereumTransaction }
 import { TransactionInterface as ArweaveTransaction } from 'arweave/node/lib/transaction'
 export { ArweaveTransaction }
 ```
-`TransactionInterface` 来源于 [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
+`TransactionInterface` is sourced from [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
 
 ## Config
-`Everpay` 构造函数配置项
+`Everpay` constructor configuration items
 
 ```ts
 export interface Config {
@@ -50,7 +50,7 @@ export interface Config {
 }
 ```
 
-`Signer` 来源于 [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
+`Signer` is sourced from [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
 
 ## Token
 ```ts
