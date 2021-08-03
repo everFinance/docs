@@ -17,7 +17,7 @@ Withdrawal means withdrawing the valid balance in your everPay account to your n
 |to|When withdrawing, `to` is the blockchain wallet address to withdraw to|
 |amount|Withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it is 100000|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../sdk/server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../sdk/server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.|
@@ -57,7 +57,7 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 |to|Market Maker everPay account ID for quick withdrawals (via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get)|
 |amount|Transfer amount (quick withdrawal amount), type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it is 100000|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../sdk/server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../sdk/server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**|

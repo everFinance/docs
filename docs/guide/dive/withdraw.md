@@ -17,7 +17,7 @@ sidebar_position: 6
 |to|提现时，`to` 为要提现至的区块链钱包地址|
 |amount|提现金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../sdk/server-api/basic-api/info) 接口获取|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|提现时，`chainType` 为要提现至的区块链名称，必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **匹配**。例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainType` 字段为 `arweave,ethereum`，开发者需要指定提现至哪个区块链，`arweave`为 Arweave 区块链，`ethereum` 为以太坊区块链。|
@@ -57,7 +57,7 @@ sidebar_position: 6
 |to|快速提现的做市商 everPay 账户 ID（通过 [expressInfo API](../../sdk/server-api/basic-api/expressinfo) 获取）|
 |amount|转账金额（快速提现金额），类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 转账手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../sdk/server-api/basic-api/info) 接口获取|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|

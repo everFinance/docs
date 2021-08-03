@@ -18,7 +18,7 @@ everPay 通过区块链密码学签名验证来确保转账的安全性。
 |to|转账时，`to` 为另一个 everPay 账户 ID|
 |amount|转账金额，类型为 uint。设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../sdk/server-api/basic-api/info) 接口获取|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|

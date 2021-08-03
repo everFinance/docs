@@ -105,7 +105,7 @@ everpay-js 现已封装开源，内部集成了 arweave.js、arConnect，开发�
 |to|用户进行充值的区块链转账钱包地址，即需要充值的 everPay 账户 ID|
 |amount|充值资产数额，类型为 uint。设置时经过 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。设置时经过进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../sdk/server-api/basic-api/info) 接口获取|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|`chainType` 与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
