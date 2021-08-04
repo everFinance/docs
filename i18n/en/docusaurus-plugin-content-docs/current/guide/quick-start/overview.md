@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Brief Description
 
-everPay is a cross-chain token payment protocol that provides real-time and inexpensive token payment capabilities for users and merchants. The protocol is based on the stored computing paradigm and is transparent, trustworthy, efficient and fast. The protocol has no entry requirements and any developer or merchant can integrate everPay protocol via API.
+everPay is a cross-chain token payment protocol that provides real-time and inexpensive token payment capabilities for users and merchants. The protocol is based on the stored computing paradigm which is transparent, trustworthy, efficient and fast. The protocol has no entry requirements and any developer or merchant can integrate everPay protocol via API.
 
 Individual users can use [everpay.io](https://everpay.io) to access everPay UI for easy and fast blockchain token payments. Developers can quickly integrate the everPay protocol using the SDK.
 
