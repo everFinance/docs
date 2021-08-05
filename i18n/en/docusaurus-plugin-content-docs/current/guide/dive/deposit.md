@@ -13,8 +13,8 @@ For example
 The act of depositing, i.e. make a blockchain transfer to the everPay DAO managed blockchain wallet address.
 
 Example.
-* Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859 transfers 0.1 USDT to everPay's multisignature contract on Ethereum, everPay's backend service monitors the entry and waits for 6 blocks to confirm it, i.e. it will mark the assets on the account will increase to 0.1 USDT on everPay.
-* Arweave wallet 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo transfers 0.1 AR to everPay's threshold signature wallet address on Arweave, everPay's backend service monitors the entry and waits for 15 block confirmations, i.e. it will mark the assets on the account will increase to 0.1 AR on everPay.
+* Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859 transfers 0.1 USDT to everPay's multisignature contract on Ethereum, everPay's backend service monitors the entry and waits for 6 blocks to confirm it, i.e. it will mark the assets on the account which will increase the amount to 0.1 USDT on everPay.
+* Arweave wallet 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo transfers 0.1 AR to everPay's threshold signature wallet address on Arweave, everPay's backend service monitors the entry and waits for 15 block confirmations, i.e. it will mark the assets on the account which will increase the amount to 0.1 AR on everPay.
 
 ## Fund your Ethereum account
 ### Blockchain wallets like imToken / MetaMask
