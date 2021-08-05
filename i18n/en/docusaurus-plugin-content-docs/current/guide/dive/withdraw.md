@@ -12,7 +12,7 @@ Withdrawal means withdrawing the valid balance on your everPay account to your n
 |Field|Description|
 |---|---|
 |tokenSymbol|Token Symbol|
-|action|`'burn'` for withdraw|
+|action|`'burn'` to withdraw|
 |from|the current everPay account ID that signed the transaction|
 |to|When withdrawing, `to` is the blockchain wallet address to withdraw to|
 |amount|Withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
@@ -21,7 +21,7 @@ Withdrawal means withdrawing the valid balance on your everPay account to your n
 |nonce|unix milliseconds|
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.|
-|chainID|When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethernet blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also needs to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethernet blockchain network ID|
+|chainID|When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethereum blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also needs to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethereum blockchain network ID|
 |data|**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication|
 |version|transaction version `'v1'`|
 
@@ -52,7 +52,7 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 |Field|Description|
 |---|---|
 |tokenSymbol|Token Symbol|
-|action|`'transfer'` for transfer|
+|action|`'transfer'` to transfer|
 |from|the current everPay account ID that signed the transaction|
 |to|Market Maker's everPay account ID for quick withdrawals (via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get)|
 |amount|Transfer amount (quick withdrawal amount), type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
@@ -72,7 +72,7 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 |withdrawAction|`'pay'`|
 |withdrawChainType|`'ethereum'`. Blockchain for quick withdrawals to, currently only `'ethereum'` is supported|
 |withdrawTo|Blockchain wallet address for quick withdrawals to|
-|withdrawFee|Quick withdrawal fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing. 通过 via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get|
+|withdrawFee|Quick withdrawal fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing. Via [expressInfo API](../../sdk/server-api/basic-api/expressinfo) to get|
 
 ### Transaction signature, sending and record acquisition
 Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.

@@ -15,13 +15,13 @@ everPay has its own separate transaction format, all everPay transactions follow
 |action|<ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|
 |from|the current everPay account ID that signed the transaction|
 |to|<ul><li>When transferring, `to` is another everPay account ID</li><li>When withdrawing, `to` is the blockchain wallet address to withdraw to</li></ul>|
-|amount|Transfer amount or withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it is 100000|
-|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing |
+|amount|Transfer amount or withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
+|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
 |feeRecipient|Receive everPay account ID for handling fees, via [info API](../../sdk/server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|<ul><li>When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**</li><li>When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.</li></ul>|
-|chainID|<ul><li>When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**</li><li>When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethernet blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also need to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethernet blockchain network ID</li></ul>|
+|chainID|<ul><li>When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**</li><li>When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethereum blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also needs to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethereum blockchain network ID</li></ul>|
 |data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in.<ul><li>**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication</li><li>In addition, developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description)</li></ul>|
 |version|transaction version `'v1'`|
 
@@ -363,7 +363,7 @@ everPay adds some fields to the [`Schema`](#schema) definition field and `sig` s
 |express|Fields added for quick withdrawals, `express: {"chainTxHash": "", "withdrawFee": "", "refundEverHash": "", "err": ""}`<ul><li>`chainTxHash` represents the packaged blockchain `txHash` after a successful quick withdrawal</li><li>`withdrawFee` represents the actual fee charged</li><li>`refundEverHash` represents the everPay transaction `everHash` that was refunded by the market maker after a failed quick withdrawal</li><li>`err` represents the reason for the failed quick withdrawal</li></ul>|
 
 ### Query Interface
-* [txs](../../sdk/server-api/basic-api/txs) Checks all everPay transaction records
-* [txsByAccount](../../sdk/server-api/basic-api/txsByAccount) Checks the transaction history of a specific everPay account
-* [txByHash](../../sdk/server-api/basic-api/txByHash) Queries everPay's transaction records based on `everHash`
-* [mintedTxByChainTxHash](../../sdk/server-api/basic-api/mintedTxByChainTxHash) Check the everPay transaction record of the deposit according to the blockchain record ID (e.g. `txHash` for ethereum)
+* [txs](../../sdk/server-api/basic-api/txs) Queries all everPay transaction records
+* [txsByAccount](../../sdk/server-api/basic-api/txsByAccount) Queries the everPay transaction records of a specific everPay account
+* [txByHash](../../sdk/server-api/basic-api/txByHash) Queries the everPay transaction record based on `everHash`
+* [mintedTxByChainTxHash](../../sdk/server-api/basic-api/mintedTxByChainTxHash) Queries the everPay transaction record of the deposit according to the blockchain record ID (e.g. `txHash` for ethereum)

@@ -12,7 +12,7 @@ everPay ensures the security of transfers through blockchain cryptographic signa
 |Field|Description|
 |---|---|
 |tokenSymbol|Token Symbol|
-|action|`'transfer'` for transfer|
+|action|`'transfer'` to transfer|
 |from|the current everPay account ID that signed the transaction|
 |to|When transferring, `to` is another everPay account ID|
 |amount|Transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
