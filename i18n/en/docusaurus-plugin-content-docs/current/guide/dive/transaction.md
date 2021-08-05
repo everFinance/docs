@@ -363,7 +363,7 @@ everPay adds some fields to the [`Schema`](#schema) definition field and `sig` s
 |express|Fields added for quick withdrawals, `express: {"chainTxHash": "", "withdrawFee": "", "refundEverHash": "", "err": ""}`<ul><li>`chainTxHash` represents the packaged blockchain `txHash` after a successful quick withdrawal</li><li>`withdrawFee` represents the actual fee charged</li><li>`refundEverHash` represents the everPay transaction `everHash` that was refunded by the market maker after a failed quick withdrawal</li><li>`err` represents the reason for the failed quick withdrawal</li></ul>|
 
 ### Query Interface
-* [txs](../../sdk/server-api/basic-api/txs) Queries all everPay transaction records
-* [txsByAccount](../../sdk/server-api/basic-api/txsByAccount) Queries the everPay transaction records of a specific everPay account
-* [txByHash](../../sdk/server-api/basic-api/txByHash) Queries the everPay transaction record based on `everHash`
-* [mintedTxByChainTxHash](../../sdk/server-api/basic-api/mintedTxByChainTxHash) Queries the everPay transaction record of the deposit according to the blockchain record ID (e.g. `txHash` for ethereum)
+* [txs](../../sdk/server-api/basic-api/txs) Checks all everPay transaction records
+* [txsByAccount](../../sdk/server-api/basic-api/txsByAccount) Checks the everPay transaction records of a specific everPay account
+* [txByHash](../../sdk/server-api/basic-api/txByHash) Checks the everPay transaction record based on `everHash`
+* [mintedTxByChainTxHash](../../sdk/server-api/basic-api/mintedTxByChainTxHash) Checks the everPay transaction record of the deposit according to the blockchain record ID (e.g. `txHash` for ethereum)
