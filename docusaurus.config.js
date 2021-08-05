@@ -161,15 +161,15 @@ module.exports = {
       trackingID: 'GTM-PZ2J4TP',
       anonymizeIP: false,
     },
-    algolia: {
-      apiKey: 'c0a24558f1b0e63277377b7282bbb6a9',
-      indexName: 'docs.everpay.io',
+    // algolia: {
+    //   apiKey: 'c0a24558f1b0e63277377b7282bbb6a9',
+    //   indexName: 'docs.everpay.io',
 
-      // Optional: see doc section below
-      contextualSearch: true,
+    //   // Optional: see doc section below
+    //   contextualSearch: true,
 
-      // Optional: Algolia search parameters
-      searchParameters: {},
-    }
+    //   // Optional: Algolia search parameters
+    //   searchParameters: {},
+    // }
   },
 };
