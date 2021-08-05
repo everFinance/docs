@@ -15,8 +15,8 @@ everPay ensures the security of transfers through blockchain cryptographic signa
 |action|`'transfer'` for transfer|
 |from|the current everPay account ID that signed the transaction|
 |to|When transferring, `to` is another everPay account ID|
-|amount|Transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it is 100000|
-|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it is 100000 after USDT's `decimals: 6` processing |
+|amount|Transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
+|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
 |feeRecipient|Receive everPay account ID for handling fees, via [info API](../../sdk/server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
