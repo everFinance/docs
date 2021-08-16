@@ -165,7 +165,8 @@ module.exports = {
       // 自己生成索引需要
       appId: 'AI0VA1UPRC',
       apiKey: '35a05c3168caead7419515e910de2c96',
-      indexName: 'docs'
+      indexName: 'docs',
+      js_render: true
     }
   },
 };
