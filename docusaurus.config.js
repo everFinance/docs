@@ -161,15 +161,11 @@ module.exports = {
       trackingID: 'GTM-PZ2J4TP',
       anonymizeIP: false,
     },
-    // algolia: {
-    //   apiKey: 'c0a24558f1b0e63277377b7282bbb6a9',
-    //   indexName: 'docs.everpay.io',
-
-    //   // Optional: see doc section below
-    //   contextualSearch: true,
-
-    //   // Optional: Algolia search parameters
-    //   searchParameters: {},
-    // }
+    algolia: {
+      // 自己生成索引需要
+      appId: 'AI0VA1UPRC',
+      apiKey: '35a05c3168caead7419515e910de2c96',
+      indexName: 'docs'
+    }
   },
 };
