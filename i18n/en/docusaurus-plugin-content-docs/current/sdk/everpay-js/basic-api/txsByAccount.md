@@ -12,7 +12,7 @@ Get the transactions corresponding to `account` on everPay by paging
 
 |Query Field|Description|
 |---|---|
-|account|Optional, default is the `account` parameters passed when the Everpay instance is created|
+|account|Optional, default is the `account` parameters passed when the Everpay instance created|
 |page|Optional, default is 1|
 |symbol|Optional|
 |action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|
