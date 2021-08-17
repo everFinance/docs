@@ -6,14 +6,14 @@ sidebar_position: 6
 
 
 ## Function
-Get the transactions corresponding to `account` on everPay by paging
+Get transactions corresponding to `account` on everPay by paging
 
 ## Parameter
 `{{endpoint}}/txs/{{account}}?page={{page}}&tokenId={{tokenId}}&action={{action}}`
 
 |Query Field|Description|
 |---|---|
-|account|Optional, default is the `account` parameters passed when the Everpay instance created|
+|account|Optional, default is the `account` parameter passed when the Everpay instance is created|
 |page|Optional, default is 1|
 |tokenId|Optional, via [info API](./info) interface to get|
 |action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|

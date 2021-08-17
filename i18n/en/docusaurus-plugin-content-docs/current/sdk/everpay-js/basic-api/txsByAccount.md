@@ -5,7 +5,7 @@ sidebar_position: 6
 # txsByAccount
 
 ## Function
-Get the transactions corresponding to `account` on everPay by paging
+Get transactions corresponding to `account` on everPay by paging
 
 ## Parameter
 [TxsByAccountParams](../types#txsbyaccountparams)
@@ -91,5 +91,5 @@ everpay3.txsByAccount({ account: '0x26361130d5d6E798E9319114643AF8c868412859', p
 ```
 
 :::info
-The `txsByAccount` interface gets the transaction from the corresponding account on everPay, with the `accId` field in the returned result.
+The `txsByAccount` interface gets transactions from the corresponding account on everPay, with the `accId` field in the returned result.
 :::
