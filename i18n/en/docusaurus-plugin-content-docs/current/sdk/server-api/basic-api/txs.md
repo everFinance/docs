@@ -8,7 +8,13 @@ sidebar_position: 5
 Get all transactions on everPay accessed by paging
 
 ## Parameter
-`{{endpoint}}/txs?page={{page}}`
+`{{endpoint}}/txs?page={{page}}&tokenId={{tokenId}}&action={{action}}`
+
+|Query Field|Description|
+|---|---|
+|page|Optional, default is 1|
+|tokenId|Optional, via [info API](./info) interface to get|
+|action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|
 
 ## Return Fields
 Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)

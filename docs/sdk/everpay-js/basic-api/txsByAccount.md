@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # txsByAccount
@@ -9,6 +9,13 @@ sidebar_position: 5
 
 ## 参数
 [TxsByAccountParams](../types#txsbyaccountparams)
+
+|查询字段|描述|
+|---|---|
+|account|可选，默认为 Everpay 实例创建时传递的 `account` 参数|
+|page|可选，默认为 1|
+|symbol|可选|
+|action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li></ul>|
 ## 返回
 ### 返回类型
 [TxsResult](../types#txsresult)
