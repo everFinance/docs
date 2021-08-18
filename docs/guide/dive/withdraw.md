@@ -62,7 +62,7 @@ sidebar_position: 6
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
 |chainID|转账时，`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。<ul><li>[快速提现 `data` 字段说明](#快速提现-data-字段说明)</li></ul>|
+|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递|
 |version|交易版本 `'v1'`|
 
 ### 快速提现 data 字段说明
