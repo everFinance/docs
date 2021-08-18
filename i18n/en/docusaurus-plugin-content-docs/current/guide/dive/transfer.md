@@ -22,7 +22,7 @@ everPay ensures the security of transfers through blockchain cryptographic signa
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**|
 |chainID|When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**|
-|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in.<ul><li>**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication</li><li>In addition, developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description)</li></ul>|
+|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in. Developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description)</li></ul>|
 |version|transaction version `'v1'`|
 
 ## Transaction signature, sending and record acquisition

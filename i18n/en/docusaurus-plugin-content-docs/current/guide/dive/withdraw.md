@@ -22,7 +22,7 @@ Withdrawal means withdrawing the valid balance on your everPay account to your n
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.|
 |chainID|When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethereum blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also needs to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethereum blockchain network ID|
-|data|**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication|
+|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in|
 |version|transaction version `'v1'`|
 
 ### Transaction signature, sending and record acquisition
@@ -62,7 +62,7 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**|
 |chainID|When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**|
-|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in.<ul><li>**The current account is the arweave account model and needs to be passed `{"arOwner": "current arweave address's owner(public key)"}`** for RSA-PSS sha256 authentication</li></ul>|
+|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in|
 |version|transaction version `'v1'`|
 
 ### Quick Withdrawal data field description
