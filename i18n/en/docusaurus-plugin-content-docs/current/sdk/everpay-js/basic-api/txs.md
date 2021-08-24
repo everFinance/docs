@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # txs
@@ -9,6 +9,13 @@ Get all transactions on everPay accessed by paging
 
 ## Parameter
 [TxsParams](../types#txsparams)
+
+|Query Field|Description|
+|---|---|
+|page|Optional, default is 1|
+|symbol|Optional|
+|action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|
+
 ## Return
 ### Return Type
 [TxsResult](../types#txsresult)
