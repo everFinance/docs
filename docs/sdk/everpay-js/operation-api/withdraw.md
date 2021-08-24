@@ -89,7 +89,7 @@ const everpay = new Everpay({
 })
 
 everpay.withdraw({
-  symbol: 'usdt',
+  symbol: 'USDT',
   amount: '101',
   to: '0x26361130d5d6E798E9319114643AF8c868412859',
 }).then(console.log)
@@ -98,22 +98,22 @@ everpay.withdraw({
 {
   status: 'ok',
   everpayTx: {
-    tokenSymbol: 'usdt',
+    tokenSymbol: 'USDT',
     action: 'burn',
     from: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
     to: '0x26361130d5d6E798E9319114643AF8c868412859',
     amount: '21000000',
     fee: '80000000',
     feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-    nonce: '1625988312969',
+    nonce: '1629277285273',
     tokenID: '0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee',
     chainType: 'ethereum',
     chainID: '42',
-    data: '{"arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}',
+    data: '',
     version: 'v1',
-    sig: 'OyqtZa4F3y8d-DTZgbk0e0fSQjSc6TWDGgNvd57wqoXDoCNAZP6itZ2YPwypxhzHLVh9r1ncFzVA-YJ6etfq87uU_dR8mX0NzL80woqCL7toHWnF4dtJZGXHteC14H516WjDpqPYoZ8-Vscn9U3zvgZ5f0BysEQ4Z_PvK_w3HSdn0dLxjmG4errbV84oH5lIMNTPkS8fdiV_q1icozVRsMNjNYVNCLuYuGD15CW62gN5KkxOEvfX588k51kEaXmHo8DFIGlhKvjMwxTWTxmamGKAl7z4TrC8TwLL6_2vld5AdV3NKYf4Cs4U3oDr1D5O2dfCbZgbqc3iFZSR6UiMaU-TGlve3jnKovx_Q1LfyDoXNPBi1rp67LlU4LLhjN2NOOpY57QuwNkiFFck-CABU6L1BU7ZKyaUo0_OaJJRmvu89HLFk26mlOSwjJlFWolyIiFQ4FX_CMkQvF5v53fGykluZCnOm8yngDGpNYLJDCe_PTun0_5u5p8EvZ81Q8oKyotfOEs9IYcOytBp5_zb0IdmPz47SK5Hl4-Ds-mSvPuxVJL8qPhExo-ws0V8jaVWz3v5kUNdHkIvVD0urcGxhwpmpJ_6caWZ3IpBzHKYMLyXaMKDXfLy38yXh5OyXk6Vp3LByKPTW4gb8R7XtFGkNPlVpBd8VF8pKVe_OvIXAP0'
+    sig: 'E-KW8bYaBSwn8ipyfChDfqm_dqWh9B8MFNbRYyFSGWeTKMr1pD2wITdJLor2J6fe_puyDZOAcN10ocZ-P-KGFKHqP4gZrosrSM_9UTkdeuA1doLq1VEJ6732gwmS1Forn2kj-9GqFVeWdjtuw29XaRMn37SoXwuqycNn1Cd0e1B_5KPhXyikjACXp1FgyGh8FZviuBKMbI9KM_WTHTrFDj-bTg1lT9OSvQHEmoZclrW7VBIeXbhwAK4Qy2iBa38_3kTeFdTppSYJgZxQpPhsr7UDDgB9oWfPetNEwlf8-cSDNoK_ZaN5EN6HVwhtpIBRguuUusGUIEc5hTiLdcGehrCoVRaPqkwjzWmWKGU57n72EbZURdm5O8wAEInmAK7M9pesw--7BIxfjmEgzbPR-JFKFJBsj4LEOool2AvX78Y0JBy6wbqfkZnV8WqTmZDv7I3848zyKk8viztn7GMk1bK5BZov2kfrWg2oDNDvi3L0qraYtMDAiAn7-TD7wMGLWzIkcp9ZClk-zh0ar-IHRT3LuatB5-EZW6gf8Yw7rnz8YYxQS2rQJKSQ44kQbuKDwk2oF2xvjRkzUGY3AqQDwkY8RLurwV8Eu5LjWPWznQQYOfKHwts2l4SxgtPYkGzn679-ERGAWkSSXNGVwqK9uLBgcH1CxhrPZ9eioV1fxws,odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc'
   },
-  everHash: '0x43cf662dc8dfdab5339bae2e3d7710066907328de1f7330d4508165533449e47'
+  everHash: '0xe9f246edd77aa7bb3a1ac66a7fd25716b5f17fa7050e8076e65570cfc8a43c96'
 }
 */
 ```
@@ -172,20 +172,10 @@ const everpay = new Everpay({
 everpay.withdraw({
   chainType: ChainType.ethereum,
   symbol: 'USDT',
-  amount: '5.26',
-  to: ethWalletHasUSDT.address
+  amount: '52.6',
+  to: '0x26361130d5d6E798E9319114643AF8c868412859',
   quickMode: true
 }).then(console.log)
-
-everpay.withdraw({
-  chainType: ChainType.ethereum,
-  symbol: 'USDT',
-  amount: '5.26',
-  to: '0x26361130d5d6E798E9319114643AF8c868412859'
-}).then(withdrawResult => {
-  console.log('withdrawResult', withdrawResult)
-  expect(withdrawResult.status).toBe('ok')
-})
 
 /* 返回结果
 {
@@ -195,18 +185,18 @@ everpay.withdraw({
     action: 'transfer',
     from: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
     to: '0x9334435791aD7FbF24aFc0CA187a6B432Fba9f09',
-    amount: '5260000',
+    amount: '52600000',
     fee: '0',
     feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-    nonce: '1627632911156',
+    nonce: '1629277427012',
     tokenID: '0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee',
     chainType: 'ethereum',
     chainID: '42',
-    data: '{"appId":"express","withdrawAction":"pay","withdrawTo":"0x26361130d5d6E798E9319114643AF8c868412859","withdrawChainType":"ethereum","withdrawFee":"3167902","arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}',
+    data: '{"appId":"express","withdrawAction":"pay","withdrawTo":"0x26361130d5d6E798E9319114643AF8c868412859","withdrawChainType":"ethereum","withdrawFee":"4248145"}',
     version: 'v1',
-    sig: 'SxJf36ZiQpbGbn6K1LiDY9WrkHVQecNhNjR6PiPHimMcHgkiOxlNUs4jtrLHUZ7AAORGKJ7CGFfZFB6wSW0kG7tlGyh5iEFVH9cKmoeD1wNqFkAFe9IupZsa-8PQ-EbBi_Tl0TtF0v_IzDzkTXBGT8rlPe_vo5Zd0UburMSwWOG1GaVa4nzY0l5zU4jlPLPbElTiD3GcOw6fhP1iHsjcaVnCJyVwZTTs-XaHax01L_YPmijs4U8NhtEjGodgLlYrvQ3cM4yLrQEN5bdJhDwU47BXXCeOcPMfEsw7IF9ucwoRTvMtwccIy5TyPSMor9K45_GMTpn5jI55R0-MeKXmruVSoEKnmyJmpiA5JhzzALnVzmv_SUPjXxO58v9UgT8CwBtMADEFz8hdVkna8JA2wN7m-fQDK96fxdvZH-f8jJcvShpfyBGesAtNmsoLPYG-97sqMwsYQdPjp3u7pQcnGTg1Sfi7ni0TSNjKPYXKZG4C6W6sm27d7iyPOMpi31XHXo_Q6MAGAjTZiYI4JSSyy--AK_Z4FTBKdMUiahFPQHbwJPg-byGpVhAm3ELb0yzQjtHvOryqY9kJAbgHM-HlUZfCXlO3aes6z0lOz1TsmDxseec7JVwGSUJd4JaHcoDhzxuysQ7Ft2-6rdRvDpE_JlKyZ2FnluRg0ah3FFlSRVc'
+    sig: 'dfTAtS88RF6QaHDvpzvRhzpmp0H_tMr4-e90ksrixMdQ12ZnwzRiHJ24raLgULIqwcewSqwFEYZOHEZtQHot9zWEHZ16GxvsmzhxPfbPK44VHtVpcYtXhFIyX7RPCpkdETaP-eMba397fiR3jRcflaSepeoRdp7N_POpO9M-KvejuRXWFR7J530eCAWfItwvITOn5Go2p5e1pBpidP61UnCv3O9K-INoz0EjPcSXq136uCyYHitlNwF4TJxdnv9PcHM7oRXT3siv4P5HAlKjDB7ak8WQ4x2VLluMQ2hpx8o_IiPwL6TYzxClHcw_e1oG1bGrOTG-0JmBRn9U_-orrL8NS3QGKNd0VAcJuLrXHe6NBqy0aP1ZdodKdrI7aViHMbmUAi-EtgVlVeqxR4zPB5fgB63ZhOzrq4rbU1LvMhp41EniK7oUQV3dswsU2ara9IiyDUHN-yNZSHzVwAes6PNDv_FKk_b75iQ5RQ5ZD6nJS2FyNdCo7vLMTqbEHIoqlkdehJLhuSCNykLcQh31sslTNHKkXIwnWgN-5cvgasu2y8FQgJoZ2A1tHfB6eOf4KgsHMNlatxlll8gvyF-uDsWQKJ8ywu8LYXeDmIXmS1R0N8TlI4JYUqrYkj6LYITh0dipWTuATXFtGfExGVtR1pH5uGDx-VqXtcfGsyAzcHg,odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc'
   },
-  everHash: '0x2277dae741faf143dab3cd6dd6ac3151fb381939134c55e4834dea6c23b8faad'
+  everHash: '0x38a2b38637a51e3037b3f04c3745eb1022f261e3de16308d8a2ac8c4251bde8e'
 }
 */
 ```

@@ -21,7 +21,7 @@ everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|<ul><li>转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**</li><li>提现时，`chainType` 为要提现至的区块链名称。例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainType` 字段为 `arweave,ethereum`，开发者需要指定提现至哪个区块链，`arweave`为 Arweave 区块链，`ethereum` 为以太坊区块链。</li></ul>|
 |chainID|<ul><li>转账时，`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**</li><li>提现时，`chainID` 为要提现至的区块链网络 ID，例如 AR Token 支持提现至 Arweave 和以太坊区块链，token `chainID` 字段为 `0,1`，开发者指定提现至哪个区块链，`chainID` 也需要使用对应的值，`0`为 Arweave 区块链网络 ID，`1` 为以太坊区块链网络 ID</li></ul>|
-|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。<ul><li>**当前账户为 arweave 账户模型，需要传递`{"arOwner": "current arweave address's owner(public key)"}`**，用于 RSA-PSS sha256 验证</li><li>此外，开发者可通过 `data` 自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)</li></ul>|
+|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)|
 |version|交易版本 `'v1'`|
 
 ### 以太坊账户示例
@@ -53,17 +53,14 @@ const everpayTxWithoutSig = {
   amount: '100',
   fee: '0',
   feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-  nonce: '1626080392301',
+  nonce: '1629276767583',
   tokenID: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be',
   chainType: 'arweave,ethereum',
   chainID: '0,42',
-  data: '{"hello":"world","this":"is everpay","arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}',
+  data: '{"hello":"world","this":"is everpay"}',
   version: 'v1'
 }
 ```
-:::danger
-当前账户为 arweave 账户模型，`data` 字段需要传递 `"arOwner": "current arweave address's owner(public key)"`，用于 RSA-PSS sha256 验证
-:::
 
 ## messageData
 由 Schema 按照统一格式生成，用于：
@@ -120,11 +117,11 @@ to:0x26361130d5d6E798E9319114643AF8c868412859
 amount:100
 fee:0
 feeRecipient:0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1
-nonce:1626080392301
+nonce:1629276767583
 tokenID:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be
 chainType:arweave,ethereum
 chainID:0,42
-data:{"hello":"world","this":"is everpay","arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}
+data:{"hello":"world","this":"is everpay"}
 version:v1`
 ```
 
@@ -198,7 +195,7 @@ const signature = await signMessageAsync(ethConnectedSigner, messageData)
 伪代码参考来源：[everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
 
 ### Arweave 账户模型
-通过 arweave RSA-PSS sha256 签名 `everHash` 对应的 `Uint8Array`（或者 `Buffer`），得到的签名结果，再通过 `Arweave.utils.bufferTob64Url`（与其他 base64 转换函数有差异） 进行 `base64` 转换后，得到 `signature`
+通过 arweave RSA-PSS sha256 签名 `everHash` 对应的 `Uint8Array`（或者 `Buffer`），得到的签名结果，再通过 `Arweave.utils.bufferTob64Url`（与其他 base64 转换函数有差异） 进行 `base64` 转换，拼接上 `,{{arOwner}}` 后，得到 `signature`
 
 #### 通过 arweave.js 生成签名
 ```ts
@@ -206,8 +203,21 @@ const signature = await signMessageAsync(ethConnectedSigner, messageData)
 const signMessageAsync = async (arJWK: ArJWK, address: string, everHash: string): Promise<string> => {
   const arweave = Arweave.init(options)
   const everHashBuffer: Buffer = Buffer.from(everHash.slice(2), 'hex')
+  let arOwner = ''
+  let signatureB64url = ''
   // web
   if (arJWK === 'use_wallet') {
+    try {
+      await checkArPermissions('ACCESS_PUBLIC_KEY')
+    } catch {
+      throw new Error(ERRORS.ACCESS_PUBLIC_KEY_PERMISSION_NEEDED)
+    }
+    try {
+      arOwner = await (window.arweaveWallet as any).getActivePublicKey()
+    } catch {
+      throw new Error(ERRORS.ACCESS_PUBLIC_KEY_FAILED)
+    }
+
     try {
       await checkArPermissions('SIGNATURE')
     } catch {
@@ -225,7 +235,7 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, everHash: string)
         algorithm
       )
       const buf = new Uint8Array(Object.values(signature))
-      return Arweave.utils.bufferTob64Url(buf)
+      signatureB64url = Arweave.utils.bufferTob64Url(buf)
     } catch {
       throw new Error(ERRORS.SIGNATURE_FAILED)
     }
@@ -233,8 +243,11 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, everHash: string)
   // node
   } else {
     const buf = await arweave.crypto.sign(arJWK, everHashBuffer)
-    return Arweave.utils.bufferTob64Url(buf)
+    arOwner = arJWK.n
+    signatureB64url = Arweave.utils.bufferTob64Url(buf)
   }
+
+  return `${signatureB64url},${arOwner}`
 }
 
 const everpayTxWithoutSig = {
@@ -245,11 +258,11 @@ const everpayTxWithoutSig = {
   amount: '100',
   fee: '0',
   feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-  nonce: '1626080392301',
+  nonce: '1629276767583',
   tokenID: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be',
   chainType: 'arweave,ethereum',
   chainID: '0,42',
-  data: '{"hello":"world","this":"is everpay","arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}',
+  data: '{"hello":"world","this":"is everpay"}',
   version: 'v1'
 }
 
@@ -261,11 +274,11 @@ to:0x26361130d5d6E798E9319114643AF8c868412859
 amount:100
 fee:0
 feeRecipient:0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1
-nonce:1626080392301
+nonce:1629276767583
 tokenID:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be
 chainType:arweave,ethereum
 chainID:0,42
-data:{"hello":"world","this":"is everpay","arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}
+data:{"hello":"world","this":"is everpay"}
 version:v1`
 
 // cp from: https://github.com/ethereumjs/ethereumjs-util/blob/ebf40a0fba8b00ba9acae58405bca4415e383a0d/src/signature.ts#L168
@@ -290,7 +303,7 @@ const signature = await signMessageAsync(config.arJWK as ArJWK, everHash)
 
 :::danger
 * 用于 以太坊 personalSign 签名的是 `messageData` string，得到的结果即为 `signature`
-* 用于 arweave RSA-PSS sha256 签名的是 `everHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string` 才是 `signature`
+* 用于 arweave RSA-PSS sha256 签名的是 `everHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string`，并拼接上 `,{{arOwner}}` 才是 `signature`
 :::
 
 ## signature 校验
@@ -306,10 +319,11 @@ const verified = ethers.utils.verifyMessage(messageData, signature).toLowerCase(
 ```ts
 const signature = await signMessageAsync(config.arJWK as ArJWK, everHash)
 // arOwner 为 arweave 钱包 publicKey
+const [sigB64url, arOwner] = signature.split(',')
 const verified = arweave.crypto.verify(
-  everpayTxWithoutSig.data.arOwner,
+  arOwner,
   Buffer.from(everHash.slice(2)),
-  Arweave.utils.b64UrlToBuffer(signature)
+  Arweave.utils.b64UrlToBuffer(sigB64url)
 )
 ```
 
@@ -333,13 +347,13 @@ const verified = arweave.crypto.verify(
   amount: '100',
   fee: '0',
   feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-  nonce: '1627542576322',
+  nonce: '1629276767583',
   tokenID: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be',
   chainType: 'arweave,ethereum',
   chainID: '0,42',
-  data: '{"hello":"world","this":"is everpay","arOwner":"odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc"}',
+  data: '{"hello":"world","this":"is everpay"}',
   version: 'v1',
-  sig: 'JuoDkJq1imoaQGoeGhi138e7PCtRpCqYga5rE-C0Ci-3pd-2EGsjbixAspQ6nxPYMT9HOF2shXeS7eUReQO309GtC2XwpqiipSKJiEe-IXjq70JqjCDd9cPgSVho-hmxMcjW263WUwatXXzVzETx3HRMA0GtTz6NOZju2A5ZDNWX9hzGTW7Y_m0a5OyRtc35ZxDrC3aGDBxk2cVhf7pln9JY_w0VGvEI961_y6SZ-_sX0VkqgFEGw76uF94T8CMZh4JMvc4oYPjuX-DR-Dxkm2Dz1oWZV9PsAHD7JbTqyQ2HecJnLf2DJYrYzVi-rTaLHPBZfXxIqqHjcWY6K6aaYk3m7y1-MuSwWYaeAWhnI0YPnsDCk9jsxu1flaPNvdPboQvBoUbTUFx5l9sQBmDcRyq-o2L9H0qlG_AwC-FR1xmjuJR2TKeXkv1zJAwkg2cMX9Bza4Hvjy2X88MoTBRw_GpPxbUti2yBAQWkCsj4iNrUU0CltXddhb_AWWYSLxp0_ELo7h_grBSdiOvq26PgcWBdasnfYE84765htrMlAo6QqMDw5Fs1DBD-8LJQ-d8aCqGE-JuizocbPO3KsuXurAhA6i639XhH81zGCCHow_wFGTJCIc_btVQvTltOZPPEFTOkSnLkjnMwWWhDKS0ZDeOArGTCDZrdZ3TkQDIdTvA'
+  sig: 'Lg8Xgk_LZn_H-HVOz042wbhv5RVQjc7Z0iVV4_UbWWgoqHnboB6PQujtCtu1_QW0cXPqakm9sLi7fJlhK7Hm7UMFQiwXbVB_bClr73GKAcV0tpWye9BUsKw9SfOnFAHCCufF4C1PPt4xRrJp5UeG-smonQ9k4t0GmoXnXoSfmFxsEvaId5SeNaOZa1JYMzReo8-P4m5EdrTKLNgWwo28OOi4GbpXIzRxorJp-dwhsNhQHu4vzOq4rflGRwQKb9bj4S92YqEp2wXRRU7ebEiBJlGjQrf0HgTr7gZO_q3gI5FQgsL_UbOo4sp5hL69IUOfRxmr_RTiLZZzQRu-0dJBsWOSWYC5232fRf3MwogIELdDUl3dVCz5PDnXp8AOPKBQCiblu74oTSyKhsVMvwfER125dXyKtxJLlxTkDhEOPzTJdufy-Czs1pE_ZPKj4z44P3W7UdGiAt9rXYQb6JjMNOpG1_S7RMa5OKoCV4MbuK2CGFCNBE0h4zxeXZfXLOMSImrfFZ4nZAHkTbpKgpH1hPDEMGsEEgwvDl6_AyjrMOebAAyJGj6keyy9tf7lQBKKaj2-bGG6PIVC-l7wCXJizFt-3Cb0aC6ZXaCHGdhHuI-7Ime4M5iZESiBhkIhtOV3ADjqks174o0J0zKxE0NVl14tuu5tY-UfJ6kAkqbujLs,odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc'
 }
 ```
 
