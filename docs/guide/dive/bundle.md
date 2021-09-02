@@ -62,11 +62,8 @@ const sigs = {
 
 ### data 生成示例
 :::danger
-为确保签名校验时，用于签名校验的 `messageData` 一致，`internalItem`、`bundleData` 字段顺序必须与示例保持一致，才可正确通过签名校验。
-:::
-
-:::info
-示例中的 `signBundleData` 为伪代码，在通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，后续签名生成规则与 [everPay 交易签名](./transaction#signature) 一致。
+* 为确保签名校验时，用于签名校验的 `messageData` 一致，`internalItem`、`bundleData` 字段顺序必须与示例保持一致，才可正确通过签名校验。
+* 示例中的 `signBundleData` 为伪代码，在通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，后续签名生成规则与 [everPay 交易签名](./transaction#signature) 一致。
 :::
 
 ```ts

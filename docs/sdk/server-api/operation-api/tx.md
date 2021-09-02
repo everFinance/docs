@@ -11,13 +11,13 @@ sidebar_position: 2
 在用户侧，只会生成：
 * 转账的 `transfer` everPay 交易
 * 提现的 `burn` everPay 交易
-### 参数
+## 参数
 * path `{{endpoint}}/tx`
 * Post data `everpayTx`
 
 关于 `Schema` 生成、签名，以及交易记录获取，请阅读 [指南 - 深入理解 - 交易](../../../guide/dive/transaction)
 
-### 示例
+## 示例
 ```bash
 curl --location --request POST 'https://api-dev.everpay.io/tx' \
 --header 'Content-Type: application/json' \
