@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# swapPlaceOrder
+# swapOrder
 
 ## 介绍
 
@@ -14,7 +14,7 @@ everPay Swap 兑换由生态合作伙伴 [Goblin](https://goblinpool.com/) 团�
     2. 通过请求 [swapPrice](../basic-api/swapPrice) 接口，获取兑换币种的汇率
     3. 根据做市商 everPay 账户 ID、数量、汇率，生成 [`bundleData`](../../../guide/dive/bundle#bundledata-信息)
     4. 通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，执行后续签名处理
-    5. 将 `bundleData` 和 `sigs` 组装，通过此 `swapPlaceOrder` API POST 请求提交给 everPay Swap 做市商
+    5. 将 `bundleData` 和 `sigs` 组装，通过此 `swapOrder` API POST 请求提交给 everPay Swap 做市商
 2. everPay Swap 做市商
     1. 接收到 `bundle` 后，校验数量、汇率等
     2. 通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，执行后续签名处理
