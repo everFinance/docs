@@ -22,7 +22,7 @@ Any everPay account can transfer any of its assets on everPay to other everPay a
 [TransferParams](../types#transferparams)
 
 ## Return
-[TransferOrWithdrawResult](../types#transferorwithdrawresult)
+[SendEverpayTxResult](../types#sendeverpaytxresult)
 ## Example
 ### From ethereum account
 ```ts

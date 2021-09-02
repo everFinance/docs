@@ -36,7 +36,7 @@ Any everPay account can withdraw assets on everPay to blockchain wallets that ev
 [WithdrawParams](../types#withdrawparams)
 
 ## Return
-[TransferOrWithdrawResult](../types#transferorwithdrawresult)
+[SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## Example
 ### ethereum account withdraw AR to arweave wallet address

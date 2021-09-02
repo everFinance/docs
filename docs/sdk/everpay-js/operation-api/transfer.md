@@ -22,7 +22,7 @@ sidebar_position: 3
 [TransferParams](../types#transferparams)
 
 ## 返回
-[TransferOrWithdrawResult](../types#transferorwithdrawresult)
+[SendEverpayTxResult](../types#sendeverpaytxresult)
 ## 示例
 ### ethereum 账户给其他账户转账
 ```ts

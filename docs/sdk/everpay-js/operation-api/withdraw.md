@@ -35,7 +35,7 @@ sidebar_position: 4
 [WithdrawParams](../types#withdrawparams)
 
 ## 返回
-[TransferOrWithdrawResult](../types#transferorwithdrawresult)
+[SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## 示例
 ### ethereum 账户普通提现 AR 至 arweave 钱包地址

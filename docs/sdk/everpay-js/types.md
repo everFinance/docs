@@ -103,6 +103,15 @@ export enum EverpayAction {
 }
 ```
 
+## SwapInfo
+```ts
+export interface SwapInfo {
+  fee: string
+  address: string
+  tokenList: string[]
+}
+```
+
 ## InternalTransferItem
 ```ts
 export interface InternalTransferItem {
@@ -282,6 +291,17 @@ export interface WithdrawParams {
   to?: string
 }
 ```
+## BundleParams
+```ts
+export interface BundleParams {
+  symbol: string
+  amount: string
+  data: {
+    bundle: BundleDataWithSigs
+  }
+  to: string
+}
+```
 
 ## TxsParams
 ```ts
@@ -302,13 +322,13 @@ export interface TxsByAccountParams {
 }
 ```
 
-## TransferOrWithdrawResult
+## SendEverpayTxResult
 ```ts
 // Note: This type does not have an export
 interface PostEverpayTxResult {
   status: string
 }
-export interface TransferOrWithdrawResult extends PostEverpayTxResult {
+export interface SendEverpayTxResult extends PostEverpayTxResult {
   everpayTx: EverpayTx
   everHash: string
 }
