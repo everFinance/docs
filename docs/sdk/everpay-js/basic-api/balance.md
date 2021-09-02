@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # balance
@@ -8,9 +8,9 @@ sidebar_position: 5
 获取 对应 `account` 在 everPay 上的 指定代币 的资产余额
 
 ## 参数
-### 返回类型
 [BalanceParams](../types#balanceparams)
 ## 返回
+### 返回类型
 string
 
 :::info
