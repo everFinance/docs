@@ -5,21 +5,7 @@ sidebar_position: 3
 # swapOrder
 
 ## 介绍
-
-everPay Swap 兑换由生态合作伙伴 [Goblin](https://goblinpool.com/) 团队开发。借助 everPay [批量转账交易](../../../guide/dive/bundle) 能力，在去中心化的区块链应用上，实现了中心化交易所兑换的体验。
-
-## 兑换处理
-1. 开发者
-    1. 通过请求 [swapInfo](../basic-api/swapInfo) 接口，获取 everPay Swap 做市商 everPay 账户 ID、支持代币列表
-    2. 通过请求 [swapPrice](../basic-api/swapPrice) 接口，获取兑换币种的汇率
-    3. 根据做市商 everPay 账户 ID、数量、汇率，生成 [`bundleData`](../../../guide/dive/bundle#bundledata-信息)
-    4. 通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，执行后续签名处理
-    5. 将 `bundleData` 和 `sigs` 组装，通过此 `swapOrder` API POST 请求提交给 everPay Swap 做市商
-2. everPay Swap 做市商
-    1. 接收到 `bundle` 后，校验数量、汇率等
-    2. 通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，执行后续签名处理
-    3. 将 `bundleData` 和 `sigs`（包括开发者提交的签名） 组装成 `data`
-    4. 生成 everPay [批量转账交易](../../../guide/dive/bundle) 提交至 everPay 服务器
+兑换内容可阅读 [指南 - 深入理解 - 兑换](../../../guide/dive/swap) 了解更多。
 
 ## 参数
 * path `{{swapEndpoint}}/dex/place_order`
