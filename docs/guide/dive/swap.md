@@ -8,6 +8,11 @@ sidebar_position: 8
 
 everPay Swap 兑换由生态合作伙伴 [Goblin](https://goblinpool.com/) 团队基于 everPay [批量转账 Schema](./bundle) 开发。借助了 everPay 批量转账实时到账的能力，在去中心化的区块链应用上，实现了中心化交易所兑换的体验。
 
+## 特点
+* 借助 everPay 批量转账实时到账的能力，兑换实时完成
+* 使用 uniSwap v3 算法，价格更优
+* 兑换时即锁定价格，所见即所得，没有矿工可提取价值 —— [Miner Extractable Value (MEV)](https://www.ethereum.cn/Thinking/MEV)
+
 ## 实现方式
 1. 用户
     1. 通过请求 [swapInfo](../../sdk/server-api/basic-api/swapInfo) 接口，获取 everPay Swap 做市商 everPay 账户 ID、支持代币列表
