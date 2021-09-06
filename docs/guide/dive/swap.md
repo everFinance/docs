@@ -10,11 +10,11 @@ everPay Swap 兑换由生态合作伙伴 [Goblin](https://goblinpool.com/) 团�
 
 ## 实现方式
 1. 用户
-    1. 通过请求 [swapInfo](../../../../sdk/server-api/basic-api/swapInfo) 接口，获取 everPay Swap 做市商 everPay 账户 ID、支持代币列表
-    2. 通过请求 [swapPrice](../../../../sdk/server-api/basic-api/swapPrice) 接口，获取兑换币种的汇率
+    1. 通过请求 [swapInfo](../../sdk/server-api/basic-api/swapInfo) 接口，获取 everPay Swap 做市商 everPay 账户 ID、支持代币列表
+    2. 通过请求 [swapPrice](../../sdk/server-api/basic-api/swapPrice) 接口，获取兑换币种的汇率
     3. 根据做市商 everPay 账户 ID、数量、汇率，生成 [`bundleData`](./bundle#bundledata-信息)，对应两笔内部转账交易。一笔是用户转出给做市商 everPay 账户的内部转账，另一笔是做市商 everPay 账户转出给用户的内部转账。
     4. 通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，执行后续签名处理
-    5. 将 `bundleData` 和 `sigs` 组装，通过 [swapOrder](../../../../sdk/server-api/operation-api/swapOrder) 请求提交给 everPay Swap 做市商
+    5. 将 `bundleData` 和 `sigs` 组装，通过 [swapOrder](../../sdk/server-api/operation-api/swapOrder) 请求提交给 everPay Swap 做市商
 2. everPay Swap 做市商
     1. 接收到 `bundle` 数据后，校验数量、汇率等
     2. 通过 `const messageData = JSON.stringfiy(bundleData)` 将 `bundleData` 转换成 `messageData` 后，执行后续签名处理
