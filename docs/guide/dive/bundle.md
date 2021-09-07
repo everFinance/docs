@@ -8,6 +8,8 @@ sidebar_position: 7
 
 `data` 中，包含多笔内部转账事务，也包含这些内部转账事务中 `from` 账户对于所有转账事务信息的签名。
 
+`data` 中的多笔内部转账必须全部成功，有一笔失败则所有内部转账回滚。一个批量转账交易只能执行一次，不管内部转账是成功还是失败，执行后不可二次执行。
+
 ## Schema 说明
 
 |字段|描述|
@@ -23,7 +25,7 @@ sidebar_position: 7
 |tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
 |chainType|批量转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
 |chainID|批量转账时，`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|data|特定 JSON 格式，实现批量转账功能|
+|data|特定 JSON 格式，实现批量转账功能，见下文 [data 生成描述](#data-生成描述)|
 |version|交易版本 `'v1'`|
 
 ## data 生成描述
