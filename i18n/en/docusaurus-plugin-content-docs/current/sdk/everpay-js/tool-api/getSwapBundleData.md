@@ -4,26 +4,23 @@ sidebar_position: 4
 
 # getSwapBundleData
 
-## 介绍
-everPay Swap 由 everPay 生态合作伙伴 Goblin 团队研发，借助 everPay 批量转账功能实现。
+## Function
+Generate [`bundleData`](../types#bundledata) based on [`SwapOrder`](../types#swaporder)
 
-## 功能
-根据 [`SwapOrder`](../types#swaporder) 生成 [`bundleData`](../types#bundledata)
-
-## 参数
+## Parameter
 [`SwapOrder`](../types#swaporder)
 
-|参数|描述|
+|Field|Description|
 |---|---|
-|tokenIn|everPay Swap 资金池收到的资产（即用户转出的资产） `symbol`|
-|tokenOut|everPay Swap 资金池转出的资产（即用户收到的资产） `symbol`|
-|tokenInAmount|everPay Swap 资金池收到的资产（即用户转出的资产）数额，非 uint 类型|
-|tokenOutAmount|everPay Swap 资金池转出的资产（即用户收到的资产）数额，非 uint 类型|
+|tokenIn|Token `symbol`, which is everPay Swap pool received (i.e. assets transferred out by users)|
+|tokenOut|Token `symbol`, which transferred out from the everPay Swap pool (i.e., assets received by the user)|
+|tokenInAmount|The amount of assets received by the everPay Swap pool (i.e., assets transferred out by the user). Not uint type, which should be processed by `decimals`|
+|tokenOutAmount|The amount of assets transferred out of the everPay Swap pool (i.e. assets received by the user). Not uint type, which should be processed by `decimals`|
 
-## 返回
+## Return
 [`BundleData`](../types#bundledata)
 
-## 示例
+## Example
 
 ```ts
 const swapBundleData = await everpayArAccount.getSwapBundleData({
@@ -32,7 +29,7 @@ const swapBundleData = await everpayArAccount.getSwapBundleData({
   tokenInAmount: '0.001',
   tokenOutAmount: '2.0666'
 })
-/* 示例返回
+/* Returnd result
 {
   items: [
     {

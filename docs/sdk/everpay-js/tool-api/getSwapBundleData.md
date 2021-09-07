@@ -4,9 +4,6 @@ sidebar_position: 4
 
 # getSwapBundleData
 
-## 介绍
-everPay Swap 由 everPay 生态合作伙伴 Goblin 团队研发，借助 everPay 批量转账功能实现。
-
 ## 功能
 根据 [`SwapOrder`](../types#swaporder) 生成 [`bundleData`](../types#bundledata)
 

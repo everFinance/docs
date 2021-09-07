@@ -5,37 +5,37 @@ sidebar_position: 11
 
 # swapPrice
 
-## 功能
-获取 everPay Swap 支持兑换的币种数量
+## Function
+Get the number of currencies supported by everPay Swap
 
-## 参数
+## Parameter
 [SwapPriceParams](../types#swappriceparams)
 
 
-|字段|描述|
+|Field|Description|
 |---|---|
-|tokenIn|everPay Swap 资金池收到的资产（即用户转出的资产） `symbol`|
-|tokenOut|everPay Swap 资金池转出的资产（即用户收到的资产） `symbol`|
-|tokenInAmount|可选，everPay Swap 资金池收到的资产（即用户转出的资产）数额，类型非 uint 类型，已经过 `decimals` 处理。传递 `tokenInAmount` 后，不再传递 `tokenOutAmount`|
-|tokenOutAmount|可选，everPay Swap 资金池转出的资产（即用户收到的资产）数额，类型非 uint 类型，已经过 `decimals` 处理。传递 `tokenOutAmount` 后，不再传递 `tokenInAmount`|
+|tokenIn|Token `symbol`, which is everPay Swap pool received (i.e. assets transferred out by users)|
+|tokenOut|Token `symbol`, which transferred out from the everPay Swap pool (i.e., assets received by the user)|
+|tokenInAmount|Optionally, the amount of assets received by the everPay Swap pool (i.e., assets transferred out by the user). Not uint type, which has been processed by `decimals`. After passing `tokenInAmount`, `tokenOutAmount` is no longer passed|
+|tokenOutAmount|Optionally, the amount of assets transferred out of the everPay Swap pool (i.e. assets received by the user). Not uint type, which has been processed by `decimals`. After passing `tokenOutAmount`, `tokenInAmount` is no longer passed|
 
 
-## 返回
-### 返回类型
+## Return
+### Return Type
 [SwapPriceResult](../types#swappriceresult)
 
-### 返回字段
+### Return Fields
 
-|字段|描述|
+|Field|Description|
 |---|---|
-|indicativePrice|兑换数量为 `0` 时的参考价格|
-|spreadPercent|当前兑换数量下，与数量为 `0` 时的 `indicativePrice` 参考价格的价差，`spreadPercent * 100` 为价差百分比|
-|tokenIn|everPay Swap 资金池收到的资产（即用户转出的资产） `symbol`|
-|tokenOut|everPay Swap 资金池转出的资产（即用户收到的资产） `symbol`|
-|tokenInAmount|everPay Swap 资金池收到的资产（即用户转出的资产）数额，类型非 uint 类型，已经过 `decimals` 处理|
-|tokenOutAmount|everPay Swap 资金池收到的资产（即用户转出的资产）数额，类型非 uint 类型，已经过 `decimals` 处理|
+|indicativePrice|Reference price when the exchange quantity is `0`|
+|spreadPercent|The price difference between the current exchange quantity and the `indicativePrice` reference price when the quantity is `0`, `spreadPercent * 100` is the percentage of price difference|
+|tokenIn|Token `symbol`, which is everPay Swap pool received (i.e. assets transferred out by users)|
+|tokenOut|Token `symbol`, which transferred out from the everPay Swap pool (i.e., assets received by the user)|
+|tokenInAmount|The amount of assets received by the everPay Swap pool (i.e., assets transferred out by the user). Not uint type, which has been processed by `decimals`|
+|tokenOutAmount|The amount of assets transferred out of the everPay Swap pool (i.e. assets received by the user). Not uint type, which has been processed by `decimals`|
 
-## 示例
+## Example
 
 ```js
 const everpay = new Everpay({ debug: true })
@@ -46,7 +46,7 @@ everpay.swapPrice({
 }).then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```js
 {
   tokenIn: 'ETH',

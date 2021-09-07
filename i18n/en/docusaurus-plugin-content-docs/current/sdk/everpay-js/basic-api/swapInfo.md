@@ -5,25 +5,26 @@ sidebar_position: 10
 
 # swapInfo
 
-## 功能
-获取 everPay Swap 做市商 everPay 账户、支持代币列表、手续费
+## Function
+Get everPay Swap market maker everPay account, list of supported tokens, fees
 
-## 参数
-无
-## 返回
-### 返回类型
+## Parameter
+None
+## Return
+### Return Type
 [SwapInfo](../types#swapinfo)
 
-### 返回字段
-字段信息可查看 [Server API - 基础查询接口 - swapInfo - 返回字段](../../server-api/basic-api/swapinfo#返回字段)
-## 示例
+### Return Fields
+Field information can be viewed in [SDK - Server API - Basic Query API - swapInfo - Return Fields](../../server-api/basic-api/info#return-fields)
+
+## Example
 
 ```js
 const everpay = new Everpay({ debug: true })
 everpay.swapInfo().then(console.log)
 ```
 
-## 示例返回
+## Example return
 ```json
 {
   "status": "ok",

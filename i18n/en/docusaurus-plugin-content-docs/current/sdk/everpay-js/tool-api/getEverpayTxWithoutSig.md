@@ -4,22 +4,23 @@ sidebar_position: 1
 
 # getEverpayTxWithoutSig
 
-## 功能
-生成 everPay 交易结构
+## Function
+Generate everPay transaction structure
 
-## 参数
+## Parameter
 ```js
 everpay.getEverpayTxWithoutSig(type, params)
 ```
-|参数|类型|
+
+|Field|Description|
 |---|---|
 |type|'transfer' or 'withdraw' or 'bundle'|
 |params|[TransferParams](../types#transferparams) or [WithdrawParams](../types#withdrawparams) or [BundleParams](../types#bundleparams)|
 
-## 返回
+## Return
 [EverpayTxWithoutSig](../types#everpaytxwithoutSig)
 
-## 示例
+## Example
 
 ```ts
 const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -36,7 +37,7 @@ everpay.getEverpayTxWithoutSig('transfer', {
   data: { hello: 'world', this: 'is everpay' }
 }).then(console.log)
 
-/* 示例返回
+/* Returnd result
 {
   tokenSymbol: 'usdt',
   action: 'transfer',

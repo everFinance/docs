@@ -4,16 +4,16 @@ sidebar_position: 2
 
 # getEverpayTxMessage
 
-## 功能
-将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithousig) 转化成 `messageData` 用于签名
+## Function
+Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithousig)  into `messageData` for signature
 
-## 参数
+## Parameter
 [EverpayTxWithoutSig](../types#everpaytxwithousig)
 
-## 返回
+## Return
 `messageData` string
 
-## 示例
+## Example
 
 ```ts
 const everpayTxWithoutSig = {
@@ -33,7 +33,8 @@ const everpayTxWithoutSig = {
 }
 
 everpay.getEverpayTxMessage(everpayTxWithoutSig)
-/* 示例返回
+
+/* Returnd result
 `tokenSymbol:usdt
 action:transfer
 from:0x26361130d5d6E798E9319114643AF8c868412859
