@@ -3,22 +3,22 @@ sidebar_position: 6
 ---
 
 # bundle
-## 功能
+## Function
+Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when make a bundle transaction,
+* Internal build [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
+* Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
+* Send the everpay tx to everPay backend server for signature verification
+* The backend server verifies it and updates the user's asset balance. And store the everPay transaction record on the arweave blockchain
 
-根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在批量转账时：
-* 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
-* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)
-* 将信息发送给 everPay 后端服务器，进行签名验证
-* 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上
-* 更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../guide/dive/bundle)
+Developers can visit the [Guide - Dive - Bundle](../../../guide/dive/bundle) section for more information.
 
-## 参数
+## Parameter
 [BundleParams](../types#bundleparams)
 
-## 返回
+## Return
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
-## 示例
+## Example
 ```ts
 const bundleDataWithSigs = {
   items: [
@@ -48,11 +48,11 @@ const bundleDataWithSigs = {
 
 const bundleResult = await everpayArAccount.bundle({
   symbol: 'ETH',
-  // 可为任意 everPay 账户 ID，包括当前 everPay 账户 ID
+  // Can be any everPay account ID, including the current everPay account ID
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
-  // bundle 批量转账的 外部转账 amount 可为 0
+  // The external transfer amount for a bundle transaction can be 0
   amount: '0',
-  // 特定 data
+  // Specific data
   data: {
     bundle: bundleDataWithSigs
   }

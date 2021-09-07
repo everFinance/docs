@@ -3,16 +3,16 @@ sidebar_position: 7
 ---
 
 # sendEverpayTx
-## 功能
-将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithousig) 转化成 `messageData` 后，根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数进行签名，并发送至 everPay 服务器。
+## Function
+Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithousig) into `messageData`, sign it according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation and send it to everPay server.
 
-## 参数
+## Parameter
 [EverpayTxWithoutSig](../types#everpaytxwithousig)
 
-## 返回
+## Return
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
-## 示例
+## Example
 ```ts
 const everpayTxWithoutSig = {
   tokenSymbol: 'usdt',
@@ -30,7 +30,7 @@ const everpayTxWithoutSig = {
   version: 'v1'
 }
 
-// 使用 0x26361130d5d6E798E9319114643AF8c868412859 对应私钥进行签名
+// Sign with the private key corresponding to 0x26361130d5d6E798E9319114643AF8c868412859
 const result = await everpay.sendEverpayTx(everpayTxWithoutSig)
 /*
 {

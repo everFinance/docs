@@ -10,7 +10,8 @@ sidebar_position: 6
 * 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)
 * 将信息发送给 everPay 后端服务器，进行签名验证
 * 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上
-* 更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../guide/dive/bundle)
+
+更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../guide/dive/bundle)
 
 ## 参数
 [BundleParams](../types#bundleparams)

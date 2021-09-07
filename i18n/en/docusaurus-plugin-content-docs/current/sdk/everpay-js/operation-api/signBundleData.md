@@ -3,17 +3,17 @@ sidebar_position: 5
 ---
 
 # signBundleData
-## 功能
+## Function
 
-根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，对 `bundleData` 进行签名，生成 [`BundleDataWithSigs`](../types#bundledatawithsigs)，用于 everPay 批量转账交易特定 `data` 生成。
+Sign `bundleData` according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation, generate [`BundleDataWithSigs`](./types#bundledatawithsigs) for everPay bundle transaction specific `data` generation.
 
-## 参数
+## Parameter
 [`BundleData`](../types#bundledata)
 
-## 返回
+## Return
 [`BundleDataWithSigs`](../types#bundledatawithsigs)
 
-## 示例
+## Example
 
 ```ts
 const bundleData = {
@@ -38,7 +38,7 @@ const bundleData = {
   version: 'v1'
 }
 
-// 使用 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 对应的私钥，签名 bundleData
+// Sign bundleData with the private key corresponding to 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo wallet
 const bundleDataWithSigs1 = await everpayArAccount.signBundleData(bundleData)
 /*
 {
@@ -67,7 +67,7 @@ const bundleDataWithSigs1 = await everpayArAccount.signBundleData(bundleData)
 }
 */
 
-// 使用 0x26361130d5d6E798E9319114643AF8c868412859 对应的私钥，签名 bundleDataWithSigs1
+// Sign bundleDataWithSigs1 with the private key corresponding to 0x26361130d5d6E798E9319114643AF8c868412859 wallet
 const bundleDataWithSigs2 = await everpayEthAccount.signBundleData(bundleDataWithSigs1)
 /*
 {

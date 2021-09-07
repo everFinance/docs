@@ -11,13 +11,13 @@ For all everPay transactions, everPay Tx is generated and sent to `tx` API via `
 On the user side, only the following will be generated.
 * `transfer` everPay Tx for transfer transaction
 * `burn` everPay Tx for withdraw transaction
-### Parameter
+## Parameter
 * path `{{endpoint}}/tx`
 * Post data `everpayTx`
 
 For `Schema` generation, signatures, and transaction record acquisition, please read [Guide - Dive - Transaction](../../../guide/dive/transaction)
 
-### Example
+## Example
 ```bash
 curl --location --request POST 'https://api-dev.everpay.io/tx' \
 --header 'Content-Type: application/json' \
