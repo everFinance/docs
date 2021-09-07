@@ -5,7 +5,7 @@ sidebar_position: 5
 # signBundleData
 ## Function
 
-Sign `bundleData` according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation, generate [`BundleDataWithSigs`](./types#bundledatawithsigs) for everPay bundle transaction specific `data` generation.
+Sign `bundleData` according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation, generate [`BundleDataWithSigs`](../types#bundledatawithsigs) for everPay bundle transaction specific `data` generation.
 
 ## Parameter
 [`BundleData`](../types#bundledata)

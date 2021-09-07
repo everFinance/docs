@@ -34,5 +34,9 @@
   "version.label": {
     "message": "Next",
     "description": "The label for version current"
+  },
+  "sidebar.sdk.category.工具类接口": {
+    "message": "Tool API",
+    "description": "The label for category 工具类接口 in sidebar sdk"
   }
 }
