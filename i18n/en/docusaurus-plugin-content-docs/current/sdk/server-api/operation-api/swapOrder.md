@@ -4,21 +4,21 @@ sidebar_position: 3
 
 # swapOrder
 
-## 介绍
-兑换内容可阅读 [指南 - 深入理解 - 兑换](../../../guide/dive/swap) 了解更多。
+## Introduction
+Developers can visit the [Guide - Dive - Swap](../../../guide/dive/swap) section for more information.
 
-## 参数
+## Function
 * path `{{swapEndpoint}}/dex/place_order`
 * Post data `bundle`
 
-关于 `bundleData` 生成、签名，请阅读 [指南 - 深入理解 - 批量转账 - data 生成](../../../guide/dive/bundle#data-生成示例)
+For `bundleData` generation, signature, please read [Guide - Dive - Bundle - Data Generate Description](../../../guide/dive/bundle#data-generate-gescription)
 
-## 返回字段
-|字段|描述|
+### Return Fields
+|Field|Description|
 |---|---|
-|everHash|everPay Swap 做市商提交的 [批量转账交易](../../../guide/dive/bundle) `everHash`|
+|everHash|The `everHash` of the [bundle transaction](../../../guide/dive/bundle) submitted by everPay Swap Market Maker|
 
-## 示例
+## Example
 ```bash
 curl --location --request POST 'https://warriors-dev.everpay.io/dex/place_order' \
 --header 'Content-Type: application/json' \
@@ -48,7 +48,7 @@ curl --location --request POST 'https://warriors-dev.everpay.io/dex/place_order'
 }'
 ```
 
-## 示例返回
+## Example return
 
 ```json
 {

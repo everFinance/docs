@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Bundle
 
-`bundle` transaction extend the `'transfer'` transaction to include external transfers for the original `'transfer'` function, as well as internal batch transfers via a specific `data` field.
+`bundle` transaction extend the `'transfer'` transaction to include external transfer for the original `'transfer'` function, as well as internal batch transfers via a specific `data` field.
 
 The `data` contains multiple internal transfer transactions and also contains the signatures of the `from` accounts for all transfer transactions in these internal transfer transactions.
 
@@ -24,9 +24,9 @@ All internal transfers in `data` must succeed, and if one fails, all internal tr
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
 |chainType|`chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**|
 |chainID|`chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**|
-|data|Specific JSON format for bundle transfer function, see below [data Generate description](#data-generate-gescription)|
+|data|Specific JSON format for bundle transfer function, see below [Data Generate Description](#data-generate-gescription)|
 
-## data Generate description
+## Data Generate Description
 
 ### `internalItem`
 `internalItem` for each internal transfer transaction.
