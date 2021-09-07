@@ -12,17 +12,17 @@ everPay has its own separate transaction format, all everPay transactions follow
 |Field|Description|
 |---|---|
 |tokenSymbol|Token Symbol|
-|action|<ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|
+|action|<ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li><li>`'bundle'` to batch execute internal transfers</li></ul>|
 |from|the current everPay account ID that signed the transaction|
-|to|<ul><li>When transferring, `to` is another everPay account ID</li><li>When withdrawing, `to` is the blockchain wallet address to withdraw to</li></ul>|
-|amount|Transfer amount or withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
+|to|<ul><li>When transferring, `to` is another everPay account ID</li><li>When withdrawing, `to` is the blockchain wallet address to withdraw to</li><li>When using bundle transaction, `to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID (including the current everPay account ID of the signed transaction)</li></ul>|
+|amount|Type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000<ul><li>When transferring, `amount` is the transfer amount</li><li>When withdrawing, `amount` is the withdrawal amount</li><li>When using bundle transaction, `amount` is the external transfer amount</li></ul>|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
 |feeRecipient|Receive everPay account ID for handling fees, via [info API](../../sdk/server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
 |tokenID|via [info API](../../sdk/server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|<ul><li>When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**</li><li>When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.</li></ul>|
-|chainID|<ul><li>When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**</li><li>When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethereum blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also needs to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethereum blockchain network ID</li></ul>|
-|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in. Developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description)</li></ul>|
+|chainType|<ul><li>When transferring, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**</li><li>When withdrawing, `chainType` is the name of the blockchain to be withdrawn to. For example, AR Token supports withdrawing to both Arweave and ethereum blockchains, the token `chainType` field is `arweave,ethereum`, the developer needs to specify which blockchain to withdraw to, `arweave` is Arweave blockchain, `ethereum` is ethereum blockchain.</li><li>When using bundle transaction, `chainType` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainType` **consistent**</li></ul>|
+|chainID|<ul><li>When transferring, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**</li><li>When withdrawing, `chainID` is the blockchain network ID to withdraw to, for example, AR Token supports withdrawing to Arweave and Ethereum blockchain, the token `chainID` field is `0,1`, the developer specify which blockchain to withdraw to, `chainID` also needs to use the corresponding value, `0` is Arweave blockchain network ID, `1` is Ethereum blockchain network ID</li><li>When using bundle transaction, `chainID` must be the same as [info API](../../sdk/server-api/basic-api/info), the token `chainID` **consistent**</li></ul>|
+|data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in. Developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description), [Bundle](./bundle)|
 |version|transaction version `'v1'`|
 
 ### Example of an ethereum account
@@ -65,7 +65,7 @@ const everpayTxWithoutSig = {
 
 ## messageData
 Generated by Schema in a uniform format for.
-* Ethereum personalSign signature generation
+* Ethereum `personalSign` signature generation
 * Generate `everHash`
 
 ### Generation rules
@@ -127,7 +127,7 @@ version:v1`
 ```
 
 ## everHash
-Each everPay transaction has a uniquely identified `everHash`. The `everHash` is generated by `messageData` using the Ethereum `hashPersonalMessage`.
+Each everPay transaction has a uniquely identified `everHash`. The `personalMessageHash` generated by `messageData` using the Ethereum `hashPersonalMessage`, which is `everHash`
 
 ### Generation rules
 
@@ -140,10 +140,10 @@ const hashPersonalMessage = (message: Buffer): Buffer => {
   )
   return keccak256(Buffer.concat([prefix, message]))
 }
-const getEverHash = (messageData: string): string => {
-  const personalMsgHash = hashPersonalMessage(Buffer.from(messageData))
-  const everHash = `0x${personalMsgHash.toString('hex')}`
-  return everHash
+const getPersonalMessageHash = (messageData: string): string => {
+  const personalMsgBuf = hashPersonalMessage(Buffer.from(messageData))
+  const personalMessageHash = `0x${personalMsgBuf.toString('hex')}`
+  return personalMessageHash
 }
 ```
 
@@ -196,14 +196,14 @@ const signature = await signMessageAsync(ethConnectedSigner, messageData)
 Pseudocode reference source: [everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
 
 ### Arweave Account Model
-The `Uint8Array` (or `Buffer`) corresponding to `everHash` is signed by arweave RSA-PSS sha256, and the signature result is then `base64` converted by `Arweave.utils.bufferTob64Url` (which differs from other base64 conversion functions), after conversion, and splice with `,{{arOwner}}`, we get `signature`
+A `personalMessageHash` generated by `messageData` using the Ethereum `hashPersonalMessage`. And the `Uint8Array` (or `Buffer`) corresponding to `personalMessageHash` is signed by arweave RSA-PSS sha256, and the signature result is then `base64` converted by `Arweave.utils.bufferTob64Url` (which differs from other base64 conversion functions), after conversion, and splice with `,{{arOwner}}`, we get `signature`
 
 #### Generate signature with everPay Tx via arweave.js
 ```ts
 // RSA-PSS sha256
-const signMessageAsync = async (arJWK: ArJWK, address: string, everHash: string): Promise<string> => {
+const signMessageAsync = async (arJWK: ArJWK, address: string, personalMessageHash: string): Promise<string> => {
   const arweave = Arweave.init(options)
-  const everHashBuffer: Buffer = Buffer.from(everHash.slice(2), 'hex')
+  const personalMessageHashBuffer: Buffer = Buffer.from(personalMessageHash.slice(2), 'hex')
   let arOwner = ''
   let signatureB64url = ''
   // web
@@ -232,7 +232,7 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, everHash: string)
 
     try {
       const signature = await (window.arweaveWallet as any).signature(
-        everHashBuffer,
+        personalMessageHashBuffer,
         algorithm
       )
       const buf = new Uint8Array(Object.values(signature))
@@ -243,7 +243,7 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, everHash: string)
 
   // node
   } else {
-    const buf = await arweave.crypto.sign(arJWK, everHashBuffer)
+    const buf = await arweave.crypto.sign(arJWK, personalMessageHashBuffer)
     arOwner = arJWK.n
     signatureB64url = Arweave.utils.bufferTob64Url(buf)
   }
@@ -291,20 +291,20 @@ const hashPersonalMessage = function (message: Buffer): Buffer {
   return keccak256(Buffer.concat([prefix, message]))
 }
 
-const getEverHash = (messageData: string): string => {
-  const personalMsgHash = hashPersonalMessage(Buffer.from(messageData))
-  const everHash = `0x${personalMsgHash.toString('hex')}`
-  return everHash
+const getPersonalMessageHash = (messageData: string): string => {
+  const personalMsgBuf = hashPersonalMessage(Buffer.from(messageData))
+  const personalMessageHash = `0x${personalMsgBuf.toString('hex')}`
+  return personalMessageHash
 }
-const everHash = getEverHash(messageData)
-const signature = await signMessageAsync(config.arJWK as ArJWK, everHash)
+const personalMessageHash = getPersonalMessageHash(messageData)
+const signature = await signMessageAsync(config.arJWK as ArJWK, personalMessageHash)
 ```
 
 Pseudocode reference source: [everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
 
 :::danger
 * For ethereum `personalSign` signature is `messageData` string, and the result is the `signature`;
-* For arweave RSA-PSS sha256 signature is `everHash` Buffer, the result needs to be further converted by `Arweave.utils.bufferTob64Url` to get `base64 string` and spliced with `,{{arOwner}}`, which is `signature`.
+* For arweave RSA-PSS sha256 signature is `personalMessageHash` Buffer, the result needs to be further converted by `Arweave.utils.bufferTob64Url` to get `base64 string` and spliced with `,{{arOwner}}`, which is `signature`.
 :::
 
 ## Signature Checksum
@@ -371,8 +371,9 @@ everPay adds some fields to the [`Schema`](#schema) definition field and `sig` s
 |supplementary fields|description|
 |---|---|
 |everHash|each everPay transaction corresponds to a unique `everHash`, `everHash` is generated with reference to [everHash](#everhash)|
-|timestamp| unix milliseconds timestamp of everPay transaction received by everPay server|
+|timestamp|<ul><li>When the everPay transaction is recorded on the Arweave blockchain, this `timestamp` represents the unix milliseconds of the everPay transaction being recorded on the Arweave blockchain</li><li>If the everPay transaction is not recorded on the Arweave blockchain, `timestamp` is `0`</li></ul>|
 |status|<ul><li>`confirmed` means the everPay transaction has been confirmed by everPay's backend signature verification, but not yet recorded on the Arweave blockchain</li><li>`packaged` means the everPay transaction has been recorded on the Arweave blockchain</li></ul>|
+|internalStatus|The field returns a specific error message only if internal transfers fails in the bundle transaction. The value is `success` for successful internal transfers, withdrawals and recharges|
 |id|<ul><li>When the everPay transaction is recorded on the Arweave blockchain, the `id` corresponds to the hash of the transaction recorded on Arweave</li><li>If the everPay transaction is not recorded on the Arweave blockchain, the `id` is an empty string</li></ul>|
 |targetChainTxHash|<ul><li>The corresponding blockchain `txHash` for deposits and withdrawals (not quick withdrawals)</li><li>If the withdrawal (Not quick withdrawals) is not completed or is an everPay transfer transaction, this `targetChainTxHash` will be an empty string</li></ul>|
 |express|Fields added for quick withdrawals, `express: {"chainTxHash": "", "withdrawFee": "", "refundEverHash": "", "err": ""}`<ul><li>`chainTxHash` represents the packaged blockchain `txHash` after a successful quick withdrawal</li><li>`withdrawFee` represents the actual fee charged</li><li>`refundEverHash` represents the everPay transaction `everHash` that was refunded by the market maker after a failed quick withdrawal</li><li>`err` represents the reason for the failed quick withdrawal</li></ul>|
