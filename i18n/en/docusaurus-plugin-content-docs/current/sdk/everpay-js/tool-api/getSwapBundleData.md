@@ -13,7 +13,7 @@ Generate [`bundleData`](../types#bundledata) based on [`SwapOrder`](../types#swa
 |Field|Description|
 |---|---|
 |tokenIn|Token `symbol`, which is everPay Swap pool received (i.e. assets transferred out by users)|
-|tokenOut|Token `symbol`, which transferred out from the everPay Swap pool (i.e., assets received by the user)|
+|tokenOut|Token `symbol`, which transferred out of the everPay Swap pool (i.e., assets received by the user)|
 |tokenInAmount|The amount of assets received by the everPay Swap pool (i.e., assets transferred out by the user). Not uint type, which should be processed by `decimals`|
 |tokenOutAmount|The amount of assets transferred out of the everPay Swap pool (i.e. assets received by the user). Not uint type, which should be processed by `decimals`|
 
