@@ -6,7 +6,7 @@ sidebar_position: 10
 # swapInfo
 
 ## Function
-Get everPay Swap market maker everPay account, list of supported tokens, fees
+Get everPays Swap market maker everPay account, list of supported tokens, fees
 
 ## Parameter
 None
