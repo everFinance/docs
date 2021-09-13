@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # txsByAccount
@@ -15,7 +15,7 @@ Get transactions corresponding to `account` on everPay by paging
 |account|Optional, default is the `account` parameter passed when the Everpay instance is created|
 |page|Optional, default is 1|
 |symbol|Optional|
-|action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit</li><li>`'transfer'` to transfer</li><li>`'burn'` to withdraw</li></ul>|
+|action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` for deposit transactions</li><li>`'transfer'` for transfer transactions</li><li>`'burn'` for withdraw transactions</li><li>`'bundle'` for bundle transactions</li></ul>|
 
 ## Return
 ### Return Type
