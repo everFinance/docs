@@ -39,7 +39,7 @@
   },
   "theme.blog.paginator.olderEntries": {
     "message": "Older Entries",
-    "description": "The label used to navigate to the older blog posts page (next page)"
+    "description": "The label is used to navigate to the older blog posts page (next page)"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Close",
@@ -79,7 +79,7 @@
   },
   "theme.blog.post.readingTime.plurals": {
     "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language supports (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.tags.tagsListLabel": {
     "message": "Tags:",
@@ -123,26 +123,26 @@
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
+    "description": "The title attribute for the collapse button of the doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
+    "description": "The title attribute for the collapse button of the doc sidebar"
   },
   "theme.docs.sidebar.responsiveCloseButtonLabel": {
     "message": "Close menu",
-    "description": "The ARIA label for close button of mobile doc sidebar"
+    "description": "The ARIA label for close button of the mobile doc sidebar"
   },
   "theme.docs.sidebar.responsiveOpenButtonLabel": {
     "message": "Open menu",
-    "description": "The ARIA label for open button of mobile doc sidebar"
+    "description": "The ARIA label for the open button of the mobile doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
     "message": "Sidebar navigation",
-    "description": "The ARIA label for documentation menu"
+    "description": "The ARIA label for the documentation menu"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "message": "This is the unreleased documentation for the {siteTitle} {versionLabel} version.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
@@ -151,7 +151,7 @@
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
     "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
-    "description": "The label userd to tell the user that he's browsing an unmaintained doc version"
+    "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "latest version",
@@ -171,7 +171,7 @@
   },
   "theme.lastUpdated.byUser": {
     "message": " by {user}",
-    "description": "The words used to describe by who the page has been last updated"
+    "description": "The words used to describe by who the page was last updated by"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
     "message": "Last updated{atDate}{byUser}",
@@ -179,6 +179,70 @@
   },
   "theme.common.skipToMainContent": {
     "message": "Skip to main content",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to the main content with the keyboards tab/enter navigation"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "One document found|{count} documents found",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Search results for \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Search the documentation",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Type your search here",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Search by Algolia",
+    "description": "The ARIA label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "No results were found",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Fetching new results...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "The ARIA label and placeholder for search button"
   }
 }

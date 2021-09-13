@@ -99,6 +99,56 @@ export interface ExpressInfo {
 export enum EverpayAction {
   transfer = 'transfer',
   withdraw = 'burn',
+  bundle = 'bundle'
+}
+```
+
+## SwapInfo
+```ts
+export interface SwapInfo {
+  fee: string
+  address: string
+  tokenList: string[]
+}
+```
+
+## InternalTransferItem
+```ts
+export interface InternalTransferItem {
+  symbol: string
+  from: string
+  to: string
+  amount: string
+}
+```
+
+## BundleItem
+```ts
+export interface BundleItem {
+  amount: string
+  chainID: string
+  from: string
+  to: string
+  tag: string
+}
+```
+
+## BundleData
+```ts
+export interface BundleData {
+  items: BundleItem[]
+  expiration: number
+  salt: string
+  version: string
+}
+```
+
+## BundleDataWithSigs
+```ts
+export interface BundleDataWithSigs extends BundleData {
+  sigs: {
+    [account: string]: string
+  }
 }
 ```
 
@@ -134,7 +184,8 @@ export interface EverpayTx extends EverpayTxWithoutSig {
 export enum EverpayActionWithDeposit {
   transfer = 'transfer',
   withdraw = 'burn',
-  deposit = 'mint'
+  deposit = 'mint',
+  bundle = 'bundle'
 }
 ```
 
@@ -241,6 +292,18 @@ export interface WithdrawParams {
 }
 ```
 
+## BundleParams
+```ts
+export interface BundleParams {
+  symbol: string
+  amount: string
+  data: {
+    bundle: BundleDataWithSigs
+  }
+  to: string
+}
+```
+
 ## TxsParams
 ```ts
 export interface TxsParams {
@@ -260,14 +323,40 @@ export interface TxsByAccountParams {
 }
 ```
 
-## TransferOrWithdrawResult
+## SendEverpayTxResult
 ```ts
 // Note: This type does not have an export
 interface PostEverpayTxResult {
   status: string
 }
-export interface TransferOrWithdrawResult extends PostEverpayTxResult {
+export interface SendEverpayTxResult extends PostEverpayTxResult {
   everpayTx: EverpayTx
   everHash: string
+}
+```
+
+## SwapPriceParams
+```ts
+export interface SwapPriceParams {
+  tokenIn: string
+  tokenOut: string
+  tokenInAmount?: string
+  tokenOutAmount?: string
+}
+```
+## SwapOrder
+```ts
+export interface SwapOrder {
+  tokenIn: string
+  tokenOut: string
+  tokenInAmount: string
+  tokenOutAmount: string
+}
+```
+## SwapPriceResult
+```ts
+export interface SwapPriceResult extends SwapOrder {
+  spreadPercent: string
+  indicativePrice: string
 }
 ```
