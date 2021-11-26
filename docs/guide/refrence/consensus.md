@@ -4,6 +4,6 @@ sidebar_position: 2
 
 # 共识变迁
 
-[从共识机制谈起，探讨区块链应用范式的变迁](https://www.chainnews.com/articles/071093360415.htm)
+[从共识机制谈起，探讨区块链应用范式的变迁](https://medium.com/everfinance/evolution-of-the-blockchain-application-model-along-with-changing-consensus-755e4ae407a7)
 
 <!-- TODO: -->
