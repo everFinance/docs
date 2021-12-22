@@ -58,11 +58,21 @@ export interface Token {
   id: string
   symbol: string
   decimals: number
+  chainDecimals: string
   totalSupply: string
-  burnFee: string
-  transferFee: string
   chainID: string
   chainType: ChainType | string
+}
+```
+
+## FeeItem
+```ts
+export interface FeeItem {
+  tokenTag: string
+  burnFee: string
+  transferFee: string
+  atomicBundleFee: string
+  updatedAt: string
 }
 ```
 
