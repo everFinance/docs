@@ -50,7 +50,7 @@ const everpay = new Everpay({
 
 everpay.withdraw({
   symbol: 'ar',
-  amount: '0.000012',
+  amount: '0.000010001',
   chainType: 'arweave',
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
 }).then(console.log)
@@ -63,18 +63,18 @@ everpay.withdraw({
     action: 'burn',
     from: '0x26361130d5d6E798E9319114643AF8c868412859',
     to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
-    amount: '11985000',
-    fee: '15000',
+    amount: '10001000',
+    fee: '13200000',
     feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-    nonce: '1625987836534',
+    nonce: '1640156350136',
     tokenID: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be',
     chainType: 'arweave,ethereum',
     chainID: '0,42',
     data: '{"targetChainType":"arweave"}',
     version: 'v1',
-    sig: '0x6ea1793dcdbc542f152e79ec8e498f5170e0c105c4b2115524c05e5656fd1fca4b97bfd0d95c85eecc0b889d0bbd566af7e5128cd6986064f075e01bb37920d31c'
+    sig: '0x17a4d8f1570933839a9a188bf77d378a354777dabecd7bd27a22ef516c2f85bb731c07cb59174fdcf541623e55f70dfc70031de4d319f3a26d84f1691a7208ea1c'
   },
-  everHash: '0x3762d5eee25fc6b339a790ee192d7db56f152f4a75825d792e1c0f8ece3653d0'
+  everHash: '0x474399ccd4ab9432a72f79107b2fd36f0264f0cdc5d81bd5739b8b79e6ba9a13'
 }
 */
 ```
@@ -98,22 +98,22 @@ everpay.withdraw({
 {
   status: 'ok',
   everpayTx: {
-    tokenSymbol: 'USDT',
+    tokenSymbol: 'usdt',
     action: 'burn',
     from: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
     to: '0x26361130d5d6E798E9319114643AF8c868412859',
-    amount: '21000000',
-    fee: '80000000',
+    amount: '101000000',
+    fee: '32778384',
     feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-    nonce: '1629277285273',
+    nonce: '1640156915340',
     tokenID: '0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee',
     chainType: 'ethereum',
     chainID: '42',
     data: '',
     version: 'v1',
-    sig: 'E-KW8bYaBSwn8ipyfChDfqm_dqWh9B8MFNbRYyFSGWeTKMr1pD2wITdJLor2J6fe_puyDZOAcN10ocZ-P-KGFKHqP4gZrosrSM_9UTkdeuA1doLq1VEJ6732gwmS1Forn2kj-9GqFVeWdjtuw29XaRMn37SoXwuqycNn1Cd0e1B_5KPhXyikjACXp1FgyGh8FZviuBKMbI9KM_WTHTrFDj-bTg1lT9OSvQHEmoZclrW7VBIeXbhwAK4Qy2iBa38_3kTeFdTppSYJgZxQpPhsr7UDDgB9oWfPetNEwlf8-cSDNoK_ZaN5EN6HVwhtpIBRguuUusGUIEc5hTiLdcGehrCoVRaPqkwjzWmWKGU57n72EbZURdm5O8wAEInmAK7M9pesw--7BIxfjmEgzbPR-JFKFJBsj4LEOool2AvX78Y0JBy6wbqfkZnV8WqTmZDv7I3848zyKk8viztn7GMk1bK5BZov2kfrWg2oDNDvi3L0qraYtMDAiAn7-TD7wMGLWzIkcp9ZClk-zh0ar-IHRT3LuatB5-EZW6gf8Yw7rnz8YYxQS2rQJKSQ44kQbuKDwk2oF2xvjRkzUGY3AqQDwkY8RLurwV8Eu5LjWPWznQQYOfKHwts2l4SxgtPYkGzn679-ERGAWkSSXNGVwqK9uLBgcH1CxhrPZ9eioV1fxws,odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc'
+    sig: 'bXbDJQR86kvau-pm9ub19hckF6C1Z8BBksaZWztrakJNKB_YxcV8gKXvX2kVTtvxYX4gxyImMkMacNG6q1ATjVEHZ-RLGH0W4PTZPJPrsUyspPlmFYQtFS2CX5sK_3eLTFE3O2P4QVep1tZYsD275Mdk0LzE8hVTJ7mIQGO2KEIFxhaipYj8hvPgMA3y9LlhG_634yTt08iUfbKTB2_E54BZvBzY4RX-Oc5CIuc07OOS_wzbNv4aZbEDfV5k31d1f5wuapRsZVG3yzs7aZHLawbugY08BytVG7QWKM55ZZsOIW8R8EuJI-LdmqXlMsjpJVWNDSAjKLJeyr0-fBpZGcF6ZHE5CRMXI6iRud0JKae1oq0ZO4w-rKvuBMeuoMda8iMOtvhFviKeGgFJ3npjilKHSWptMGblLtp5W3cn7WKOSp77imyLyLI0j8MbuITzeqOumLVwNqlwJiigfP6HooibC8dm42tMDzQO2mwlp8H1JkttgUl6AYXq_E_Ndk4xuv3Q0aAHtO3FE1ssHkmu0P7l5QII2hMtJOoTCBbwSQwWoaxbvXdzkTF802V981iHbtdL6LWnf0KctQdAX95nc682hHWFWj3KXaOkkRrEJJ5v5lpaFnXP6uM1-gQYK8MDmkVOnjNUNW3MApBXOk0uxdHTPgfnanmV4AOuBSll-Ck,odtNk97a4PARR0I8g3kQpzlFVmPg-udyjfl81fbTioyP2pEw5tP5A1-FVqR-QFFPskW-j7yAze5usYNWHEir7oVQ9d9bbkcZIDEPqwSTO1JoD1BKXeeBK0xsmiSgxeY7uuRXWdhXREhlmIMsV8ObakEeXdbbxbs89XaZHBuES7boASrRVDXRz_mhMu6u_58OdLeMwR3I1BCH6nphNGVOehA7GOOqEBvtesBset0bNaLCb0JpSg5ZW_0AGLP-XydzE3IPLLx4NQEEJY21y8fChxYM4jntI78l5hojp9NlmS69EXlj0PoMjsbaWaz9WtnZaMAbnaOGAHhv8Y_TNmBI0FHpqHaGPP906Mnrgdm3tl2L40EX-Q6-liNVkB56CmPxXzSesu-4x5LLYxQ-aX3W6Hj7RCDTacxqUJHzOrhJqXSx6Jx0t8CwyfReMgVv4p5t1C3OZ8yYbJ_H3LdkeriVniaC5jQdMyIJ6QBMzr1XdXIw9WuEG2kCIYtvOp2qDuu9o2SY-9W4Yv7VWRDfWO38xxR4ZO65MMAdZxeaZ4w8sK_owH46Wm0XoT3Al-LPypaeijWqlHEu4R8c2ersD3xkDvXC_lNtaQw_qyfI3UEH5fWupY4zhZeDGkvXQh32Fv4CxlZL58iUHv9SvR7p5LgBCC3AVUbn7Sqc4xPUCZMj-Tc'
   },
-  everHash: '0xe9f246edd77aa7bb3a1ac66a7fd25716b5f17fa7050e8076e65570cfc8a43c96'
+  everHash: '0x1a31b394f471c74f588810201a29bd66fb53a9b6f9518512210817a72655238b'
 }
 */
 ```
