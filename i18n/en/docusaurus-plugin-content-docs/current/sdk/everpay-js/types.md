@@ -65,6 +65,17 @@ export interface Token {
 }
 ```
 
+## FeeItem
+```ts
+export interface FeeItem {
+  tokenTag: string
+  burnFee: string
+  transferFee: string
+  atomicBundleFee: string
+  updatedAt: string
+}
+```
+
 ## EverpayInfo
 ```ts
 export interface EverpayInfo {
