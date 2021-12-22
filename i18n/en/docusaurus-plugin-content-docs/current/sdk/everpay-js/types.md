@@ -58,9 +58,8 @@ export interface Token {
   id: string
   symbol: string
   decimals: number
+  chainDecimals: string
   totalSupply: string
-  burnFee: string
-  transferFee: string
   chainID: string
   chainType: ChainType | string
 }
