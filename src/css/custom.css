@@ -7,13 +7,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: rgb(239, 102, 3);
-  --ifm-color-primary-dark: rgb(235, 100, 2);
-  --ifm-color-primary-darker:rgb(224, 95, 2);
-  --ifm-color-primary-darkest:rgb(219, 92, 0);
-  --ifm-color-primary-light:rgb(245, 116, 22);
-  --ifm-color-primary-lighter:rgb(242, 130, 48);
-  --ifm-color-primary-lightest:rgb(242, 143, 70);
+  --ifm-color-primary: #5356BD;
+  --ifm-color-primary-dark: #5A5BC1;
+  --ifm-color-primary-darker: #5A5BC1;
+  --ifm-color-primary-darkest: #5A5BC1;
+  --ifm-color-primary-light: #9D9ED7;
+  --ifm-color-primary-lighter: #9D9ED7;
+  --ifm-color-primary-lightest: #9D9ED7;
   --ifm-code-font-size: 95%;
 }
 
@@ -24,6 +24,36 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+.hero {
+  background: linear-gradient(271.69deg, #9D9ED7 0%, #DDD5FF 0.01%, #9D9ED7 4.15%, rgba(233, 239, 255, 0.99) 34.34%, rgba(229, 197, 255, 0.997484) 75.32%, #FFDFEE 99.52%);
+}
+
+.hero__title,
+.hero__subtitle {
+  color: #000;
+}
+
+.featureImg_src-components-HomepageFeatures-module {
+  width: auto !important;
+  height: 200px;
+}
+
+.button.button--secondary.button--lg {
+  background: linear-gradient(98.82deg, #9B81E6 1.77%, #5356BD 95.45%);
+  color: #fff;
+}
+
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark']:root {
+  --ifm-color-primary: #9D9ED7;
+  --ifm-color-primary-dark: #9D9ED7;
+  --ifm-color-primary-darker: #9D9ED7;
+  --ifm-color-primary-darkest: #9D9ED7;
+  --ifm-color-primary-light: #DDD5FF;
+  --ifm-color-primary-lighter: #DDD5FF;
+  --ifm-color-primary-lightest: #DDD5FF;
+  --ifm-code-font-size: 95%;
 }
