@@ -3,7 +3,9 @@ sidebar_position: 3
 ---
 
 # transfer
+
 ## Function
+
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when do transfering,
 
 * Internal build [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
@@ -15,21 +17,29 @@ Developers can visit the [Guide - Dive - Transaction](../../../guide/dive/transa
 
 :::info
 Any everPay account can transfer any of its assets on everPay to other everPay accounts, regardless of whether the everPay account to be transferred is an ethereum or arweave account model. For example.
+
 * `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay account of arweave account model can transfer AR, ETH, USDT to `0x26361130d5d6E798E9319114643AF8c868412859` everPay account of ethereum account model
 * and vice versa
 :::
+
 ## Parameter
+
 [TransferParams](../types#transferparams)
 
 ## Return
+
 [SendEverpayTxResult](../types#sendeverpaytxresult)
+
 ## Example
+
 ### From ethereum account
+
 ```ts
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 
@@ -66,10 +76,12 @@ everpay.transfer({
 ```
 
 ### From arweave account
+
 ```ts
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
 })
 

@@ -5,9 +5,11 @@ sidebar_position: 1
 # getEverpayTxWithoutSig
 
 ## Function
+
 Generate everPay transaction structure
 
 ## Parameter
+
 ```js
 everpay.getEverpayTxWithoutSig(type, params)
 ```
@@ -18,6 +20,7 @@ everpay.getEverpayTxWithoutSig(type, params)
 |params|[TransferParams](../types#transferparams) or [WithdrawParams](../types#withdrawparams) or [BundleParams](../types#bundleparams)|
 
 ## Return
+
 [EverpayTxWithoutSig](../types#everpaytxwithoutSig)
 
 ## Example
@@ -27,6 +30,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 

@@ -3,6 +3,7 @@ sidebar_position: 4
 ---
 
 # withdraw
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，
@@ -25,6 +26,7 @@ sidebar_position: 4
 
 :::info
 任意 everPay 账户，均可将 everPay 上的资产，提现至 everPay 目前支持提现的区块链钱包上，例如：
+
 * 当前 everPay 上的 USDT 支持 ethereum 区块链，everPay 账户 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` 可将 USDT 提现至 ethereum 区块链钱包 `0x26361130d5d6E798E9319114643AF8c868412859` 中
 * 当前 everPay 上的 AR 支持 ethereum、arweave 区块链，everPay 账户 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo`可将 AR 提现至 arweave 区块链钱包 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` 中，也可将其提现至 ethereum 钱包 `0x26361130d5d6E798E9319114643AF8c868412859` 中。
 * 更多的代币支持**普通提现**至的区块链，可查阅 [`基础查询API - info接口`](../basic-api/info)
@@ -32,18 +34,23 @@ sidebar_position: 4
 :::
 
 ## 参数
+
 [WithdrawParams](../types#withdrawparams)
 
 ## 返回
+
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## 示例
+
 ### ethereum 账户普通提现 AR 至 arweave 钱包地址
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer,
   debug: true
 })
@@ -80,10 +87,12 @@ everpay.withdraw({
 ```
 
 ### arweave 账户普通提现 USDT 至 ethereum 钱包地址
+
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
   debug: true,
 })
@@ -118,13 +127,14 @@ everpay.withdraw({
 */
 ```
 
-
 ### ethereum 账户快速提现 USDT 至 ethereum 钱包地址
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer,
   debug: true
 })
@@ -161,10 +171,12 @@ everpay.withdraw({
 ```
 
 ### arweave 账户快速提现 USDT 至 ethereum 钱包地址
+
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
   debug: true,
 })

@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## 配置项功能
 
-此配置项用于通过 ethereum 钱包 来操作 everPay ethereum 账户模型的 账户，对该账户进行
+此配置项用于通过 ethereum/moonbeam/moonbase 钱包 来操作 everPay ethereum 账户模型的 账户，对该账户进行
 
 * 充值：使用 `ethConnectedSigner` 进行 ethereum 转账 至 everPay 多签合约地址
 * 转账：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限
@@ -27,6 +27,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 ```
@@ -42,6 +43,7 @@ const provider = new ethers.providers.InfuraProvider('kovan')
 const signer = new ethers.Wallet(privateKey, provider)
 const everpay = new Everpay({
   account: address,
+  chainType: 'ethereum',
   ethConnectedSigner: signer,
 })
 ```
@@ -51,16 +53,19 @@ const everpay = new Everpay({
 :::
 
 ## 与 arJWK 配置项的冲突
+
 `ethConnectedSigner` 用于 ethereum 账户模型的 everPay 账户操作，而 `arJWK` 用于 arweave 账户模型的 everPay 账户操作。同一个 Everpay 实例，**只能使用一个账户模型**，但开发者可以创建 多个 Everpay 实例，来进行更复杂应用的开发。
 
 ```js
 const ethEverpay = new Everpay({
   account: '0x2ca81e1253f9426c62Df68b39a22A377164eeC92',
+  chainType: 'ethereum',
   ethConnectedSigner
 })
 
 const arEverpay = new Everpay({
   account: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
+  chainType: 'arweave',
   arJWK
 })
 ```

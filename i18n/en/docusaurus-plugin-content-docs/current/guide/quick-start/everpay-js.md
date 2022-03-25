@@ -12,6 +12,7 @@ everpay-js encapsulates most of the interfaces of everPay protocol for developer
 * [ethers.js](https://docs.ethers.io/v5/) (only required when connecting with an ethereum wallet). It is recommended to use [the same version ethers.js inside the everpay-js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 ## Installation
+
 ```bash
 yarn add everpay
 
@@ -21,12 +22,12 @@ npm install everpay
 ```
 
 ## Import
+
 ```js
 import Everpay from 'everpay'
 // or
 // const Everpay = require('everpay')
 ```
-
 
 ## Initialization
 
@@ -39,6 +40,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 ```
@@ -53,6 +55,7 @@ If the developer uses Arweave wallet connection, the initialization needs to inj
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
 })
 ```
@@ -71,6 +74,7 @@ everpay.deposit({
 ```
 
 :::info
+
 * Ethereum requires 6 blocks for recharge, Arweave requires 15 blocks for recharge
 * everPay supports AR cross-chain, initialization injection `ethConnectedSigner` will call WAR (ERC20) for recharge, initialization injection `arJWK` will call AR (native) for recharge
 :::
@@ -101,4 +105,5 @@ everpay.withdraw({
 ```
 
 ## Example reference
+
 More examples can be found in [everpay-js unit test cases](https://github.com/everFinance/everpay-js/tree/main/test)

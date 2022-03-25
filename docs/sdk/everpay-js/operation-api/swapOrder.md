@@ -5,23 +5,30 @@ sidebar_position: 8
 # swapOrder
 
 ## 介绍
+
 兑换内容可阅读 [指南 - 深入理解 - 兑换](../../../guide/dive/swap) 了解更多。
+
 ## 功能
+
 传递 [`getSwapBundleData`](../tool-api/getSwapBundleData) 接口生成的 [`bundleData`](../types#bundledata)，根据 Everpay 实例创建时传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，对 `bundleData` 进行签名，内部生成 [`BundleDataWithSigs`](../types#bundledatawithsigs)，提交至 everPay Swap 服务器。
 
 ## 参数
+
 [`bundleData`](../types#bundledata)
 
 ## 返回
+
 `everHash` string
 
 ## 示例
+
 ```ts
 const provider = new ethers.providers.InfuraProvider('kovan')
 const signer = new ethers.Wallet(ethWalletHasUSDT.privateKey, provider)
 
 const everpayEthAccount = new Everpay({
   account: ethWalletHasUSDT.address,
+  chainType: 'ethereum',
   ethConnectedSigner: signer,
   debug: true
 })
