@@ -12,14 +12,13 @@ everPay 无需审计，所有交易由链下智能合约完成，所有交易记
 
 everPay 目前支持的链包括：Ethereum 和 Arweave。普通用户可以将 Ethereum 上的 ETH，ERC20 代币充值到 everPay，体验实时的支付结算。也可以将 Arweave 上的 AR 充值到 everPay，进行支付结算，甚至可以将 AR 跨链到 Ethereum，生成 Wrapped AR（WAR）。
 
-
 ## 锁仓地址
 
 everPay 的资产和链上资产 1:1 对应，Ethereum 上我们使用多签合约锁定资产，Arweave 上则使用门限签名技术锁定资产。
 
 | 区块链 | 锁仓地址                                   |
 | -------- | ------------------------------------------ |
-| Ethereum | [0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
+| Ethereum | [0x38741a69785e84399fcf7c5ad61d572f7ecb1dab](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
 | Arweave  | [dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys](https://viewblock.io/arweave/address/dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys)|
 
 ## 支持代币列表

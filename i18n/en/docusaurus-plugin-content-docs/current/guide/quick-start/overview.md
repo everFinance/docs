@@ -18,7 +18,7 @@ The assets of everPay correspond 1:1 to the assets on the chain, and we use mult
 
 | Blockchain | Locked Position Address                  |
 | -------- | ------------------------------------------ |
-| Ethereum | [0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
+| Ethereum | [0x38741a69785e84399fcf7c5ad61d572f7ecb1dab](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
 | Arweave  | [dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys](https://viewblock.io/arweave/address/dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys)|
 
 ## Supported tokens list
