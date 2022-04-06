@@ -5,12 +5,15 @@ sidebar_position: 2
 # info
 
 ## Function
+
 Get basic information about everPay service, e.g. `arLocker` represents the locked position address on arweave blockchain, `ethLocker` represents the locked position contract on etherum blockchain.
 
 ## Parameter
+
 `{{endpoint}}/info`
 
 ## Return Fields
+
 |Field|Description|
 |---|---|
 |arLocker|everPay AR native token locked position address on arweave blockchain|
@@ -23,6 +26,7 @@ Get basic information about everPay service, e.g. `arLocker` represents the lock
 |tokenList|The list of tokens supported by everPay. Single token fields, see below [Token field description](#token-field-description)|
 
 ### Token field description
+
 |Field|Description|
 |---|---|
 |tag|combined by `chainType`, `symbol`, `id` via `-`|
@@ -32,10 +36,12 @@ Get basic information about everPay service, e.g. `arLocker` represents the lock
 |totalSupply|The total amount of token assets on everPay|
 |chainType|Supported blockchains to top-ups and withdrawals, separated by `,`|
 |chainID|Supported blockchain network IDs to top-ups and withdrawals, separated by `,`|
-|burnFee|The fee should to be paid for the **everPay normal withdrawal**|
+|burnFees|The fee should to be paid for the **everPay normal withdrawal**|
 |transferFee|The fee should to be paid for the everPay transfer|
+|crossChainInfoList|Cross-Chain Information|
 
 :::danger
+
 * Ethereum addresses are case-compatible, **arweave addresses are case-incompatible**
 * everPay recommends developers to assemble [`Schema`](../../../guide/dive/transaction#schema) using the Token information returned by this info API.
 :::
@@ -47,6 +53,7 @@ curl --location --request GET 'https://api-dev.everpay.io/info'
 ```
 
 ## Example Return
+
 ```json
 {
     "arLocker": "FyINHRSrHW0teUhvJzd6R33Tl50qxLnSj8LJCP5puiI",

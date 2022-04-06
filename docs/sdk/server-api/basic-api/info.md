@@ -5,12 +5,15 @@ sidebar_position: 2
 # info
 
 ## 功能
+
 获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
 
 ## 参数
+
 `{{endpoint}}/info`
 
 ## 返回字段
+
 |字段|描述|
 |---|---|
 |arLocker|everPay AR 原生代币锁仓地址|
@@ -23,6 +26,7 @@ sidebar_position: 2
 |tokenList|everPay 支持的资产列表。单一币种字段，见如下 [Token 字段描述](#Token-字段描述)|
 
 ### Token 字段描述
+
 |字段|描述|
 |---|---|
 |tag|由 `chainType`, `symbol`, `id` 通过 `-` 组合|
@@ -33,10 +37,12 @@ sidebar_position: 2
 |totalSupply|everPay 上，Token 资产总量|
 |chainType|Token 所支持的区块链，如支持多个区块链充值提现，以 `,` 隔开|
 |chainID|Token 所支持的区块链网络 ID，如支持多个区块链充值提现，以 `,` 隔开|
-|burnFee|**普通提现**该 Token 需要支付的手续费|
+|burnFees|**普通提现**该 Token 需要支付的手续费|
 |transferFee|everPay 转账该 Token 需要支付的手续费|
+|crossChainInfoList|跨链信息|
 
 :::danger
+
 * 以太坊地址大小写兼容，**Arweave 地址，大小写不兼容**
 * everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/transaction#schema)
 :::
@@ -48,6 +54,7 @@ curl --location --request GET 'https://api-dev.everpay.io/info'
 ```
 
 ## 示例返回
+
 ```json
 {
     "arLocker": "FyINHRSrHW0teUhvJzd6R33Tl50qxLnSj8LJCP5puiI",
