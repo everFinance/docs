@@ -52,16 +52,29 @@ export interface Config {
 
 `Signer` is sourced from [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
 
+## CrossChainInfo
+```ts
+export interface CrossChainInfo {
+  targetChainId: string
+  targetChainType: ChainType
+  targetDecimals: number
+  targetTokenId: string
+}
+```
+
 ## Token
 ```ts
 export interface Token {
+  tag: string
   id: string
   symbol: string
   decimals: number
-  chainDecimals: string
   totalSupply: string
   chainID: string
   chainType: ChainType | string
+  crossChainInfoList: {
+    [propname: string]: CrossChainInfo
+  }
 }
 ```
 
@@ -69,7 +82,9 @@ export interface Token {
 ```ts
 export interface FeeItem {
   tokenTag: string
-  burnFee: string
+  burnFeeMap: {
+    [propname: string]: string
+  }
   transferFee: string
   atomicBundleFee: string
   updatedAt: string

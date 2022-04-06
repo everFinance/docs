@@ -14,7 +14,7 @@ sidebar_position: 5
 |字段|描述|
 |---|---|
 |tokenTag|由 [Token](./info#token-字段描述) `chainType`, `symbol`, `id` 通过 `-` 组合|
-|burnFee|`withdraw` 手续费，如果该币种支持多条链提现，以 `,` 分隔开不同的链的提现手续费|
+|burnFeeMap|`withdraw` 手续费|
 |transferFee| `transfer` 手续费|
 |atomicBundleFee| `bundle` 手续费|
 
@@ -27,55 +27,81 @@ curl --location --request GET 'https://api-dev.everpay.io/fees'
 ## 示例返回
 ```json
 {
-  "fees": [
-    {
-      "tokenTag": "arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
-      "burnFee": "13200000,12000000",
-      "transferFee": "0",
-      "atomicBundleFee": "0",
-      "updatedAt": "2021-12-20T02:16:41.145Z",
-      "manualSet": true
-    },
-    {
-      "tokenTag": "arweave,ethereum-vrt-usjm4PCxUd5mtaon7zc97-dt-3qf67yPyqgzLnLqk5A,0x5adea0d9af164f371a79ed7243bd4fbaae1b79be",
-      "burnFee": "13200000000000000,12000000000000000",
-      "transferFee": "0",
-      "atomicBundleFee": "0",
-      "updatedAt": "2021-11-17T09:54:08.487Z",
-      "manualSet": true
-    },
-    {
-      "tokenTag": "ethereum-eth-0x0000000000000000000000000000000000000000",
-      "burnFee": "9360000000000000",
-      "transferFee": "0",
-      "atomicBundleFee": "0",
-      "updatedAt": "2021-12-22T03:52:19.729Z",
-      "manualSet": false
-    },
-    {
-      "tokenTag": "ethereum-usdt-0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee",
-      "burnFee": "37982731",
-      "transferFee": "0",
-      "atomicBundleFee": "0",
-      "updatedAt": "2021-12-22T03:52:19.707Z",
-      "manualSet": false
-    },
-    {
-      "tokenTag": "ethereum-usdc-0xb7a4f3e9097c08da09517b5ab877f7a917224ede",
-      "burnFee": "37996024",
-      "transferFee": "0",
-      "atomicBundleFee": "0",
-      "updatedAt": "2021-12-22T03:52:19.714Z",
-      "manualSet": false
-    },
-    {
-      "tokenTag": "ethereum-dai-0xc4375b7de8af5a38a93548eb8453a498222c4ff2",
-      "burnFee": "37992985534557234840",
-      "transferFee": "0",
-      "atomicBundleFee": "0",
-      "updatedAt": "2021-12-22T03:52:19.722Z",
-      "manualSet": false
-    }
-  ]
+    "fees": [
+        {
+            "tokenTag": "arweave-pia-n05LTiuWcAYjizXAu-ghegaWjL89anZ6VdvuHcU6dno",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "arweave": "0"
+            }
+        },
+        {
+            "tokenTag": "arweave-vrt-usjm4PCxUd5mtaon7zc97-dt-3qf67yPyqgzLnLqk5A",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "arweave": "113283016595811720",
+                "ethereum": "1200000000000000"
+            }
+        },
+        {
+            "tokenTag": "arweave-xyz-mzvUgNc8YFk0w5K5H7c8pyT-FC5Y_ba0r7_8766Kx74",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "arweave": "9062641327664880"
+            }
+        },
+        {
+            "tokenTag": "ethereum-dai-0xc4375b7de8af5a38a93548eb8453a498222c4ff2",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "ethereum": "8863368273654731160"
+            }
+        },
+        {
+            "tokenTag": "ethereum-eth-0x0000000000000000000000000000000000000000",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "ethereum": "3432000000000000"
+            }
+        },
+        {
+            "tokenTag": "ethereum-usdc-0xb7a4f3e9097c08da09517b5ab877f7a917224ede",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "ethereum": "8864697"
+            }
+        },
+        {
+            "tokenTag": "ethereum-usdt-0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "ethereum": "8861595"
+            }
+        },
+        {
+            "tokenTag": "arweave-ardrive--8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "arweave": "6796980995748720"
+            }
+        },
+        {
+            "tokenTag": "arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
+            "transferFee": "0",
+            "atomicBundleFee": "0",
+            "burnFeeMap": {
+                "arweave": "2265886830",
+                "ethereum": "120000000"
+            }
+        }
+    ]
 }
 ```
