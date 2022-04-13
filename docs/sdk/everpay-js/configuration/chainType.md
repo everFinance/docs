@@ -10,7 +10,7 @@ everPay 支持 ethereum evm 兼容链。充值时，使用对应链的币种进�
 
 ## 配置项类型
 
-当前支持 `ethereum`, `moonbase`, `moonbeam`, `arweave`
+当前支持 `ethereum`, `arweave`, `moon`
 
 ## moonbase 示例
 
@@ -25,7 +25,7 @@ const signer = new ethers.Wallet(ethWalletHasUSDT.privateKey, provider)
 
 const everpay = new Everpay({
   account: ethWalletHasUSDT.address,
-  chainType: 'moonbase',
+  chainType: 'moon',
   ethConnectedSigner: signer,
   debug: true
 })

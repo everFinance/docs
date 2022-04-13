@@ -10,7 +10,7 @@ everPay supports the ethereum evm compatible chain. To top up, use the coins of 
 
 ## Configuration Type
 
-Currently support `ethereum`, `moonbase`, `moonbeam`, `arweave`
+Currently support `ethereum`, `arweave`, `moon`
 
 ## moonbase Example
 
@@ -25,7 +25,7 @@ const signer = new ethers.Wallet(ethWalletHasUSDT.privateKey, provider)
 
 const everpay = new Everpay({
   account: ethWalletHasUSDT.address,
-  chainType: 'moonbase',
+  chainType: 'moon',
   ethConnectedSigner: signer,
   debug: true
 })
