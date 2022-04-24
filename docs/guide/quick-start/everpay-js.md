@@ -12,6 +12,7 @@ everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可
 * [ethers.js](https://docs.ethers.io/v5/)（只有在使用以太坊钱包连接时需要）。推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 ## 安装
+
 ```bash
 yarn add everpay
 
@@ -21,12 +22,12 @@ npm install everpay
 ```
 
 ## 引入
+
 ```js
 import Everpay from 'everpay'
 // or
 // const Everpay = require('everpay')
 ```
-
 
 ## 初始化
 
@@ -39,26 +40,27 @@ const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 ```
 
 `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner)。
 
-
 ### 使用 Arweave 钱包连接
+
 初始化需要注入 `arJWK`，当使用浏览器 [ArConnect](https://arconnect.io/) 钱包时，注入 `arJWK: 'use_wallet'` 即可。
 
 ```ts
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
 })
 ```
 
 `arJWK` 也支持私钥格式，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
-
 
 ## 充值
 
@@ -72,6 +74,7 @@ everpay.deposit({
 ```
 
 :::info
+
 * Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块
 * everPay 支持 AR 跨链，初始化注入 `ethConnectedSigner` 则充值调用的是 WAR（ERC20），初始化注入 `arJWK` 则充值调用的是 AR（native）
 :::
@@ -102,4 +105,5 @@ everpay.withdraw({
 ```
 
 ## 示例参考
+
 更多示例可参考 [everpay-js 单元测试用例](https://github.com/everFinance/everpay-js/tree/main/test)

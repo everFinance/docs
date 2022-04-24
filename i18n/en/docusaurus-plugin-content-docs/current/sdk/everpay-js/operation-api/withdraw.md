@@ -3,6 +3,7 @@ sidebar_position: 4
 ---
 
 # withdraw
+
 ## Function
 
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created,
@@ -23,28 +24,33 @@ Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the
   * Market maker transfers the corresponding amount (after fees) of asset tokens to the user's withdrawal wallet address via native blockchain transfer
   * For more information, please read [Guide - Dive - Withdraw - Quick Withdrawal](../../../guide/dive/withdraw#quick-withdrawal)
 
-
 :::info
 Any everPay account can withdraw assets on everPay to blockchain wallets that everPay currently supported, for example
+
 * USDT on everPay currently supports ethereum blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw USDT to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`
-* The current AR on everPay supports ethereum, arweave blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw AR to arweave wallet ` 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` and also to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`.
+* The current AR on everPay supports ethereum, arweave blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw AR to arweave wallet `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` and also to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`.
 * For more blockchains that tokens are supported for withdrawal to, see [Basic api - info](../basic-api/info)
 * For more blockchains that tokens are supported for quick withdrawal to, see [Basic api - expressInfo](../basic-api/expressinfo)
 :::
 
 ## Parameter
+
 [WithdrawParams](../types#withdrawparams)
 
 ## Return
+
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## Example
+
 ### ethereum account withdraw AR to arweave wallet address
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer,
   debug: true
 })
@@ -81,10 +87,12 @@ everpay.withdraw({
 ```
 
 ### arweave account withdraw USDT to ethereum wallet address
+
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
   debug: true,
 })
@@ -120,11 +128,13 @@ everpay.withdraw({
 ```
 
 ### ethereum account quick withdraw USDT to ethereum wallet address
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer,
   debug: true
 })
@@ -161,10 +171,12 @@ everpay.withdraw({
 ```
 
 ### arweave account quick withdraw USDT to ethereum wallet address
+
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
   debug: true,
 })

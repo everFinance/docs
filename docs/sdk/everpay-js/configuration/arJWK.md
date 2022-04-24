@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # arJWK
@@ -13,6 +13,7 @@ sidebar_position: 5
 * 提现：使用 `arJWK` 进行 arweave `RSA-PSS SHA-256` 签名，来确保该 everPay 账户的操作权限
 
 ## 配置项类型
+
 everpay-js 集成了 [arweave-js](https://github.com/ArweaveTeam/arweave-js) 用于 arweave 签名、发送交易。
 
 此配置项类型
@@ -24,6 +25,7 @@ export type ArJWK = JWKInterface | 'use_wallet'
 使用 [arweave-js](https://github.com/ArweaveTeam/arweave-js) `JWKInterface` 作为其中之一的同时，也使用了一个 `'use_wallet'` 字符串作为参数，用于适配 Chrome 浏览器 arweave 插件钱包 [arconnect](https://arconnect.io/)（一个类似 MetaMask 的钱包工具）。
 
 ## 如何配置
+
 ### JWKInterface 方式
 
 参考：[arweave Docs - Sample JWK](https://docs.arweave.org/developers/server/http-api#sample-jwk)
@@ -46,6 +48,7 @@ const arJWK = {
 
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: arJWK
 })
 ```
@@ -55,12 +58,14 @@ const everpay = new Everpay({
 :::
 
 ### 浏览器 + arconnect
+
 当用户 浏览器安装了 [arconnect](https://arconnect.io/) 后，可以使用 传递 `arJWK: 'use_wallet'` 来指定使用 [arconnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
 
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
 })
 ```

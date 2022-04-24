@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # arJWK
@@ -13,6 +13,7 @@ This configuration item is used to operate the everPay arweave account model acc
 * withdraw: use `arJWK` to call arweave `RSA-PSS SHA-256` sign to secure access to the everPay account
 
 ## Configuration item function
+
 everpay-js integrates with [arweave-js](https://github.com/ArweaveTeam/arweave-js) for signing and sending transactions with arweave.
 
 Configuration item type
@@ -24,6 +25,7 @@ export type ArJWK = JWKInterface | 'use_wallet'
 Uses [arweave-js](https://github.com/ArweaveTeam/arweave-js) `JWKInterface` as one of the type, and with a `'use_wallet'` string as a parameter for adapting Chrome arweave Plugin wallet [arconnect](https://arconnect.io/) (a MetaMask-like wallet tool).
 
 ## How to configure
+
 ### JWKInterface mode
 
 Reference from [arweave Docs - Sample JWK](https://docs.arweave.org/developers/server/http-api#sample-jwk)
@@ -46,6 +48,7 @@ const arJWK = {
 
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: arJWK
 })
 ```
@@ -55,12 +58,14 @@ This method passes the private key explicitly in the code, which is a security r
 :::
 
 ### Browser + arconnect
+
 Once [arconnect](https://arconnect.io/) is installed in the user's browser, you can use the pass `arJWK: 'use_wallet'` to specify the use of [arconnect](https://arconnect.io/) for arweave transfers (corresponding to everPay deposit), and signature (for everPay transfer and withdraw) operations.
 
 ```js
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
 })
 ```

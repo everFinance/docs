@@ -3,27 +3,35 @@ sidebar_position: 2
 ---
 
 # deposit
+
 ## Function
 
 Call the corresponding (plugin) wallet transfer function to deposit to the everPay account according to the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created
 
 ## Parameter
+
 [DepositParams](../types#depositparams)
 
 ## Return
+
 ### ethereum wallet
+
 When deposit with an ethereum wallet (using the `ethConnectedSigner` configuration) returns [EthereumTransaction](../types#ethereumtransaction)
 
 ### arweave wallet
+
 When deposit with an arweave wallet (using the `arJWK` configuration) returns [ArweaveTransaction](../types#arweavetransaction)
 
 ## Example
+
 ### ethereum wallet
+
 ```js
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
   account: window.ethereum.selectedAddress,
+  chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 
@@ -58,6 +66,7 @@ everpay.deposit({
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
+  chainType: 'arweave',
   arJWK: 'use_wallet',
 })
 
