@@ -16,6 +16,7 @@ export enum ChainType {
 ```
 
 ## ArJWK
+
 ```ts
 export type ArJWK = JWKInterface | 'use_wallet'
 ```
@@ -23,6 +24,7 @@ export type ArJWK = JWKInterface | 'use_wallet'
 `JWKInterface` is sourced from [arweave-js JWKInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/wallet.ts#L7)
 
 ## EthereumTransaction
+
 ```ts
 import { TransactionResponse as EthereumTransaction } from '@ethersproject/abstract-provider'
 export { EthereumTransaction }
@@ -36,15 +38,18 @@ export { EthereumTransaction }
 import { TransactionInterface as ArweaveTransaction } from 'arweave/node/lib/transaction'
 export { ArweaveTransaction }
 ```
+
 `TransactionInterface` is sourced from [arweave-js TransactionInterface](https://github.com/ArweaveTeam/arweave-js/blob/92d690a52ed0b647f36d58a6eba28542ef609b18/src/common/lib/transaction.ts#L64)
 
 ## Config
+
 `Everpay` constructor configuration items
 
 ```ts
 export interface Config {
   debug?: boolean
   account?: string
+  chainType?: ChainType
   ethConnectedSigner?: Signer
   arJWK?: ArJWK
 }
@@ -53,6 +58,7 @@ export interface Config {
 `Signer` is sourced from [ethers.js Signer](https://docs.ethers.io/v5/api/signer/#Signer)
 
 ## CrossChainInfo
+
 ```ts
 export interface CrossChainInfo {
   targetChainId: string
@@ -63,6 +69,7 @@ export interface CrossChainInfo {
 ```
 
 ## Token
+
 ```ts
 export interface Token {
   tag: string
@@ -79,6 +86,7 @@ export interface Token {
 ```
 
 ## FeeItem
+
 ```ts
 export interface FeeItem {
   tokenTag: string
@@ -92,6 +100,7 @@ export interface FeeItem {
 ```
 
 ## EverpayInfo
+
 ```ts
 export interface EverpayInfo {
   ethLocker: string
@@ -106,6 +115,7 @@ export interface EverpayInfo {
 ```
 
 ## ExpressInfo
+
 ```ts
 interface ExpressTokenItem {
   tokenTag: string
@@ -120,6 +130,7 @@ export interface ExpressInfo {
 ```
 
 ## EverpayAction
+
 ```ts
 export enum EverpayAction {
   transfer = 'transfer',
@@ -129,6 +140,7 @@ export enum EverpayAction {
 ```
 
 ## SwapInfo
+
 ```ts
 export interface SwapInfo {
   fee: string
@@ -138,6 +150,7 @@ export interface SwapInfo {
 ```
 
 ## InternalTransferItem
+
 ```ts
 export interface InternalTransferItem {
   symbol: string
@@ -148,6 +161,7 @@ export interface InternalTransferItem {
 ```
 
 ## BundleItem
+
 ```ts
 export interface BundleItem {
   amount: string
@@ -159,6 +173,7 @@ export interface BundleItem {
 ```
 
 ## BundleData
+
 ```ts
 export interface BundleData {
   items: BundleItem[]
@@ -169,6 +184,7 @@ export interface BundleData {
 ```
 
 ## BundleDataWithSigs
+
 ```ts
 export interface BundleDataWithSigs extends BundleData {
   sigs: {
@@ -178,6 +194,7 @@ export interface BundleDataWithSigs extends BundleData {
 ```
 
 ## EverpayTxWithoutSig
+
 ```ts
 export interface EverpayTxWithoutSig {
   tokenSymbol: string
@@ -197,6 +214,7 @@ export interface EverpayTxWithoutSig {
 ```
 
 ## EverpayTx
+
 ```ts
 export interface EverpayTx extends EverpayTxWithoutSig {
   sig: string
@@ -215,6 +233,7 @@ export enum EverpayActionWithDeposit {
 ```
 
 ## EverpayTransactionStatus
+
 ```ts
 enum EverpayTransactionStatus {
   // deposit(mint) transaction, after the corresponding number of blocks confirm, status will be confirmed
@@ -226,6 +245,7 @@ enum EverpayTransactionStatus {
 ```
 
 ## EverpayTransaction
+
 ```ts
 export interface EverpayTransaction {
   id: string // an arweave tx, which stored the everPay Tx information on the arweave blockchain
@@ -252,6 +272,7 @@ export interface EverpayTransaction {
 ```
 
 ## TxsResult
+
 ```ts
 export interface TxsResult {
   accid?: string
@@ -262,6 +283,7 @@ export interface TxsResult {
 ```
 
 ## BalanceParams
+
 ```ts
 export interface BalanceParams {
   symbol: string
@@ -270,6 +292,7 @@ export interface BalanceParams {
 ```
 
 ## BalancesParams
+
 ```ts
 export interface BalancesParams {
   account?: string
@@ -277,6 +300,7 @@ export interface BalancesParams {
 ```
 
 ## BalanceItem
+
 ```ts
 export interface BalanceItem {
   chainType: string
@@ -287,6 +311,7 @@ export interface BalanceItem {
 ```
 
 ## DepositParams
+
 ```ts
 export interface DepositParams {
   symbol: string
@@ -295,6 +320,7 @@ export interface DepositParams {
 ```
 
 ## TransferParams
+
 ```ts
 export interface TransferParams {
   symbol: string
@@ -305,6 +331,7 @@ export interface TransferParams {
 ```
 
 ## WithdrawParams
+
 ```ts
 export interface WithdrawParams {
   chainType: ChainType
@@ -318,6 +345,7 @@ export interface WithdrawParams {
 ```
 
 ## BundleParams
+
 ```ts
 export interface BundleParams {
   symbol: string
@@ -330,6 +358,7 @@ export interface BundleParams {
 ```
 
 ## TxsParams
+
 ```ts
 export interface TxsParams {
   page?: number
@@ -339,6 +368,7 @@ export interface TxsParams {
 ```
 
 ## TxsByAccountParams
+
 ```ts
 export interface TxsByAccountParams {
   page?: number
@@ -349,6 +379,7 @@ export interface TxsByAccountParams {
 ```
 
 ## SendEverpayTxResult
+
 ```ts
 // Note: This type does not have an export
 interface PostEverpayTxResult {
@@ -361,6 +392,7 @@ export interface SendEverpayTxResult extends PostEverpayTxResult {
 ```
 
 ## SwapPriceParams
+
 ```ts
 export interface SwapPriceParams {
   tokenIn: string
@@ -369,7 +401,9 @@ export interface SwapPriceParams {
   tokenOutAmount?: string
 }
 ```
+
 ## SwapOrder
+
 ```ts
 export interface SwapOrder {
   tokenIn: string
@@ -378,7 +412,9 @@ export interface SwapOrder {
   tokenOutAmount: string
 }
 ```
+
 ## SwapPriceResult
+
 ```ts
 export interface SwapPriceResult extends SwapOrder {
   spreadPercent: string
