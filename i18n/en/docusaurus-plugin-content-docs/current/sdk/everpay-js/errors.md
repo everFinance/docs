@@ -3,7 +3,9 @@ sidebar_position: 7
 ---
 
 # Errors
+
 ## Introduction
+
 Error returns are built in, including some arConnect special handling errors.
 
 ## Error messages
@@ -23,7 +25,6 @@ export enum ERRORS {
   INVALID_ACCOUNT_TYPE = 'INVALID_ACCOUNT_TYPE',
   INVALID_ACTION = 'INVALID_ACTION',
   INVALID_AMOUNT = 'INVALID_AMOUNT',
-  UNSUPPORTED_TOKEN_SWAP = 'UNSUPPORTED_TOKEN_SWAP',
   WITHDRAW_AMOUNT_LESS_THAN_FEE = 'WITHDRAW_AMOUNT_LESS_THAN_FEE',
   INSUFFICIENT_QUICK_WITHDRAWAL_AMOUNT = 'INSUFFICIENT_QUICK_WITHDRAWAL_AMOUNT',
   WITHDRAW_TOKEN_NOT_SUPPORT_QUICK_MODE = 'WITHDRAW_TOKEN_NOT_SUPPORT_QUICK_MODE',
@@ -33,6 +34,7 @@ export enum ERRORS {
 ```
 
 ## arConnect Special Handling Errors
+
 ```ts
 enum ERRORS {
   PLEASE_INSTALL_ARCONNECT = 'PLEASE_INSTALL_ARCONNECT',
@@ -45,6 +47,7 @@ enum ERRORS {
   ACCESS_PUBLIC_KEY_FAILED = 'ACCESS_PUBLIC_KEY_FAILED'
 }
 ```
+
 :::danger
 Due to some current issues with arConnect, everPay team has customized some arConnect errors
 :::
