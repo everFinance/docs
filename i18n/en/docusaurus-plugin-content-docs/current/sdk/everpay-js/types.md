@@ -139,16 +139,6 @@ export enum EverpayAction {
 }
 ```
 
-## SwapInfo
-
-```ts
-export interface SwapInfo {
-  fee: string
-  address: string
-  tokenList: string[]
-}
-```
-
 ## InternalTransferItem
 
 ```ts
@@ -388,36 +378,5 @@ interface PostEverpayTxResult {
 export interface SendEverpayTxResult extends PostEverpayTxResult {
   everpayTx: EverpayTx
   everHash: string
-}
-```
-
-## SwapPriceParams
-
-```ts
-export interface SwapPriceParams {
-  tokenIn: string
-  tokenOut: string
-  tokenInAmount?: string
-  tokenOutAmount?: string
-}
-```
-
-## SwapOrder
-
-```ts
-export interface SwapOrder {
-  tokenIn: string
-  tokenOut: string
-  tokenInAmount: string
-  tokenOutAmount: string
-}
-```
-
-## SwapPriceResult
-
-```ts
-export interface SwapPriceResult extends SwapOrder {
-  spreadPercent: string
-  indicativePrice: string
 }
 ```
