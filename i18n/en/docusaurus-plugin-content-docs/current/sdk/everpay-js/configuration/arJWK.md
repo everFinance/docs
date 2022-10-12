@@ -61,7 +61,36 @@ This method passes the private key explicitly in the code, which is a security r
 
 Once [arconnect](https://arconnect.io/) is installed in the user's browser, you can use the pass `arJWK: 'use_wallet'` to specify the use of [arconnect](https://arconnect.io/) for arweave transfers (corresponding to everPay deposit), and signature (for everPay transfer and withdraw) operations.
 
-```js
+```ts
+const checkArPermissions = async (permissions: string[] | string): Promise<void> => {
+  let existingPermissions: string[] = []
+  permissions = isString(permissions) ? [permissions] : permissions
+
+  try {
+    existingPermissions = await window.arweaveWallet.getPermissions()
+  } catch {
+    throw new Error('PLEASE_INSTALL_ARCONNECT')
+  }
+
+  if (permissions.length === 0) {
+    return
+  }
+
+  if (permissions.some(permission => {
+    return !existingPermissions.includes(permission)
+  })) {
+    await window.arweaveWallet.connect(permissions as never[])
+  }
+}
+
+await checkArPermissions([
+  'ACCESS_ADDRESS',
+  'ACCESS_ALL_ADDRESSES',
+  'ACCESS_PUBLIC_KEY',
+  'SIGN_TRANSACTION',
+  'SIGNATURE'
+])
+
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,

@@ -61,7 +61,36 @@ const everpay = new Everpay({
 
 当用户 浏览器安装了 [arconnect](https://arconnect.io/) 后，可以使用 传递 `arJWK: 'use_wallet'` 来指定使用 [arconnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
 
-```js
+```ts
+const checkArPermissions = async (permissions: string[] | string): Promise<void> => {
+  let existingPermissions: string[] = []
+  permissions = isString(permissions) ? [permissions] : permissions
+
+  try {
+    existingPermissions = await window.arweaveWallet.getPermissions()
+  } catch {
+    throw new Error('PLEASE_INSTALL_ARCONNECT')
+  }
+
+  if (permissions.length === 0) {
+    return
+  }
+
+  if (permissions.some(permission => {
+    return !existingPermissions.includes(permission)
+  })) {
+    await window.arweaveWallet.connect(permissions as never[])
+  }
+}
+
+await checkArPermissions([
+  'ACCESS_ADDRESS',
+  'ACCESS_ALL_ADDRESSES',
+  'ACCESS_PUBLIC_KEY',
+  'SIGN_TRANSACTION',
+  'SIGNATURE'
+])
+
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
   account: arAddress,
