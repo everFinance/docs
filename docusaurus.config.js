@@ -125,7 +125,7 @@ module.exports = {
           items: [
             {
               label: 'Twitter',
-              href: 'https://twitter.com/FinanceEver',
+              href: 'https://twitter.com/everVisionHQ',
             },
             {
               label: 'Discord',
