@@ -133,7 +133,7 @@ module.exports = {
             },
             {
               label: 'Medium',
-              href: 'https://medium.com/everfinance',
+              href: 'https://news.ever.vision',
             },
           ],
         },

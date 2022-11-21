@@ -37,7 +37,7 @@
   },
   "link.item.label.Medium": {
     "message": "Medium",
-    "description": "The label of footer link with label=Medium linking to https://medium.com/everfinance"
+    "description": "The label of footer link with label=Medium linking to https://news.ever.vision"
   },
   "link.item.label.Server API": {
     "message": "Server API",
