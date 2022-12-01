@@ -23,15 +23,23 @@ string
 
 ```js
 const everpay1 = new Everpay({ debug: true })
-everpay1.balance({ account: '0x26361130d5d6E798E9319114643AF8c868412859', symbol: 'ar' }).then(console.log)
+everpay1.balance({
+  account: '0x26361130d5d6E798E9319114643AF8c868412859',
+  tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8'
+}).then(console.log)
 
 // 或者
 const everpay2 = new Everpay({ account: '0x26361130d5d6E798E9319114643AF8c868412859', debug: true })
-everpay.balance({ symbol: 'ar' }).then(console.log)
+everpay.balance({
+  tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8'
+}).then(console.log)
 
 // 或者 覆盖默认 account
 const everpay3 = new Everpay({ account: '0x2ca81e1253f9426c62Df68b39a22A377164eeC92', debug: true })
-everpay3.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859', symbol: 'ar' }).then(console.log)
+everpay3.balances({
+  account: '0x26361130d5d6E798E9319114643AF8c868412859',
+  tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8'
+}).then(console.log)
 ```
 
 ## 示例返回

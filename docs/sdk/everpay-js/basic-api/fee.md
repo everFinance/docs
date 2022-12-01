@@ -11,7 +11,7 @@ sidebar_position: 6
 string
 
 :::info
-此处 string 为 `symbol` string
+此处 string 为 `tag` string
 :::
 
 ## 返回
@@ -30,7 +30,7 @@ string
 
 ```js
 const everpay1 = new Everpay({ debug: true })
-everpay1.fee('AR').then(console.log)
+everpay1.fee('arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be').then(console.log)
 ```
 
 ## 示例返回

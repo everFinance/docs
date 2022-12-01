@@ -3,9 +3,11 @@ sidebar_position: 6
 ---
 
 # bundle
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在批量转账时：
+
 * 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
 * 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)
 * 将信息发送给 everPay 后端服务器，进行签名验证
@@ -14,12 +16,15 @@ sidebar_position: 6
 更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../guide/dive/bundle)
 
 ## 参数
+
 [BundleParams](../types#bundleparams)
 
 ## 返回
+
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## 示例
+
 ```ts
 const bundleDataWithSigs = {
   items: [
@@ -48,7 +53,7 @@ const bundleDataWithSigs = {
 }
 
 const bundleResult = await everpayArAccount.bundle({
-  symbol: 'ETH',
+  tag: 'ethereum-eth-0x0000000000000000000000000000000000000000',
   // 可为任意 everPay 账户 ID，包括当前 everPay 账户 ID
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
   // bundle 批量转账的 外部转账 amount 可为 0

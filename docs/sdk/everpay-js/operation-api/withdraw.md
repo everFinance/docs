@@ -56,7 +56,7 @@ const everpay = new Everpay({
 })
 
 everpay.withdraw({
-  symbol: 'ar',
+  tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8',
   amount: '0.000010001',
   chainType: 'arweave',
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
@@ -98,7 +98,7 @@ const everpay = new Everpay({
 })
 
 everpay.withdraw({
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '101',
   to: '0x26361130d5d6E798E9319114643AF8c868412859',
 }).then(console.log)
@@ -141,7 +141,7 @@ const everpay = new Everpay({
 
 everpay.withdraw({
   chainType: ChainType.ethereum,
-  symbol: 'usdt',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '99',
   quickMode: true
 }).then(console.log)
@@ -183,7 +183,7 @@ const everpay = new Everpay({
 
 everpay.withdraw({
   chainType: ChainType.ethereum,
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '52.6',
   to: '0x26361130d5d6E798E9319114643AF8c868412859',
   quickMode: true
