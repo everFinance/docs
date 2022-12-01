@@ -5,21 +5,24 @@ sidebar_position: 7
 # txs
 
 ## 功能
+
 everPay 上所有交易记录，通过 分页 形式获取
 
 ## 参数
-`{{endpoint}}/txs?page={{page}}&tag={{tag}}&action={{action}}`
+
+`{{endpoint}}/txs?page={{page}}&tokenTag={{tokenTag}}&action={{action}}`
 
 |查询字段|描述|
 |---|---|
 |page|可选，默认为 1|
-|tag|可选，可通过 [info](./info) 接口获得|
+|tokenTag|可选，可通过 [info](./info) 接口获得|
 |action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
 |withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
 
-
 ## 返回字段
+
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
+
 ## 示例
 
 ```bash
@@ -27,6 +30,7 @@ curl --location --request GET 'https://api-dev.everpay.io/txs?page=1'
 ```
 
 ## 示例返回
+
 ```js
 {
   currentPage: 1,
