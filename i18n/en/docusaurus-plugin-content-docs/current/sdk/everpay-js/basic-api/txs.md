@@ -5,22 +5,28 @@ sidebar_position: 4
 # txs
 
 ## Function
+
 Get all transactions on everPay accessed by paging
 
 ## Parameter
+
 [TxsParams](../types#txsparams)
 
 |Query Field|Description|
 |---|---|
 |page|Optional, default is 1|
-|symbol|Optional|
+|tag|Optional|
 |action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` for deposit transactions</li><li>`'transfer'` for transfer transactions</li><li>`'burn'` for withdraw transactions</li><li>`'bundle'` for bundle transactions</li></ul>|
+|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
 ## Return
+
 ### Return Type
+
 [TxsResult](../types#txsresult)
 
 ### Return Fields
+
 Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
 ## Example
@@ -31,6 +37,7 @@ everpay.txs({ page: 1 }).then(console.log)
 ```
 
 ## Example return
+
 ```js
 {
   currentPage: 1,

@@ -5,24 +5,29 @@ sidebar_position: 7
 # txsByAccount
 
 ## Function
+
 Get transactions corresponding to `account` on everPay by paging
 
 ## Parameter
+
 [TxsByAccountParams](../types#txsbyaccountparams)
 
 |Query Field|Description|
 |---|---|
 |account|Optional, default is the `account` parameter passed when the Everpay instance is created|
 |page|Optional, default is 1|
-|symbol|Optional|
+|tag|Optional|
 |action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` for deposit transactions</li><li>`'transfer'` for transfer transactions</li><li>`'burn'` for withdraw transactions</li><li>`'bundle'` for bundle transactions</li></ul>|
 |withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
 ## Return
+
 ### Return Type
+
 [TxsResult](../types#txsresult)
 
 ### Return Fields
+
 Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 
 ## Example
@@ -41,6 +46,7 @@ everpay3.txsByAccount({ account: '0x26361130d5d6E798E9319114643AF8c868412859', p
 ```
 
 ## Example return
+
 ```js
 {
   currentPage: 1,

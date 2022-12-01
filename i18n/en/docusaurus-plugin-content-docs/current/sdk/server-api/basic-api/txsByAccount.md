@@ -4,22 +4,26 @@ sidebar_position: 8
 
 # txsByAccount
 
-
 ## Function
+
 Get transactions corresponding to `account` on everPay by paging
 
 ## Parameter
-`{{endpoint}}/txs/{{account}}?page={{page}}&tokenId={{tokenId}}&action={{action}}`
+
+`{{endpoint}}/txs/{{account}}?page={{page}}&tag={{tag}}&action={{action}}`
 
 |Query Field|Description|
 |---|---|
 |account|Optional, default is the `account` parameter passed when the Everpay instance is created|
 |page|Optional, default is 1|
-|tokenId|Optional, via [info API](./info) interface to get|
+|tag|Optional, via [info API](./info) interface to get|
 |action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 |withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+
 ## Return Fields
+
 Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
+
 ## Example
 
 ```bash
@@ -27,6 +31,7 @@ curl --location --request GET 'https://api-dev.everpay.io/txs/0x26361130d5d6E798
 ```
 
 ## Example Return
+
 ```js
 {
   "accid": "0x26361130d5d6E798E9319114643AF8c868412859",

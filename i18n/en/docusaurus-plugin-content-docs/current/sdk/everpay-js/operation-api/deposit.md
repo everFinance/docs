@@ -36,7 +36,7 @@ const everpay = new Everpay({
 })
 
 everpay.deposit({
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26'
 }).then(console.log)
 
@@ -71,7 +71,7 @@ const everpay = new Everpay({
 })
 
 everpay.deposit(
-  symbol: 'ar',
+  tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8',
   amount: '0.01'
 }).then(console.log)
 

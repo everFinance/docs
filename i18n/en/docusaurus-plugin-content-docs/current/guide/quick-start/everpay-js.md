@@ -68,7 +68,7 @@ Fill in the token symbol and amount to be recharged, and call the following inte
 
 ```js
 everpay.deposit({
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26'
 }).then(console.log)
 ```
@@ -85,7 +85,7 @@ When the everPay account that corresponds to the injected wallet already has ass
 
 ```js
 everpay.transfer({
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26',
   to: '0x26361130d5d6E798E9319114643AF8c868412859'
 }).then(console.log)
@@ -97,7 +97,7 @@ Withdraw the assets from everPay back to the native chain. When the everPay acco
 
 ```js
 everpay.withdraw({
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26',
   chainType: 'ethereum',
   to: '0x26361130d5d6E798E9319114643AF8c868412859'

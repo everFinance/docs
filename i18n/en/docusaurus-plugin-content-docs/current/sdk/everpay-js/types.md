@@ -11,7 +11,11 @@ The following types can be `imported` from everpay-js via typescript
 ```ts
 export enum ChainType {
   ethereum = 'ethereum',
-  arweave = 'arweave'
+  moon = 'moon',
+  arweave = 'arweave',
+  conflux = 'conflux',
+  bsc = 'bsc',
+  platon = 'platon'
 }
 ```
 
@@ -143,7 +147,7 @@ export enum EverpayAction {
 
 ```ts
 export interface InternalTransferItem {
-  symbol: string
+  tag: string
   from: string
   to: string
   amount: string
@@ -276,7 +280,7 @@ export interface TxsResult {
 
 ```ts
 export interface BalanceParams {
-  symbol: string
+  tag: string
   account?: string
 }
 ```
@@ -295,6 +299,7 @@ export interface BalancesParams {
 export interface BalanceItem {
   chainType: string
   symbol: string
+  tag: string
   balance: string
   address: string
 }
@@ -304,7 +309,7 @@ export interface BalanceItem {
 
 ```ts
 export interface DepositParams {
-  symbol: string
+  tag: string
   amount: string
 }
 ```
@@ -313,7 +318,7 @@ export interface DepositParams {
 
 ```ts
 export interface TransferParams {
-  symbol: string
+  tag: string
   amount: string
   data?: Record<string, unknown>
   to: string
@@ -325,7 +330,7 @@ export interface TransferParams {
 ```ts
 export interface WithdrawParams {
   chainType: ChainType
-  symbol: string
+  tag: string
   amount: string
   fee?: string
   quickMode?: boolean
@@ -338,7 +343,7 @@ export interface WithdrawParams {
 
 ```ts
 export interface BundleParams {
-  symbol: string
+  tag: string
   amount: string
   data: {
     bundle: BundleDataWithSigs
@@ -352,8 +357,9 @@ export interface BundleParams {
 ```ts
 export interface TxsParams {
   page?: number
-  symbol?: string
+  tag?: string
   action?: EverpayActionWithDeposit
+  withoutAction?: EverpayActionWithDeposit
 }
 ```
 
@@ -363,8 +369,9 @@ export interface TxsParams {
 export interface TxsByAccountParams {
   page?: number
   account?: string
-  symbol?: string
+  tag?: string
   action?: EverpayActionWithDeposit
+  withoutAction?: EverpayActionWithDeposit
 }
 ```
 

@@ -3,8 +3,11 @@ sidebar_position: 6
 ---
 
 # bundle
+
 ## Function
+
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when make a bundle transaction,
+
 * Internal build [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
 * Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
 * Send the everpay tx to everPay backend server for signature verification
@@ -13,12 +16,15 @@ Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the
 Developers can visit the [Guide - Dive - Bundle](../../../guide/dive/bundle) section for more information.
 
 ## Parameter
+
 [BundleParams](../types#bundleparams)
 
 ## Return
+
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## Example
+
 ```ts
 const bundleDataWithSigs = {
   items: [
@@ -47,7 +53,7 @@ const bundleDataWithSigs = {
 }
 
 const bundleResult = await everpayArAccount.bundle({
-  symbol: 'ETH',
+  tag: 'ethereum-eth-0x0000000000000000000000000000000000000000',
   // Can be any everPay account ID, including the current everPay account ID
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
   // The external transfer amount for a bundle transaction can be 0

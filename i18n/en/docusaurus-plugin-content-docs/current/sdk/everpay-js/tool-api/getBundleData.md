@@ -4,11 +4,12 @@ sidebar_position: 3
 
 # getBundleData
 
-
 ## Function
+
 Generate a `bundleData` based on a list of internal transfer transactions for the bundle transaction
 
 ## Parameter
+
 ```ts
 everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
 ```
@@ -18,9 +19,8 @@ everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
 |items|[InternalTransferItem](../types#internaltransferitem)[] | List of internal transfers for bundle transaction, where `amount` is not uint type and has been processed by `decimals`|
 |expiration|number|Optional, expiration time of all internal transfers, unix timestamp. **Note: not millisecond timestamps**|
 
-
-
 ## Return
+
 [`BundleData`](../types#bundledata)
 
 ## Example
@@ -29,14 +29,14 @@ everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
 const bundleData = await everpayArAccount.getBundleData([
   // transfer 0.001 ETH from account 0x26361130d5d6E798E9319114643AF8c868412859 to account 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo
   {
-    symbol: 'ETH',
+    tag: 'ethereum-eth-0x0000000000000000000000000000000000000000',
     from: '0x26361130d5d6E798E9319114643AF8c868412859',
     to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
     amount: '0.001'
   },
   // transfer 10 USDT from account 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo to account 0x26361130d5d6E798E9319114643AF8c868412859
   {
-    symbol: 'USDT',
+    tag: 'ethereum-usdt-0xd85476c906b5301e8e9eb58d174a6f96b9dfc5ee',
     from: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
     to: '0x26361130d5d6E798E9319114643AF8c868412859',
     amount: '10'

@@ -35,7 +35,7 @@ const everpay = new Everpay({
 })
 
 everpay.getEverpayTxWithoutSig('transfer', {
-  symbol: 'USDT',
+  tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26'
   to: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
   data: { hello: 'world', this: 'is everpay' }
