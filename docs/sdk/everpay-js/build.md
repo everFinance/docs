@@ -18,6 +18,8 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill'
+// You don't need to add this to deps, it's included by @esbuild-plugins/node-modules-polyfill
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode})=>{
@@ -56,6 +58,15 @@ export default defineConfig(({mode})=>{
         ]
       }
     },
+    build: {
+      rollupOptions: {
+        plugins: [
+          // Enable rollup polyfills plugin
+          // used during production bundling
+          rollupNodePolyFill()
+        ]
+      }
+    }
   }
 })
 ```
