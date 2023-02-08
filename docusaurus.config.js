@@ -12,9 +12,9 @@ module.exports = {
 
   // 部署 github 配置
   // https://docusaurus.io/zh-CN/docs/deployment#deploying-to-github-pages
-  organizationName: 'everFinance', // Usually your GitHub org/user name.
+  organizationName: 'charles-lpd', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
-  url: 'https://docs.everpay.io',
+  url: 'https://charles-lpd.github.io/',
   baseUrl: '/',
   trailingSlash,
 
