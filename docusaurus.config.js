@@ -13,7 +13,7 @@ module.exports = {
   // 部署 github 配置
   // https://docusaurus.io/zh-CN/docs/deployment#deploying-to-github-pages
   organizationName: 'charles-lpd', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  projectName: 'docs-dev', // Usually your repo name.
   url: 'https://charles-lpd.github.io/',
   baseUrl: '/',
   trailingSlash,
