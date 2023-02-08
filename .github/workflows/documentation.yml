@@ -36,7 +36,6 @@ jobs:
       - name: Release to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_USER: 'lpd0916'
         run: |
           git config --global user.email "1985413702@qq.com"
           git config --global user.name "lpd0916"
