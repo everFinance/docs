@@ -38,6 +38,7 @@ jobs:
           ssh-private-key: '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'
       - name: Release to GitHub Pages
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USE_SSH: true
           GIT_USER: git
         run: |
