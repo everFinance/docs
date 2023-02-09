@@ -143,7 +143,7 @@ everpay
 
 ## 提现
 
-将 everPay 中的资产提出，回到原生链。注入的钱包，对应 everPay 账户已经拥有 token 就可以进行 everPay 提现。填写需要提现的 `symbol`、`amount`、`chainType` 以及提现收款原生链地址`to`,调用下面的接口完成提现：
+将 everPay 中的资产提出，回到原生链。注入的钱包，对应 everPay 账户已经拥有 token 就可以进行 everPay 提现。填写需要提现的 `token tag`、`amount`、`chainType` 以及提现收款原生链地址`to`,调用下面的接口完成提现：
 
 ```js
 everpay
@@ -158,7 +158,7 @@ everpay
 :::danger
 
  * 将 everPay 上的资产提现到目标链，如 Ethereum 等。
- * 请勿提现至交易所或合约地址，无法找回！
+ * 请勿提现至合约地址，无法找回！
 :::
 
 ## 示例参考
