@@ -4,9 +4,13 @@ sidebar_position: 2
 
 # info
 
-## Function
+## Basic examples
 
-Get basic information about everPay service, e.g. `arLocker` represents the locked position address on arweave blockchain, `ethLocker` represents the locked position contract on etherum blockchain.
+```bash
+curl --location --request GET 'https://api.everpay.io/info'
+```
+
+Enter to get basic information about everPay services, e.g. `arLocker` represents the locked position address on arweave blockchain, `ethLocker` represents the locked position contract on etherum blockchain.
 
 ## Parameter
 
@@ -46,13 +50,8 @@ Get basic information about everPay service, e.g. `arLocker` represents the lock
 * everPay recommends developers to assemble [`Schema`](../../../guide/dive/transaction#schema) using the Token information returned by this info API.
 :::
 
-## Example
 
-```bash
-curl --location --request GET 'https://api.everpay.io/info'
-```
-
-## Example Return
+## Example Return Data
 
 ```json
 {

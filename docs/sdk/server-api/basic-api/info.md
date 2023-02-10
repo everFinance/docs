@@ -4,9 +4,12 @@ sidebar_position: 2
 
 # info
 
-## 功能
+## 基础示例
 
-获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
+```bash
+curl --location --request GET 'https://api.everpay.io/info'
+```
+输入即可获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
 
 ## 参数
 
@@ -47,13 +50,8 @@ sidebar_position: 2
 * everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/transaction#schema)
 :::
 
-## 示例
 
-```bash
-curl --location --request GET 'https://api.everpay.io/info'
-```
-
-## 示例返回
+## 示例返回数据
 
 ```json
 {

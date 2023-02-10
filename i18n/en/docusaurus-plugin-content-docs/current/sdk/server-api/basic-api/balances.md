@@ -4,8 +4,11 @@ sidebar_position: 3
 
 # balances
 
-## Function
-Get all assets balance on everPay for the corresponding `account`.
+## Basic examples
+```js
+curl --location --request GET 'https://api-dev.everpay.io/balances/0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
+```
+Enter the account `account` to get all the assets of the account on everPay.
 
 ## Parameter
 `{{endpoint}}/balances/{{account}}`
@@ -24,14 +27,7 @@ Get all assets balance on everPay for the corresponding `account`.
 |amount|Asset balance, type uint|
 |decimals| |
 
-
-## Example
-
-```js
-curl --location --request GET 'https://api-dev.everpay.io/balances/0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
-```
-
-## Example Return
+## Example Return Data
 ```json
 {
   "accid": "0x2ca81e1253f9426c62Df68b39a22A377164eeC92",

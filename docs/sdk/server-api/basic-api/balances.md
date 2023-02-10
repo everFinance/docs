@@ -4,8 +4,11 @@ sidebar_position: 3
 
 # balances
 
-## 功能
-获取 对应 `account` 在 everPay 上的所有资产信息
+## 基础示例
+```js
+curl --location --request GET 'https://api-dev.everpay.io/balances/0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
+```
+输入 账户`account` ,即可获取该账户在 everPay 上的所有资产信息。
 
 ## 参数
 `{{endpoint}}/balances/{{account}}`
@@ -24,13 +27,8 @@ sidebar_position: 3
 |decimals| |
 
 
-## 示例
 
-```js
-curl --location --request GET 'https://api-dev.everpay.io/balances/0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
-```
-
-## 示例返回
+## 示例返回数据
 ```json
 {
   "accid": "0x2ca81e1253f9426c62Df68b39a22A377164eeC92",
