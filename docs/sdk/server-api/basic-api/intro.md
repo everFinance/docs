@@ -12,5 +12,4 @@ sidebar_position: 1
 curl --location --request GET 'https://api-dev.everpay.io/info'
 // 获取 everPay 服务相关基本信息
 
-curl --location --request GET 'https://express-dev.everpay.io/withdraw/info'
 ```

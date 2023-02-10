@@ -5,10 +5,15 @@ sidebar_position: 3
 # balances
 
 ## 功能
-获取 对应 `account` 在 everPay 上的所有资产信息
+获取 对应 `account` 在 everPay 上的所有资产信息。
 
 ## 参数
-`{{endpoint}}/balances/{{account}}`
+`{{ endpoint }}/balances/{{ account }}`
+
+|查询字段|描述|
+|---|---|
+|请求方式|GET|
+|account|必选，`string` 类型，everPay 账户地址|
 
 ## 返回字段
 |字段|描述|
