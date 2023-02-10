@@ -11,5 +11,4 @@ sidebar_position: 1
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/info'
 
-curl --location --request GET 'https://express-dev.everpay.io/withdraw/info'
 ```
