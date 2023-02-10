@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # 打包
 
-因 everpay-js 引用的库中，使用很多 nodeJS 内置模块，例如 `buffer`, `stream`, `crypto`, `path` 等，所以需要引用部分包，配置 `vite.config.js` 或 `webapck.config.js` 来支持 nodeJS 语法。
+因 everpay-js 引用的库中，使用很多 nodeJS 内置模块，例如 `buffer`, `stream`, `crypto`, `path` 等，所以需要配置 `vite.config.js` 或 `webacck.config.js` 来支持 nodeJS 内置模块。
 
 ## vite
 
