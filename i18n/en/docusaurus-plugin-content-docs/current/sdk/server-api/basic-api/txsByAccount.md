@@ -14,7 +14,8 @@ Get transactions corresponding to `account` on everPay by paging
 
 |Query Field|Description|
 |---|---|
-|account|Optional, default is the `account` parameter passed when the Everpay instance is created|
+|request method|GET|
+|account|Optional, everPay account address|
 |page|Optional, default is 1|
 |tokenTag|Optional, via [info API](./info) interface to get|
 |action|Optional, note that **[Quick Withdrawals](../../../guide/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|

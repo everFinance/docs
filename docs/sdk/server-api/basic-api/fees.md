@@ -13,7 +13,7 @@ sidebar_position: 5
 ## 返回字段
 |字段|描述|
 |---|---|
-|tokenTag|由 [Token](./info#token-字段描述) `chainType`, `symbol`, `id` 通过 `-` 组合|
+|tokenTag|识别 `token` 的唯一标识，由 [Token](./info#token-字段描述) `chainType`, `symbol`, `id` 通过 `-` 组合|
 |burnFeeMap|`withdraw` 手续费|
 |transferFee| `transfer` 手续费|
 |atomicBundleFee| `bundle` 手续费|
