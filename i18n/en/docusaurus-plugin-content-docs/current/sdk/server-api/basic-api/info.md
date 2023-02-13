@@ -12,6 +12,10 @@ Get basic information about everPay service, e.g. `arLocker` represents the lock
 
 `{{endpoint}}/info`
 
+|Query Field|Description|
+|---|---|
+|request method|GET|
+
 ## Return Fields
 
 |Field|Description|

@@ -17,6 +17,7 @@ sidebar_position: 9
 
 |查询字段|描述|
 |---|---|
+|请求方式|GET|
 |everHash|everPay 交易完成后生成的唯一字符|
 
 ## 返回字段

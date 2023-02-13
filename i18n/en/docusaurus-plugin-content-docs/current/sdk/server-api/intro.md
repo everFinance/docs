@@ -4,7 +4,6 @@ sidebar_position: 1
 
 # Introduction
 
-everPay backend service,
+The everPay back-end service, available through.
 
-* Via everPay Server to get everPay basic information, account balance, transaction records, and perform everPay transaction sending function
-* Via Express API to get quick withdrawal information and amount
+* everPay Server to obtain everPay basic information, account balance, transaction records, and to perform everPay transaction sending functions.

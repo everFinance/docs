@@ -13,7 +13,7 @@ sidebar_position: 3
 |查询字段|描述|
 |---|---|
 |请求方式|GET|
-|account|必选，`string` 类型，everPay 账户地址|
+|account|everPay 账户地址|
 
 ## 返回字段
 |字段|描述|
