@@ -64,11 +64,13 @@ const everpay = new Everpay({
   ethConnectedSigner: signer
 })
 ```
+
 :::info
+
 - [chainType 配置项](../../sdk/everpay-js/types#chaintype)
 - `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner)。
 :::
-若是 ts 项目 `window.ethereum` 会报出错误，请创建 type.d.ts 文件，对 window 下的 ethereum 进行配置。
+  若是 ts 项目，`window.ethereum` 会报出错误，请创建 type.d.ts 文件，对 window 下的 ethereum 进行配置。
 
 ```ts
 declare interface Window {
@@ -76,6 +78,48 @@ declare interface Window {
   // ...
 }
 ```
+
+### CDN 方式连接以太坊钱包
+
+创建时需要先在 `index.html` 文件中`head` 引入 everpay-js 包和 ethers 包。
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.js"
+  defer
+  type="text/javascript"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.4.0/ethers.umd.min.js"
+  defer
+  type="application/javascript"
+></script>
+```
+
+引入成功后，再次创建一个`script`标签，并根据以下代码进行填充。
+
+```html
+<script type="text/javascript" defer>
+const ethRun = async () => {
+    // 若未连接可在此处做连接钱包和连接站点操作
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    const signer = provider.getSigner()
+    const everpay = new window.Everpay.default({
+      account: window.ethereum.selectedAddress,
+      chainType: 'ethereum',
+      ethConnectedSigner: signer
+    })
+}
+ethRun()
+</script>
+```
+
+:::danger
+- 确保钱包已连接和当前站点已连接。
+- 创建 everpay 应用时需要添加`default`: `new window.Everpay.default({})`。
+- ethers CDN 版本 请使用`umd`格式，[查看 ethers CDN 版本](https://cdnjs.com/libraries/ethers/5.4.0)。
+- 确保 `ethers CDN链接` 和 `everpay CDN链接`优先加载完成，否则 `ethers is not defined` 或 `Everpay is not defined`。
+:::
 
 ### 使用 Arweave 钱包连接
 
@@ -96,6 +140,41 @@ const everpay = new Everpay({
 
 - [chainType 配置项](../../sdk/everpay-js/types#chaintype)
 - `arJWK` 也支持私钥格式，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
+
+### CDN 方式连接 Arweave 钱包
+
+创建时需要先在 `index.html` 文件中`head` 引入 everpay-js 包。
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.js"
+  defer
+  type="text/javascript"
+></script>
+```
+
+引入成功后，再次创建一个`script`标签，并根据以下代码进行填充。
+
+```html
+<script>
+const arRun = async () => {
+  // 若未连接可在此处做连接钱包和连接站点操作
+  const arAddress = await window.arweaveWallet.getActiveAddress()
+  const everpay = new window.Everpay.default({
+    account: arAddress,
+    chainType: 'arweave',
+    arJWK: 'use_wallet'
+  })
+}
+arRun()
+</script>
+```
+:::danger
+* 确保钱包已连接和连接当前站点。
+* 创建 everpay 应用时需要添加`default`: `new window.Everpay.default({})`。
+* 确保 everpay CDN链接优先加载完成。
+:::
+
 
 :::info
 
@@ -138,7 +217,8 @@ everpay
 ```
 
 :::danger
-* 请注意：你正在操作转账的是 everPay 网络上的资产，请不要转账到交易所地址，或合约地址，否则您的资产将无法找回！
+
+- 请注意：你正在操作转账的是 everPay 网络上的资产，请不要转账到交易所地址，或合约地址，否则您的资产将无法找回！
 :::
 
 ## 提现
@@ -155,10 +235,11 @@ everpay
   })
   .then(console.log)
 ```
+
 :::danger
 
- * 将 everPay 上的资产提现到目标链，如 Ethereum 等。
- * 请勿提现至合约地址，无法找回！
+- 将 everPay 上的资产提现到目标链，如 Ethereum 等。
+- 请勿提现至合约地址，无法找回！
 :::
 
 ## 示例参考

@@ -68,7 +68,7 @@ const everpay = new Everpay({
 - [chainType configuration item](../../sdk/everpay-js/types#chaintype)
 - More ways to create `ethConnectedSigner` can be found at [SDK - everpay-js - Configuration Items - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner).
 :::
-If the ts project `window.ethereum` gives an error, create a type.d.ts file to configure ethereum under window.
+If the ts project, `window.ethereum` gives an error, create a type.d.ts file to configure ethereum under window.
 
 ```ts
 declare interface Window {
@@ -76,6 +76,47 @@ declare interface Window {
   // ...
 }
 ```
+### CDN way to connect Ethereum wallet
+
+When creating, you need to introduce the everpay-js package and ethers package in the `head` of the `index.html` file.
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.js"
+  defer
+  type="text/javascript"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.4.0/ethers.umd.min.js"
+  defer
+  type="application/javascript"
+></script>
+```
+After the import is successful, create a `script` tag again and fill it according to the following code.
+
+```html
+<script type="text/javascript" defer>
+const ethRun = async () => {
+    // If you are not connected, you can connect to the wallet and connect to the site here
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    const signer = provider.getSigner()
+    const everpay = new window.Everpay.default({
+      account: window.ethereum.selectedAddress,
+      chainType: 'ethereum',
+      ethConnectedSigner: signer
+    })
+}
+ethRun()
+</script>
+```
+
+:::danger
+- Make sure the wallet is connected and the current site is connected.
+- When creating an everpay application, you need to add `default`: `new window.Everpay.default({})`.
+- ethers CDN version Please use `umd` format, [View ethers CDN version](https://cdnjs.com/libraries/ethers/5.4.0).
+- Make sure `ethers CDN link` and `everpay CDN link` are loaded first, otherwise `ethers is not defined` or `Everpay is not defined`.
+:::
+
 
 ### Connecting with an arweave wallet
 
@@ -95,6 +136,39 @@ const everpay = new Everpay({
 ```
 - [chainType configuration item](../../sdk/everpay-js/types#chaintype)
 - `arJWK` also supports the private key format, you can browse [SDK - everpay-js - Configuration - `arJWK`](../../sdk/everpay-js/configuration/arJWK) for configuration.
+
+### CDN way to connect Arweave wallet
+
+When creating, you need to introduce the everpay-js package in the `head` of the `index.html` file.
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.js"
+  defer
+  type="text/javascript"
+></script>
+```
+After the import is successful, create a `script` tag again and fill it according to the following code.
+
+```html
+<script>
+const arRun = async () => {
+  // If you are not connected, you can connect to the wallet and connect to the site here
+  const arAddress = await window.arweaveWallet.getActiveAddress()
+  const everpay = new window.Everpay.default({
+    account: arAddress,
+    chainType: 'arweave',
+    arJWK: 'use_wallet'
+  })
+}
+arRun()
+</script>
+```
+:::danger
+* Make sure the wallet is connected and connected to the current site.
+* You need to add `default` when creating everpay application: `new window.Everpay.default({})`.
+* Make sure that the everpay CDN link is loaded first.
+:::
 
 :::info
 
