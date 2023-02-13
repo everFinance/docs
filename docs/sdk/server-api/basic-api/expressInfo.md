@@ -3,9 +3,7 @@ sidebar_position: 11
 ---
 
 # expressInfo
-:::danger
-改功能以下线，请勿使用。
-:::
+
 ## 功能
 获取 everPay 快速提现做市商账户、支持代币列表、代币可快速提现额度以及预估手续费。
 
