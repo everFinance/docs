@@ -10,7 +10,8 @@ sidebar_position: 6
 ## 参数
 `{{endpoint}}/fee/{{tokenTag}}`
 
-|查询字段|描述|
+### 查询字段
+|字段|描述|
 |---|---|
 |请求方式|GET|
 |tokenTag|识别 `token` 的唯一标识，[info](./info.md#示例返回) 接口 `tokenList` 中可查看每个 `token` 的唯一 `tag`。|

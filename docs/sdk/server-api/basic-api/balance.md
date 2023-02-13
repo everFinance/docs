@@ -32,17 +32,17 @@ sidebar_position: 4
 ## 示例
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/balance/ethereum-eth-0x0000000000000000000000000000000000000000/0x2ca81e1253f9426c62Df68b39a22A377164eec92'
+curl --location --request GET 'https://api-dev.everpay.io/balance/arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be/0x2ca81e1253f9426c62Df68b39a22A377164eec92'
 ```
 
 ## 示例返回
 ```json
 {
-	"accid": "0x2ca81e1253f9426c62Df68b39a22A377164eeC92",
-	"balance": {
-		"tag": "ethereum-eth-0x0000000000000000000000000000000000000000",
-		"amount": "0",
-		"decimals": 18
-	}
+  "accid": "0x2ca81e1253f9426c62Df68b39a22A377164eeC92",
+  "balance": {
+    "tag": "arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
+    "amount": "220000000",
+    "decimals": 12
+  }
 }
 ```

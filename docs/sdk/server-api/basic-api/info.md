@@ -9,7 +9,6 @@ sidebar_position: 2
 获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
 
 ## 参数
-
 `{{endpoint}}/info`
 
 ## 返回字段

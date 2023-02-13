@@ -12,10 +12,12 @@ sidebar_position: 10
 ## 参数
 `{{everpay}}/minted/{{chainTxHash}}`
 
+
 |查询字段|描述|
 |---|---|
 |请求方式|GET|
 |chainTxHash|区块链充值交易记录中的 `chainTxHash`|
+
 :::danger
 仅可通过 `chainTxHash` 查询充值的 everPay 交易记录，无法查询提现的 everPay 交易记录。例如：
 * ethereum 充值交易，etherum 充值的 etherum txHash 为 `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`，此笔 everPay 充值交易记录可通过此 API 获取
