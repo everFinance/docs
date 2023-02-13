@@ -10,11 +10,10 @@ sidebar_position: 6
 ## 参数
 `{{endpoint}}/fee/{{tokenTag}}`
 
-|查询字段|描述|
+### 查询字段
+|字段|描述|
 |---|---|
-|请求方式|GET|
-|tokenTag|必选，`string` 类型，[info](./info.md#示例返回) 接口 `tokenList` 中可查看每个 `token` 的唯一 `tag`。|
-
+|tokenTag|由 [Token](./info#token-字段描述) `chainType`, `symbol`, `id` 通过 `-` 组合|
 
 ## 返回字段
 |字段|描述|
