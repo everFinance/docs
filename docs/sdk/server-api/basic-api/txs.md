@@ -14,6 +14,7 @@ everPay 上所有交易记录，通过 分页 形式获取
 
 |查询字段|描述|
 |---|---|
+|请求方式|GET|
 |page|可选，默认为 1|
 |tokenTag|可选，识别 `token` 的唯一标识，可通过 [info](./info.md#示例返回) 接口 `tokenList` 中可查看每个 `token` 的唯一 `tag`。|
 |action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|

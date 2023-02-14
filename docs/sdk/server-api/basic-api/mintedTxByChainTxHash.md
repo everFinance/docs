@@ -12,7 +12,6 @@ sidebar_position: 10
 ## 参数
 `{{everpay}}/minted/{{chainTxHash}}`
 
-
 |查询字段|描述|
 |---|---|
 |请求方式|GET|
