@@ -8,9 +8,9 @@ sidebar_position: 5
 
 此配置项用于通过 ethereum/moonbeam/moonbase 钱包 来操作 everPay ethereum 账户模型的 账户，对该账户进行
 
-* 充值：使用 `ethConnectedSigner` 进行 ethereum 转账 至 everPay 多签合约地址
-* 转账：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限
-* 提现：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限
+* 充值：使用 `ethConnectedSigner` 进行 ethereum 转账 至 everPay 多签合约地址。
+* 转账：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限。
+* 提现：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限。
 
 ## 如何配置
 
@@ -39,7 +39,7 @@ const everpay = new Everpay({
 ```js
 const address = 'YOUR ADDRESS'
 const privateKey = 'YOUR PRIVATE KEY'
-const provider = new ethers.providers.InfuraProvider('kovan')
+const provider = new ethers.providers.InfuraProvider('goerli')
 const signer = new ethers.Wallet(privateKey, provider)
 const everpay = new Everpay({
   account: address,
@@ -72,4 +72,4 @@ const arEverpay = new Everpay({
 
 ## 与 account 配置项的关系
 
-当需要进行 everPay 账户（ethereum 账户模型）操作时，`account` 参数必须与 `ethConnectedSigner` 对应的 ethereum 钱包地址一致
+当需要进行 everPay 账户（ethereum 账户模型）操作时，`account` 参数必须与 `ethConnectedSigner` 对应的 ethereum 钱包地址一致。
