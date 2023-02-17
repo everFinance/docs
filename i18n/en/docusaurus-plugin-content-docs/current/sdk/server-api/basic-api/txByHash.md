@@ -15,6 +15,10 @@ For example, for a normal withdrawal (not quick withdrawal), you can query the t
 ## Parameter
 `{{endpoint}}/tx/{{everHash}}`
 
+|Query Field|Description|
+|---|---|
+|request method|GET|
+|everHash| Unique characters generated after the everPay transaction is completed|
 ## Return Fields
 Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
 ## Example

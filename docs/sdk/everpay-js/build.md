@@ -4,7 +4,9 @@ sidebar_position: 3
 
 # 打包
 
-因 everpay-js 引用的库中，使用很多 nodeJS 内置模块，例如 `buffer`, `stream`, `crypto`, `path` 等，所以需要配置 `vite.config.js` 或 `webpack.config.js` 来支持 nodeJS 内置模块。
+
+因 everpay-js 引用的库中，使用很多 nodeJS 内置模块，例如 `buffer`, `stream`, `crypto`, `path` 等，所以我们需要配置 `vite.config.js` 或 `webpack.config.js` 来支持使用 nodeJS 内置模块。
+
 
 ## vite
 
@@ -22,26 +24,21 @@ import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfil
 import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode})=>{
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
   const processEnvValues = {
-    'process.env': Object.entries(env).reduce(
-        (prev, [key, val]) => {
-            return {
-                ...prev,
-                [key]: val,
-            }
-        },
-        {},
-    )
+    'process.env': Object.entries(env).reduce((prev, [key, val]) => {
+      return {
+        ...prev,
+        [key]: val
+      }
+    }, {})
   }
   return {
-    plugins: [
-      vue(),
-    ],
-    define: Object.assign(processEnvValues, {global:{}}),
-    resolve:{
-      alias:{
+    plugins: [vue()],
+    define: Object.assign(processEnvValues, { global: {} }),
+    resolve: {
+      alias: {
         util: 'rollup-plugin-node-polyfills/polyfills/util',
         buffer: 'rollup-plugin-node-polyfills/polyfills/buffer-es6',
         process: 'rollup-plugin-node-polyfills/polyfills/process-es6'
@@ -51,9 +48,9 @@ export default defineConfig(({mode})=>{
       esbuildOptions: {
         plugins: [
           NodeGlobalsPolyfillPlugin({
-              process: true,
-              buffer: true,
-            }),
+            process: true,
+            buffer: true
+          }),
           NodeModulesPolyfillPlugin()
         ]
       }
@@ -86,7 +83,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     resolve: {
-      alias:{
+      alias: {
         stream: 'stream-browserify'
       },
       fallback: {

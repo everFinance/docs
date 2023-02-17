@@ -3,7 +3,9 @@ sidebar_position: 11
 ---
 
 # expressInfo
-
+:::danger
+***This function is offline, please do not use it.***
+:::
 ## Function
 Get access to everPay Quick Withdrawal Market Maker account, list of supported tokens, the amount of tokens that can be quick withdrawn, and estimated fees.
 

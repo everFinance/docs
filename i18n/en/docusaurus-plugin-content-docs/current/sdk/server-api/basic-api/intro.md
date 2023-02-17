@@ -4,12 +4,10 @@ sidebar_position: 1
 
 # Introduction
 
-Request everPay Server API, Express API base query service using GET request without wallet signature operation.
+Use GET requests to request the everPay Server base query service without the need for a wallet signing operation.
 
 For example,
-
+* Get basic information about everPay services。
 ```bash
 curl --location --request GET 'https://api-dev.everpay.io/info'
-
-curl --location --request GET 'https://express-dev.everpay.io/withdraw/info'
 ```
