@@ -23,8 +23,13 @@ sidebar_position: 3
 :::
 
 ## 参数
+```ts
+everpay.transfer(transferParams: TransferParams)
+```
 
-[TransferParams](../types#transferparams)
+|参数|类型|
+|---|---|
+|transferParams| 查看 [`TransferParams`](../types.md#transferparams) 类型 |
 
 ## 返回
 

@@ -12,12 +12,27 @@ Get basic information about everPay service, e.g. `arLocker` represents arweave 
 
 None
 
+|Query Field|Description|
+|---|---|
+|Request method|GET|
+
 ## Return
 
 ### Return Type
 
-[EverpayInfo](../types#everpayinfo)
-
+```ts
+export interface EverpayInfo {
+  ethLocker: string
+  arLocker: string
+  ethChainID: string
+  feeRecipient: string
+  owner: string
+  everRootHash: string
+  rootHash: string
+  tokenList: Token[]
+}
+```
+[View Token Type](../types.md#token)
 ### Return Fields
 
 Field information can be viewed in [SDK - Server API - Basic Query API - info - Return Fields](../../server-api/basic-api/info#return-fields)

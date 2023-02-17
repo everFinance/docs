@@ -14,8 +14,8 @@ everPay 上所有交易记录，通过 分页 形式获取
 
 |查询字段|描述|
 |---|---|
-|page|可选，默认为 1|
-|tag|可选|
+|page|可选，默认为 1 。|
+|tag|可选, `token` 的唯一标识，[info](./info.md) 接口中 `tokenList` 可查看每个 `token` 的唯一 `tag`。|
 |action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
 |withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
 
@@ -23,7 +23,15 @@ everPay 上所有交易记录，通过 分页 形式获取
 
 ### 返回类型
 
-[TxsResult](../types#txsresult)
+```ts
+export interface TxsResult {
+  accid?: string
+  currentPage: number
+  totalPages: number
+  txs: EverpayTransaction[]
+}
+```
+[查看 EverpayTransaction 类型](../types.md#everpaytransaction)
 
 ### 返回字段
 

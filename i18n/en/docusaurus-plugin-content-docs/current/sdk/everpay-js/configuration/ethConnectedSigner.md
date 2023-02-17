@@ -8,9 +8,9 @@ sidebar_position: 5
 
 This configuration item is used to operate the everPay ethereum account model account via ethereum/moonbeam/moonbase wallet and to do the following for the account
 
-* deposit: transfer assets on ethereum blockchain to everPay multi-signature contract address using `ethConnectedSigner`
-* transfer: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account
-* withdraw: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account
+* deposit: transfer assets on ethereum blockchain to everPay multi-signature contract address using `ethConnectedSigner`.
+* transfer: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account.
+* withdraw: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account.
 
 ## How to configure
 
@@ -39,7 +39,7 @@ Reference from [ethers.js Wallet API](https://docs.ethers.io/v5/api/signer/#Wall
 ```js
 const address = 'YOUR ADDRESS'
 const privateKey = 'YOUR PRIVATE KEY'
-const provider = new ethers.providers.InfuraProvider('kovan')
+const provider = new ethers.providers.InfuraProvider('goerli')
 const signer = new ethers.Wallet(privateKey, provider)
 const everpay = new Everpay({
   account: address,

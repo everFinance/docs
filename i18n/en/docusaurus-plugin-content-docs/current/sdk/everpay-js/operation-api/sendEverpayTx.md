@@ -4,10 +4,16 @@ sidebar_position: 7
 
 # sendEverpayTx
 ## Function
-Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithousig) into `messageData`, sign it according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation and send it to everPays server.
+Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithoutsig) into `messageData`, sign it according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation and send it to everPays server.
 
 ## Parameter
-[EverpayTxWithoutSig](../types#everpaytxwithousig)
+```ts
+everpay.sendEverpayTx(everpayTxWithoutSig: EverpayTxWithoutSig)
+```
+
+|Field|Type|Description|
+|---|---|---|
+|everpayTxWithoutSig| [`EverpayTxWithoutSig`](../types#everpaytxwithoutsig) | Available via [`getEverpayTxWithoutSig Api`](../tool-api/getEverpayTxWithoutSig.md) |
 
 ## Return
 [SendEverpayTxResult](../types#sendeverpaytxresult)

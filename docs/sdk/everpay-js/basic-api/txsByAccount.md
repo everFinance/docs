@@ -14,12 +14,21 @@ sidebar_position: 7
 |---|---|
 |account|可选，默认为 Everpay 实例创建时传递的 `account` 参数|
 |page|可选，默认为 1|
-|symbol|可选|
+|symbol|可选, 代币名称|
 |action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
 |withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
 ## 返回
 ### 返回类型
-[TxsResult](../types#txsresult)
+
+```ts
+export interface TxsResult {
+  accid?: string
+  currentPage: number
+  totalPages: number
+  txs: EverpayTransaction[]
+}
+```
+[查看 EverpayTransaction 类型](../types.md#everpaytransaction)
 
 ### 返回字段
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)

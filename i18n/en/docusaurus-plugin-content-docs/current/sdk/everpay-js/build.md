@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Package
 
-Since everpay-js references libraries that use many nodeJS built-in modules, such as `buffer`, `stream`, `crypto`, `path`, etc., you need to reference some of these packages and configure `vite.config.js` or `webapck.config.js` to support nodeJS syntax.
+Since everpay-js references libraries that use many nodeJS built-in modules, such as `buffer`, `stream`, `crypto`, `path`, etc., you need to configure `vite.config.js` or `webpack.config.js` to support nodeJS built-in modules.
 
 ## vite
 

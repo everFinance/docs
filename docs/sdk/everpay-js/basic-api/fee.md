@@ -16,7 +16,21 @@ string
 
 ## 返回
 ### 返回类型
-[FeeItem](../types#feeitem)
+
+```ts
+export interface FeeItem {
+  tokenTag: string
+  burnFeeMap: {
+    [propname: string]: string
+  }
+  transferFee: string
+  atomicBundleFee: string
+  updatedAt: string
+}
+```
+:::info
+[typescript 索引签名](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
+:::
 
 ### 返回字段
 |字段|描述|

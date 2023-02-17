@@ -17,7 +17,13 @@ sidebar_position: 6
 
 ## 参数
 
-[BundleParams](../types#bundleparams)
+```ts
+everpay.bundle(bundleParams: BundleParams)
+```
+
+|参数|类型|
+|---|---|
+|bundleParams| 查看 [`BundleParams`](../types.md#bundleparams) 类型 |
 
 ## 返回
 

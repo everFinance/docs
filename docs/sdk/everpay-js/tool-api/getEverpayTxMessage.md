@@ -5,10 +5,15 @@ sidebar_position: 2
 # getEverpayTxMessage
 
 ## 功能
-将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithousig) 转化成 `messageData` 用于签名
+将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithoutsig) 转化成 `messageData` 用于签名
 
 ## 参数
-[EverpayTxWithoutSig](../types#everpaytxwithousig)
+```ts
+everpay.getEverpayTxMessage(everpayTxWithoutSig: EverpayTxWithoutSig)
+```
+|参数|类型|描述|
+|---|---|---|
+|everpayTxWithoutSig| [EverpayTxWithoutSig](../types.md#everpaytxwithoutsig) | 可通过 [getEverpayTxWithoutSig Api](./getEverpayTxWithoutSig.md) 获取 |
 
 ## 返回
 `messageData` string

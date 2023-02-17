@@ -12,11 +12,24 @@ Get all assets on everPay for the corresponding `account`.
 
 [BalancesParams](../types#balancesparams)
 
+|Query Field|Description|
+|---|---|
+|Request method|GET|
+|account|Optional,everpay account address, see account model for details|
+
 ## Return
 
 ### Return Type
 
-[BalanceItem](../types#balanceitem)[]
+```ts
+export interface BalanceItem {
+  chainType: string
+  tag: string
+  symbol: string
+  balance: string
+  address: string
+}[]
+```
 
 ### Return Fields
 

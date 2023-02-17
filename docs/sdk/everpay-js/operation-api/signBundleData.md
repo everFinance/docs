@@ -8,11 +8,33 @@ sidebar_position: 5
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，对 `bundleData` 进行签名，生成 [`BundleDataWithSigs`](../types#bundledatawithsigs)，用于 everPay 批量转账交易特定 `data` 生成。
 
 ## 参数
-[`BundleData`](../types#bundledata)
+```ts
+everpay.signBundleData(bundleData:BundleData)
+
+everpay.signBundleData(bundleDataWithSigs:BundleDataWithSigs)
+```
+
+|参数|类型|描述|
+|---|---|---|
+|bundleData| [`BundleData`](../types#bundledata) | 可通过 [getBundleData Api](../tool-api/getBundleData.md) 获取 |
 
 ## 返回
-[`BundleDataWithSigs`](../types#bundledatawithsigs)
 
+```ts
+export interface BundleDataWithSigs {
+  items: BundleItem[]
+  expiration: number
+  salt: string
+  version: string
+  sigs: {
+    [account: string]: string
+  }
+}
+```
+[查看 BundleItem 类型](../types.md#bundledata)
+:::info
+[typescript 索引签名](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
+:::
 ## 示例
 
 ```ts

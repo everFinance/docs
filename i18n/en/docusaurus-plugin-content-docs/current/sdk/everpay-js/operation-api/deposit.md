@@ -9,8 +9,13 @@ sidebar_position: 2
 Call the corresponding (plugin) wallet transfer function to deposit to the everPay account according to the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created
 
 ## Parameter
+```ts
+everpay.deposit(depositParams: DepositParams)
+```
 
-[DepositParams](../types#depositparams)
+|Field|Type|
+|---|---|
+|depositParams| View [`DepositParams`](../types#depositparams) Type|
 
 ## Return
 

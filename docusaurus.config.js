@@ -18,11 +18,11 @@ module.exports = {
   baseUrl: '/',
   trailingSlash,
 
+
   // 一般部署至托管商需要：结尾斜杠，不同的服务托管商需要
   // https://docusaurus.io/zh-CN/docs/deployment#trailing-slashes
   // https://docusaurus.io/zh-CN/docs/docusaurus.config.js#trailing-slash
   // trailingSlash
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
@@ -59,6 +59,10 @@ module.exports = {
             }
             return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
           },
+        },
+        gtag: {
+          trackingID: 'GTM-PZ2J4TP',
+          anonymizeIP: false,
         },
         // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用） 
         blog: false,
@@ -156,10 +160,6 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-    },
-    gtag: {
-      trackingID: 'GTM-PZ2J4TP',
-      anonymizeIP: false,
     },
     algolia: {
       // 自己生成索引需要

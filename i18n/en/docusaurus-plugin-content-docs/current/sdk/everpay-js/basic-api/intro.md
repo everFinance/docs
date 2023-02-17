@@ -10,6 +10,6 @@ For example.
 
 ```js
 const everpay = new Everpay()
-await everpay.info()
-await everpay.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859' })
+everpay.info().then(console.log)
+everpay.balances({ account: '0x26361130d5d6E798E9319114643AF8c868412859' }).then(console.log)
 ```

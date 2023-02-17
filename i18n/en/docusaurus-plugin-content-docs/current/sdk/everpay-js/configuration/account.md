@@ -23,22 +23,28 @@ const everpay = new Everpay({
 // Query account 0x26361130d5d6E798E9319114643AF8c868412859 for ETH asset balance on everpay production environment
 everpay.balance({
   tag: 'ethereum-eth-0x0000000000000000000000000000000000000000'
-})
+}).then(console.log)
 ```
 
-### Override account
+### Query account
 
 ```js
 const everpay = new Everpay({
   debug: false,
   account: '0x26361130d5d6E798E9319114643AF8c868412859'
-})
+}).then(console.log)
 
 // Query the balance of ETH assets on another account 0x2ca81e1253f9426c62Df68b39a22A377164eeC92 on the everpay production environment
 everpay.balance({
   tag: 'ethereum-eth-0x0000000000000000000000000000000000000000'
   account: '0x2ca81e1253f9426c62Df68b39a22A377164eeC92'
-})
+}).then(console.log)
+
+// The above code will not overwrite the account address at initialization
+// Query the balance of ETH assets on another account 0x26361130d5d6E798E9319114643AF8c868412859 on the everpay production environment
+everpay.balance({
+  tag: 'ethereum-eth-0x0000000000000000000000000000000000000000',
+}).then(console.log)
 ```
 
 ## Operation API Example

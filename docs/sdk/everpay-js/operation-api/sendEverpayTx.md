@@ -4,10 +4,16 @@ sidebar_position: 7
 
 # sendEverpayTx
 ## 功能
-将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithousig) 转化成 `messageData` 后，根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数进行签名，并发送至 everPay 服务器。
+将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithoutsig) 转化成 `messageData` 后，根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数进行签名，并发送至 everPay 服务器。
 
 ## 参数
-[EverpayTxWithoutSig](../types#everpaytxwithousig)
+```ts
+everpay.sendEverpayTx(everpayTxWithoutSig: EverpayTxWithoutSig)
+```
+
+|参数|类型|描述|
+|---|---|---|
+|everpayTxWithoutSig| [`EverpayTxWithoutSig`](../types#everpaytxwithoutsig) | 可通过 [getEverpayTxWithoutSig Api](../tool-api/getEverpayTxWithoutSig.md) 获取 |
 
 ## 返回
 [SendEverpayTxResult](../types#sendeverpaytxresult)

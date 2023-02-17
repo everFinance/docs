@@ -8,11 +8,35 @@ sidebar_position: 5
 Sign `bundleData` according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation, generate [`BundleDataWithSigs`](../types#bundledatawithsigs) for everPay bundle transaction specific `data` generation.
 
 ## Parameter
-[`BundleData`](../types#bundledata)
+
+```ts
+everpay.signBundleData(bundleData:BundleData)
+
+everpay.signBundleData(bundleDataWithSigs:BundleDataWithSigs)
+```
+
+|Field|Type|Description|
+|---|---|---|
+|bundleData| [BundleData](../types.md#bundledata) | Available via [getBundleData Api](../tool-api/getBundleData.md)|
+
 
 ## Return
-[`BundleDataWithSigs`](../types#bundledatawithsigs)
 
+```ts
+export interface BundleDataWithSigs {
+  items: BundleItem[]
+  expiration: number
+  salt: string
+  version: string
+  sigs: {
+    [account: string]: string
+  }
+}
+```
+[View BundleItem Type](../types.md#bundledata)
+:::info
+[Typescript Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
+:::
 ## Example
 
 ```ts

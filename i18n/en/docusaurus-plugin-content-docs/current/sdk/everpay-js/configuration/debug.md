@@ -7,6 +7,7 @@ sidebar_position: 2
 ## Configuration item function
 
 Used for development and production environment selection.
+* Default: `debug: false`
 
 ## Development environment
 

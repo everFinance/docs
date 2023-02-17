@@ -21,7 +21,7 @@ everpay.getEverpayTxWithoutSig(type, params)
 
 ## 返回
 
-[EverpayTxWithoutSig](../types#everpaytxwithoutSig)
+[EverpayTxWithoutSig](../types#everpaytxwithoutsig)
 
 ## 示例
 

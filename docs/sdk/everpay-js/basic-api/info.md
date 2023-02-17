@@ -9,14 +9,29 @@ sidebar_position: 2
 获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
 
 ## 参数
-
 无
+
+|查询字段|描述|
+|---|---|
+|请求方式|GET|
 
 ## 返回
 
 ### 返回类型
 
-[EverpayInfo](../types#everpayinfo)
+```ts
+export interface EverpayInfo {
+  ethLocker: string
+  arLocker: string
+  ethChainID: string
+  feeRecipient: string
+  owner: string
+  everRootHash: string
+  rootHash: string
+  tokenList: Token[]
+}
+```
+[查看 Token 类型](../types.md#token)
 
 ### 返回字段
 

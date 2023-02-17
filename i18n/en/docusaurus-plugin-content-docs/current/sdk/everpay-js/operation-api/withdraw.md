@@ -35,7 +35,12 @@ Any everPay account can withdraw assets on everPay to blockchain wallets that ev
 
 ## Parameter
 
-[WithdrawParams](../types#withdrawparams)
+```ts
+everpay.withdraw(withdrawParams: WithdrawParams)
+```
+|Field|Type|
+|---|---|
+|withdrawParams| View [`WithdrawParams`](../types.md#withdrawparams) Type |
 
 ## Return
 
