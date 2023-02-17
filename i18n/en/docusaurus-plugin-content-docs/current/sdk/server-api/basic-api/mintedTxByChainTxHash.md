@@ -12,6 +12,10 @@ For example, for an everPay deposit transaction, you can query the transaction r
 ## Parameter
 `{{everpay}}/minted/{{chainTxHash}}`
 
+|Query Field|Description|
+|---|---|
+|request method|GET|
+|chainTxHash|`chainTxHash` in blockchain recharge transaction records|
 :::danger
 Only everPay transaction records for deposit can be queryed by `chainTxHash`, but not everPay transaction records for withdrawal. For example
 * ethereum deposit transaction, the etherum txHash of etherum deposit is `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`, this everPay deposit transaction record can be accessed through this API

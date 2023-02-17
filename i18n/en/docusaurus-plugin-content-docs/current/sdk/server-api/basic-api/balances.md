@@ -10,6 +10,11 @@ Get all assets balance on everPay for the corresponding `account`.
 ## Parameter
 `{{endpoint}}/balances/{{account}}`
 
+|Query Field|Description|
+|---|---|
+|request method|GET|
+|account|everPay account address|
+
 ## Return Fields
 |Field|Description|
 |---|---|
