@@ -60,6 +60,10 @@ module.exports = {
             return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
           },
         },
+        gtag: {
+          trackingID: 'GTM-PZ2J4TP',
+          anonymizeIP: false,
+        },
         // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用） 
         blog: false,
         sitemap: {
@@ -156,10 +160,6 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-    },
-    gtag: {
-      trackingID: 'GTM-PZ2J4TP',
-      anonymizeIP: false,
     },
     algolia: {
       // 自己生成索引需要
