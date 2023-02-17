@@ -23,8 +23,13 @@ Any everPay account can transfer any of its assets on everPay to other everPay a
 :::
 
 ## Parameter
+```ts
+everpay.transfer(transferParams: TransferParams)
+```
 
-[TransferParams](../types#transferparams)
+|Field|Type|
+|---|---|
+|transferParams| View [`TransferParams`](../types.md#transferparams) Type |
 
 ## Return
 

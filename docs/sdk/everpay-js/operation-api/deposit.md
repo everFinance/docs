@@ -9,8 +9,13 @@ sidebar_position: 2
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值
 
 ## 参数
+```ts
+everpay.deposit(depositParams: DepositParams)
+```
 
-[DepositParams](../types#depositparams)
+|参数|类型|
+|---|---|
+|depositParams| 查看 [`DepositParams`](../types#depositparams) 类型|
 
 ## 返回
 

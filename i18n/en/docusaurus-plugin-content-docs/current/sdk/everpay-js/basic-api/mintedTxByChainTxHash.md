@@ -25,7 +25,33 @@ Only everPay transaction for deposit can be queryed by `chainTxHash`, but not ev
 ## Return
 
 ### Return Type
-[EverpayTransaction](../types#everpaytransaction)
+
+```ts
+export interface EverpayTransaction {
+  id: string // an arweave tx, which stored the everPay Tx information on the arweave blockchain
+  nonce: number
+  action: EverpayActionWithDeposit
+  from: string
+  to: string
+  amount: string
+  data: string
+  fee: string
+  feeRecipient: string
+  sig: string
+  everHash: string
+  status: EverpayTransactionStatus
+  timestamp: number
+  targetChainTxHash?: string
+  express: {
+    chainTxHash: string
+    withdrawFee: string
+    refundEverHash: string
+    err: string
+  }
+}
+```
+[View EverpayActionWithDeposit Type](../types.md#everpayactionwithdeposit)  
+[View EverpayTransactionStatus Type](../types.md#everpaytransactionstatus)
 
 ### Return Fields
 Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)

@@ -9,10 +9,23 @@ sidebar_position: 3
 
 ## 参数
 [BalancesParams](../types#balancesparams)
+
+|查询字段|描述|
+|---|---|
+|请求方式|GET|
+|account|可选，everpay 账户地址，详情查看[账户模型](../../../guide/dive/account-model.md)|
+
 ## 返回
 ### 返回类型
-[BalanceItem](../types#balanceitem)[]
-
+```ts
+export interface BalanceItem {
+  chainType: string
+  tag: string
+  symbol: string
+  balance: string
+  address: string
+}[]
+```
 ### 返回字段
 |字段|描述|
 |---|---|

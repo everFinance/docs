@@ -24,7 +24,33 @@ string
 
 ## 返回
 ### 返回类型
-[EverpayTransaction](../types#everpaytransaction)
+
+```ts
+export interface EverpayTransaction {
+  id: string // an arweave tx, which stored the everPay Tx information on the arweave blockchain
+  nonce: number
+  action: EverpayActionWithDeposit
+  from: string
+  to: string
+  amount: string
+  data: string
+  fee: string
+  feeRecipient: string
+  sig: string
+  everHash: string
+  status: EverpayTransactionStatus
+  timestamp: number
+  targetChainTxHash?: string
+  express: {
+    chainTxHash: string
+    withdrawFee: string
+    refundEverHash: string
+    err: string
+  }
+}
+```
+[查看 EverpayActionWithDeposit 类型](../types.md#everpayactionwithdeposit)  
+[查看 EverpayTransactionStatus 类型](../types.md#everpaytransactionstatus)
 
 ### 返回字段
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)

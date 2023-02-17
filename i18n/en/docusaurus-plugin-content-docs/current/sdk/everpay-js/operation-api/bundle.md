@@ -17,7 +17,13 @@ Developers can visit the [Guide - Dive - Bundle](../../../guide/dive/bundle) sec
 
 ## Parameter
 
-[BundleParams](../types#bundleparams)
+```ts
+everpay.bundle(bundleParams: BundleParams)
+```
+
+|Field|Type|
+|---|---|
+|bundleParams| View [BundleParams](../types.md#bundleparams) Type |
 
 ## Return
 

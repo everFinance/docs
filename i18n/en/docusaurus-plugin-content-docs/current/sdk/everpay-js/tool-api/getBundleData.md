@@ -21,7 +21,15 @@ everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
 
 ## Return
 
-[`BundleData`](../types#bundledata)
+```ts
+export interface BundleData {
+  items: BundleItem[]
+  expiration: number
+  salt: string
+  version: string
+}
+```
+[View BundleItem Type](../types.md#bundledata)
 
 ## Example
 

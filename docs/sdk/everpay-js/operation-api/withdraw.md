@@ -34,8 +34,12 @@ sidebar_position: 4
 :::
 
 ## 参数
-
-[WithdrawParams](../types#withdrawparams)
+```ts
+everpay.withdraw(withdrawParams: WithdrawParams)
+```
+|参数|类型|
+|---|---|
+|withdrawParams| 查看 [`WithdrawParams`](../types.md#withdrawparams) 类型 |
 
 ## 返回
 

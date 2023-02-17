@@ -20,7 +20,20 @@ string
 
 ### Return Type
 
-[FeeItem](../types#feeitem)
+```ts
+export interface FeeItem {
+  tokenTag: string
+  burnFeeMap: {
+    [propname: string]: string
+  }
+  transferFee: string
+  atomicBundleFee: string
+  updatedAt: string
+}
+```
+:::info
+[Typescript Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
+:::
 
 ### Return Fields
 

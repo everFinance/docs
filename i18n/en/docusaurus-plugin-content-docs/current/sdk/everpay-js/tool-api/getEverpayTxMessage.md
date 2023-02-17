@@ -8,7 +8,13 @@ sidebar_position: 2
 Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithousig)  into `messageData` for signature
 
 ## Parameter
-[EverpayTxWithoutSig](../types#everpaytxwithousig)
+
+```ts
+everpay.getEverpayTxMessage(everpayTxWithoutSig: EverpayTxWithoutSig)
+```
+|Field|Type|Description|
+|---|---|---|
+|everpayTxWithoutSig| [EverpayTxWithoutSig](../types.md#everpaytxwithoutsig) | Available via [getEverpayTxWithoutSig Api](./getEverpayTxWithoutSig.md)|
 
 ## Return
 `messageData` string
