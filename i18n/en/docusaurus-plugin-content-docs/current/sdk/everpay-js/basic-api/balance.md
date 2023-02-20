@@ -15,7 +15,7 @@ Get the asset balance of the specified token on everPay for the corresponding `a
 |Query Field|Description|
 |---|---|
 |Request method|GET|
-|account|Optional, everpay account address, see [account model](.../.../.../guide/dive/account-model.md) for details. |
+|account|Optional, everpay account address, see [account model](../../../guide/dive/account-model.md) for details. |
 |tag|A unique identifier for `token`, [info](./info.md) interface `tokenList` to see the unique `tag` for each `token`.|
 
 ## Return
