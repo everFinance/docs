@@ -2,14 +2,13 @@
 sidebar_position: 2
 ---
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+<!-- import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem' -->
 
 # 安装与使用
-
 ## 安装
 
-<Tabs>
+<!-- <Tabs>
 <TabItem value="yarn" label="yarn">
 
 ```bash
@@ -24,7 +23,17 @@ npm install everpay
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> -->
+
+### 使用 yarn 安装
+```console
+yarn add everpay
+```
+
+### 使用 npm 安装
+```console
+npm install everpay
+```
 
 ## 使用
 
