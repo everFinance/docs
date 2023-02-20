@@ -68,14 +68,7 @@ const everpay = new Everpay({
 - [chainType configuration item](../../sdk/everpay-js/types#chaintype)
 - More ways to create `ethConnectedSigner` can be found at [SDK - everpay-js - Configuration Items - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner).
 :::
-If the ts project, `window.ethereum` gives an error, create a type.d.ts file to configure ethereum under window.
 
-```ts
-declare interface Window {
-  ethereum: any
-  // ...
-}
-```
 ### CDN way to connect Ethereum wallet
 
 When creating, you need to introduce the everpay-js package and ethers package in the `head` of the `index.html` file.
