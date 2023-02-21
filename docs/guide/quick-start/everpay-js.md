@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 使用 everpay-js 快速集成
 
-everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用页面中。使用 everpay-js 可以在应用中快速完成 everPay 支付结算。
+everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用中。使用 everpay-js 可以在应用中快速完成 everPay 支付或结算。
 
 ## 使用要求
 
