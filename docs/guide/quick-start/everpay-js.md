@@ -4,12 +4,12 @@ sidebar_position: 2
 
 # 使用 everpay-js 快速集成
 
-everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用页面。使用 everpay-js 可以在应用中快速完成 everPay 支付结算。
+everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用页面中。使用 everpay-js 可以在应用中快速完成 everPay 支付结算。
 
 ## 使用要求
 
 - `Node Version >= 14` 推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 或 [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） 来管理 Node 版本。
-- [ethers.js](https://docs.ethers.io/v5/)（只有在使用以太坊钱包连接时需要）。推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)。
+- 推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)。[ethers.js](https://docs.ethers.io/v5/) 只有在使用以太坊钱包连接时需要。
 
 :::tip
 
@@ -110,8 +110,8 @@ ethRun()
 - [debug 环境配置](../../sdk/everpay-js/configuration/debug.md)。
 - [account 配置](../../guide/dive/account-model.md) & [chainType 配置项](../../sdk/everpay-js/types#chaintype)。
 - `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](../../sdk/everpay-js/configuration/ethConnectedSigner)。
-- CDN 方式创建 everpay 应用时，需要添加 `default` : `new window.Everpay.default({})`。
-- 确保 `ethers CDN链接` 和 `everpay CDN链接` 优先加载完成，否则 `ethers is not defined` 或 `Everpay is not defined` 。
+- CDN 方式创建 everPay 应用时，需要添加 `default` : `new window.Everpay.default({})`。
+- 确保 `ethers CDN链接` 和 `everPay CDN链接` 优先加载完成，否则 `ethers is not defined` 或 `Everpay is not defined` 。
 :::
 ---
 ### Arweave 钱包连接
@@ -176,7 +176,7 @@ arRun()
 * [chainType 配置项](../../sdk/everpay-js/types#chaintype)。
 * `arJWK` 也支持私钥格式，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](../../sdk/everpay-js/configuration/arJWK) 进行配置。
 * CDN 方式创建 everPay 应用时，需要添加 `default` : `new window.Everpay.default({})`。
-* 确保 `everpay CDN链接` 优先加载完成，否则 `Everpay is not defined` 。
+* 确保 `everPay CDN链接` 优先加载完成，否则 `Everpay is not defined` 。
 :::
 ---
 
@@ -189,7 +189,7 @@ arRun()
 
 填写充值所需要的 `token tag` 和 `amount`，调用下面的接口完成充值:
 * `tag` : `token` 的唯一标识，可通过 [`info`](../../sdk/everpay-js/basic-api/info.md#示例返回) 接口进行查看。
-* `amount` : 金额。 
+* `amount` : 数额。 
 ```js
 everpay
   .deposit({
@@ -201,18 +201,18 @@ everpay
 
 :::info
 
-- 耐心等待区块验证完成，即可在 everPay 中拥有对应财产。
+- 耐心等待区块验证完成，即可在 [everPay](https://app.everpay.io/) 中拥有对应财产。
 - Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块。
 - everPay 支持 AR 跨链，初始化注入 `ethConnectedSigner` 则充值调用的是 WAR（ERC20），初始化注入 `arJWK` 则充值调用的是 AR（native）。
 :::
 ---
 ## 转账
-`everPay 应用` 创建成功后，可通过 `transfer` 方法，可以对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 转账。
+`everPay 应用` 创建成功后，可通过 `transfer` 方法，对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 转账。
 
 填写转账所需要的 `token tag` 和 `amount`，`to`，调用下面的接口完成转账：
 
 * `tag` : `token` 的唯一标识，可通过 [`info`](../../sdk/everpay-js/basic-api/info.md#示例返回) 接口进行查看。
-* `amount` : 金额。 
+* `amount` : 数额。 
 * `to` : `everPay` 的收款方地址，详情可见 [账户模型](../dive/account-model.md)。
 ```js
 everpay
@@ -229,12 +229,12 @@ everpay
 :::
 ---
 ## 提现
-`everPay 应用` 创建成功后，可通过 `withdraw` 方法，可以对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 提现。将 everPay 中的 `资产(token)` 提到原生链地址中。
+`everPay 应用` 创建成功后，可通过 `withdraw` 方法，对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 提现。将 everPay 中的 `资产(token)` 提到原生链地址中。
 
 填写需要提现的 `token tag` 、 `amount`、 `chainType` 、`to`，调用下面的接口完成提现：
 
 * `token tag` : 唯一标识，可通过 [`info`](../../sdk/everpay-js/basic-api/info.md#示例返回) 接口进行查看。
-* `amount` : 金额。 
+* `amount` : 数额。 
 * `chainType` : [chainType 原生链](../../sdk/everpay-js/types.md#chaintype)。
 * `to` : `everpay` 收款方地址，详情可见 [账户模型](../dive/account-model.md)。
 
