@@ -47,14 +47,14 @@ const Everpay = require('everpay')
 - 请下载 [MetaMask](https://metamask.io/) 或 其他以太坊钱包。
 #### 1. 使用包管理器
 
-1. 安装 [everpay-js](./everpay-js.md#安装) 和 [ethers.js](https://github.com/ethers-io/ethers.js)。
+（1）安装 [everpay-js](./everpay-js.md#安装) 和 [ethers.js](https://github.com/ethers-io/ethers.js)。
 
 ```bash
 yarn add everpay ethers
 # or
 npm install everpay ethers
 ```
-2. 引入 everpay-js 和 ethers 进行创建。
+（2）引入 everpay-js 和 ethers 进行创建。
 ```js
 import Everpay from 'everpay'
 import { ethers } from 'ethers'
@@ -71,7 +71,7 @@ const everpay = new Everpay({
 ---
 #### 2. 通过 CDN 方式连接以太坊钱包
 
-1. 创建 `index.html` 文件并引入 [everpay-js](https://www.jsdelivr.com/package/npm/everpay?nav=config) 和 [ethers](https://www.jsdelivr.com/package/npm/ethers?nav=config&version=5.4.0) 的 CDN 链接。
+（1）创建 `index.html` 文件并引入 [everpay-js](https://www.jsdelivr.com/package/npm/everpay?nav=config) 和 [ethers](https://www.jsdelivr.com/package/npm/ethers?nav=config&version=5.4.0) 的 CDN 链接。
 
 ```html
 <script
@@ -86,7 +86,7 @@ const everpay = new Everpay({
 ></script>
 ```
 
-2. 在 `index.html` 文件中创建 `script` 标签，并根据以下代码进行填充。
+（2）在 `index.html` 文件中创建 `script` 标签，并根据以下代码进行填充。
 
 ```html
 <script type="text/javascript" defer>
@@ -121,14 +121,14 @@ ethRun()
 
 #### 1. 使用包管理
 
-1. 安装 [everpay-js](./everpay-js.md#安装)。
+（1）安装 [everpay-js](./everpay-js.md#安装)。
 
 ```bash
 yarn add everpay
 # or
 npm install everpay
 ```
-2. 引入 everpay-js 进行创建。
+（2）引入 everpay-js 进行创建。
 ```ts
 import Everpay from 'everpay'
 
@@ -143,7 +143,7 @@ const everpay = new Everpay({
 
 #### 2. 使用 CDN 方式连接 Arweave 钱包
 
-1. 创建 `index.html` 文件并引入 [everpay-js CDN](https://www.jsdelivr.com/package/npm/everpay?nav=config) 链接。
+（1）创建 `index.html` 文件并引入 [everpay-js CDN](https://www.jsdelivr.com/package/npm/everpay?nav=config) 链接。
 
 ```html
 <script
@@ -153,7 +153,7 @@ const everpay = new Everpay({
 ></script>
 ```
 
-2. 在 `index.html` 文件中创建 `script` 标签，并根据以下代码进行填充。
+（2）在 `index.html` 文件中创建 `script` 标签，并根据以下代码进行填充。
 
 ```html
 <script>
