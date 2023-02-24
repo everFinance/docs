@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## 功能
 
-获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
+获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约、`tokenList` 代表 everPay 支持的资产列表等信息。
 
 ## 参数
 `{{endpoint}}/info`
@@ -19,35 +19,36 @@ sidebar_position: 2
 
 |字段|描述|
 |---|---|
-|arLocker|everPay AR 原生代币锁仓地址|
-|ethChainID|当前以太坊网络 ID|
-|ethLocker|everPay 以太坊区块链ETH、erc20 Token 锁仓合约地址|
-|everRootHash| everPay 系统交易指纹，通过当前所有交易 everHash 逐笔进行 keccak256 获得|
-|feeRecipient|everPay 手续费收款账户 ID|
-|owner|负责将 everPay 交易记录存储至 Arweave 区块链的钱包地址|
-|rootHash|everPay 系统交易指纹，通过当前所有交易 everHash 与 id 逐笔进行 keccak256 获得|
-|tokenList|everPay 支持的资产列表。单一币种字段，见如下 [Token 字段描述](#Token-字段描述)|
+|arLocker|everPay AR 原生代币锁仓地址。|
+|ethChainID|当前以太坊网络 ID。|
+|ethLocker|everPay 以太坊区块链ETH、erc20 Token 锁仓合约地址。|
+|everRootHash| everPay 系统交易指纹，通过当前所有交易 everHash 逐笔进行 keccak256 获得。|
+|feeRecipient|everPay 手续费收款账户 ID。|
+|owner|负责将 everPay 交易记录存储至 Arweave 区块链的钱包地址。|
+|rootHash|everPay 系统交易指纹，通过当前所有交易 everHash 与 id 逐笔进行 keccak256 获得。|
+|lockers| everPay 所有支持原生链的锁仓地址。|
+|tokenList|everPay 支持的资产列表。单一币种字段，见如下 [Token 字段描述](#Token-字段描述)。|
 
 ### Token 字段描述
 
 |字段|描述|
 |---|---|
-|tag|由 `chainType`, `symbol`, `id` 通过 `-` 组合|
-|id|Token ID，通常为 Token erc20 合约地址，如支持多个区块链充值提现，以 `,` 隔开|
-|symbol|Token Symbol|
-|decimals|Token decimals|
-|chainDecimals|具体的链的 Token decimals|
-|totalSupply|everPay 上，Token 资产总量|
-|chainType|Token 所支持的区块链，如支持多个区块链充值提现，以 `,` 隔开|
-|chainID|Token 所支持的区块链网络 ID，如支持多个区块链充值提现，以 `,` 隔开|
-|burnFees|**普通提现**该 Token 需要支付的手续费|
-|transferFee|everPay 转账该 Token 需要支付的手续费|
-|crossChainInfoList|跨链信息|
+|tag|token 的唯一标识，由 `chainType`, `symbol`, `id` 通过 `-` 组合。|
+|id|Token ID，通常为 Token erc20 合约地址，如支持多个区块链充值提现，以 `,` 隔开。|
+|symbol|Token Symbol。|
+|decimals|Token decimals。|
+|chainDecimals|具体的链的 Token decimals。|
+|totalSupply|everPay 上，Token 资产总量。|
+|chainType|Token 所支持的区块链，如支持多个区块链充值提现，以 `,` 隔开。|
+|chainID|Token 所支持的区块链网络 ID，如支持多个区块链充值提现，以 `,` 隔开。|
+|burnFees|**普通提现**该 Token 需要支付的手续费。|
+|transferFee|everPay 转账该 Token 需要支付的手续费。|
+|crossChainInfoList|跨链信息。|
 
 :::danger
 
-* 以太坊地址大小写兼容，**Arweave 地址，大小写不兼容**
-* everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/transaction#schema)
+* 以太坊地址大小写兼容，**Arweave 地址，大小写不兼容**。
+* everPay 建议开发者，使用 everPay 返回的 Token 信息，组装 [`Schema`](../../../guide/dive/transaction#schema)。
 :::
 
 ## 示例
