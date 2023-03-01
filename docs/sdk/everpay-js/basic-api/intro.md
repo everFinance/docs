@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 介绍
 
-在 创建 Everpay 实例时，无需传递 `debug`, `account`, `ethConnectedSigner`, `arJWK` 甚至任意参数都不进行传递，也可进行 基础查询API 的调用。
+在 创建 Everpay 实例时，可选择性传递 `debug`, `account`, `ethConnectedSigner`, `arJWK`，甚至参数都不进行传递，也可进行 `基础查询API` 的调用。
 
 例如：
 

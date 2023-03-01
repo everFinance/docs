@@ -27,7 +27,7 @@ everPay 上所有交易记录，通过 分页 形式获取
 ## 示例
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/txs?page=1&tokenTa=ethereum-eth-0x0000000000000000000000000000000000000000'
+curl --location --request GET 'https://api-dev.everpay.io/txs?page=1&tokenTag=ethereum-eth-0x0000000000000000000000000000000000000000'
 ```
 
 ## 示例返回

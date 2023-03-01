@@ -6,18 +6,20 @@ sidebar_position: 6
 
 ## 功能
 
-everPay 上所有交易记录，通过 分页 形式获取
+获取 everPay 上所有交易记录，通过 分页 形式展示。
 
 ## 参数
-
-[TxsParams](../types#txsparams)
+```ts
+everpay.txs(txsParams:TxsParams):TxsResult
+```
+[查看 TxsParams 类型](../types#txsparams)
 
 |查询字段|描述|
 |---|---|
 |page|可选，默认为 1 。|
-|tag|可选, `token` 的唯一标识，[info](./info.md) 接口中 `tokenList` 可查看每个 `token` 的唯一 `tag`。|
-|action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
-|withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
+|tag|可选, token 的唯一标识，可通过 [`info`](./info.md#示例返回) 接口进行查看。|
+|action|可选，其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
+|withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../guide/dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
 
 ## 返回
 
@@ -35,13 +37,13 @@ export interface TxsResult {
 
 ### 返回字段
 
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../guide/dive/transaction#交易记录)。
 
 ## 示例
 
 ```js
 const everpay = new Everpay({ debug: true })
-everpay.txs({ page: 1 }).then(console.log)
+everpay.txs({ page: 1, action: 'transfer'}).then(console.log)
 ```
 
 ## 示例返回
@@ -49,31 +51,42 @@ everpay.txs({ page: 1 }).then(console.log)
 ```js
 {
   currentPage: 1,
-  totalPages: 196,
+  totalPages: 35,
   txs: [
     {
-      id: 'Lwml1yitCpuIyJ6w-MgCPWRpDjE1-5dQF_hGw7OQcoY',
-      tokenSymbol: 'ETH',
-      action: 'burn',
-      from: '0x295204c357963C07F7D696E61cB243A0CE92cC0c',
-      to: '0xB245ceC3b31707e2ffe1C58148cEC6b6017255a3',
-      amount: '979251798000000000',
-      fee: '20000000000000000',
-      feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-      nonce: 1625733233558,
-      tokenID: '0x0000000000000000000000000000000000000000',
-      chainType: 'ethereum',
-      chainID: '42',
-      data: '',
-      sig: '0x53dd3941c422b514b59e55bbecd66143aea199fef582842dcfd7d0f64aad4cf21f0e95fcc2346a44bc027e1a0ef474960d51b5745a6e9685930a14920d2b1afa1b',
-      everHash: '0xaf5f8a2d95af57553eddc4d280ea5911d9152e346aaa8b772cb61db05ea05590',
-      status: 'packaged',
-      timestamp: 1625733624000,
-      targetChainTxHash: '0xdbe3cf5194b289deb674cb88c6510ae85de0572fdeefd83d0cd1dbdaf8f9d94e'
-    },
-    // etc.
+      rawId: 1309,
+      id: "DkeiBMTQZtZSFNrK_3hgvxT9TZ1ekbD30wKGVhIBR3o",
+      tokenSymbol: "ETH",
+      action: "transfer",
+      from: "0x66303B4D1e522272D613EE23dd79e528eAb2279D",
+      to: "0xc16D22719619BC8bEBc1cCFe3Fb62b6848d1c740",
+      amount: "54900000000000000",
+      fee: "0",
+      feeRecipient: "0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1",
+      nonce: 1677234578508,
+      tokenID: "0x0000000000000000000000000000000000000000",
+      chainType: "ethereum",
+      chainID: "5",
+      data: "{\"targetChainHash\":\"0x25d0fc93b8f77265f3e305912bab924653c2c787cda34f3d65400db410ceb430\"}",
+      version: "v1",
+      sig: "0x42e022bedd0e89dcca9cfdfb6157baffff133451251ed5bf3362e06cd9f00e105cc326e3c7ad6ca12928b811a16e315672f8dba3c32ac68536bf8cf6c8348c601b",
+      everHash:
+        "0x6358b3883b2028c9720fac59544ce9ca62ece51093e357b5bc5c71a7c59a13f5",
+      status: "packaged",
+      internalStatus: "{\"status\":\"success\"}",
+      timestamp: 1677235004000,
+      targetChainTxHash: "",
+      express: {
+        chainTxHash: "",
+        withdrawFee: "",
+        refundEverHash: "",
+        err: ""
+      }
+    }
+    // etc .
   ]
 }
+
 ```
 
 :::info

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## 功能
 
-获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约。
+获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约、  `tokenList` 代表 everPay 支持的资产列表等信息。
 
 ## 参数
 无
@@ -45,14 +45,13 @@ everpay.info().then(console.log)
 ```
 
 ## 示例返回
-
 ```json
 {
     "isSynced": true,
     "isClosed": false,
-    "balanceRootHash": "0x46e8415df1532329a24f2c66973a7c292751d1125bdb70279675e1bbc10e82bc",
-    "rootHash": "0xf43e697493cad7558ed0057ccbb19e2c69d6e703346a988c3026ebb6d0de034a",
-    "everRootHash": "0xec2a7cf85427e913b2c7af7224d34135a0a94adfcef2de1043f3ebbdf27bd05d",
+    "balanceRootHash": "0xcecc83ae52f37aa40e23fbc3bc6e003df6118ee0c2094679a8c7aa6071c74f98",
+    "rootHash": "0x8dea2e2efd9741798c9806a9057d9eaf0eb17aded23874742d42bfad795c7b2c",
+    "everRootHash": "0x0c6660c28b9beb52aa8b4b8525734e0a84fae3b51560028c578bbe7f5f961478",
     "owner": "uGx-QfBXSwABKxjha-00dI7vvfyqIYblY6Z5L6cyTFM",
     "setActionOwner": "0x2f669E44F42f26435034EEC7224a7df92a55Cf6A",
     "ethChainID": "1",
@@ -73,7 +72,7 @@ everpay.info().then(console.log)
             "id": "0x0000000000000000000000000000000000000000",
             "symbol": "BNB",
             "decimals": 18,
-            "totalSupply": "3389239000000000000",
+            "totalSupply": "3352579100000000000",
             "chainType": "bsc",
             "chainID": "56",
             "burnFees": {
@@ -81,7 +80,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 29,
+            "holderNum": 35,
             "crossChainInfoList": {
                 "bsc": {
                     "targetChainId": "56",
@@ -96,11 +95,11 @@ everpay.info().then(console.log)
             "id": "0x67ee3cb086f8a16f34bee3ca72fad36f7db929e2",
             "symbol": "DODO",
             "decimals": 18,
-            "totalSupply": "28995756582720298411",
+            "totalSupply": "28005756582720298414",
             "chainType": "bsc",
             "chainID": "56",
             "burnFees": {
-                "bsc": "3"
+                "bsc": "2"
             },
             "transferFee": "0",
             "bundleFee": "0",
@@ -119,7 +118,7 @@ everpay.info().then(console.log)
             "id": "0x0000000000000000000000000000000000000000",
             "symbol": "LAT",
             "decimals": 18,
-            "totalSupply": "69798895148000000000000",
+            "totalSupply": "117295799400000000000",
             "chainType": "platon",
             "chainID": "210425",
             "burnFees": {
@@ -127,7 +126,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 8,
+            "holderNum": 11,
             "crossChainInfoList": {
                 "platon": {
                     "targetChainId": "210425",
@@ -142,15 +141,15 @@ everpay.info().then(console.log)
             "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             "symbol": "USDC",
             "decimals": 6,
-            "totalSupply": "411570280890",
+            "totalSupply": "430275920724",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
-                "ethereum": "2"
+                "ethereum": "3000000"
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 338,
+            "holderNum": 360,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",
@@ -169,7 +168,7 @@ everpay.info().then(console.log)
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
-                "ethereum": "4"
+                "ethereum": "8000000"
             },
             "transferFee": "0",
             "bundleFee": "0",
@@ -188,7 +187,7 @@ everpay.info().then(console.log)
             "id": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x4fadc7a98f2dc96510e42dd1a74141eeae0c1543",
             "symbol": "AR",
             "decimals": 12,
-            "totalSupply": "39256515550653796",
+            "totalSupply": "40630857990359370",
             "chainType": "arweave,ethereum",
             "chainID": "0,1",
             "burnFees": {
@@ -198,7 +197,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 2022,
+            "holderNum": 2239,
             "crossChainInfoList": {
                 "arweave": {
                     "targetChainId": "0",
@@ -225,7 +224,7 @@ everpay.info().then(console.log)
             "id": "0x0000000000000000000000000000000000000000",
             "symbol": "ETH",
             "decimals": 18,
-            "totalSupply": "63932986100867296315",
+            "totalSupply": "64060215899199604555",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
@@ -233,7 +232,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 309,
+            "holderNum": 338,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",
@@ -248,7 +247,7 @@ everpay.info().then(console.log)
             "id": "0x0000000000000000000000000000000000000000",
             "symbol": "GLMR",
             "decimals": 18,
-            "totalSupply": "131855800000000000000",
+            "totalSupply": "430871400000000000000",
             "chainType": "moonbeam",
             "chainID": "1284",
             "burnFees": {
@@ -256,7 +255,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 19,
+            "holderNum": 21,
             "crossChainInfoList": {
                 "moon": {
                     "targetChainId": "1284",
@@ -271,7 +270,7 @@ everpay.info().then(console.log)
             "id": "0x0000000000000000000000000000000000000000",
             "symbol": "CFX",
             "decimals": 18,
-            "totalSupply": "94566370663860567551906",
+            "totalSupply": "78377104932294969828124",
             "chainType": "conflux",
             "chainID": "1030",
             "burnFees": {
@@ -294,15 +293,15 @@ everpay.info().then(console.log)
             "id": "0xdac17f958d2ee523a2206206994597c13d831ec7",
             "symbol": "USDT",
             "decimals": 6,
-            "totalSupply": "86899673825",
+            "totalSupply": "80992658803",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
-                "ethereum": "2"
+                "ethereum": "3000000"
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 239,
+            "holderNum": 241,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",
@@ -340,7 +339,7 @@ everpay.info().then(console.log)
             "id": "-8A6RexFkpfWwuyVO98wzSFZh0d6VJuI-buTJvlwOJQ",
             "symbol": "ARDRIVE",
             "decimals": 18,
-            "totalSupply": "993900000000000000000",
+            "totalSupply": "1522900000000000000000",
             "chainType": "arweave",
             "chainID": "0",
             "burnFees": {
@@ -349,7 +348,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 27,
+            "holderNum": 37,
             "crossChainInfoList": {
                 "arweave": {
                     "targetChainId": "0",
@@ -370,15 +369,15 @@ everpay.info().then(console.log)
             "id": "0x3b484b82567a09e2588a13d54d032153f0c0aee0",
             "symbol": "SOS",
             "decimals": 18,
-            "totalSupply": "1470183164366819000575577865",
+            "totalSupply": "1461520461657719000602774864",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
-                "ethereum": "22256743"
+                "ethereum": "22439460"
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 248,
+            "holderNum": 271,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",
@@ -393,7 +392,7 @@ everpay.info().then(console.log)
             "id": "0xeaba187306335dd773ca8042b3792c46e213636a",
             "symbol": "T4EVER",
             "decimals": 18,
-            "totalSupply": "257378600000000000000000",
+            "totalSupply": "408143600000000000000000",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
@@ -401,7 +400,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 4,
+            "holderNum": 6,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",
@@ -485,7 +484,7 @@ everpay.info().then(console.log)
             "id": "usjm4PCxUd5mtaon7zc97-dt-3qf67yPyqgzLnLqk5A",
             "symbol": "VRT",
             "decimals": 18,
-            "totalSupply": "1781000000000000000000",
+            "totalSupply": "1840000000000000000000",
             "chainType": "arweave",
             "chainID": "0",
             "burnFees": {
@@ -493,7 +492,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 13,
+            "holderNum": 15,
             "crossChainInfoList": {
                 "arweave": {
                     "targetChainId": "0",
@@ -531,7 +530,7 @@ everpay.info().then(console.log)
             "id": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
             "symbol": "UNI",
             "decimals": 18,
-            "totalSupply": "2786765696054602880",
+            "totalSupply": "7786765696054602880",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
@@ -539,7 +538,7 @@ everpay.info().then(console.log)
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 2,
+            "holderNum": 3,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",
@@ -554,15 +553,15 @@ everpay.info().then(console.log)
             "id": "0x6b175474e89094c44da98b954eedeac495271d0f",
             "symbol": "DAI",
             "decimals": 18,
-            "totalSupply": "299873170623989827352",
+            "totalSupply": "304973170623989827352",
             "chainType": "ethereum",
             "chainID": "1",
             "burnFees": {
-                "ethereum": "2"
+                "ethereum": "3000000000000000000"
             },
             "transferFee": "0",
             "bundleFee": "0",
-            "holderNum": 15,
+            "holderNum": 16,
             "crossChainInfoList": {
                 "ethereum": {
                     "targetChainId": "1",

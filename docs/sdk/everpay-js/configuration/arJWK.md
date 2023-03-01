@@ -1,15 +1,13 @@
 ---
 sidebar_position: 6
 ---
-
+# arJWK
 <!-- import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem' -->
 
-# arJWK
-
 ## 配置项功能
 
-此配置项用于通过 arweave 钱包 来操作 everPay arweave 账户模型的 账户，对该账户进行：
+此配置项用于通过 arweave 钱包 来操作 everPay `arweave 账户模型` 的 账户，对该账户进行：
 
 - 充值：使用 `arJWK` 进行 arweave 转账 至 everPay arweave 锁仓地址（**通过门限签名实现了多签**）。
 - 转账：使用 `arJWK` 进行 arweave `RSA-PSS SHA-256` 签名，来确保该 everPay 账户的操作权限。
@@ -31,7 +29,7 @@ export type ArJWK = JWKInterface | 'use_wallet'
 
 ### JWKInterface 方式
 
-参考：[arweave Docs - Sample JWK](https://docs.arweave.org/developers/server/http-api#sample-jwk)
+参考：[arweave Docs - Sample JWK](https://docs.arweave.org/developers/server/http-api#sample-jwk)。
 
 arweave 的私钥格式，一个 KEY JSON，例如：
 
@@ -57,12 +55,12 @@ const everpay = new Everpay({
 ```
 
 :::danger 私钥泄漏风险
-此方式在代码中明文传递私钥（arJWK），存在安全风险
+此方式在代码中明文传递私钥（arJWK），存在安全风险。
 :::
 
 ### 浏览器 + arconnect
 
-当用户 浏览器安装了 [arconnect](https://arconnect.io/) 后，可以使用 传递 `arJWK: 'use_wallet'` 来指定使用 [arconnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
+当用户 浏览器安装了 [arconnect](https://arconnect.io/) 后，可以传递 `arJWK: 'use_wallet'` 来指定使用 [arconnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
 
 
 <!-- <Tabs>
@@ -208,5 +206,5 @@ const everpay = new Everpay({
 
 1. [arweave-js](https://github.com/ArweaveTeam/arweave-js) 也支持在浏览器端使用 `'use_wallet'` 作为 `jwk` 参数，来使用 arconnect 获取 arweave 钱包地址，以及进行 arweave 转账、签名。详见[arweave-js Search · use_wallet](https://github.com/ArweaveTeam/arweave-js/search?q=use_wallet)
 2. everpay-js 集成了 [arweave-js](https://github.com/ArweaveTeam/arweave-js)，来进行 arweave 转账，使用 `'use_wallet'` 可让 [arweave-js](https://github.com/ArweaveTeam/arweave-js) 去调用 [arconnect](https://arconnect.io/)，从而减少开发者适配 [arconnect](https://arconnect.io/) 的成本。
-3. 在 Web 端，使用 `'use_wallet'` 代表的 [arconnect](https://arconnect.io/)，更 **安全**。
+3. 在 Web 端，使用 `'use_wallet'` 代表的 [arconnect](https://arconnect.io/)，**更安全**。
 

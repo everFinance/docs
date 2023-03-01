@@ -5,15 +5,18 @@ sidebar_position: 3
 # balances
 
 ## 功能
-获取 对应 `account` 在 everPay 上的所有资产信息
+获取对应 `账户(account)` 在 everPay 上的所有资产信息。
 
 ## 参数
-[BalancesParams](../types#balancesparams)
+```ts
+everpay.balances(balancesParams:BalancesParams):BalanceItem[]
+```
+[查看 BalancesParams 类型](../types#balancesparams)
 
 |查询字段|描述|
 |---|---|
 |请求方式|GET|
-|account|可选，everpay 账户地址，详情查看[账户模型](../../../guide/dive/account-model.md)|
+|account|可选，everpay 账户地址，详情查看[账户模型](../../../guide/dive/account-model.md)。|
 
 ## 返回
 ### 返回类型
@@ -29,11 +32,11 @@ export interface BalanceItem {
 ### 返回字段
 |字段|描述|
 |---|---|
-|chainType|该资产支持充值、提现的区块链，如支持多个区块链充值、提现，以 `,` 分隔开|
-|symbol|该资产名称|
-|address|该资产区块链合约地址，如如支持多个区块链充值、提现，以 `,` 分隔开，顺序与 `chainType` 中区块链名称顺序保持一致|
-|tag|该资产唯一标识|
-|balance|该资产余额，非 uint 类型，已经过 `decimals` 处理|
+|chainType|该资产支持充值、提现的区块链，如支持多个区块链充值、提现，以 `,` 分隔开。|
+|symbol|该资产名称。|
+|address|该资产区块链合约地址，如如支持多个区块链充值、提现，以 `,` 分隔开，顺序与 `chainType` 中区块链名称顺序保持一致。|
+|tag|token 的唯一标识，由 `chainType` , `symbol` , `id` 通过 `-` 组合。|
+|balance|该资产余额，非 uint 类型，已经过 `decimals` 处理。|
 ## 示例
 
 ```js

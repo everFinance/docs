@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## 配置项功能
 
-此配置项用于通过 ethereum/moonbeam/moonbase 钱包 来操作 everPay ethereum 账户模型的 账户，对该账户进行
+此配置项用于通过 ethereum/moonbeam/moonbase 钱包，来操作 everPay `ethereum 账户模型` 的 账户，对该账户进行：
 
 * 充值：使用 `ethConnectedSigner` 进行 ethereum 转账 至 everPay 多签合约地址。
 * 转账：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限。
@@ -20,7 +20,7 @@ everpay-js 集成了 [ethers.js](https://docs.ethers.io/v5/) 用于 ethereum 签
 
 ### ethereum 钱包: imToken / MetaMask 等
 
-参考 [ethers.js Connecting to Ethereum: Metamask](https://docs.ethers.io/v5/getting-started/#getting-started--connecting)
+参考 [ethers.js Connecting to Ethereum: Metamask](https://docs.ethers.io/v5/getting-started/#getting-started--connecting)。
 
 ```ts
 const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -34,7 +34,7 @@ const everpay = new Everpay({
 
 ### RPC API + privateKey
 
-参考 [ethers.js Wallet API](https://docs.ethers.io/v5/api/signer/#Wallet)
+参考 [ethers.js Wallet API](https://docs.ethers.io/v5/api/signer/#Wallet)。
 
 ```js
 const address = 'YOUR ADDRESS'

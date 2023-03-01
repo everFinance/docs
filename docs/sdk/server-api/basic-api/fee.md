@@ -5,7 +5,7 @@ sidebar_position: 6
 # fee
 
 ## 功能
-获取 在 everPay 上的 `指定代币` 的`transfer`、`withdraw`、`bundle` 手续费。
+获取 在 everPay 上 `指定代币` 的`transfer`、`withdraw`、`bundle` 手续费。
 
 ## 参数
 `{{ endpoint }}/fee/{{ tokenTag }}`

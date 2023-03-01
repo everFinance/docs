@@ -38,7 +38,7 @@ npm install everpay
 ## 使用
 
 ### es module
-```js
+```ts
 import Everpay from 'everpay'
 const everpay = new Everpay()
 ```
