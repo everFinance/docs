@@ -7,7 +7,7 @@ sidebar_position: 2
 ## 配置项功能
 
 用于 测试、正式 环境选择。 
-* 默认: `debug: false`
+* 默认正式环境：`debug: false`。
 
 ## 测试环境
 

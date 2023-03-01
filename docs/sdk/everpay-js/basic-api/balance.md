@@ -5,20 +5,24 @@ sidebar_position: 4
 # balance
 
 ## 功能
-获取 对应 `account` 在 everPay 上的 指定代币 的资产余额
+获取对应 `账户(account)` 在 everPay 上的 `指定代币(symbol)` 的资产余额。
 
 ## 参数
-[BalanceParams](../types#balanceparams)
+```ts
+everpay.balance(balanceParams:BalanceParams):string
+```
+[查看 BalanceParams 类型](../types#balanceparams)
 
 |查询字段|描述|
 |---|---|
 |请求方式|GET|
 |account|可选，everpay 账户地址，详情查看[账户模型](../../../guide/dive/account-model.md)。|
-|tag|`token` 的唯一标识，[info](./info.md) 接口中 `tokenList` 可查看每个 `token` 的唯一 `tag`。|
+|tag|`token` 的唯一标识，可通过 [`info`](./info.md) 接口进行查看。|
 
 
 ## 返回
 ### 返回类型
+
 string
 
 :::info

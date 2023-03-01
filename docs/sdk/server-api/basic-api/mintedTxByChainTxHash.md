@@ -5,7 +5,7 @@ sidebar_position: 10
 # mintedTxByChainTxHash
 
 ## 功能
-通过区块链 **充值** 的交易记录 `chainTxHash` 获取 everPay 上对应的 everPay 充值交易记录。
+通过区块链 **充值** 的交易记录中的 `chainTxHash` 可以获取 everPay 上对应的 everPay 充值交易记录。
 
 例如一笔 everPay 充值交易，可通过 `chainTxHash` 查询该笔交易记录，如果该笔 everPay 交易记录存在，即可认为充值已到账。
 
