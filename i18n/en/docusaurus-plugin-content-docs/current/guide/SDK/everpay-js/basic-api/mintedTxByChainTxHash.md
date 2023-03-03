@@ -54,7 +54,7 @@ export interface EverpayTransaction {
 [View EverpayTransactionStatus Type](../types.md#everpaytransactionstatus)
 
 ### Return Fields
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../guide/dive/transaction#transaction-record)
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../basic/dive/transaction#transaction-record)
 
 ## Example
 
