@@ -16,7 +16,7 @@ everpay.balances(balancesParams:BalancesParams):BalanceItem[]
 |查询字段|描述|
 |---|---|
 |请求方式|GET|
-|account|可选，everpay 账户地址，详情查看[账户模型](../../../dive/account-model.md)。|
+|account|可选，everpay 账户地址，详情查看[账户模型](../../../basic/dive/account-model.md)。|
 
 ## 返回
 ### 返回类型
