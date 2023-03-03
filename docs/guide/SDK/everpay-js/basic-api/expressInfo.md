@@ -19,7 +19,7 @@ sidebar_position: 9
 [ExpressInfo](../types#expressinfo)
 
 ### 返回字段
-字段信息可查看 [Server API - 基础查询接口 - expressInfo - 返回字段](../../server-api/basic-api/expressinfo#返回字段)
+字段信息可查看 [Server API - 基础查询接口 - expressInfo - 返回字段](../../../server-api/basic-api/expressInfo.md#返回字段)
 ## 示例
 
 ```js

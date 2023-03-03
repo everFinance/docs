@@ -52,7 +52,7 @@ sidebar_position: 6
 :::caution
 
 * 快速提现通过 everPay 转账实现，`Schema` 定义与转账一致
-* `to` 需要设置为做市商 everPay 账户 ID（通过 [expressInfo API](../server-api/basic-api/expressinfo) 获取）
+* `to` 需要设置为做市商 everPay 账户 ID（通过 [expressInfo API](../../server-api/basic-api/expressInfo.md) 获取）
 * 通过 `data` 定义特殊字段，达成快速提现的目的
 :::
 

@@ -18,8 +18,8 @@ everpay.txs(txsParams:TxsParams):TxsResult
 |---|---|
 |page|可选，默认为 1 。|
 |tag|可选, token 的唯一标识，可通过 [`info`](./info.md#示例返回) 接口进行查看。|
-|action|可选，其中 [快速提现](../../../dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
-|withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
+|action|可选，其中 [快速提现](../../../basic/dive/withdraw.md#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
+|withoutAction|可选，排除某种类型的交易。其中 [快速提现](../../../basic/dive/withdraw.md#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
 
 ## 返回
 
@@ -37,7 +37,7 @@ export interface TxsResult {
 
 ### 返回字段
 
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../dive/transaction#交易记录)。
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../basic/dive/transaction.md#交易记录)。
 
 ## 示例
 

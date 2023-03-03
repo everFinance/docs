@@ -7,7 +7,7 @@ import Translate from '@docusaurus/Translate';
 const FeatureList = [
   {
     title: <Translate>指南</Translate>,
-    to: 'docs/guide/quick-start/overview',
+    to: 'docs/guide/getting-started/overview',
     src: require('../../static/img/sharding.png').default,
     description: (
       <Translate>
@@ -15,16 +15,16 @@ const FeatureList = [
       </Translate>
     ),
   },
-  {
-    title: 'SDK',
-    to: 'docs/sdk/intro',
-    src: require('../../static/img/dev.png').default,
-    description: (
-      <Translate>
-        everPay 服务端接口与客户端 SDK
-      </Translate>
-    ),
-  },
+  // {
+  //   title: 'SDK',
+  //   to: 'docs/sdk/intro',
+  //   src: require('../../static/img/dev.png').default,
+  //   description: (
+  //     <Translate>
+  //       everPay 服务端接口与客户端 SDK
+  //     </Translate>
+  //   ),
+  // },
 ];
 
 function Feature({src, title, description, to}) {
