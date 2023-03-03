@@ -54,7 +54,7 @@ const transferAsync = async (ethConnectedSigner: Signer, {
 ### Via everpay-js
 everpay-js is now a packaged open source, integrated with ethers.js, developers do not need to care about `Token decimals`. It's very easy for developers to integrate and use. 
 
-To use everpay-js for top-ups, please refer to: [everpay-js deposit](../../everpay-js/operation-api/deposit#ethereum-wallet-1)。
+To use everpay-js for top-ups, please refer to: [everpay-js deposit](../../SDK/everpay-js/operation-api/deposit#ethereum-wallet-1)。
 
 
 ## Fund your Arweave account
