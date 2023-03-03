@@ -87,16 +87,16 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'guide/quick-start/overview',
+          docId: 'guide/getting-started/overview',
           position: 'left',
           label: '指南',
         },
-        {
-          type: 'doc',
-          docId: 'sdk/intro',
-          position: 'left',
-          label: 'SDK',
-        },
+        // {
+        //   type: 'doc',
+        //   docId: 'sdk/intro',
+        //   position: 'left',
+        //   label: 'SDK',
+        // },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -116,12 +116,12 @@ module.exports = {
           items: [
             {
               label: '指南',
-              to: '/docs/guide/quick-start/overview',
+              to: '/docs/guide/getting-started/overview',
             },
-            {
-              label: 'SDK',
-              to: '/docs/sdk/intro',
-            }
+            // {
+            //   label: 'SDK',
+            //   to: '/docs/sdk/intro',
+            // }
           ],
         },
         {
