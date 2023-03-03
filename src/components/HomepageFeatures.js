@@ -15,16 +15,16 @@ const FeatureList = [
       </Translate>
     ),
   },
-  // {
-  //   title: 'SDK',
-  //   to: 'docs/sdk/intro',
-  //   src: require('../../static/img/dev.png').default,
-  //   description: (
-  //     <Translate>
-  //       everPay 服务端接口与客户端 SDK
-  //     </Translate>
-  //   ),
-  // },
+  {
+    title: 'SDK',
+    to: 'docs/guide/SDK/intro',
+    src: require('../../static/img/dev.png').default,
+    description: (
+      <Translate>
+        everPay 客户端 SDK
+      </Translate>
+    ),
+  },
 ];
 
 function Feature({src, title, description, to}) {

@@ -5,8 +5,8 @@
   "了解、深入 everPay 协议": {
     "message": "Understand and dive into everPay protocol"
   },
-  "everPay 服务端接口与客户端 SDK": {
-    "message": "everPay server-side interface and client-side SDK"
+  "everPay 客户端 SDK": {
+    "message": "everPay client-side SDK"
   },
   "everPay 文档": {
     "message": "everPay Docs"
