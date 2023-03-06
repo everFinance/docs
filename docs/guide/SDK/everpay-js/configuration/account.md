@@ -5,9 +5,9 @@ sidebar_position: 3
 # account
 
 ## 配置项功能
-* account 为 everPay 账户地址，详情可见[账户模型](../../../basic/dive/account-model.md)。
-* 当调用 everpay-js [基础查询API](../basic-api/intro) 时，此 `account` 配置项作为默认的 account 参数，传递给 基础查询API。
-* 当调用 everpay-js [操作类API](../operation-api/intro) 、（everpay充值、转账、提现）时，此 `account` 配置项 **必须传递，并且满足如下钱包地址之一**。
+* account 为 everPay 账户地址，详情可见[`账户模型`](../../../basic/dive/account-model.md)。
+* 当调用 everpay-js [`基础查询API`](../basic-api/intro) 时，此 `account` 配置项作为默认的 account 参数，传递给 基础查询API。
+* 当调用 everpay-js [`操作类API`](../operation-api/intro) 、（everpay充值、转账、提现）时，此 `account` 配置项 **必须传递，并且满足如下钱包地址之一**。
     * 与 ethConnectedSigner 对应的 ethereum 钱包地址一致。
     * 与 arJWK 对应的 arweave 钱包地址一致。
 
@@ -16,7 +16,7 @@ sidebar_position: 3
 ### 默认查询 account 对应的基础信息
 ```js
 const everpay = new Everpay({
-  debug: false, // 开启正式环境
+  debug: false, // 默认开启正式环境
   account: '0x26361130d5d6E798E9319114643AF8c868412859' // 账户地址
 })
 // 查询 账户 0x26361130d5d6E798E9319114643AF8c868412859 在 everpay 正式环境上的 ETH 资产余额

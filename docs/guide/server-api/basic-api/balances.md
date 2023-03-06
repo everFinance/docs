@@ -10,10 +10,9 @@ sidebar_position: 3
 ## 参数
 `{{ endpoint }}/balances/{{ account }}`
 
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|account|everPay 账户地址。|
+|查询字段|是否必需|描述|
+|---|---|---|
+|account|YES|everPay 账户地址。|
 
 ## 返回字段
 |字段|描述|

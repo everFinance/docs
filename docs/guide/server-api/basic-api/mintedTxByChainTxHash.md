@@ -12,15 +12,14 @@ sidebar_position: 10
 ## 参数
 `{{ endpoint }}/minted/{{ chainTxHash }}`
 
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|chainTxHash|区块链充值交易记录中的 `hash`。|
+|查询字段|是否比需|描述|
+|---|---|---|
+|chainTxHash| YES |区块链充值交易记录中的 `hash`。|
 
 :::danger
 仅可通过 `chainTxHash` 查询充值的 everPay 交易记录，无法查询提现的 everPay 交易记录。例如：
-* ethereum 充值交易，etherum 充值的 etherum txHash 为 `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`，此笔 everPay 充值交易记录可通过此 API 获取
-* everPay 提现交易，最终提现至用户 ethereum 钱包地址的交易 txHash 为 `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`，此笔 everPay 提现交易记录无法通过此 API 获取
+* ethereum 充值交易，etherum 充值的 etherum txHash 为 `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`，此笔 everPay 充值交易记录可通过此 API 获取。
+* everPay 提现交易，最终提现至用户 ethereum 钱包地址的交易 txHash 为 `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`，此笔 everPay 提现交易记录无法通过此 API 获取。
 :::
 
 ## 返回字段
