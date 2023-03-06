@@ -4,8 +4,8 @@ sidebar_position: 3
 
 # balances
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## 功能
 获取对应 `账户(account)` 在 everPay 上的所有资产信息。
@@ -14,10 +14,9 @@ import TabItem from '@theme/TabItem'
 ```ts
 everpay.balances(balancesParams:BalancesParams):BalanceItem[]
 ```
-<!-- [查看 BalancesParams 类型](../types#balancesparams) -->
 
 <Tabs>
-<TabItem value="js" label="参数">
+<TabItem value="js" label="参数" default>
 
 |查询字段|是否必需|描述|
 |---|---|---|
