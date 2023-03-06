@@ -2,8 +2,8 @@
 sidebar_position: 6
 ---
 # arJWK
-<!-- import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem' -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## 配置项功能
 
@@ -63,8 +63,8 @@ const everpay = new Everpay({
 当用户 浏览器安装了 [arconnect](https://arconnect.io/) 后，可以传递 `arJWK: 'use_wallet'` 来指定使用 [arconnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
 
 
-<!-- <Tabs>
-<TabItem value="ts" label="Typescript">
+<Tabs>
+<TabItem value="ts" label="Typescript" default>
 
 ```ts
 const checkArPermissions = async (permissions: string[] | string): Promise<void> => {
@@ -156,50 +156,8 @@ const everpay = new Everpay({
 ```
 
 </TabItem>
-</Tabs> -->
+</Tabs>
 
-```ts
-const checkArPermissions = async (permissions: string[] | string): Promise<void> => {
-  let existingPermissions: string[] = []
-  const isString = (content: any) => {
-    return Object.prototype.toString.call(content) === "[object String]"
-  }
-  permissions = isString(permissions) ? [permissions] : permissions
-
-  try {
-    existingPermissions = await window.arweaveWallet.getPermissions()
-  } catch {
-    throw new Error('PLEASE_INSTALL_ARCONNECT')
-  }
-
-  if (permissions.length === 0) {
-    return
-  }
-
-  if (
-    permissions.some((permission) => {
-      return !existingPermissions.includes(permission)
-    })
-  ) {
-    await window.arweaveWallet.connect(permissions as never[])
-  }
-}
-
-await checkArPermissions([
-  'ACCESS_ADDRESS',
-  'ACCESS_ALL_ADDRESSES',
-  'ACCESS_PUBLIC_KEY',
-  'SIGN_TRANSACTION',
-  'SIGNATURE'
-])
-
-const arAddress = await window.arweaveWallet.getActiveAddress()
-const everpay = new Everpay({
-  account: arAddress,
-  chainType: 'arweave',
-  arJWK: 'use_wallet'
-})
-```
 
 
 ## 为什么 要使用 'use_wallet'？
