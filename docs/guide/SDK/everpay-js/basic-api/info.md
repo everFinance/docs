@@ -35,7 +35,7 @@ export interface EverpayInfo {
 
 ### 返回字段
 
-字段信息可查看 [Server API - 基础查询接口 - info - 返回字段](../../../server-api/basic-api/info.md#返回字段)
+字段信息可查看 [Server API - 基础查询接口 - info - 返回字段](../../../server-api/basic-api/info.md#返回字段)。
 
 ## 示例
 

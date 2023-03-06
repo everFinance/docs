@@ -6,14 +6,10 @@ sidebar_position: 2
 
 ## 功能
 
-获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约、`tokenList` 代表 everPay 支持的资产列表等信息。
+获取 everPay 服务相关基本信息，例如：`arLocker` 代表 arweave 锁仓地址、`ethLocker` 代表 etherum 链锁仓合约、`tokenList` 代表 everPay 支持的资产列表信息等。
 
 ## 参数
 `{{endpoint}}/info`
-
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
 
 ## 返回字段
 

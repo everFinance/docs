@@ -15,10 +15,9 @@ sidebar_position: 9
 ## 参数
 `{{endpoint}}/tx/{{everHash}}`
 
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|everHash|everPay 交易完成后，生成的唯一字符。|
+|查询字段|是否比需|描述|
+|---|---|---|
+|everHash|YES|everPay 交易完成后，生成的唯一字符。|
 
 ## 返回字段
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../basic/dive/transaction#交易记录)。

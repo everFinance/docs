@@ -10,7 +10,7 @@ sidebar_position: 3
 
 ## vite
 
-打开 `vite.config.js` 进行配置
+打开 `vite.config.js` 进行配置:
 
 ```ts
 // yarn add buffer
@@ -72,7 +72,7 @@ export default defineConfig(({ mode }) => {
 
 ### vue-cli@5.x
 
-打开 `vue.config.js` 进行配置
+打开 `vue.config.js` 进行配置:
 
 ```ts
 // yarn add buffer
@@ -100,11 +100,11 @@ module.exports = defineConfig({
 })
 ```
 
-后续若出现 `crypto` 等 `not defined`，可使用相同方法引入。参考 [https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js](https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js)
+后续若出现 `crypto` 等 `not defined` 情况，可使用相同方法引入。参考 [https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js](https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js)
 
 ### create-react-app
 
-通过 `yarn eject`，多出 `config` 文件夹 打开 `webpack.config.js`，找到 `reslove` 添加: `fallback` 和 `buffer`
+通过 `yarn eject`命令，目录多出 `config` 文件夹，打开 `webpack.config.js`，找到 `reslove` 添加: `fallback` 和 `buffer`:
 
 ```ts
 // yarn add buffer
@@ -128,7 +128,7 @@ module.exports = defineConfig({
 }
 ```
 
-后续若出现 `crypto` 等 `not defined`，可使用相同方法引入。参考 [https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js](https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js)
+后续若出现 `crypto` 等 `not defined` 情况，可使用相同方法引入。参考 [https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js](https://github.com/Bundlr-Network/arbundles/blob/master/webpack.config.js)
 
 ## webpack@4.x
 
