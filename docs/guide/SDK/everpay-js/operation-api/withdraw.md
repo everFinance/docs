@@ -15,7 +15,7 @@ sidebar_position: 4
   * 后端服务器验证通过，将该笔 everPay 交易记录存储在 arweave 区块链上。
   * 等待 arweave 区块链完成该笔 everPay 交易记录存储，确保账户的正确性后。
   * 多签钱包/锁仓地址，给用户提现地址，提现对应数量（扣除手续费后）资产代币。
-  * 更多信息请阅读 [指南 - 深入理解 - 提现](../../../basic/dive/withdraw)。
+  * 更多信息请阅读 [指南 - 深入理解 - 提现](../../../basic/dive/withdraw.md)。
 * 在快速提现时
   * 内部构建**快速提现** [Schema](../../../basic/dive/withdraw#schema-说明-1)。
   * 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
