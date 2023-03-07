@@ -9,11 +9,11 @@ sidebar_position: 2
 
 ## 参数
 ```ts
-everpay.getEverpayTxMessage(everpayTxWithoutSig: EverpayTxWithoutSig)
+everpay.getEverpayTxMessage(everpayTxWithoutSig: EverpayTxWithoutSig):string
 ```
-|参数|类型|描述|
+|参数|是否必需|描述|
 |---|---|---|
-|everpayTxWithoutSig| [EverpayTxWithoutSig](../types.md#everpaytxwithoutsig) | 可通过 [getEverpayTxWithoutSig Api](./getEverpayTxWithoutSig.md) 获取 |
+|everpayTxWithoutSig| YES | 可通过 [getEverpayTxWithoutSig API](./getEverpayTxWithoutSig.md) 获取。 |
 
 ## 返回
 `messageData` string

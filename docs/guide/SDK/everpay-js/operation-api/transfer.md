@@ -6,34 +6,45 @@ sidebar_position: 3
 
 ## 功能
 
-根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在转账时：
+根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在转账时进行以下步骤：
 
-* 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
-* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)
-* 将信息发送给 everPay 后端服务器，进行签名验证
-* 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上
+* 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)。
+* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
+* 将信息发送给 everPay 后端服务器，进行签名验证。
+* 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上。
 
 开发者可浏览 [指南 - 深入理解 - 交易](../../../basic/dive/transaction) 章节获取更多信息。
 
 :::info
 任意 everPay 账户均支持将任意其在 everPay 上的资产转账给其他 everPay 账户，无论要转账给的 everPay 账户是 ethereum 还是 arweave 账户模型。例如：
 
-* arweave 账户模型的 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay 账户，可向 ethereum 账户模型的`0x26361130d5d6E798E9319114643AF8c868412859` everPay 账户，转账 AR、ETH、USDT
-* 反之亦然
+* arweave 账户模型的 `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` everPay 账户，可向 ethereum 账户模型的`0x26361130d5d6E798E9319114643AF8c868412859` everPay 账户，转账 AR、ETH、USDT。
+* 反之亦然。
 :::
 
 ## 参数
 ```ts
-everpay.transfer(transferParams: TransferParams)
+everpay.transfer(transferParams: TransferParams):SendEverpayTxResult
 ```
 
-|参数|类型|
-|---|---|
-|transferParams| 查看 [`TransferParams`](../types.md#transferparams) 类型 |
+|参数|是否必需|描述|
+|---|---|---|
+|tag|YES| `token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|amount|YES|转账的资产数额。|
+|to|YES|`everPay` 的收款方 ID。|
+|data|NO|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](../../../basic/dive/withdraw#快速提现-data-字段说明)、[批量转账](../../../basic/dive/bundle.md)。|
 
 ## 返回
-
-[SendEverpayTxResult](../types#sendeverpaytxresult)
+```ts
+// Note: This type does not have an export
+interface PostEverpayTxResult {
+  status: string
+}
+export interface SendEverpayTxResult extends PostEverpayTxResult {
+  everpayTx: EverpayTx
+  everHash: string
+}
+```
 
 ## 示例
 

@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## 功能
 
-根据批量转账的内部转账事务列表，生成批量转账 `bundleData`
+根据批量转账的内部转账事务列表，生成批量转账 `bundleData`。
 
 ## 参数
 
@@ -14,10 +14,14 @@ sidebar_position: 3
 everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
 ```
 
-|参数|类型|描述|
+|参数|是否必需|描述|
 |---|---|---|
-|items|[InternalTransferItem](../types#internaltransferitem)[] | 批量转账的内部转账事务列表，其中的 `amount` 非 uint 类型，已经过 `decimals` 处理|
-|expiration|number|可选，所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**|
+|items|YES| 批量转账的内部转账事务列表，其中的 `amount` 非 uint 类型，已经过 `decimals` 处理|
+|tag|YES|`token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|from|YES|签名交易的当前 everPay 账户 ID。|
+|to|YES|批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|
+|amount|YES|资产数额。|
+|expiration|NO|所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**。|
 
 ## 返回
 

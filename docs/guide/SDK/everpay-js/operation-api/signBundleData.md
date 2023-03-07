@@ -9,14 +9,12 @@ sidebar_position: 5
 
 ## 参数
 ```ts
-everpay.signBundleData(bundleData:BundleData)
-
-everpay.signBundleData(bundleDataWithSigs:BundleDataWithSigs)
+everpay.signBundleData(params:BundleData | BundleDataWithSigs):BundleDataWithSigs
 ```
 
-|参数|类型|描述|
+|参数|是否必需|描述|
 |---|---|---|
-|bundleData| [`BundleData`](../types#bundledata) | 可通过 [getBundleData Api](../tool-api/getBundleData.md) 获取 |
+|params| YES | <ul><li>`'BundleData'` 根据指定数据结构生成，详情可查看 [getBundleData API](../tool-api/getBundleData.md)，获取 `BundleData` 数据。</li><li>`'BundleDataWithSigs'` 用于 everPay 批量转账交易的特定 `data` </li></ul>|
 
 ## 返回
 
