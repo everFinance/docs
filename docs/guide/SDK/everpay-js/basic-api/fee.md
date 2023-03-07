@@ -11,10 +11,9 @@ sidebar_position: 6
 ```ts
 everpay.fee(tag:string):FeeItem
 ```
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|tag|token 的唯一标识，可通过 [`info`](./info.md#示例返回) 接口进行查看。|
+|查询字段|是否必需|描述|
+|---|---|---|
+|tag|YES|token 的唯一标识，可通过 [`info`](./info.md#示例返回) 接口进行查看。|
 ## 返回
 ### 返回类型
 

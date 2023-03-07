@@ -13,10 +13,9 @@ sidebar_position: 10
 ```ts
 everpay.mintedTxByChainTxHash(chainTxHash:string):EverpayTransaction
 ```
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|chainTxHash|通过区块链充值后，交易记录中的 `chainTxHash`。|
+|查询字段|是否必需|描述|
+|---|---|---|
+|chainTxHash|YES|通过区块链充值后，交易记录中的 `chainTxHash`。|
 
 :::danger
 仅可通过 `chainTxHash` 查询充值的 everPay 交易记录，无法查询提现的 everPay 交易记录。例如：

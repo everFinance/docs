@@ -13,11 +13,10 @@ everpay.balance(balanceParams:BalanceParams):string
 ```
 [查看 BalanceParams 类型](../types#balanceparams)
 
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|account|可选，everpay 账户地址，详情查看[账户模型](../../../basic/dive/account-model.md)。|
-|tag|`token` 的唯一标识，可通过 [`info`](./info.md) 接口进行查看。|
+|查询字段|是否必需|描述|
+|---|---|---|
+|account|NO|everpay 账户地址，默认为 Everpay 实例创建时传递的 `account` 参数，详情查看[账户模型](../../../basic/dive/account-model.md)。|
+|tag|YES|`token` 的唯一标识，可通过 [`info`](./info.md) 接口进行查看。|
 
 
 ## 返回

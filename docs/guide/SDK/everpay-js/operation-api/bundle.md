@@ -6,12 +6,12 @@ sidebar_position: 6
 
 ## 功能
 
-根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在批量转账时：
+根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在批量转账时进行以下步骤：
 
-* 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
-* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)
-* 将信息发送给 everPay 后端服务器，进行签名验证
-* 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上
+* 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)。
+* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
+* 将信息发送给 everPay 后端服务器，进行签名验证。
+* 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上。
 
 更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../basic/dive/bundle.md)
 
@@ -21,9 +21,12 @@ sidebar_position: 6
 everpay.bundle(bundleParams: BundleParams)
 ```
 
-|参数|类型|
-|---|---|
-|bundleParams| 查看 [`BundleParams`](../types.md#bundleparams) 类型 |
+|参数|是否必需|描述|
+|---|---|---|
+|tag| YES| `token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|amount|YES|资产数额。|
+|data|YES| 特定 JSON 格式，实现批量转账功能，详情查看[data 生成描述](../../../basic/dive/bundle.md#data-生成描述)|
+|to|YES| 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID（包括签名交易的当前 everPay 账户 ID）|
 
 ## 返回
 

@@ -16,10 +16,9 @@ sidebar_position: 9
 everpay.txByHash(everHash:string):EverpayTransaction
 ```
 
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-|everHash|everPay 交易完成后，生成的唯一字符。|
+|查询字段|是否必需|描述|
+|---|---|---|
+|everHash|YES|everPay 交易完成后，生成的唯一字符。|
 
 ## 返回
 ### 返回类型

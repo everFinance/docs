@@ -6,26 +6,27 @@ sidebar_position: 2
 
 ## 功能
 
-根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值
+根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值。
 
 ## 参数
 ```ts
-everpay.deposit(depositParams: DepositParams)
+everpay.deposit(depositParams: DepositParams): EthereumTransaction | ArweaveTransaction
 ```
 
-|参数|类型|
-|---|---|
-|depositParams| 查看 [`DepositParams`](../types#depositparams) 类型|
+|参数|是否必需|描述|
+|---|---|---|
+|tag|YES| `token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|amount|YES|充值的资产数额。|
 
 ## 返回
 
 ### ethereum 钱包
 
-当使用 ethereum 钱包充值时（使用 `ethConnectedSigner` 配置） 返回 [EthereumTransaction](../types#ethereumtransaction)
+当使用 ethereum 钱包充值时（使用 `ethConnectedSigner` 配置） 返回 [EthereumTransaction](../types#ethereumtransaction)。
 
 ### arweave 钱包
 
-当使用 arweave 钱包充值时（使用 `arJWK` 配置） 返回 [ArweaveTransaction](../types#arweavetransaction)
+当使用 arweave 钱包充值时（使用 `arJWK` 配置） 返回 [ArweaveTransaction](../types#arweavetransaction)。
 
 ## 示例
 

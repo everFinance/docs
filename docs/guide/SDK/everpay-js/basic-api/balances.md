@@ -14,8 +14,11 @@ import TabItem from '@theme/TabItem';
 ```ts
 everpay.balances(balancesParams:BalancesParams):BalanceItem[]
 ```
+|查询字段|是否必需|描述|
+|---|---|---|
+|account|NO|everpay 账户地址，详情查看[账户模型](../../../basic/dive/account-model.md)。|
 
-<Tabs>
+<!-- <Tabs>
 <TabItem value="js" label="参数" default>
 
 |查询字段|是否必需|描述|
@@ -32,7 +35,7 @@ export interface BalancesParams {
 ```
 
 </TabItem>
-</Tabs>
+</Tabs> -->
 
 ## 返回
 ### 返回类型

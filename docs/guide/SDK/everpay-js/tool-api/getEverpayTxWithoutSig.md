@@ -6,22 +6,39 @@ sidebar_position: 1
 
 ## 功能
 
-生成 everPay 交易结构
+生成 everPay 交易结构，用于 everPay 交易。
 
 ## 参数
 
-```js
-everpay.getEverpayTxWithoutSig(type, params)
+```ts
+everpay.getEverpayTxWithoutSig(type, params):EverpayTxWithoutSig
 ```
 
-|参数|类型|
-|---|---|
-|type|'transfer' or 'withdraw' or 'bundle'|
-|params|[TransferParams](../types#transferparams) or [WithdrawParams](../types#withdrawparams) or [BundleParams](../types#bundleparams)|
+|参数|是否必需|类型|
+|---|---|---|
+|type|YES|'transfer' or 'withdraw' or 'bundle'|
+|params|YES|[TransferParams](../types#transferparams) or [WithdrawParams](../types#withdrawparams) or [BundleParams](../types#bundleparams)|
 
 ## 返回
 
-[EverpayTxWithoutSig](../types#everpaytxwithoutsig)
+### 返回类型 
+```ts
+export interface EverpayTxWithoutSig {
+  tokenSymbol: string
+  action: EverpayAction
+  from: string
+  to: string
+  amount: string
+  fee: string
+  feeRecipient: string
+  nonce: string
+  tokenID: string
+  chainType: ChainType | string
+  chainID: string
+  data: string
+  version: string
+}
+```
 
 ## 示例
 
