@@ -39,8 +39,8 @@ everpay.withdraw(withdrawParams: WithdrawParams):SendEverpayTxResult
 ```
 |参数|是否必需|描述|
 |---|---|---|
-|chainType| YES | [ChainType](../types.md#chaintype), `chainType` 必须与 [info API](../../server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**。|
-|tag|YES|`token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|chainType| YES | [ChainType](../types.md#chaintype), `chainType` 必须与 [info API](../../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**。|
+|tag|YES|`token` 的唯一标识，可通过 [`info`](../../../server-api/basic-api/info.md) 接口进行查看。|
 |amount|YES|提现金额。|
 |fee|NO|手续费。|
 |quickMode|NO|快速提现。|

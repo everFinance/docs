@@ -15,7 +15,7 @@ everpay.deposit(depositParams: DepositParams): EthereumTransaction | ArweaveTran
 
 |参数|是否必需|描述|
 |---|---|---|
-|tag|YES| `token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|tag|YES| `token` 的唯一标识，可通过 [`info`](../../../server-api/basic-api/info.md) 接口进行查看。|
 |amount|YES|充值的资产数额。|
 
 ## 返回
