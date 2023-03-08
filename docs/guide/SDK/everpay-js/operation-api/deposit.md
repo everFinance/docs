@@ -4,6 +4,9 @@ sidebar_position: 2
 
 # deposit
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值。
@@ -13,10 +16,25 @@ sidebar_position: 2
 everpay.deposit(depositParams: DepositParams): EthereumTransaction | ArweaveTransaction
 ```
 
+<Tabs>
+<TabItem value="field" label="参数" default>
+
 |参数|是否必需|描述|
 |---|---|---|
 |tag|YES| `token` 的唯一标识，可通过 [`info`](../../../server-api/basic-api/info.md) 接口进行查看。|
 |amount|YES|充值的资产数额。|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface DepositParams {
+  tag: string
+  amount: string
+}
+```
+</TabItem>
+</Tabs>
 
 ## 返回
 

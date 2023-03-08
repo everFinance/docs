@@ -3,6 +3,10 @@ sidebar_position: 7
 ---
 
 # sendEverpayTx
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 将 everPay 交易结构 [(EverpayTxWithoutSig)](../types#everpaytxwithoutsig) 转化成 `messageData` 后，根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数进行签名，并发送至 everPay 服务器进行验证。
 
@@ -10,13 +14,51 @@ sidebar_position: 7
 ```ts
 everpay.sendEverpayTx(everpayTxWithoutSig: EverpayTxWithoutSig): SendEverpayTxResult
 ```
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |参数|是否必需|描述|
 |---|---|---|
-|everpayTxWithoutSig| YES | 特定的 everPay 交易结构， 详情可查看 [getEverpayTxWithoutSig API](../tool-api/getEverpayTxWithoutSig.md)，获取 `everpayTxWithoutSig` 数据 |
+|everpayTxWithoutSig| YES | 特定的 everPay 交易数据结构， 可通过 [getEverpayTxWithoutSig API](../tool-api/getEverpayTxWithoutSig.md) 快速构建数据结构。 |
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface EverpayTxWithoutSig {
+  tokenSymbol: string
+  action: EverpayAction
+  from: string
+  to: string
+  amount: string
+  fee: string
+  feeRecipient: string
+  nonce: string
+  tokenID: string
+  chainType: ChainType | string
+  chainID: string
+  data: string
+  version: string
+}
+```
+
+</TabItem>
+</Tabs>
+
+
 
 ## 返回
-[SendEverpayTxResult](../types#sendeverpaytxresult)
+
+```ts
+// Note: This type does not have an export
+interface PostEverpayTxResult {
+  status: string
+}
+export interface SendEverpayTxResult extends PostEverpayTxResult {
+  everpayTx: EverpayTx
+  everHash: string
+}
+```
 
 ## 示例
 ```ts

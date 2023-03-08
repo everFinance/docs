@@ -9,17 +9,7 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### 使用 yarn 安装
-```console
-yarn add everpay
-```
-
-### 使用 npm 安装
-```console
-npm install everpay
-```
-
-<!-- <Tabs>
+<Tabs>
 <TabItem value="yarn" label="yarn" default>
 
 ```bash
@@ -27,29 +17,19 @@ yarn add everpay
 ```
 
 </TabItem>
-<TabItem value="js" label="npm">
+<TabItem value="npm" label="npm">
 
 ```bash
 npm install everpay
 ```
 
 </TabItem>
-</Tabs> -->
+</Tabs>
 
 
 ## 使用
-### es module
-```ts
-import Everpay from 'everpay'
-const everpay = new Everpay()
-```
-### commonjs
-```js
-const Everpay = require('everpay')
-const everpay = new Everpay()
-```
 
-<!-- <Tabs>
+<Tabs>
 <TabItem value="es_module" label="ES Modules" default>
 
 ```ts
@@ -66,4 +46,4 @@ const everpay = new Everpay()
 ```
 
 </TabItem>
-</Tabs> -->
+</Tabs>

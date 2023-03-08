@@ -14,19 +14,16 @@ import TabItem from '@theme/TabItem';
 ```ts
 everpay.balances(balancesParams:BalancesParams):BalanceItem[]
 ```
-|查询字段|是否必需|描述|
-|---|---|---|
-|account|NO|everpay 账户地址，详情查看[账户模型](../../../basic/dive/account-model.md)。|
 
-<!-- <Tabs>
-<TabItem value="js" label="参数" default>
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |查询字段|是否必需|描述|
 |---|---|---|
 |account|NO|everpay 账户地址，详情查看[账户模型](../../../basic/dive/account-model.md)。|
 
 </TabItem>
-<TabItem value="ts" label="类型">
+<TabItem value="type" label="类型">
 
 ```ts
 export interface BalancesParams {
@@ -35,10 +32,25 @@ export interface BalancesParams {
 ```
 
 </TabItem>
-</Tabs> -->
+</Tabs>
 
 ## 返回
-### 返回类型
+
+<Tabs>
+<TabItem value="field" label="返回字段" default>
+
+### 字段描述
+|字段|描述|
+|---|---|
+|chainType|该资产支持充值、提现的区块链，如支持多个区块链充值、提现，以 `,` 分隔开。|
+|symbol|该资产名称。|
+|address|该资产区块链合约地址，如如支持多个区块链充值、提现，以 `,` 分隔开，顺序与 `chainType` 中区块链名称顺序保持一致。|
+|tag|token 的唯一标识，由 `chainType` , `symbol` , `id` 通过 `-` 组合。|
+|balance|该资产余额，非 uint 类型，已经过 `decimals` 处理。|
+
+</TabItem>
+<TabItem value="type" label="返回类型">
+
 ```ts
 export interface BalanceItem {
   chainType: string
@@ -48,14 +60,10 @@ export interface BalanceItem {
   address: string
 }[]
 ```
-### 返回字段
-|字段|描述|
-|---|---|
-|chainType|该资产支持充值、提现的区块链，如支持多个区块链充值、提现，以 `,` 分隔开。|
-|symbol|该资产名称。|
-|address|该资产区块链合约地址，如如支持多个区块链充值、提现，以 `,` 分隔开，顺序与 `chainType` 中区块链名称顺序保持一致。|
-|tag|token 的唯一标识，由 `chainType` , `symbol` , `id` 通过 `-` 组合。|
-|balance|该资产余额，非 uint 类型，已经过 `decimals` 处理。|
+
+</TabItem>
+</Tabs>
+
 ## 示例
 
 ```js

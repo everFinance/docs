@@ -4,6 +4,9 @@ sidebar_position: 4
 
 # withdraw
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，进行以下步骤：
@@ -37,6 +40,10 @@ sidebar_position: 4
 ```ts
 everpay.withdraw(withdrawParams: WithdrawParams):SendEverpayTxResult
 ```
+
+<Tabs>
+<TabItem value="field" label="参数" default>
+
 |参数|是否必需|描述|
 |---|---|---|
 |chainType| YES | [ChainType](../types.md#chaintype), `chainType` 必须与 [info API](../../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**。|
@@ -47,6 +54,25 @@ everpay.withdraw(withdrawParams: WithdrawParams):SendEverpayTxResult
 |data|NO|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。|
 |to|NO| `to` 为要提现至的区块链钱包地址。|
 [更多信息请移至 深入理解 - 提现](../../../basic/dive/withdraw.md)。
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface WithdrawParams {
+  chainType: ChainType
+  tag: string
+  amount: string
+  fee?: string
+  quickMode?: boolean
+  data?: Record<string, unknown>
+  to?: string
+}
+```
+
+</TabItem>
+</Tabs>
+
 ## 返回
 ```ts
 // Note: This type does not have an export

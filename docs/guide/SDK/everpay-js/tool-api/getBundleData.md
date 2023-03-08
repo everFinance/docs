@@ -16,11 +16,11 @@ everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
 
 |参数|是否必需|描述|
 |---|---|---|
-|items|YES| 批量转账的内部转账事务列表，其中的 `amount` 非 uint 类型，已经过 `decimals` 处理|
-|tag|YES|`token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
-|from|YES|签名交易的当前 everPay 账户 ID。|
-|to|YES|批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|
-|amount|YES|资产数额。|
+|items|YES| 批量转账的内部转账事务列表。|
+|tag|YES| `items` 中参数，`token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
+|from|YES|`items` 中参数，签名交易的当前 everPay 账户 ID。|
+|to|YES|`items` 中参数，代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|
+|amount|YES|`items` 中参数，资产数额。非 uint 类型，已经过 `decimals` 处理。|
 |expiration|NO|所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**。|
 
 ## 返回
@@ -33,7 +33,6 @@ export interface BundleData {
   version: string
 }
 ```
-[查看 BundleItem 类型](../types.md#bundledata)
 
 ## 示例
 

@@ -4,6 +4,9 @@ sidebar_position: 9
 
 # txByHash
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 每一笔 everPay 交易，都会生成唯一的 `everHash` 字符串。可通过 `everHash` 查询该笔交易的具体信息。
 
@@ -15,10 +18,19 @@ sidebar_position: 9
 ```ts
 everpay.txByHash(everHash:string):EverpayTransaction
 ```
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |查询字段|是否必需|描述|
 |---|---|---|
 |everHash|YES|everPay 交易完成后，生成的唯一字符。|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+`string`
+</TabItem>
+</Tabs>
 
 ## 返回
 ### 返回类型
@@ -47,11 +59,8 @@ export interface EverpayTransaction {
   }
 }
 ```
-[查看 EverpayActionWithDeposit 类型](../types.md#everpayactionwithdeposit)  
-[查看 EverpayTransactionStatus 类型](../types.md#everpaytransactionstatus)
-
 ### 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../basic/dive/transaction.md#交易记录)
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../basic/dive/transaction.md#交易记录)。
 ## 示例
 
 ```js

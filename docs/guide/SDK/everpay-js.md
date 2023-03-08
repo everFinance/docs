@@ -4,6 +4,9 @@ sidebar_position: 2
 
 # 快速集成
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可以使用 everpay-js 快速将 everPay 协议集成到应用中。使用 everpay-js 可以在应用中快速完成 everPay 支付或结算。
 
 ## 使用要求
@@ -20,23 +23,43 @@ everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可
 
 使用 [yarn](https://www.yarnpkg.cn/getting-started/install) 或 npm 进行安装使用，若未安装成功请检查网络再次进行尝试。
 
+<Tabs>
+<TabItem value="yarn" label="yarn" default>
+
 ```bash
 yarn add everpay
+```
 
-# or
+</TabItem>
+<TabItem value="npm" label="npm">
 
+```bash
 npm install everpay
 ```
 
+</TabItem>
+</Tabs>
+
 ## 引入
 
-```js
+<Tabs>
+<TabItem value="es_module" label="ES Modules" default>
+
+```ts
 import Everpay from 'everpay'
-
-// or
-
-const Everpay = require('everpay')
+const everpay = new Everpay()
 ```
+
+</TabItem>
+<TabItem value="commonjs" label="CommonJS">
+
+```js
+const Everpay = require('everpay')
+const everpay = new Everpay()
+```
+
+</TabItem>
+</Tabs>
 
 ## 创建 Everpay 应用
 
@@ -49,11 +72,23 @@ const Everpay = require('everpay')
 
 （1）安装 [everpay-js](./everpay-js.md#安装) 和 [ethers.js](https://github.com/ethers-io/ethers.js)。
 
+<Tabs>
+<TabItem value="yarn" label="yarn" default>
+
 ```bash
 yarn add everpay ethers
-# or
+```
+
+</TabItem>
+<TabItem value="npm" label="npm">
+
+```bash
 npm install everpay ethers
 ```
+
+</TabItem>
+</Tabs>
+
 （2）引入 everpay-js 和 ethers 进行创建。
 ```js
 import Everpay from 'everpay'
@@ -123,11 +158,23 @@ ethRun()
 
 （1）安装 [everpay-js](./everpay-js.md#安装)。
 
+<Tabs>
+<TabItem value="yarn" label="yarn" default>
+
 ```bash
 yarn add everpay
-# or
+```
+
+</TabItem>
+<TabItem value="npm" label="npm">
+
+```bash
 npm install everpay
 ```
+
+</TabItem>
+</Tabs>
+
 （2）引入 everpay-js 进行创建。
 ```ts
 import Everpay from 'everpay'
