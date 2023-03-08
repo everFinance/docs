@@ -4,6 +4,9 @@ sidebar_position: 6
 
 # bundle
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在批量转账时进行以下步骤：
@@ -13,24 +16,55 @@ sidebar_position: 6
 * 将信息发送给 everPay 后端服务器，进行签名验证。
 * 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上。
 
-更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../basic/dive/bundle.md)
+更多信息请阅读 [指南 - 深入理解 - 批量转账](../../../basic/dive/bundle.md)。
 
 ## 参数
 
 ```ts
-everpay.bundle(bundleParams: BundleParams)
+everpay.bundle(bundleParams: BundleParams): SendEverpayTxResult
 ```
+
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |参数|是否必需|描述|
 |---|---|---|
 |tag| YES| `token` 的唯一标识，可通过 [`info`](../basic-api/info.md) 接口进行查看。|
 |amount|YES|资产数额。|
-|data|YES| 特定 JSON 格式，实现批量转账功能，详情查看[data 生成描述](../../../basic/dive/bundle.md#data-生成描述)|
-|to|YES| 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID（包括签名交易的当前 everPay 账户 ID）|
+|data|YES| 特定 JSON 格式，实现批量转账功能，详情查看[data 生成描述](../../../basic/dive/bundle.md#data-生成描述)。|
+|to|YES| 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface BundleParams {
+  tag: string
+  amount: string
+  data: {
+    bundle: BundleDataWithSigs
+  }
+  to: string
+}
+```
+
+</TabItem>
+</Tabs>
+
+
 
 ## 返回
 
-[SendEverpayTxResult](../types#sendeverpaytxresult)
+```ts
+// Note: This type does not have an export
+interface PostEverpayTxResult {
+  status: string
+}
+export interface SendEverpayTxResult extends PostEverpayTxResult {
+  everpayTx: EverpayTx
+  everHash: string
+}
+```
 
 ## 示例
 

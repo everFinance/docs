@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # getEverpayTxWithoutSig
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
 生成 everPay 交易结构，用于 everPay 交易。
@@ -11,13 +14,54 @@ sidebar_position: 1
 ## 参数
 
 ```ts
-everpay.getEverpayTxWithoutSig(type, params):EverpayTxWithoutSig
+everpay.getEverpayTxWithoutSig(type: EverpayTxWithoutSigType, params: EverpayTxWithoutSigParams):EverpayTxWithoutSig
 ```
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |参数|是否必需|类型|
 |---|---|---|
 |type|YES|'transfer' or 'withdraw' or 'bundle'|
 |params|YES|[TransferParams](../types#transferparams) or [WithdrawParams](../types#withdrawparams) or [BundleParams](../types#bundleparams)|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+// Note: This type does not have an export
+type EverpayTxWithoutSigType = 'transfer' | 'withdraw' | 'bundle'
+type EverpayTxWithoutSigParams = TransferParams | WithdrawParams | BundleParams
+
+export interface TransferParams {
+  tag: string
+  amount: string
+  data?: Record<string, unknown>
+  to: string
+}
+
+export interface WithdrawParams {
+  chainType: ChainType
+  tag: string
+  amount: string
+  fee?: string
+  quickMode?: boolean
+  data?: Record<string, unknown>
+  to?: string
+}
+
+export interface BundleParams {
+  tag: string
+  amount: string
+  data: {
+    bundle: BundleDataWithSigs
+  }
+  to: string
+}
+```
+</TabItem>
+</Tabs>
+
+
 
 ## 返回
 

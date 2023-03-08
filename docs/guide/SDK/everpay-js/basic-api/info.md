@@ -20,10 +20,12 @@ everpay.info():EverpayInfo
 |---|---|
 |请求方式|GET|
 
-## 返回
+## 返回数据
 
 <Tabs>
-<TabItem value="value" label="返回字段">
+<TabItem value="field" label="返回字段" default>
+
+### 字段描述
 
 |字段|描述|
 |---|---|
@@ -69,8 +71,20 @@ export interface EverpayInfo {
   rootHash: string
   tokenList: Token[]
 }
+
+export interface Token {
+  tag: string
+  id: string
+  symbol: string
+  decimals: number
+  totalSupply: string
+  chainID: string
+  chainType: ChainType | string
+  crossChainInfoList: {
+    [propname: string]: CrossChainInfo
+  }
+}
 ```
-[查看 Token 类型](../types.md#token)
 
 </TabItem>
 </Tabs>

@@ -3,6 +3,10 @@ sidebar_position: 5
 ---
 
 # signBundleData
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，对 `bundleData` 进行签名，生成 [`BundleDataWithSigs`](../types#bundledatawithsigs)，用于 everPay 批量转账交易特定 `data` 生成。
@@ -11,10 +15,34 @@ sidebar_position: 5
 ```ts
 everpay.signBundleData(params:BundleData | BundleDataWithSigs):BundleDataWithSigs
 ```
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |参数|是否必需|描述|
 |---|---|---|
 |params| YES | <ul><li>`'BundleData'` 根据指定数据结构生成，详情可查看 [getBundleData API](../tool-api/getBundleData.md)，获取 `BundleData` 数据。</li><li>`'BundleDataWithSigs'` 用于 everPay 批量转账交易的特定 `data` </li></ul>|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface BundleData {
+  items: BundleItem[]
+  expiration: number
+  salt: string
+  version: string
+}
+
+export interface BundleDataWithSigs extends BundleData {
+  sigs: {
+    [account: string]: string
+  }
+}
+```
+</TabItem>
+</Tabs>
+
+
 
 ## 返回
 
@@ -29,7 +57,6 @@ export interface BundleDataWithSigs {
   }
 }
 ```
-[查看 BundleItem 类型](../types.md#bundledata)
 :::info
 [typescript 索引签名](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
 :::

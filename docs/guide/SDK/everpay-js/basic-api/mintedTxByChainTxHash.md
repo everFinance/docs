@@ -4,6 +4,9 @@ sidebar_position: 10
 
 # mintedTxByChainTxHash
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 通过区块链 **充值** 的交易记录中的 `chainTxHash` 可以获取 everPay 上对应的 everPay 充值交易记录。
 
@@ -13,9 +16,22 @@ sidebar_position: 10
 ```ts
 everpay.mintedTxByChainTxHash(chainTxHash:string):EverpayTransaction
 ```
+
+<Tabs>
+<TabItem value="field" label="参数" default>
+
 |查询字段|是否必需|描述|
 |---|---|---|
 |chainTxHash|YES|通过区块链充值后，交易记录中的 `chainTxHash`。|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+`string`
+
+</TabItem>
+</Tabs>
+
 
 :::danger
 仅可通过 `chainTxHash` 查询充值的 everPay 交易记录，无法查询提现的 everPay 交易记录。例如：
@@ -50,8 +66,6 @@ export interface EverpayTransaction {
   }
 }
 ```
-[查看 EverpayActionWithDeposit 类型](../types.md#everpayactionwithdeposit)  
-[查看 EverpayTransactionStatus 类型](../types.md#everpaytransactionstatus)
 
 ### 返回字段
 字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../basic/dive/transaction.md#交易记录)。

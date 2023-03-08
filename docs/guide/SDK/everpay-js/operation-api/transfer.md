@@ -4,6 +4,9 @@ sidebar_position: 3
 
 # transfer
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在转账时进行以下步骤：
@@ -27,12 +30,32 @@ sidebar_position: 3
 everpay.transfer(transferParams: TransferParams):SendEverpayTxResult
 ```
 
+<Tabs>
+<TabItem value="field" label="参数" default>
+
 |参数|是否必需|描述|
 |---|---|---|
 |tag|YES| `token` 的唯一标识，可通过 [`info`](../../../server-api/basic-api/info.md) 接口进行查看。|
 |amount|YES|转账的资产数额。|
 |to|YES|`everPay` 的收款方 ID。|
 |data|NO|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](../../../basic/dive/withdraw#快速提现-data-字段说明)、[批量转账](../../../basic/dive/bundle.md)。|
+
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface TransferParams {
+  tag: string
+  amount: string
+  data?: Record<string, unknown>
+  to: string
+}
+```
+
+</TabItem>
+</Tabs>
+
 
 ## 返回
 ```ts

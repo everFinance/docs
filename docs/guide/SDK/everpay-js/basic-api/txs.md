@@ -4,15 +4,20 @@ sidebar_position: 6
 
 # txs
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 功能
 
-获取 everPay 上所有交易记录，通过 分页 形式展示。
+获取 everPay 上所有交易记录，通过 `分页(10条1页)` 形式展示。
 
 ## 参数
 ```ts
 everpay.txs(txsParams:TxsParams):TxsResult
 ```
-[查看 TxsParams 类型](../types#txsparams)
+
+<Tabs>
+<TabItem value="field" label="参数" default>
 
 |查询字段|是否必需|描述|
 |---|---|---|
@@ -21,9 +26,35 @@ everpay.txs(txsParams:TxsParams):TxsResult
 |action|NO|其中 [快速提现](../../../basic/dive/withdraw.md#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
 |withoutAction|NO|排除某种类型的交易。其中 [快速提现](../../../basic/dive/withdraw.md#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
 
-## 返回
+</TabItem>
+<TabItem value="type" label="类型" default>
 
-### 返回类型
+```ts
+export interface TxsParams {
+  page?: number
+  tag?: string
+  action?: EverpayActionWithDeposit
+  withoutAction?: EverpayActionWithDeposit
+}
+```
+
+</TabItem>
+</Tabs>
+
+## 返回数据
+
+<Tabs>
+<TabItem value="field" label="返回参数" default>
+
+### 字段描述
+|字段|描述|
+|---|---|
+|currentPage|当前页数，与传入的`page`参数一致。|
+|totalPages|总共拥有多少页数据。|
+|txs|交易记录。字段信息可查看 [深入理解 - 交易 - 交易记录](../../../basic/dive/transaction.md#交易记录)。|
+
+</TabItem>
+<TabItem value="type" label="返回类型">
 
 ```ts
 export interface TxsResult {
@@ -35,9 +66,8 @@ export interface TxsResult {
 ```
 [查看 EverpayTransaction 类型](../types.md#everpaytransaction)
 
-### 返回字段
-
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../basic/dive/transaction.md#交易记录)。
+</TabItem>
+</Tabs>
 
 ## 示例
 
