@@ -143,7 +143,7 @@ ethRun()
 :::info
 - 确保 `钱包已连接` 并且 `连接到当前站点`。
 - [debug 环境配置](./everpay-js/configuration/debug.md)。
-- [account 配置](../basic/dive/account-model.md) & [chainType 配置项](./everpay-js/types.md#chaintype)。
+- [account 配置](../dive/account-model.md) & [chainType 配置项](./everpay-js/types.md#chaintype)。
 - `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](./everpay-js/configuration/ethConnectedSigner)。
 - CDN 方式创建 everPay 应用时，需要添加 `default` : `new window.Everpay.default({})`。
 - 确保 `ethers CDN链接` 和 `everPay CDN链接` 优先加载完成，否则 `ethers is not defined` 或 `Everpay is not defined` 。
@@ -260,7 +260,7 @@ everpay
 
 * `tag` : `token` 的唯一标识，可通过 [`info`](./everpay-js/basic-api/info.md#示例返回) 接口进行查看。
 * `amount` : 数额。 
-* `to` : `everPay` 的收款方地址，详情可见 [账户模型](../basic/dive/account-model.md)。
+* `to` : `everPay` 的收款方地址，详情可见 [账户模型](../dive/account-model.md)。
 ```js
 everpay
   .transfer({
@@ -283,7 +283,7 @@ everpay
 * `token tag` : 唯一标识，可通过 [`info`](./everpay-js/basic-api/info.md#示例返回) 接口进行查看。
 * `amount` : 数额。 
 * `chainType` : [chainType 原生链](./everpay-js/types.md#chaintype)。
-* `to` : `everpay` 收款方地址，详情可见 [账户模型](../basic/dive/account-model.md)。
+* `to` : `everpay` 收款方地址，详情可见 [账户模型](../dive/account-model.md)。
 
 ```js
 everpay
