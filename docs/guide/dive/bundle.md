@@ -20,11 +20,11 @@ sidebar_position: 7
 |to|批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID（包括签名交易的当前 everPay 账户 ID）|
 |amount|批量转账时，`amount` 为外部转账金额。类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../server-api/basic-api/info.md) 接口获取|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../server-api/basic-api/info.md) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|批量转账时，`chainType` 必须与 [info API](../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
-|chainID|批量转账时，`chainID` 必须与 [info API](../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
+|tokenID|通过 [info API](../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
+|chainType|批量转账时，`chainType` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
+|chainID|批量转账时，`chainID` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
 |data|特定 JSON 格式，实现批量转账功能，见下文 [data 生成描述](#data-生成描述)|
 |version|交易版本 `'v1'`|
 
@@ -35,8 +35,8 @@ sidebar_position: 7
 
 |字段|描述|
 |---|---|
-|tag|由 `chainType`, `symbol`, `id` 通过 `-` 组合，通过 [info API](../../server-api/basic-api/info.md) 接口获取|
-|chainID|`chainID` 必须与 [info API](../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
+|tag|由 `chainType`, `symbol`, `id` 通过 `-` 组合，通过 [info API](../server-api/basic-api/info.md) 接口获取|
+|chainID|`chainID` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
 |from|此笔内部转账事务资产转出者 everPay 账户 ID|
 |to|此笔内部转账事务资产接收者 everPay 账户 ID|
 |amount|此笔内部转账事务资产金额，类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
