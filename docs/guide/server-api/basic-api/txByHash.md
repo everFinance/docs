@@ -20,7 +20,7 @@ sidebar_position: 9
 |everHash|YES|everPay 交易完成后，生成的唯一字符。|
 
 ## 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../basic/dive/transaction#交易记录)。
+字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../dive/transaction#交易记录)。
 ## 示例
 
 ```bash
