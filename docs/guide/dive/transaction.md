@@ -405,6 +405,6 @@ everPay 在 [`Schema`](#schema) 定义字段、`sig` 签名字段外，添加了
 ### 查询接口
 
 * [txs](../server-api/basic-api/txs.md) 查询所有 everPay 交易记录
-* [txsByAccount](../server-api/basic-api/txsByAccount) 查询具体 everPay 账户的交易记录
+* [txsByAccount](../server-api/basic-api/txsByAccount.md) 查询具体 everPay 账户的交易记录
 * [txByHash](../server-api/basic-api/txByHash) 根据 `everHash` 查询 everPay 交易记录
 * [mintedTxByChainTxHash](../server-api/basic-api/mintedTxByChainTxHash) 根据充值的区块链记录ID （如以太坊为 `txHash`），查询充值的 everPay 交易记录
