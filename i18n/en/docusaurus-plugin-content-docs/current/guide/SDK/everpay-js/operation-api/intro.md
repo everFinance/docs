@@ -14,20 +14,20 @@ Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the
   * The backend server verifies it and updates the user's asset balance. And store the everPay transaction record on the arweave blockchain
 * When do withdrawing,
   * When using Normal Withdrawals:
-    * Internal build **Normal Withdrawal** [Schema](../../../basic/dive/withdraw#schema)
+    * Internal build **Normal Withdrawal** [Schema](../../../dive/withdraw#schema)
     * Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
     * Send the everpay tx to everPays backend server for signature verification
     * The everPay transaction record is stored on the arweave blockchain after the backend server passes the verification
     * Wait for the arweave blockchain to finish storing the everPay transaction record and ensure the correctness of the account
     * Multi-sign wallet/locker address, give the user the withdrawal address and withdraw the corresponding amount (after fees) of tokens
-    * For more information, please read [Guide - Dive - Withdraw](../../../basic/dive/withdraw)
+    * For more information, please read [Guide - Dive - Withdraw](../../../dive/withdraw)
   * When using Quick Withdrawals:
-    * Internal build **Quick Withdrawal** [Schema](../../../basic/dive/withdraw#schema-1)
+    * Internal build **Quick Withdrawal** [Schema](../../../dive/withdraw#schema-1)
     * Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
     * Send the everpay tx to everPay backend server for signature verification
     * The market maker account receives assets after the verification by everPay backend server
     * Market maker transfers the corresponding amount (after fees) of asset tokens to the user's withdrawal wallet address via native blockchain transfer
-    * For more information, please read [Guide - Dive - Withdraw - Quick Withdrawal](../../../basic/dive/withdraw#quick-withdrawal)
+    * For more information, please read [Guide - Dive - Withdraw - Quick Withdrawal](../../../dive/withdraw#quick-withdrawal)
 * When making a bundle transaction,
   * Internal transfers
     * Internal build [BundleData](../types/#bundledata)

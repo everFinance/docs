@@ -19,11 +19,11 @@ All internal transfers in `data` must succeed, and if one fails, all internal tr
 |to|`to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID (including the current everPay account ID of the signed transaction)|
 |amount|External transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
-|tokenID|via [info API](../../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|`chainType` must be the same as [info API](../../server-api/basic-api/info), the token `chainType` **consistent**|
-|chainID|`chainID` must be the same as [info API](../../server-api/basic-api/info), the token `chainID` **consistent**|
+|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|`chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**|
+|chainID|`chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
 |data|Specific JSON format for bundle transfer function, see below [Data Generate Description](#data-generate-gescription)|
 
 ## Data Generate Description
@@ -33,8 +33,8 @@ All internal transfers in `data` must succeed, and if one fails, all internal tr
 
 |Field|Description|
 |---|---|
-|tag|combined by `chainType`, `symbol`, `id` via `-`, or via [info API](../../server-api/basic-api/info) to get|
-|chainID|`chainID` is the same as [info API](../../server-api/basic-api/info), the token `chainID` **consistent**|
+|tag|combined by `chainType`, `symbol`, `id` via `-`, or via [info API](../server-api/basic-api/info) to get|
+|chainID|`chainID` is the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
 |from|The everPay account ID of the transferor of the assets of this internal transfer transaction|
 |to|The everPay account ID of the recipient of the asset for this internal transfer transaction|
 |amount|Amount of this internal transfer transaction asset. type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|

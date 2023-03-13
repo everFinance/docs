@@ -18,11 +18,11 @@ everPay has its own separate transaction format, all everPay transactions follow
 |to|<ul><li>When transferring, `to` is another everPay account ID</li><li>When withdrawing, `to` is the blockchain wallet address to withdraw to</li><li>When using bundle transaction, `to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID (including the current everPay account ID of the signed transaction)</li></ul>|
 |amount|Type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000<ul><li>When transferring, `amount` is the transfer amount</li><li>When withdrawing, `amount` is the withdrawal amount</li><li>When using bundle transaction, `amount` is the external transfer amount</li></ul>|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
-|tokenID|via [info API](../../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|`chainType` must be the same as [info API](../../server-api/basic-api/info), the token `chainType` **consistent**|
-|chainID|`chainID` must be the same as [info API](../../server-api/basic-api/info), the token `chainID` **consistent**|
+|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|`chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**|
+|chainID|`chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
 |data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in. Developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description), [Bundle](./bundle)|
 |version|transaction version `'v1'`|
 
@@ -348,7 +348,7 @@ const verified = arweave.crypto.verify(
 
 ## Submit a transaction
 
-Submit everPay transaction to everPay backend server via POST request to [`tx`](../../server-api/operation-api/tx) interface.
+Submit everPay transaction to everPay backend server via POST request to [`tx`](../server-api/operation-api/tx) interface.
 
 ### Field Descriptions
 
@@ -404,7 +404,7 @@ everPay adds some fields to the [`Schema`](#schema) definition field and `sig` s
 
 ### Query Interface
 
-* [txs](../../server-api/basic-api/txs) Checks all everPay transaction records
-* [txsByAccount](../../server-api/basic-api/txsByAccount) Checks the everPay transaction records of a specific everPay account
-* [txByHash](../../server-api/basic-api/txByHash) Checks the everPay transaction record based on `everHash`
-* [mintedTxByChainTxHash](../../server-api/basic-api/mintedTxByChainTxHash) Checks the everPay transaction record of the deposit according to the blockchain record ID (e.g. `txHash` for ethereum)
+* [txs](../server-api/basic-api/txs) Checks all everPay transaction records
+* [txsByAccount](../server-api/basic-api/txsByAccount) Checks the everPay transaction records of a specific everPay account
+* [txByHash](../server-api/basic-api/txByHash) Checks the everPay transaction record based on `everHash`
+* [mintedTxByChainTxHash](../server-api/basic-api/mintedTxByChainTxHash) Checks the everPay transaction record of the deposit according to the blockchain record ID (e.g. `txHash` for ethereum)

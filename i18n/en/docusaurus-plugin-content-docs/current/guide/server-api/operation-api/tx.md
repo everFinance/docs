@@ -15,7 +15,7 @@ On the user side, only the following will be generated.
 * path `{{endpoint}}/tx`
 * Post data `everpayTx`
 
-For `Schema` generation, signatures, and transaction record acquisition, please read [Guide - Dive - Transaction](../../basic/dive/transaction)
+For `Schema` generation, signatures, and transaction record acquisition, please read [Guide - Dive - Transaction](../../dive/transaction)
 
 ## Example
 ```bash

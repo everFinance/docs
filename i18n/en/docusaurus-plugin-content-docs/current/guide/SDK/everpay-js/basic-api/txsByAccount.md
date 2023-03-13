@@ -17,8 +17,8 @@ Get transactions corresponding to `account` on everPay by paging
 |account|Optional, default is the `account` parameter passed when the Everpay instance is created|
 |page|Optional, default is 1|
 |tag|Optional, Token Name|
-|action|Optional, note that **[Quick Withdrawals](../../../basic/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` for deposit transactions</li><li>`'transfer'` for transfer transactions</li><li>`'burn'` for withdraw transactions</li><li>`'bundle'` for bundle transactions</li></ul>|
-|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../../basic/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|action|Optional, note that **[Quick Withdrawals](../../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` for deposit transactions</li><li>`'transfer'` for transfer transactions</li><li>`'burn'` for withdraw transactions</li><li>`'bundle'` for bundle transactions</li></ul>|
+|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
 ## Return
 
@@ -36,7 +36,7 @@ export interface TxsResult {
 
 ### Return Fields
 
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../basic/dive/transaction#transaction-record)
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../dive/transaction#transaction-record)
 
 ## Example
 
