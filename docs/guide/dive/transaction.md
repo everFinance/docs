@@ -16,11 +16,11 @@ everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同
 |to|<ul><li>转账时，`to` 为另一个 everPay 账户 ID</li><li>提现时，`to` 为要提现至的区块链钱包地址</li><li>批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID（包括签名交易的当前 everPay 账户 ID）</li></ul>|
 |amount|类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 <ul><li>转账时，`amount` 为转账金额</li><li>提现时，`amount` 为提现金额</li><li>批量转账时，`amount` 为外部转账金额</li></ul>|
 |fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../server-api/basic-api/info.md) 接口获取|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../server-api/basic-api/info.md) 接口获取|
 |nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|`chainType` 必须与 [info API](../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
-|chainID|`chainID` 必须与 [info API](../../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
+|tokenID|通过 [info API](../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
+|chainType|`chainType` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
+|chainID|`chainID` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
 |data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)、[批量转账](./bundle)|
 |version|交易版本 `'v1'`|
 
@@ -94,7 +94,7 @@ export const getEverpayTxMessageData = (everpayTxWithoutSig: EverpayTxWithoutSig
 }
 ```
 
-其中 `EverpayTxWithoutSig` 可参考 [everpay-js types#EverpayTxWithoutSig](../../SDK/everpay-js/types.md#everpaytxwithoutsig)
+其中 `EverpayTxWithoutSig` 可参考 [everpay-js types#EverpayTxWithoutSig](../SDK/everpay-js/types.md#everpaytxwithoutsig)
 
 ### 以太坊账户示例
 
@@ -348,7 +348,7 @@ const verified = arweave.crypto.verify(
 
 ## 提交交易
 
-将 everPay 交易通过 POST 请求提交 everPay 后端服务器 [`tx`](../../server-api/operation-api/tx.md) 接口。
+将 everPay 交易通过 POST 请求提交 everPay 后端服务器 [`tx`](../server-api/operation-api/tx.md) 接口。
 
 ### 字段
 
@@ -404,7 +404,7 @@ everPay 在 [`Schema`](#schema) 定义字段、`sig` 签名字段外，添加了
 
 ### 查询接口
 
-* [txs](../../server-api/basic-api/txs.md) 查询所有 everPay 交易记录
-* [txsByAccount](../../server-api/basic-api/txsByAccount) 查询具体 everPay 账户的交易记录
-* [txByHash](../../server-api/basic-api/txByHash) 根据 `everHash` 查询 everPay 交易记录
-* [mintedTxByChainTxHash](../../server-api/basic-api/mintedTxByChainTxHash) 根据充值的区块链记录ID （如以太坊为 `txHash`），查询充值的 everPay 交易记录
+* [txs](../server-api/basic-api/txs.md) 查询所有 everPay 交易记录
+* [txsByAccount](../server-api/basic-api/txsByAccount) 查询具体 everPay 账户的交易记录
+* [txByHash](../server-api/basic-api/txByHash) 根据 `everHash` 查询 everPay 交易记录
+* [mintedTxByChainTxHash](../server-api/basic-api/mintedTxByChainTxHash) 根据充值的区块链记录ID （如以太坊为 `txHash`），查询充值的 everPay 交易记录
