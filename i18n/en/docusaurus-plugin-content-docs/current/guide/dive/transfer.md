@@ -17,11 +17,11 @@ everPay ensures the security of transfers through blockchain cryptographic signa
 |to|When transferring, `to` is another everPay account ID|
 |amount|Transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
-|tokenID|via [info API](../../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|When transferring, `chainType` must be the same as [info API](../../server-api/basic-api/info), the token `chainType` **consistent**|
-|chainID|When transferring, `chainID` must be the same as [info API](../../server-api/basic-api/info), the token `chainID` **consistent**|
+|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|When transferring, `chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**|
+|chainID|When transferring, `chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
 |data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in. Developers can pass `data` to customize some complex functions, like [Quick Withdraw](./withdraw#quick-withdrawal-data-field-description)|
 |version|transaction version `'v1'`|
 

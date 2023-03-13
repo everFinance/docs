@@ -18,11 +18,11 @@ Withdrawal means withdrawing the valid balance on your everPay account to your n
 |to|When withdrawing, `to` is the blockchain wallet address to withdraw to|
 |amount|Withdrawal amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here is 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
-|tokenID|via [info API](../../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|`chainType` must be the same as [info API](../../server-api/basic-api/info), the token `chainType` **consistent**|
-|chainID|`chainID` must be the same as [info API](../../server-api/basic-api/info), the token `chainID` **consistent**|
+|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|`chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**|
+|chainID|`chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
 |data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in|
 |version|transaction version `'v1'`|
 
@@ -52,7 +52,7 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 :::caution
 
 * Quick withdrawal is implemented via everPay transfer, `Schema` definition is the same as the transfer
-* `to` needs to be set to the market maker's everPay account ID (via [expressInfo API](../../server-api/basic-api/expressinfo) to get)
+* `to` needs to be set to the market maker's everPay account ID (via [expressInfo API](../server-api/basic-api/expressinfo) to get)
 * Define special fields via `data` for quick withdrawal purposes
 :::
 
@@ -61,14 +61,14 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 |tokenSymbol|Token Symbol|
 |action|`'transfer'` to transfer|
 |from|the current everPay account ID that signed the transaction|
-|to|Market Maker's everPay account ID for quick withdrawals (via [expressInfo API](../../server-api/basic-api/expressinfo) to get)|
+|to|Market Maker's everPay account ID for quick withdrawals (via [expressInfo API](../server-api/basic-api/expressinfo) to get)|
 |amount|Transfer amount (quick withdrawal amount), type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
 |fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../../server-api/basic-api/info) interface to get|
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get|
 |nonce|unix milliseconds|
-|tokenID|via [info API](../../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|When transferring, `chainType` must be the same as [info API](../../server-api/basic-api/info), the token `chainType` **consistent**|
-|chainID|When transferring, `chainID` must be the same as [info API](../../server-api/basic-api/info), the token `chainID` **consistent**|
+|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
+|chainType|When transferring, `chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**|
+|chainID|When transferring, `chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
 |data|Additional information, developer-customizable JSON data, processed by `JSON.stringify()` and passed in|
 |version|transaction version `'v1'`|
 
@@ -80,7 +80,7 @@ Only quick withdrawals to the ethereum blockchain are currently supported
 |withdrawAction|`'pay'`|
 |withdrawChainType|`'ethereum'`. Blockchain for quick withdrawals to, currently only `'ethereum'` is supported|
 |withdrawTo|Blockchain wallet address for quick withdrawals to|
-|withdrawFee|Quick withdrawal fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing. Via [expressInfo API](../../server-api/basic-api/expressinfo) to get|
+|withdrawFee|Quick withdrawal fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing. Via [expressInfo API](../server-api/basic-api/expressinfo) to get|
 
 ### Transaction signature, sending and record acquisition
 

@@ -47,7 +47,7 @@ Get basic information about everPay service, e.g. `arLocker` represents the lock
 :::danger
 
 * Ethereum addresses are case-compatible, **arweave addresses are case-incompatible**
-* everPay recommends developers to assemble [`Schema`](../../basic/dive/transaction#schema) using the Token information returned by this info API.
+* everPay recommends developers to assemble [`Schema`](../../dive/transaction#schema) using the Token information returned by this info API.
 :::
 
 ## Example

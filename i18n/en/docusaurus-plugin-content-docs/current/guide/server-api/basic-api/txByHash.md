@@ -20,7 +20,7 @@ For example, for a normal withdrawal (not quick withdrawal), you can query the t
 |request method|GET|
 |everHash| Unique characters generated after the everPay transaction is completed|
 ## Return Fields
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../basic/dive/transaction#transaction-record)
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../dive/transaction#transaction-record)
 ## Example
 
 ```bash

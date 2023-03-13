@@ -17,12 +17,12 @@ Get all transactions on everPay accessed by paging
 |request method|GET|
 |page|Optional, default is 1|
 |tokenTag|Optional,a unique identifier that identifies the `token`, via [info API](./info) interface to get|
-|action|Optional, note that **[Quick Withdrawals](../../basic/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
-|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../basic/dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|action|Optional, note that **[Quick Withdrawals](../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
 ## Return Fields
 
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../basic/dive/transaction#transaction-record)
+Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../dive/transaction#transaction-record)
 
 ## Example
 
