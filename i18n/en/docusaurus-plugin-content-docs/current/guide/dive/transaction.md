@@ -96,7 +96,7 @@ export const getEverpayTxMessageData = (everpayTxWithoutSig: EverpayTxWithoutSig
 }
 ```
 
-Where `EverpayTxWithoutSig` can be found in [everpay-js types#EverpayTxWithoutSig](../../SDK/everpay-js/types#everpaytxwithoutsig)
+Where `EverpayTxWithoutSig` can be found in [everpay-js types#EverpayTxWithoutSig](../SDK/everpay-js/types#everpaytxwithoutsig)
 
 ### Example of an ethereum account
 
