@@ -6,7 +6,7 @@ sidebar_position: 8
 
 ## 功能
 
-获取对应 `账户(account)` 的交易记录，通过 分页 形式获取。
+获取对应 `账户(account)` 的交易记录，通过 `分页(10条1页)` 形式展示。
 
 ## 参数
 
@@ -14,7 +14,7 @@ sidebar_position: 8
 
 |查询字段|是否必需|描述|
 |---|---|---|
-|account|YES| everPay 账户地址。|
+|account|YES| everPay 账户 ID。|
 |page|NO|默认为 1。|
 |tokenTag|NO|token 的唯一标识，可通过 [`info`](./info.md#示例返回) 接口进行查看。|
 |action|NO|其中 [快速提现](../../dive/withdraw#快速提现) 交易记录归类在 `action: 'transfer'` 筛选中。<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
@@ -22,7 +22,7 @@ sidebar_position: 8
 
 ## 返回字段
 
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../dive/transaction#交易记录)。
+字段信息可查看 [指南 - 系统概览 - 交易 - 交易记录](../../dive/transaction#交易记录)。
 
 ## 示例
 

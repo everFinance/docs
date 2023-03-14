@@ -3,11 +3,18 @@ sidebar_position: 2
 ---
 
 # 目录
+## 系统概览
+  * [账户模型](../dive/account-model.md)
+  * [交易](../dive/transaction.md)
+  * [充值](../dive/deposit.md)
+  * [转账](../dive/transfer.md)
+  * [提现](../dive/withdraw.md)
+  * [批量转账](../dive/bundle.md)
 
 ##  [Server API](../server-api/intro.md)
 * everPay 后端服务, 可通过 everPay Server 获取 everPay 基本信息等功能。
 
-#### 基本查询
+#### 基本查询类
   * GET [/info](../server-api/basic-api/info.md)
   * GET [/balances/{account}](../server-api/basic-api/balances.md)
   * GET [/balance/{tag}/{account}](../server-api/basic-api/balance.md)
@@ -22,7 +29,7 @@ sidebar_position: 2
 
 ## [SDK](../SDK/everpay-js.md)
 * 方便开发者使用 nodeJS、web 端来进行 everPay 集成，来进行 everPay 的支付等。
-#### 基本查询
+#### 基本查询类
   * [/info](../SDK/everpay-js/basic-api/info.md)
   * [/balances](../SDK/everpay-js/basic-api/balances.md)
   * [/balance](../SDK/everpay-js/basic-api/balance.md)
@@ -43,3 +50,8 @@ sidebar_position: 2
   * [signBundleData](../SDK/everpay-js/operation-api/signBundleData.md)
   * [bundle](../SDK/everpay-js/operation-api/bundle.md)
   * [sendEverpayTx](../SDK/everpay-js//operation-api/sendEverpayTx.md)
+
+## 延伸
+
+ * [基于存储的计算范式](../refrence/storage-based-computation-paradigm.md)
+ * [共识变迁](../refrence/consensus.md)

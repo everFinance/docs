@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## 功能
-通过区块链 **充值** 的交易记录中的 `chainTxHash` 可以获取 everPay 上对应的 everPay 充值交易记录。
+通过区块链 **充值** 的交易记录中的 `chainTxHash`，可以获取 everPay 上对应的 everPay 充值交易记录。
 
 例如一笔 everPay 充值交易，可通过 `chainTxHash` 查询该笔交易记录，如果该笔 everPay 交易记录存在，即可认为充值已到账。
 
@@ -68,7 +68,7 @@ export interface EverpayTransaction {
 ```
 
 ### 返回字段
-字段信息可查看 [指南 - 深入理解 - 交易 - 交易记录](../../../dive/transaction.md#交易记录)。
+字段信息可查看 [指南 - 系统概览 - 交易 - 交易记录](../../../dive/transaction.md#交易记录)。
 ## 示例
 
 ```js

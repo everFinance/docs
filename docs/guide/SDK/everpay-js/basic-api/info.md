@@ -16,10 +16,6 @@ import TabItem from '@theme/TabItem';
 everpay.info():EverpayInfo
 ```
 
-|查询字段|描述|
-|---|---|
-|请求方式|GET|
-
 ## 返回数据
 
 <Tabs>

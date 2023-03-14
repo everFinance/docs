@@ -20,7 +20,9 @@ everPay 的资产和链上资产 1:1 对应，Ethereum 上我们使用多签合�
 | -------- | ------------------------------------------ |
 | Ethereum | [0x38741a69785e84399fcf7c5ad61d572f7ecb1dab](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
 | Arweave  | [dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys](https://viewblock.io/arweave/address/dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys)|
-
+:::info
+更多区块链锁仓地址，可查看 [**info API**](../server-api/basic-api/info.md) 中的 **lockers** 字段。
+:::
 ## 支持代币列表
 
 everPay 目前支持的代币包括：
@@ -35,6 +37,8 @@ everPay 目前支持的代币包括：
 | DAI      | [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f) | ethereum          |
 | UNI      | [0x1f9840a85d5af5bf1d1762f925bdaddc4201f984](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) | ethereum          |
 
-代币详细信息可以通过 [info](../server-api/basic-api/info) 接口获得。
+:::info
+代币详细信息可以查看 [**info API**](../server-api/basic-api/info.md) 中 **tokenList** 字段。
+:::
 
 <!-- 本教程详细介绍 everPay 实现机制，以及充值、提现、转账具体的细节，开发者可以通过本教程对 everPay 有一个完整且清晰的认识，方便进行 everPay 的集成。 -->

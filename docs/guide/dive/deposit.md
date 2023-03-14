@@ -7,22 +7,22 @@ sidebar_position: 4
 不同类型区块链的钱包地址在 everPay 上，都对应一个 everPay 账户，everPay 账户 ID 与该钱包在对应区块链的钱包地址一致。用户无需额外在 everPay 进行账户注册，目前 everPay 已支持所有 Ethereum 和 Arweave 的有效账户。
 
 例如：
-* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 在 everPay 上对应的账户 ID 即为 0x26361130d5d6E798E9319114643AF8c868412859
-* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 在 everPay 上对应的账户 ID 即为 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo
-
+* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 在 everPay 上对应的账户 ID 即为 0x26361130d5d6E798E9319114643AF8c868412859。
+* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 在 everPay 上对应的账户 ID 即为 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo。
+nn
 everPay 充值行为，即向 everPay DAO 管理的区块链钱包地址进行区块链转账。
 
 例如：
-* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 给 everPay 在 Ethereum 上的多签合约转账 0.1 USDT，everPay 的后端服务监测到该笔入账，并等待6个区块确认，即会在 everPay 上，标记此 0x26361130d5d6E798E9319114643AF8c868412859 everPay 账户 资产增加 0.1 USDT
-* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 给 everPay 在 Arweave 管理的门限签名钱包地址转账 0.1 AR，everPay 的后端服务监测到该笔入账，并等待15个区块确认，即会在 everPay 上，标记此 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo everPay 账户 资产增加 0.1 AR
+* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 给 everPay 在 Ethereum 上的多签合约转账 0.1 USDT，everPay 的后端服务监测到该笔入账，并等待6个区块确认，即会在 everPay 上，标记此 0x26361130d5d6E798E9319114643AF8c868412859 everPay 账户 资产增加 0.1 USDT。
+* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 给 everPay 在 Arweave 管理的门限签名钱包地址转账 0.1 AR，everPay 的后端服务监测到该笔入账，并等待15个区块确认，即会在 everPay 上，标记此 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo everPay 账户 资产增加 0.1 AR。
 
 
 ## 给 Ethereum 账户充值
 ### imToken / MetaMask 等区块链钱包
-1. 通过 [info API](../server-api/basic-api/info.md) 获取 everPay 在 Ethereum 的多签合约地址 `ethLocker`
-2. 通过 imToken / MetaMask 等区块链钱包 工具，给该 `ethLocker` 多签合约地址转账想要充值的资产与数量
-3. 等待 该笔交易 6 个区块确认
-4. 通过 [balances API](../server-api/basic-api/balances.md) 获取此钱包对应的 everPay 账户，在everPay 上的资产信息
+1. 通过 [`info API`](../server-api/basic-api/info.md) 获取 everPay 在 Ethereum 的多签合约地址 `ethLocker`。
+2. 通过 imToken / MetaMask 等区块链钱包 工具，给该 `ethLocker` 多签合约地址转账想要充值的资产与数量。
+3. 等待 该笔交易需 6 个区块确认。
+4. 通过 [`balances API`](../server-api/basic-api/balances.md) 获取此钱包对应的 everPay 账户，在 everPay 上的资产信息。
 
 ### 通过 ethers.js
 伪代码参考来源：[everpay-js src/lib/ethereum.ts#L14](https://github.com/everFinance/everpay-js/blob/main/src/lib/ethereum.ts#L14)
@@ -60,10 +60,10 @@ everpay-js 现已封装开源，内部集成了 ethers.js，开发者无需关�
 
 ## 给 Arweave 账户充值
 ### ArConnect 等区块链钱包
-1. 通过 [info API](../server-api/basic-api/info.md) 获取 everPay 在 Arweave 上门限签名管理的钱包地址 `arLocker`
-2. 通过 arConnect 等区块链钱包 工具，给该 `arLocker` 地址转账想要充值的资产与数量
-3. 等待 该笔交易 15 个区块确认
-4. 通过 [balances API](../server-api/basic-api/balances.md) 获取此钱包对应的 everPay 账户，在everPay 上的资产信息
+1. 通过 [`info API`](../server-api/basic-api/info.md) 获取 everPay 在 Arweave 上门限签名管理的钱包地址 `arLocker`。
+2. 通过 arConnect 等区块链钱包 工具，给该 `arLocker` 地址转账想要充值的资产与数量。
+3. 等待 该笔交易需 15 个区块确认。
+4. 通过 [`balances API`](../server-api/basic-api/balances.md) 获取此钱包对应的 everPay 账户，在everPay 上的资产信息。
 
 ### 通过 arweave.js
 伪代码参考来源：[everpay-js src/lib/arweave.ts#L102](https://github.com/everFinance/everpay-js/blob/main/src/lib/arweave.ts#L102)
@@ -96,26 +96,26 @@ everpay-js 现已封装开源，内部集成了 arweave.js、arConnect，开发�
 
 **此部分充值的 everPay 交易，不需要开发者进行生成和签名，开发者可选择跳过。**
 
-### Schema 说明
+### Schema
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称|
-|action|`'mint'`代表充值|
-|from| everPay 签名钱包地址|
-|to|用户进行充值的区块链转账钱包地址，即需要充值的 everPay 账户 ID|
-|amount|充值资产数额，类型为 uint。设置时经过 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
-|fee| 手续费，类型为 uint。设置时经过进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../server-api/basic-api/info.md) 接口获取|
-|nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../server-api/basic-api/info.md) 接口获取，与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|`chainType` 与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
-|chainID|`chainID` 与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|data|用户进行充值的区块链转账交易数据，不同的区块链转账交易数据不同|
-|version|交易版本 `'v1'`|
+|tokenSymbol|代币名称。|
+|action|`'mint'`代表充值。|
+|from| everPay 签名钱包地址。|
+|to|用户进行充值的区块链转账钱包地址，即需要充值的 everPay 账户 ID。|
+|amount|充值资产数额，类型为 uint。设置时经过 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。|
+|fee| 手续费，类型为 uint。设置时经过进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../server-api/basic-api/info.md) 接口获取。|
+|nonce|unix milliseconds，unix 毫秒时间戳。|
+|tokenID|通过 [info API](../server-api/basic-api/info.md) 接口获取，与 `tokenSymbol` 对应的 token `id` 字段**一致**。|
+|chainType|`chainType` 与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**。|
+|chainID|`chainID` 与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**。|
+|data|用户进行充值的区块链转账交易数据，不同的区块链转账交易数据不同。|
+|version|交易版本 `'v1'`。|
 
 :::info
-* `action` 充值的 everPay 交易，`action` 指定为 `'mint'`
-* `to` 指定为 充值的 everPay 账户 ID
+* `action` 充值的 everPay 交易，`action` 指定为 `'mint'`。
+* `to` 指定为 充值的 everPay 账户 ID。
 * `data` everPay 会将原区块链的充值详情，作为 Schema `data` 参数，用于关联与溯源。
 :::
 
