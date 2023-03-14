@@ -6,12 +6,12 @@ sidebar_position: 3
 
 ## 功能
 
-根据批量转账的内部转账事务列表，生成批量转账 `bundleData`。
+根据 `批量转账` 的 `内部转账` 事务列表，生成批量转账的 `bundleData`。
 
 ## 参数
 
 ```ts
-everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
+everpay.getBundleData(items: InternalTransferItem[], expiration?: number):BundleData
 ```
 
 |参数|是否必需|描述|

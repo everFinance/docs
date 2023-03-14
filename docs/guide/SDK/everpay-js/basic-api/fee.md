@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## 功能
-获取 在 everPay 上 `指定代币(token)` 的 `transfer`、`withdraw`、`bundle` 手续费。
+获取在 everPay 上 `指定代币(token)` 的 `transfer`、`withdraw`、`bundle` 手续费。
 
 ## 参数
 ```ts

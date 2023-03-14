@@ -5,7 +5,7 @@ sidebar_position: 4
 # balance
 
 ## 功能
-获取对应 `账户(account)` 在 everPay 上的 `指定代币(symbol)` 的资产余额。
+获取对应 `账户(account)` 在 everPay 上的 `指定代币(token)` 的资产余额。
 
 ## 参数
 `{{ endpoint }}/balance/{{ tokenTag }}/{{ account }}`
@@ -13,13 +13,13 @@ sidebar_position: 4
 |查询字段|是否必需|描述|
 |---|---|---|
 |tokenTag|YES| token 的唯一标识，可通过 [`info`](./info.md#示例返回) 接口进行查看。 |
-|account| YES| everPay 账户地址。|
+|account| YES| everPay 账户 ID。|
 
 ## 返回字段
 |字段|描述|
 |---|---|
 |accid| everPay 账户 ID。|
-|balance| 该 everPay 账户 指定代币 资产余额，详情见 [BalanceItem 字段描述](#balanceitem-字段描述)。|
+|balance| 该 `账户(account)` 在 everPay 上 `指定代币` 的资产余额，详情见 [BalanceItem 字段描述](#balanceitem-字段描述)。|
 
 ### BalanceItem 字段描述
 |字段|描述|

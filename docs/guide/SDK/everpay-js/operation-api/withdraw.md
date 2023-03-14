@@ -18,14 +18,14 @@ import TabItem from '@theme/TabItem';
   * 后端服务器验证通过，将该笔 everPay 交易记录存储在 arweave 区块链上。
   * 等待 arweave 区块链完成该笔 everPay 交易记录存储，确保账户的正确性后。
   * 多签钱包/锁仓地址，给用户提现地址，提现对应数量（扣除手续费后）资产代币。
-  * 更多信息请阅读 [指南 - 深入理解 - 提现](../../../dive/withdraw.md)。
+  * 更多信息请阅读 [指南 - 系统概览 - 提现](../../../dive/withdraw.md)。
 * 在快速提现时
   * 内部构建**快速提现** [Schema](../../../dive/withdraw#schema-说明-1)。
   * 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
   * 将信息发送给 everPay 后端服务器，进行签名验证。
   * 后端服务器验证通过，做市商 everPay 账户收到资产。
   * 做市商通过原生区块链转账，将对应数量（扣除手续费后）资产代币转账至用户提现钱包地址。
-  * 更多信息请阅读 [指南 - 深入理解 - 提现 - 快速提现](../../../dive/withdraw#快速提现)。
+  * 更多信息请阅读 [指南 - 系统概览 - 提现 - 快速提现](../../../dive/withdraw#快速提现)。
 
 :::info
 任意 everPay 账户，均可将 everPay 上的资产，提现至 everPay 目前支持提现的区块链钱包上，例如：
@@ -53,7 +53,7 @@ everpay.withdraw(withdrawParams: WithdrawParams):SendEverpayTxResult
 |quickMode|NO|快速提现。|
 |data|NO|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。|
 |to|NO| `to` 为要提现至的区块链钱包地址。|
-[更多信息请移至 深入理解 - 提现](../../../dive/withdraw.md)。
+[更多信息请移至 系统概览 - 提现](../../../dive/withdraw.md)。
 
 </TabItem>
 <TabItem value="type" label="类型">

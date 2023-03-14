@@ -61,7 +61,7 @@ const everpay = new Everpay()
 </TabItem>
 </Tabs>
 
-## 创建 Everpay 应用
+## 创建 Everpay 实例
 
 ### 以太坊钱包连接
 
@@ -145,7 +145,7 @@ ethRun()
 - [debug 环境配置](./everpay-js/configuration/debug.md)。
 - [account 配置](../dive/account-model.md) & [chainType 配置项](./everpay-js/types.md#chaintype)。
 - `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](./everpay-js/configuration/ethConnectedSigner)。
-- CDN 方式创建 everPay 应用时，需要添加 `default` : `new window.Everpay.default({})`。
+- CDN 方式创建 Everpay 实例时，需要添加 `default` : `new window.Everpay.default({})`。
 - 确保 `ethers CDN链接` 和 `everPay CDN链接` 优先加载完成，否则 `ethers is not defined` 或 `Everpay is not defined` 。
 :::
 ---
@@ -222,17 +222,17 @@ arRun()
 * [debug 环境配置](./everpay-js/configuration/debug.md)。
 * [chainType 配置项](./everpay-js/types#chaintype)。
 * `arJWK` 也支持私钥格式，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](./everpay-js/configuration/arJWK) 进行配置。
-* CDN 方式创建 everPay 应用时，需要添加 `default` : `new window.Everpay.default({})`。
+* CDN 方式创建 Everpay 实例时，需要添加 `default` : `new window.Everpay.default({})`。
 * 确保 `everPay CDN链接` 优先加载完成，否则 `Everpay is not defined` 。
 :::
 ---
 
 :::tip 成功啦
-- 根据上面的步骤，我们已经完成了 Everpay 应用的创建了,接下来一起完成充值、转账、提现。
+- 根据上面的步骤，我们已经完成了 Everpay 实例的创建了,接下来一起完成充值、转账、提现。
 :::
 
 ## 充值
-`everPay 应用` 创建成功后，可通过 `deposit` 方法，将 `Arweave`, `Ethereum` 等链上资产存入 everPay。
+everPay 实例创建成功后，可通过 `deposit` 方法，将 `Arweave`, `Ethereum` 等链上资产存入 everPay。
 
 填写充值所需要的 `token tag` 和 `amount`，调用下面的接口完成充值:
 * `tag` : `token` 的唯一标识，可通过 [`info`](./everpay-js/basic-api/info.md#示例返回) 接口进行查看。
@@ -254,7 +254,7 @@ everpay
 :::
 ---
 ## 转账
-`everPay 应用` 创建成功后，可通过 `transfer` 方法，对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 转账。
+everPay 实例创建成功后，可通过 `transfer` 方法，对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 转账。
 
 填写转账所需要的 `token tag` 和 `amount`，`to`，调用下面的接口完成转账：
 
@@ -276,7 +276,7 @@ everpay
 :::
 ---
 ## 提现
-`everPay 应用` 创建成功后，可通过 `withdraw` 方法，对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 提现。将 everPay 中的 `资产(token)` 提到原生链地址中。
+everPay 实例创建成功后，可通过 `withdraw` 方法，对当前 `账户(account)` 已拥有的 `资产(token)` 进行 everPay 提现。将 everPay 中的 `资产(token)` 提到原生链地址中。
 
 填写需要提现的 `token tag` 、 `amount`、 `chainType` 、`to`，调用下面的接口完成提现：
 

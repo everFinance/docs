@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## 功能
-将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithoutsig) 转化成 `messageData` 用于签名
+将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithoutsig) 转化成 `messageData` 用于签名。
 
 ## 参数
 ```ts

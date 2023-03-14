@@ -53,7 +53,7 @@ export interface TxsByAccountParams {
 |accid|everPay 账户 ID，与传入 `account` 保持一致。|
 |currentPage|当前页数，与传入的 `page` 参数一致。|
 |totalPages|总共拥有多少页数据。|
-|txs|交易记录。字段信息可查看 [深入理解 - 交易 - 交易记录](../../../dive/transaction.md#交易记录)。|
+|txs|交易记录。字段信息可查看 [系统概览 - 交易 - 交易记录](../../../dive/transaction.md#交易记录)。|
 
 
 </TabItem>

@@ -20,7 +20,7 @@ everpay.balances(balancesParams:BalancesParams):BalanceItem[]
 
 |查询字段|是否必需|描述|
 |---|---|---|
-|account|NO|everpay 账户地址，详情查看[账户模型](../../../dive/account-model.md)。|
+|account|NO|everpay 账户 ID，详情查看[账户模型](../../../dive/account-model.md)。|
 
 </TabItem>
 <TabItem value="type" label="类型">

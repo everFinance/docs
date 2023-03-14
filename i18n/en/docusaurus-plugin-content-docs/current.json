@@ -3,9 +3,9 @@
     "message": "Quick Start",
     "description": "The label for category 快速开始 in sidebar guide"
   },
-  "sidebar.guide.category.深入理解": {
+  "sidebar.guide.category.系统概览": {
     "message": "Dive",
-    "description": "The label for category 深入理解 in sidebar guide"
+    "description": "The label for category 系统概览 in sidebar guide"
   },
   "sidebar.guide.category.延伸": {
     "message": "Refrence",
