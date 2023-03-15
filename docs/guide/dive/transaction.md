@@ -21,7 +21,7 @@ everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同
 |tokenID|通过 [`info API`](../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**。|
 |chainType|`chainType` 必须与 [`info API`](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应的 token `chainType` **一致**。|
 |chainID|`chainID` 必须与 [`info API`](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应的 `chainID` **一致**。|
-|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)、[批量转账](./bundle)。|
+|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [批量转账](./bundle)。|
 |version|交易版本 `'v1'`。|
 
 ### 以太坊账户示例
@@ -399,8 +399,7 @@ everPay 在 [`Schema`](#schema) 定义字段、`sig` 签名字段外，添加了
 |status|<ul><li>`confirmed` 代表该 everPay 交易被 everPay 后端签名验证通过后，确认接收，但还未记录到 Arweave 区块链上。</li><li>`packaged` 代表该 everPay 交易已被记录到 Arweave 区块链上。</li></ul>|
 |internalStatus|批量转账增加的字段，仅在批量转账的内部交易失败时，返回具体错误信息。批量转账内部交易成功、转账、提现、充值时，值都为 `success`。|
 |id|<ul><li>当该笔 everPay 交易被记录到 Arweave 区块链后，此 `id` 对应该笔记录在 Arweave 上的交易 hash。</li><li>如该笔 everPay 交易未被记录到 Arweave 区块链上，`id` 为空字符串。</li></ul>|
-|targetChainTxHash|<ul><li>充值、提现（非快速提现）时，对应的区块链 `txHash`。</li><li>如提现（非快速提现）未完成或是 everPay 转账交易，此 `targetChainTxHash` 为空字符串。</li></ul>|
-|express|快速提现增加的字段，`express: {"chainTxHash": "","withdrawFee": "","refundEverHash": "","err": ""}`<ul><li>`chainTxHash` 代表快速提现成功后，打包的 区块链 `txHash`。</li><li>`withdrawFee` 代表实际收取的手续费。</li><li>`refundEverHash` 代表快速提现失败后，做市商进行退款的 everPay 交易 `everHash`。</li><li>`err` 代表快速提现失败原因。</li></ul>|
+|targetChainTxHash|<ul><li>充值、提现时，对应的区块链 `txHash`。</li><li>如提现未完成或是 everPay 转账交易，此 `targetChainTxHash` 为空字符串。</li></ul>|
 
 ### 查询接口
 

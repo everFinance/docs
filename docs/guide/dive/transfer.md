@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # 转账
 
-转账是指两个 everPay 账户之间发生的转账行为，任意两个 everPay 账户之间都可以进行转账，甚至可以将以太坊的资产转移到 Arweave 账户上。
+转账是指两个 everPay 账户之间发生的转账行为，任意两个 everPay 账户之间都可以进行转账，并支持 Ethereum 资产转账到 Arweave 账户上。
 
 everPay 通过区块链密码学签名验证来确保转账的安全性。
 
@@ -23,7 +23,7 @@ everPay 通过区块链密码学签名验证来确保转账的安全性。
 |tokenID|通过 [info API](../server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**。|
 |chainType|转账时，`chainType` 必须与 [info API](../server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**。|
 |chainID|转账时，`chainID` 必须与 [info API](../server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**。|
-|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)。|
+|data|转账附加信息，用户可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能。|
 |version|交易版本 `'v1'`。|
 
 ## 交易签名、发送与交易记录获取

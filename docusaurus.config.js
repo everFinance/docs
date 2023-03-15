@@ -52,6 +52,7 @@ module.exports = {
 
         // 传递至 @docusaurus/plugin-content-docs
         docs: {
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
             if (locale === 'en') {
@@ -87,7 +88,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'guide/getting-started/overview',
+          docId: 'guide/overview',
           position: 'left',
           label: '指南',
         },
@@ -116,7 +117,7 @@ module.exports = {
           items: [
             {
               label: '指南',
-              to: '/docs/guide/getting-started/overview',
+              to: '/docs/guide/overview',
             },
             // {
             //   label: 'SDK',

@@ -1,16 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# 介绍
-
-everPay 是一个跨链代币支付协议，为用户和商户提供实时和便宜的代币支付功能。协议基于存储计算范式，具备透明、可信、高效、快速等特性。协议没有准入要求，任何开发者或商户都可以通过 API 集成 everPay 协议。
-
-个人用户可以使用 [everpay.io](https://everpay.io) 访问 everPay UI 进行简单快捷的区块链代币支付。开发者可以使用 SDK 快速集成 everPay 协议。
-
-everPay 无需审计，所有交易由链下智能合约完成，所有交易记录都存储在 Arweave 上，任何人都可以下载并校验这些交易记录。详情参阅：[存储计算范式](../refrence/storage-based-computation-paradigm)。
-
-everPay 目前支持的链包括：Ethereum 和 Arweave。普通用户可以将 Ethereum 上的 ETH，ERC20 代币充值到 everPay，体验实时的支付结算。也可以将 Arweave 上的 AR 充值到 everPay，进行支付结算，甚至可以将 AR 跨链到 Ethereum，生成 Wrapped AR（WAR）。
+# 基础信息
 
 ## 锁仓地址
 
@@ -21,7 +13,7 @@ everPay 的资产和链上资产 1:1 对应，Ethereum 上我们使用多签合�
 | Ethereum | [0x38741a69785e84399fcf7c5ad61d572f7ecb1dab](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
 | Arweave  | [dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys](https://viewblock.io/arweave/address/dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys)|
 :::info
-更多区块链锁仓地址，可查看 [**info API**](../server-api/basic-api/info.md) 中的 **lockers** 字段。
+更多区块链锁仓地址，可查看 [**info API**](./server-api/basic-api/info.md) 中的 **lockers** 字段。
 :::
 ## 支持代币列表
 
@@ -38,7 +30,7 @@ everPay 目前支持的代币包括：
 | UNI      | [0x1f9840a85d5af5bf1d1762f925bdaddc4201f984](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) | ethereum          |
 
 :::info
-代币详细信息可以查看 [**info API**](../server-api/basic-api/info.md) 中 **tokenList** 字段。
+代币详细信息可以查看 [**info API**](./server-api/basic-api/info.md) 中 **tokenList** 字段。
 :::
 
 <!-- 本教程详细介绍 everPay 实现机制，以及充值、提现、转账具体的细节，开发者可以通过本教程对 everPay 有一个完整且清晰的认识，方便进行 everPay 的集成。 -->

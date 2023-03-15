@@ -10,7 +10,7 @@ everPay 支持 ethereum evm 兼容链。充值时，使用对应链的币种进�
 
 ## 配置项类型
 
-当前支持 `ethereum`, `arweave`, `moon`。
+当前支持 `ethereum`, `arweave`, `moon`,`bsc`,`conflux`, `platon`。
 
 ## moonbase 示例
 

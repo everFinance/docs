@@ -15,8 +15,15 @@
   --ifm-color-primary-lighter: #9D9ED7;
   --ifm-color-primary-lightest: #9D9ED7;
   --ifm-code-font-size: 95%;
+  /* 自定义折叠 icon */
+  /* --ifm-menu-link-sublist-icon: url(../../static/img/dev.png) */
 }
-
+.marginTop {
+  margin-top: 12px !important;
+}
+.menu__link--sublist-caret:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+}
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;

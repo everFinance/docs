@@ -7,7 +7,7 @@ import Translate from '@docusaurus/Translate';
 const FeatureList = [
   {
     title: <Translate>指南</Translate>,
-    to: 'docs/guide/getting-started/overview',
+    to: 'docs/guide/overview',
     src: require('../../static/img/sharding.png').default,
     description: (
       <Translate>
