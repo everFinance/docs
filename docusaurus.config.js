@@ -125,7 +125,20 @@ module.exports = {
           ],
         },
         {
-          title: '社群',
+          title: 'GitHub',
+          items: [
+            {
+              label: 'docs',
+              href: 'https://github.com/everFinance/docs',
+            },
+            {
+              label: 'everpay-js',
+              href: 'https://github.com/everFinance/everpay-js',
+            },
+          ],
+        },
+        {
+          title: '社区',
           items: [
             {
               label: 'Twitter',
@@ -142,18 +155,14 @@ module.exports = {
           ],
         },
         {
-          title: 'GitHub',
+          title: '支持',
           items: [
             {
-              label: 'docs',
-              href: 'https://github.com/everFinance/docs',
-            },
-            {
-              label: 'everpay-js',
-              href: 'https://github.com/everFinance/everpay-js',
-            },
-          ],
-        },
+              label: '帮助中心',
+              href: 'https://everpay.zendesk.com/hc/zh-cn'
+            }
+          ]
+        }
       ],
       copyright: `Copyright © ${new Date().getFullYear()} everVision, Inc. Built with Docusaurus.`,
     },
