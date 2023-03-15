@@ -1,4 +1,6 @@
 {
   "label": "操作类接口",
-  "position": 7
+  "position": 7,
+  "collapsible": true,
+  "collapsed": true
 }

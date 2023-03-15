@@ -1,16 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Brief Description
+# Basic information
 
-everPay is a cross-chain token payment protocol that provides real-time and inexpensive token payment capabilities for users and merchants. The protocol is based on the stored computing paradigm which is transparent, trustworthy, efficient and fast. The protocol has no entry requirements and any developer or merchant can integrate everPay protocol via API.
-
-Individual users can use [everpay.io](https://everpay.io) to access everPay UI for easy and fast blockchain token payments. Developers can quickly integrate the everPay protocol using the SDK.
-
-All transactions are done by off-chain smart contracts and all transaction records are stored on Arweave, which can be downloaded and verified by anyone. For more information, see: [Stored Computing Paradigm for more information](../refrence/storage-based-computation-paradigm).
-
-EverPay currently supports the following chains: Ethereum and Arweave, and regular users can top up their ETH and ERC20 tokens on Ethereum to everPay to experience real-time payment settlement. You can also top up AR from Arweave to everPay for payment settlement, or even cross-chain AR to Ethereum to generate Wrapped AR (WAR).
 
 ## Locked Position Address
 
@@ -35,4 +28,4 @@ The tokens currently supported on everPay includes:
 | DAI      | [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f) | ethereum          |
 | UNI      | [0x1f9840a85d5af5bf1d1762f925bdaddc4201f984](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) | ethereum          |
 
-Token details can be found at [info](../server-api/basic-api/info) interface.
+Token details can be found at [info](./server-api/basic-api/info) interface.

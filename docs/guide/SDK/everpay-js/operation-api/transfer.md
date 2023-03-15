@@ -38,7 +38,7 @@ everpay.transfer(transferParams: TransferParams):SendEverpayTxResult
 |tag|YES| `token` 的唯一标识，可通过 [`info`](../../../server-api/basic-api/info.md) 接口进行查看。|
 |amount|YES|转账的资产数额。|
 |to|YES|`everPay` 的收款方 ID。|
-|data|NO|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](../../../dive/withdraw#快速提现-data-字段说明)、[批量转账](../../../dive/bundle.md)。|
+|data|NO|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [批量转账](../../../dive/bundle.md)。|
 
 
 </TabItem>

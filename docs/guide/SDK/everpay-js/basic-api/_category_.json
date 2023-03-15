@@ -1,4 +1,6 @@
 {
   "label": "基础查询接口",
-  "position": 5
+  "position": 5,
+  "collapsible": true,
+  "collapsed": true
 }
