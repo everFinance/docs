@@ -30,7 +30,6 @@ Any everPay account can withdraw assets on everPay to blockchain wallets that ev
 * USDT on everPay currently supports ethereum blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw USDT to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`
 * The current AR on everPay supports ethereum, arweave blockchain, everPay account `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` can withdraw AR to arweave wallet `5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo` and also to ethereum wallet `0x26361130d5d6E798E9319114643AF8c868412859`.
 * For more blockchains that tokens are supported for withdrawal to, see [Basic api - info](../basic-api/info)
-* For more blockchains that tokens are supported for quick withdrawal to, see [Basic api - expressInfo](../basic-api/expressinfo)
 :::
 
 ## Parameter
