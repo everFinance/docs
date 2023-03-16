@@ -79,7 +79,7 @@ module.exports = {
   // themes:
   themeConfig: {
     navbar: {
-      title: 'everPay Docs',
+      title: 'everPay',
       logo: {
         alt: 'everPay Logo',
         src: 'img/logo-black.svg',
@@ -90,7 +90,7 @@ module.exports = {
           type: 'doc',
           docId: 'guide/overview',
           position: 'left',
-          label: '指南',
+          label: 'DOCS',
         },
         // {
         //   type: 'doc',
@@ -116,7 +116,7 @@ module.exports = {
           title: '文档',
           items: [
             {
-              label: '指南',
+              label: 'DOCS',
               to: '/docs/guide/overview',
             },
             // {
