@@ -4,12 +4,12 @@ sidebar_position: 1
 
 # everPay 协议
 
+everPay 是一个基于存储计算范式的实时支付协议，旨在保持区块链透明可信的同时，为用户提供接近互联网的支付结算体验。在存储计算范式中，所有计算过程在链下完成，计算结果将全部同步到 Arweave 中。任何人都可以用存储层的程序代码重新跑一遍交易数据，得到一致的最新状态，来实现对存储层安全性的继承.
 
-everPay 是一个跨链代币支付协议，为用户和商户提供实时和便宜的代币支付功能。协议基于存储计算范式，具备透明、可信、高效、快速等特性。协议没有准入要求，任何开发者或商户都可以通过 API 集成 everPay 协议。
+协议的 TPS 没有固定的限制，仅取决于协议的应用架构和服务器性能。协议只要满足存储计算范式标准，即可以进行“无限”地拓展，性能可以媲美传统联网应用。目前支持 Arweave, Ethereum, Moonbeam, Conflux, BSC, Platon 六条公链。用户可以将相关链上资产充值到 everPay，体验实时的支付结算，之后 everPay 将会支持更多网络。
 
-个人用户可以使用 [everpay.io](https://everpay.io) 访问 everPay UI 进行简单快捷的区块链代币支付。开发者可以使用 SDK 快速集成 everPay 协议。
+数字资产实时支付有许多应用场景，例如去中心化交易所、Discord 打赏机器人、NFT 交易平台等。在这些应用场景中，everPay 可以提高支付效率和安全性，从而为用户和开发者提供更加高效和安全的服务。
 
-everPay 无需审计，所有交易由链下智能合约完成，所有交易记录都存储在 Arweave 上，任何人都可以下载并校验这些交易记录。详情参阅：[存储计算范式](./refrence/storage-based-computation-paradigm)。
+将 everPay 集成到产品中，可以为用户提供更加完善的支付转账功能，同时也可以提高用户的支付体验和安全性。我们提供了简单易用的 API 接口和一键集成的 everpay.js SDK，开发者可以轻松地进行集成和调用，同时我们也提供了详细的文档和技术支持，如果你有需求请联系我们。
 
-everPay 目前支持的链包括：Ethereum 和 Arweave。普通用户可以将 Ethereum 上的 ETH，ERC20 代币充值到 everPay，体验实时的支付结算。也可以将 Arweave 上的 AR 充值到 everPay，进行支付结算，甚至可以将 AR 跨链到 Ethereum，生成 Wrapped AR（WAR）。
 * [everPay 协议白皮书](https://mirror.xyz/everpay.eth/mafuxM9-S4pcHtXhwfLPjLkDCoWQxtQsyEn-mhmiXAQ)

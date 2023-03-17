@@ -2,6 +2,7 @@
 sidebar_position: 5
 ---
 
+# Transfer
 ## Introduction
 
 A transfer is a transfer that occurs between two everPay accounts. Any two everPay accounts can transfer funds between them, even transferring assets from an Ethereum address to an Arweave address.

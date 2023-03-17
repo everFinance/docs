@@ -12,8 +12,8 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title"><Translate>everPay 文档</Translate></h1>
-        <p className="hero__subtitle"><Translate>欢迎来的 everPay 开发者文档</Translate></p>
+        <h1 className="hero__title"><Translate>everPay API 文档</Translate></h1>
+        <p className="hero__subtitle"><Translate>集成实时支付协议 everPay，探索更多可能</Translate></p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
