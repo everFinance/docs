@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 * 将信息发送给 everPay 后端服务器，进行签名验证。
 * 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上。
 
-更多信息请阅读 [指南 - 系统概览 - 批量转账](../../../dive/bundle.md)。
+更多信息请阅读 [DOCS - 系统概览 - 批量转账](../../../dive/bundle.md)。
 
 ## 参数
 

@@ -142,5 +142,5 @@ const data = JSON.stringify({ bundle: { items, expiration, salt, version, sigs }
   * 内部转账交易同时失败。
 
 ## everPay 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 系统概览 - 交易](./transaction#messagedata) 章节获取更多信息。
+开发者可浏览 [DOCS - 系统概览 - 交易](./transaction#messagedata) 章节获取更多信息。
 

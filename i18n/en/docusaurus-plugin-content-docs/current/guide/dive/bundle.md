@@ -141,5 +141,5 @@ const data = JSON.stringify({ bundle: { items, expiration, salt, version, sigs }
   * Internal transfer transactions fail at the same time.
 
 ## Transaction signature, sending and record acquisition
-Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.
+Developers can visit the [DOCS - System overview - Transaction](./transaction#messagedata) chapter for more information.
 

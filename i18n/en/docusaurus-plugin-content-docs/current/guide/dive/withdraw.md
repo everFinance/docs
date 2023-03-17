@@ -28,4 +28,4 @@ Withdrawal means withdrawing the valid `assets (token)` from everPay account, to
 
 ### Transaction signature, sending and record acquisition
 
-Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.
+Developers can visit the [DOCS - System overview- Transaction](./transaction#messagedata) chapter for more information.

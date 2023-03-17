@@ -27,4 +27,4 @@ everPay ensures the security of transfers through blockchain cryptographic signa
 |version|transaction version `'v1'`|
 
 ## Transaction signature, sending and record acquisition
-Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.
+Developers can visit the [DOCS - System overview - Transaction](./transaction#messagedata) chapter for more information.
