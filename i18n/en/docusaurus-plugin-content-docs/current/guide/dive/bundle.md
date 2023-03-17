@@ -13,18 +13,18 @@ All internal transfers in `data` must succeed, and if one fails, all internal tr
 ## Schema
 |Field|Description|
 |---|---|
-|tokenSymbol|Token Symbol|
-|action|`'bundle'` to batch execute internal transfers|
-|from|the current everPay account ID that signed the transaction|
-|to|`to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID (including the current everPay account ID of the signed transaction)|
-|amount|External transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
-|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing |
-|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get|
-|nonce|unix milliseconds|
-|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**|
-|chainType|`chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**|
-|chainID|`chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
-|data|Specific JSON format for bundle transfer function, see below [Data Generate Description](#data-generate-gescription)|
+|tokenSymbol|Token Symbol.|
+|action|`'bundle'` to batch execute internal transfers.|
+|from|the current everPay account ID that signed the transaction.|
+|to|`to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID (including the current everPay account ID of the signed transaction).|
+|amount|External transfer amount, type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000.|
+|fee| Handling fee, type uint. needs to be decimals, e.g. 0.1USDT, here it's 100000 after USDT's `decimals: 6` processing. |
+|feeRecipient|Receive everPay account ID for handling fees, via [info API](../server-api/basic-api/info) interface to get.|
+|nonce|unix milliseconds.|
+|tokenID|via [info API](../server-api/basic-api/info) interface, must be consistent with the token `id` field **corresponding to `tokenSymbol`**.|
+|chainType|`chainType` must be the same as [info API](../server-api/basic-api/info), the token `chainType` **consistent**.|
+|chainID|`chainID` must be the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**.|
+|data|Specific JSON format for bundle transfer function, see below [Data Generate Description](#data-generate-gescription).|
 
 ## Data Generate Description
 
@@ -33,19 +33,19 @@ All internal transfers in `data` must succeed, and if one fails, all internal tr
 
 |Field|Description|
 |---|---|
-|tag|combined by `chainType`, `symbol`, `id` via `-`, or via [info API](../server-api/basic-api/info) to get|
-|chainID|`chainID` is the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**|
-|from|The everPay account ID of the transferor of the assets of this internal transfer transaction|
-|to|The everPay account ID of the recipient of the asset for this internal transfer transaction|
-|amount|Amount of this internal transfer transaction asset. type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000|
+|tag|combined by `chainType`, `symbol`, `id` via `-`, or via [info API](../server-api/basic-api/info) to get.|
+|chainID|`chainID` is the same as [info API](../server-api/basic-api/info), the token `chainID` **consistent**.|
+|from|The everPay account ID of the transferor of the assets of this internal transfer transaction.|
+|to|The everPay account ID of the recipient of the asset for this internal transfer transaction.|
+|amount|Amount of this internal transfer transaction asset. type uint; `decimals` processing is required for setting, e.g. 0.1USDT, after USDT's `decimals: 6` processing, it's 100000.|
 
 ### bundleData
 |Field|Description|
 |---|---|
-|items|Consists of multiple `internalItem` internal transfer transactions|
-|expiration|Expiration time of all internal transfer transactions, unix timestamp. **Note: not millisecond timestamp**|
-|salt|Must be a [`uuid`](https://en.wikipedia.org/wiki/Universally_unique_identifier) format string for unique identification|
-|version|bundle version `'v1'`|
+|items|Consists of multiple `internalItem` internal transfer transactions.|
+|expiration|Expiration time of all internal transfer transactions, unix timestamp. **Note: not millisecond timestamp**.|
+|salt|Must be a [`uuid`](https://en.wikipedia.org/wiki/Universally_unique_identifier) format string for unique identification.|
+|version|bundle version `'v1'`.|
 
 ### `sigs` signature structure
 
@@ -132,13 +132,13 @@ const data = JSON.stringify({ bundle: { items, expiration, salt, version, sigs }
 ```
 
 ## External and internal transactions
-* Internal transfers must contain the signatures of all `from` accounts (within all associated internal transfer transactions) for `bundleData`
-* External transfers can be initiated by any everPay account, not limited to the everPay account of the internal transfer
-* Successful external transfer transaction
-  * All signatures of `sigs` in `data` are validated and the internal transfer transaction is successful
-  * Any one of the `sigs` in `data` fails, the internal transfer transaction fails, but the external transfer transaction still executes normally
-* The external transfer transaction fails
-  * Internal transfer transactions fail at the same time
+* Internal transfers must contain the signatures of all `from` accounts (within all associated internal transfer transactions) for `bundleData`.
+* External transfers can be initiated by any everPay account, not limited to the everPay account of the internal transfer.
+* Successful external transfer transaction:
+  * All signatures of `sigs` in `data` are validated and the internal transfer transaction is successful.
+  * Any one of the `sigs` in `data` fails, the internal transfer transaction fails, but the external transfer transaction still executes normally.
+* The external transfer transaction fails:
+  * Internal transfer transactions fail at the same time.
 
 ## Transaction signature, sending and record acquisition
 Developers can visit the [Guide - Dive - Transaction](./transaction#messagedata) chapter for more information.
