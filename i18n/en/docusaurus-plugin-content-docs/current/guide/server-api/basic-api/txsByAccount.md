@@ -6,29 +6,28 @@ sidebar_position: 8
 
 ## Function
 
-Get transactions corresponding to `account` on everPay by paging
+Get the transaction records of the corresponding account, and display them in the form of `pagination (10 entries per page)`.
 
 ## Parameter
 
 `{{endpoint}}/txs/{{account}}?page={{page}}&tokenTag={{tokenTag}}&action={{action}}`
 
-|Query Field|Description|
-|---|---|
-|request method|GET|
-|account|Optional, everPay account address|
-|page|Optional, default is 1|
-|tokenTag|Optional, via [info API](./info) interface to get|
-|action|Optional, note that **[Quick Withdrawals](../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
-|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|Query Field|Mandatory|Description|
+|---|---|---|
+|account|YES|everPay account ID.|
+|page|NO|default is 1.|
+|tokenTag|NO|The unique identifier of the token, which can be viewed through the [info API](./info.md).|
+|action|NO|<ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|withoutAction|NO|exclusion of certain type of transactions<ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
 ## Return Fields
 
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../dive/transaction#transaction-record)
+Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../dive/transaction#transaction-record).
 
 ## Example
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/txs/0x26361130d5d6E798E9319114643AF8c868412859?page=1'
+curl --location --request GET 'https://api-dev.everpay.io/txs/0x26361130d5d6E798E9319114643AF8c868412859?page=1&tokenTag=ethereum-eth-0x0000000000000000000000000000000000000000'
 ```
 
 ## Example Return
