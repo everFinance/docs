@@ -14,6 +14,9 @@ The assets of everPay correspond 1:1 to the assets on the chain, and we use mult
 | Ethereum | [0x38741a69785e84399fcf7c5ad61d572f7ecb1dab](https://etherscan.io/address/0x38741a69785e84399fcf7c5ad61d572f7ecb1dab) |
 | Arweave  | [dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys](https://viewblock.io/arweave/address/dH-_dwLlN86fitrFZzi86IVEEQFyYpTzWcqnFh460ys)|
 
+:::info
+For more blockchain locker addresses, see the **lockers** field in the [**info API**](./server-api/basic-api/info.md).
+:::
 ## Supported tokens list
 
 The tokens currently supported on everPay includes:
@@ -28,4 +31,6 @@ The tokens currently supported on everPay includes:
 | DAI      | [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f) | ethereum          |
 | UNI      | [0x1f9840a85d5af5bf1d1762f925bdaddc4201f984](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) | ethereum          |
 
-Token details can be found at [info](./server-api/basic-api/info) interface.
+:::info
+Details of the tokens can be found in the **tokenList** field of the [info API](./server-api/basic-api/info.md).
+:::

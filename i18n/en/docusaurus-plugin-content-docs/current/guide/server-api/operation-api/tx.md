@@ -9,13 +9,13 @@ sidebar_position: 2
 For all everPay transactions, everPay Tx is generated and sent to `tx` API via `POST` request, which is validated by everPay backend service.
 
 On the user side, only the following will be generated.
-* `transfer` everPay Tx for transfer transaction
-* `burn` everPay Tx for withdraw transaction
+* `transfer` everPay Tx for transfer transaction.
+* `burn` everPay Tx for withdraw transaction.
 ## Parameter
 * path `{{endpoint}}/tx`
 * Post data `everpayTx`
 
-For `Schema` generation, signatures, and transaction record acquisition, please read [Guide - Dive - Transaction](../../dive/transaction)
+For `Schema` generation, signatures, and transaction record acquisition, please read [DOCS - System overview - Transaction](../../dive/transaction).
 
 ## Example
 ```bash

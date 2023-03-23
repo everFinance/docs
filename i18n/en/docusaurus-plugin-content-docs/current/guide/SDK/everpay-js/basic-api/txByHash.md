@@ -49,7 +49,7 @@ export interface EverpayTransaction {
 
 
 ### Return Fields
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../../dive/transaction#transaction-record)
+Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../../dive/transaction#transaction-record)
 
 ## Example
 

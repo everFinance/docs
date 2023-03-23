@@ -6,28 +6,27 @@ sidebar_position: 7
 
 ## Function
 
-Get all transactions on everPay accessed by paging
+All transaction records on everPay are displayed in the form of `page-by-page (10 entries per page)`.
 
 ## Parameter
 
 `{{endpoint}}/txs?page={{page}}&tokenTag={{tokenTag}}&action={{action}}`
 
-|Query Field|Description|
-|---|---|
-|request method|GET|
-|page|Optional, default is 1|
-|tokenTag|Optional,a unique identifier that identifies the `token`, via [info API](./info) interface to get|
-|action|Optional, note that **[Quick Withdrawals](../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
-|withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|Query Field|Mandatory|Description|
+|---|---|---|
+|page|NO|default is 1.|
+|tokenTag|NO|The unique identifier of the token, which can be viewed through the [info API](./info.md).|
+|action|NO|<ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
+|withoutAction|NO|exclusion of certain type of transactions.<ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
 ## Return Fields
 
-Field information can be viewed in [Guide - Dive - Transaction - Transaction Record](../../dive/transaction#transaction-record)
+Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../dive/transaction#transaction-record).
 
 ## Example
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/txs?page=1'
+curl --location --request GET 'https://api-dev.everpay.io/txs?page=1&tokenTag=ethereum-eth-0x0000000000000000000000000000000000000000'
 ```
 
 ## Example Return
@@ -35,29 +34,39 @@ curl --location --request GET 'https://api-dev.everpay.io/txs?page=1'
 ```js
 {
   currentPage: 1,
-  totalPages: 196,
+  totalPages: 129,
   txs: [
     {
-      id: 'Lwml1yitCpuIyJ6w-MgCPWRpDjE1-5dQF_hGw7OQcoY',
-      tokenSymbol: 'ETH',
-      action: 'burn',
-      from: '0x295204c357963C07F7D696E61cB243A0CE92cC0c',
-      to: '0xB245ceC3b31707e2ffe1C58148cEC6b6017255a3',
-      amount: '979251798000000000',
-      fee: '20000000000000000',
-      feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-      nonce: 1625733233558,
-      tokenID: '0x0000000000000000000000000000000000000000',
-      chainType: 'ethereum',
-      chainID: '42',
-      data: '',
-      sig: '0x53dd3941c422b514b59e55bbecd66143aea199fef582842dcfd7d0f64aad4cf21f0e95fcc2346a44bc027e1a0ef474960d51b5745a6e9685930a14920d2b1afa1b',
-      everHash: '0xaf5f8a2d95af57553eddc4d280ea5911d9152e346aaa8b772cb61db05ea05590',
-      status: 'packaged',
-      timestamp: 1625733624000,
-      targetChainTxHash: '0xdbe3cf5194b289deb674cb88c6510ae85de0572fdeefd83d0cd1dbdaf8f9d94e'
+      rawId:'1285',
+      id:'71FCES97DRmosyqAcHqicuZuflqRCnQaV2ytulb8lvs',
+      tokenSymbol:'USDT',
+      action:'transfer',
+      from:'0x4002ED1a1410aF1b4930cF6c479ae373dEbD6223',
+      to:'Ii5wAMlLNz13n26nYY45mcZErwZLjICmYd46GZvn4ck',
+      amount:'11000000',
+      fee:'0',
+      feeRecipient:'0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
+      nonce:1677035245584,
+      tokenID:'0x923Fcb255da521037385457FB549a51F78Ef0AF4',
+      chainType:'ethereum',
+      chainID:'5',
+      data:"",
+      version:'v1',
+      sig:'0x336baa979bf5f06b1871e01d2e8406ffc4de02c9451caf8e8e70e1991337aca073b5e251e9610db5a9a87fef002c7a8f922239c8112c756416d5097cc47260901b',
+      everHash:'0x2c42f8b75b8c1ea2d1f76a7390601f229f2301d0906b8c6bba11b05551d2b3a8',
+      status:'packaged',
+      internalStatus:'{\"status\":\"success\"}',
+      timestamp:1677035719000,
+      targetChainTxHash:"",
+      express:{
+          chainTxHash:"",
+          withdrawFee:"",
+          refundEverHash:"",
+          err:""
+      }
     },
     // etc.
   ]
 }
+
 ```

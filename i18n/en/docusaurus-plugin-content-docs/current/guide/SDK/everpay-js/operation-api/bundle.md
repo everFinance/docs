@@ -13,7 +13,7 @@ Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the
 * Send the everpay tx to everPay backend server for signature verification
 * The backend server verifies it and updates the user's asset balance. And store the everPay transaction record on the arweave blockchain
 
-Developers can visit the [Guide - Dive - Bundle](../../../dive/bundle) section for more information.
+Developers can visit the [DOCS - System overview - Bundle](../../../dive/bundle) section for more information.
 
 ## Parameter
 
