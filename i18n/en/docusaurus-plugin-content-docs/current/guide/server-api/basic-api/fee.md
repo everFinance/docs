@@ -25,20 +25,19 @@ Get the `transfer`, `withdraw`, `bundle` fees for the `specified token` on everP
 ## Example
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/fee/arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be'
+curl --location --request GET 'https://api.everpay.io/fee/ethereum-eth-0x0000000000000000000000000000000000000000'
 ```
 
 ## Example Return
 ```json
 {
-  "fee": {
-    "tokenTag": "arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be",
-    "transferFee": "0",
-    "atomicBundleFee": "0",
-    "burnFeeMap": {
-        "arweave": "2265880856",
-        "ethereum": "120000000"
+    "fee":{
+        "tokenTag":"ethereum-eth-0x0000000000000000000000000000000000000000",
+        "transferFee":"0",
+        "bundleFee":"0",
+        "burnFeeMap":{
+            "ethereum":"2964000000000000"
+        }
     }
-  }
 }
 ```

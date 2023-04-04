@@ -31,7 +31,7 @@ Get the asset balance of the `specified token` on everPay for the corresponding 
 ## Example
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/balance/ethereum-eth-0x0000000000000000000000000000000000000000/0x2ca81e1253f9426c62Df68b39a22A377164eec92'
+curl --location --request GET 'https://api.everpay.io/balance/ethereum-eth-0x0000000000000000000000000000000000000000/0x2ca81e1253f9426c62Df68b39a22A377164eec92'
 ```
 
 ## Example Return
