@@ -6,8 +6,8 @@ import Translate from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: <Translate>指南</Translate>,
-    to: 'docs/guide/quick-start/overview',
+    title: <Translate>DOCS</Translate>,
+    to: 'docs/guide/overview',
     src: require('../../static/img/sharding.png').default,
     description: (
       <Translate>
@@ -17,11 +17,11 @@ const FeatureList = [
   },
   {
     title: 'SDK',
-    to: 'docs/sdk/intro',
+    to: 'docs/guide/SDK/intro',
     src: require('../../static/img/dev.png').default,
     description: (
       <Translate>
-        everPay 服务端接口与客户端 SDK
+        everPay 客户端 SDK
       </Translate>
     ),
   },

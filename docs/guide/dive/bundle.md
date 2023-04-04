@@ -10,23 +10,23 @@ sidebar_position: 7
 
 `data` 中的多笔内部转账必须全部成功，有一笔失败则所有内部转账回滚。一个批量转账交易只能执行一次，不管内部转账是成功还是失败，执行后不可二次执行。
 
-## Schema 说明
+## Schema
 
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称|
-|action|`'bundle'`代表批量转账|
-|from|签名交易的当前 everPay 账户 ID|
-|to|批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID（包括签名交易的当前 everPay 账户 ID）|
-|amount|批量转账时，`amount` 为外部转账金额。类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
-|fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
-|nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|批量转账时，`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
-|chainID|批量转账时，`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|data|特定 JSON 格式，实现批量转账功能，见下文 [data 生成描述](#data-生成描述)|
-|version|交易版本 `'v1'`|
+|tokenSymbol|代币名称。|
+|action|`'bundle'`代表批量转账。|
+|from|签名交易的当前 everPay 账户 ID。|
+|to|批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|
+|amount|批量转账时，`amount` 为外部转账金额。类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。|
+|fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 。|
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../server-api/basic-api/info.md) 接口获取。|
+|nonce|unix milliseconds，unix 毫秒时间戳。|
+|tokenID|通过 [info API](../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**。|
+|chainType|批量转账时，`chainType` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**。|
+|chainID|批量转账时，`chainID` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**。|
+|data|特定 JSON 格式，实现批量转账功能，见下文 [data 生成描述](#data-生成描述)。|
+|version|交易版本 `'v1'`。|
 
 ## data 生成描述
 
@@ -35,19 +35,19 @@ sidebar_position: 7
 
 |字段|描述|
 |---|---|
-|tag|由 `chainType`, `symbol`, `id` 通过 `-` 组合，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
-|chainID|`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|from|此笔内部转账事务资产转出者 everPay 账户 ID|
-|to|此笔内部转账事务资产接收者 everPay 账户 ID|
-|amount|此笔内部转账事务资产金额，类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000|
+|tag|`token` 的唯一标识，由 `chainType`, `symbol`, `id` 通过 `-` 组合，通过 [info API](../server-api/basic-api/info.md) 接口获取。|
+|chainID|`chainID` 必须与 [info API](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**。|
+|from|此笔内部转账事务资产转出者 everPay 账户 ID。|
+|to|此笔内部转账事务资产接收者 everPay 账户 ID。|
+|amount|此笔内部转账事务资产金额，类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。|
 
 ### bundleData 信息
 |字段|描述|
 |---|---|
-|items|由多笔 `internalItem` 内部转账事务组成|
-|expiration|所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**|
-|salt|必须为 [`uuid`](https://en.wikipedia.org/wiki/Universally_unique_identifier) 格式字符串，用于唯一识别|
-|version|批量转账版本 `'v1'`|
+|items|由多笔 `internalItem` 内部转账事务组成。|
+|expiration|所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**。|
+|salt|必须为 [`uuid`](https://en.wikipedia.org/wiki/Universally_unique_identifier) 格式字符串，用于唯一识别。|
+|version|批量转账版本 `'v1'`。|
 
 ### sigs 签名结构
 所有 `internalItem` 内部转账事务中，`from` 对应的 everPay 账户对 **`bundle` 信息得到的 JSON 字符串** 进行签名后，得到的数据结构。
@@ -133,14 +133,14 @@ const data = JSON.stringify({ bundle: { items, expiration, salt, version, sigs }
 ```
 
 ## 批量转账的外部交易与内部交易
-* 内部转账必须包含所有关联的内部转账交易 `from` 账户对 `bundleData` 的签名
-* 外部转账可以由任意 everPay 账号发起，不限定于 内部转账的 everPay 账户
-* 外部转账交易成功
-  * `data` 中，`sigs` 所有的签名验证通过，内部转账交易也成功
-  * `data` 中，`sigs` 其中任意一个签名验证失败，内部转账交易失败，但外部转账交易仍然正常执行
-* 外部转账交易失败
-  * 内部转账交易同时失败
+* 内部转账必须包含所有关联的内部转账交易 `from` 账户对 `bundleData` 的签名。
+* 外部转账可以由任意 everPay 账号发起，不限定于 内部转账的 everPay 账户。
+* 外部转账交易成功：
+  * `data` 中，`sigs` 所有的签名验证通过，内部转账交易也成功。
+  * `data` 中，`sigs` 其中任意一个签名验证失败，内部转账交易失败，但外部转账交易仍然正常执行。
+* 外部转账交易失败：
+  * 内部转账交易同时失败。
 
 ## everPay 交易签名、发送与交易记录获取
-开发者可浏览 [指南 - 深入理解 - 交易](./transaction#messagedata) 章节获取更多信息。
+开发者可浏览 [DOCS - 系统概览 - 交易](./transaction#messagedata) 章节获取更多信息。
 

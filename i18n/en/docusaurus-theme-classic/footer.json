@@ -4,16 +4,16 @@
     "description": "The title of the footer links column with title=Docs in the footer"
   },
   "link.title.Community": {
-    "message": "社群",
+    "message": "社区",
     "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.Support": {
+    "message": "支持",
+    "description": "The title of the footer links column with title=Support in the footer"
   },
   "link.title.More": {
     "message": "更多",
     "description": "The title of the footer links column with title=More in the footer"
-  },
-  "link.item.label.Guide": {
-    "message": "指南",
-    "description": "The label of footer link with label=Guide linking to /docs/guide/quick-start/overview"
   },
   "link.item.label.Discord": {
     "message": "Discord",
@@ -59,25 +59,29 @@
     "message": "文档",
     "description": "The label of footer link with label=Documentation linking to /docs/documentation/account-model"
   },
-  "link.item.label.指南": {
-    "message": "Guide",
-    "description": "The label of footer link with label=指南 linking to /docs/guide/quick-start/overview"
-  },
-  "link.item.label.SDK": {
-    "message": "SDK",
-    "description": "The label of footer link with label=SDK linking to /docs/sdk/intro"
-  },
   "link.item.label.文档": {
     "message": "Docs",
     "description": "The label of footer link with label=文档 linking to https://github.com/everFinance/docs"
+  },
+  "link.item.label.Help Centre":{ 
+    "message": "帮助中心",
+    "description": "The label of footer link with label=Help Centre linking to https://everpay.zendesk.com/hc/zh-cn"
+  },
+  "link.item.label.帮助中心":{
+    "message": "Help Centre",
+    "description": "The label of footer link with label=帮助中心 linking to https://everpay.zendesk.com/hc/zh-cn"
   },
   "link.title.文档": {
     "message": "Docs",
     "description": "The title of the footer links column with title=文档 in the footer"
   },
-  "link.title.社群": {
+  "link.title.社区": {
     "message": "Community",
-    "description": "The title of the footer links column with title=社群 in the footer"
+    "description": "The title of the footer links column with title=社区 in the footer"
+  },
+  "link.title.支持": {
+    "message": "Support",
+    "description": "The title of the footer links column with title=支持 in the footer"
   },
   "link.item.label.docs": {
     "message": "docs",

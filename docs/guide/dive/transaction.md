@@ -10,19 +10,19 @@ everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同
 
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称|
-|action|<ul><li>`'mint'`代表充值</li><li>`'transfer'`代表转账</li><li>`'burn'`代表提现</li><li>`'bundle'`代表批量转账</li></ul>|
-|from|签名交易的当前 everPay 账户 ID|
-|to|<ul><li>转账时，`to` 为另一个 everPay 账户 ID</li><li>提现时，`to` 为要提现至的区块链钱包地址</li><li>批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID（包括签名交易的当前 everPay 账户 ID）</li></ul>|
-|amount|类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 <ul><li>转账时，`amount` 为转账金额</li><li>提现时，`amount` 为提现金额</li><li>批量转账时，`amount` 为外部转账金额</li></ul>|
-|fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000 |
-|feeRecipient|手续费收款 everPay 账户 ID，通过 [info API](../../sdk/server-api/basic-api/info) 接口获取|
-|nonce|unix milliseconds，unix 毫秒时间戳|
-|tokenID|通过 [info API](../../sdk/server-api/basic-api/info) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**|
-|chainType|`chainType` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 token `chainType` **一致**|
-|chainID|`chainID` 必须与 [info API](../../sdk/server-api/basic-api/info) 接口获取的 `tokenSymbol` 对应 `chainID` **一致**|
-|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [快速提现](./withdraw#快速提现-data-字段说明)、[批量转账](./bundle)|
-|version|交易版本 `'v1'`|
+|tokenSymbol|代币名称。|
+|action|<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
+|from|签名交易的当前 everPay 账户 ID。|
+|to|<ul><li>转账时，`to` 为收款方 everPay 账户 ID。</li><li>提现时，`to` 为要提现至的区块链钱包地址。</li><li>批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）</li></ul>|
+|amount|类型为 uint，设置时需要进行 `decimals` 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。 <ul><li>转账时，`amount` 为转账金额。</li><li>提现时，`amount` 为提现金额。</li><li>批量转账时，`amount` 为外部转账金额。</li></ul>|
+|fee| 手续费，类型为 uint。需要进行 decimals 处理，例如 0.1USDT，此处经过 USDT 的 `decimals: 6` 处理后，为 100000。 |
+|feeRecipient|手续费收款 everPay 账户 ID，通过 [`info API`](../server-api/basic-api/info.md) 接口获取。|
+|nonce|unix milliseconds，unix 毫秒时间戳。|
+|tokenID|通过 [`info API`](../server-api/basic-api/info.md) 接口获取，必须与 `tokenSymbol` 对应的 token `id` 字段**一致**。|
+|chainType|`chainType` 必须与 [`info API`](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应的 token `chainType` **一致**。|
+|chainID|`chainID` 必须与 [`info API`](../server-api/basic-api/info.md) 接口获取的 `tokenSymbol` 对应的 `chainID` **一致**。|
+|data|附加信息，开发者可自定义JSON 数据，经过 `JSON.stringify()` 处理后传递。通过 `data` 可自定义实现一些复杂功能，例如 [批量转账](./bundle)。|
+|version|交易版本 `'v1'`。|
 
 ### 以太坊账户示例
 
@@ -68,8 +68,8 @@ const everpayTxWithoutSig = {
 
 由 Schema 按照统一格式生成，用于：
 
-* 以太坊 `personalSign` 签名
-* 生成 `everHash`
+* 以太坊 `personalSign` 签名。
+* 生成 `everHash`。
 
 ### 生成规则
 
@@ -94,7 +94,7 @@ export const getEverpayTxMessageData = (everpayTxWithoutSig: EverpayTxWithoutSig
 }
 ```
 
-其中 `EverpayTxWithoutSig` 可参考 [everpay-js types#EverpayTxWithoutSig](../../sdk/everpay-js/types#everpaytxwithoutsig)
+其中 `EverpayTxWithoutSig` 可参考 [everpay-js types#EverpayTxWithoutSig](../SDK/everpay-js/types.md#everpaytxwithoutsig)
 
 ### 以太坊账户示例
 
@@ -134,7 +134,7 @@ version:v1`
 
 ## everHash
 
-每一笔 everPay 交易都有唯一标识的 `everHash`。由 `messageData` 使用以太坊 `hashPersonalMessage` 生成的 `personalMessageHash`，即为 `everHash`
+每一笔 everPay 交易都有唯一标识的 `everHash`。由 `messageData` 使用以太坊 `hashPersonalMessage` 生成的 `personalMessageHash`，即为 `everHash`。
 
 ### 生成规则
 
@@ -156,7 +156,7 @@ const getPersonalMessageHash = (messageData: string): string => {
 
 ## signature
 
-每一笔 everPay 交易，都需要通过 发送者账户的钱包进行签名，everPay 服务器会校验所有签名的有效性。
+每一笔 everPay 交易，都需要通过 `发送者账户的钱包` 进行签名，everPay 服务器会校验所有签名的有效性。
 
 ### 以太坊账户模型
 
@@ -207,7 +207,7 @@ const signature = await signMessageAsync(ethConnectedSigner, messageData)
 
 ### Arweave 账户模型
 
-由 `messageData` 使用以太坊 `hashPersonalMessage` 生成的 `personalMessageHash`。通过 arweave RSA-PSS sha256 签名 `personalMessageHash` 对应的 `Uint8Array`（或者 `Buffer`），得到的签名结果，再通过 `Arweave.utils.bufferTob64Url`（与其他 base64 转换函数有差异） 进行 `base64` 转换，拼接上 `,{{arOwner}}` 后，得到 `signature`
+由 `messageData` 使用以太坊 `hashPersonalMessage` 生成的 `personalMessageHash`。通过 arweave RSA-PSS sha256 签名 `personalMessageHash` 对应的 `Uint8Array`（或者 `Buffer`），得到的签名结果，再通过 `Arweave.utils.bufferTob64Url`（与其他 base64 转换函数有差异） 进行 `base64` 转换，拼接上 `,{{arOwner}}` 后，得到 `signature`。
 
 #### 通过 arweave.js 生成签名
 
@@ -319,7 +319,7 @@ const signature = await signMessageAsync(config.arJWK as ArJWK, personalMessageH
 :::danger
 
 * 用于 以太坊 personalSign 签名的是 `messageData` string，得到的结果即为 `signature`
-* 用于 arweave RSA-PSS sha256 签名的是 `personalMessageHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string`，并拼接上 `,{{arOwner}}` 才是 `signature`
+* 用于 arweave RSA-PSS sha256 签名的是 `personalMessageHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string`，并拼接上 `,{{arOwner}}` 才是 `signature`。
 :::
 
 ## signature 校验
@@ -348,7 +348,7 @@ const verified = arweave.crypto.verify(
 
 ## 提交交易
 
-将 everPay 交易通过 POST 请求提交 everPay 后端服务器 [`tx`](../../sdk/server-api/operation-api/tx) 接口。
+将 everPay 交易通过 POST 请求提交 everPay 后端服务器 [`tx`](../server-api/operation-api/tx.md) 接口。
 
 ### 字段
 
@@ -356,7 +356,7 @@ const verified = arweave.crypto.verify(
 
 |补充字段|描述|
 |---|---|
-|sig|根据不同账户模型签名，生成的 `signature`|
+|sig|根据不同账户模型签名，生成的 `signature`。|
 
 ### 示例
 
@@ -381,8 +381,8 @@ const verified = arweave.crypto.verify(
 
 ### nonce
 
-* `nonce` 为用户在客户端生成，everPay 服务器可接收与服务器时间上下 100s 的误差
-* 用户每次提交 everPay 的交易，`nonce` 必须比该用户上一笔 `nonce` 数值大
+* `nonce` 为用户在客户端生成，everPay 服务器可接收与服务器时间上下 100s 的误差。
+* 用户每次提交 everPay 的交易，`nonce` 必须比该用户上一笔 `nonce` 数值大。
 
 ## 交易记录
 
@@ -394,17 +394,16 @@ everPay 在 [`Schema`](#schema) 定义字段、`sig` 签名字段外，添加了
 
 |补充字段|描述|
 |---|---|
-|everHash|每笔 everPay 交易都对应一个唯一的 `everHash`，`everHash` 生成参考 [everHash](#everhash)|
-|timestamp|<ul><li>当该笔 everPay 交易被记录到 Arweave 区块链后，此 `timestamp` 代表 everPay 交易被记录到 Arweave 区块链的 unix milliseconds，unix 毫秒时间戳</li><li>如该笔 everPay 交易未被记录到 Arweave 区块链上，`timestamp` 为 `0`</li></ul>|
-|status|<ul><li>`confirmed` 代表该 everPay 交易被 everPay 后端签名验证通过后，确认接收，但还未记录到 Arweave 区块链上</li><li>`packaged` 代表该 everPay 交易已被记录到 Arweave 区块链上</li></ul>|
-|internalStatus|批量转账增加的字段，仅在批量转账的内部交易失败时，返回具体错误信息。批量转账内部交易成功、转账、提现、充值时，值都为 `success`|
-|id|<ul><li>当该笔 everPay 交易被记录到 Arweave 区块链后，此 `id` 对应该笔记录在 Arweave 上的交易 hash</li><li>如该笔 everPay 交易未被记录到 Arweave 区块链上，`id` 为空字符串</li></ul>|
-|targetChainTxHash|<ul><li>充值、提现（非快速提现）时，对应的区块链 `txHash`</li><li>如提现（非快速提现）未完成或是 everPay 转账交易，此 `targetChainTxHash` 为空字符串</li></ul>|
-|express|快速提现增加的字段，`express: {"chainTxHash": "","withdrawFee": "","refundEverHash": "","err": ""}`<ul><li>`chainTxHash` 代表快速提现成功后，打包的 区块链 `txHash`</li><li>`withdrawFee` 代表实际收取的手续费</li><li>`refundEverHash` 代表快速提现失败后，做市商进行退款的 everPay 交易 `everHash`</li><li>`err` 代表快速提现失败原因</li></ul>|
+|everHash|每笔 everPay 交易都对应一个唯一的 `everHash`，`everHash` 生成参考 [everHash](#everhash)。|
+|timestamp|<ul><li>当该笔 everPay 交易被记录到 Arweave 区块链后，此 `timestamp` 代表 everPay 交易被记录到 Arweave 区块链的 unix milliseconds，unix 毫秒时间戳。</li><li>如该笔 everPay 交易未被记录到 Arweave 区块链上，`timestamp` 为 `0`</li></ul>|
+|status|<ul><li>`confirmed` 代表该 everPay 交易被 everPay 后端签名验证通过后，确认接收，但还未记录到 Arweave 区块链上。</li><li>`packaged` 代表该 everPay 交易已被记录到 Arweave 区块链上。</li></ul>|
+|internalStatus|批量转账增加的字段，仅在批量转账的内部交易失败时，返回具体错误信息。批量转账内部交易成功、转账、提现、充值时，值都为 `success`。|
+|id|<ul><li>当该笔 everPay 交易被记录到 Arweave 区块链后，此 `id` 对应该笔记录在 Arweave 上的交易 hash。</li><li>如该笔 everPay 交易未被记录到 Arweave 区块链上，`id` 为空字符串。</li></ul>|
+|targetChainTxHash|<ul><li>充值、提现时，对应的区块链 `txHash`。</li><li>如提现未完成或是 everPay 转账交易，此 `targetChainTxHash` 为空字符串。</li></ul>|
 
 ### 查询接口
 
-* [txs](../../sdk/server-api/basic-api/txs) 查询所有 everPay 交易记录
-* [txsByAccount](../../sdk/server-api/basic-api/txsByAccount) 查询具体 everPay 账户的交易记录
-* [txByHash](../../sdk/server-api/basic-api/txByHash) 根据 `everHash` 查询 everPay 交易记录
-* [mintedTxByChainTxHash](../../sdk/server-api/basic-api/mintedTxByChainTxHash) 根据充值的区块链记录ID （如以太坊为 `txHash`），查询充值的 everPay 交易记录
+* [txs](../server-api/basic-api/txs.md) 查询所有 everPay 交易记录。
+* [txsByAccount](../server-api/basic-api/txsByAccount.md) 查询具体 everPay 账户的交易记录。
+* [txByHash](../server-api/basic-api/txByHash) 根据 `everHash` 查询 everPay 交易记录。
+* [mintedTxByChainTxHash](../server-api/basic-api/mintedTxByChainTxHash) 根据充值的区块链记录ID （如以太坊为 `txHash`），查询充值的 everPay 交易记录。

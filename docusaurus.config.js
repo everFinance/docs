@@ -18,11 +18,11 @@ module.exports = {
   baseUrl: '/',
   trailingSlash,
 
+
   // 一般部署至托管商需要：结尾斜杠，不同的服务托管商需要
   // https://docusaurus.io/zh-CN/docs/deployment#trailing-slashes
   // https://docusaurus.io/zh-CN/docs/docusaurus.config.js#trailing-slash
   // trailingSlash
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
@@ -52,6 +52,7 @@ module.exports = {
 
         // 传递至 @docusaurus/plugin-content-docs
         docs: {
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
             if (locale === 'en') {
@@ -78,7 +79,7 @@ module.exports = {
   // themes:
   themeConfig: {
     navbar: {
-      title: 'everPay Docs',
+      title: 'everPay',
       logo: {
         alt: 'everPay Logo',
         src: 'img/logo-black.svg',
@@ -87,16 +88,16 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'guide/quick-start/overview',
+          docId: 'guide/overview',
           position: 'left',
-          label: '指南',
+          label: 'DOCS',
         },
-        {
-          type: 'doc',
-          docId: 'sdk/intro',
-          position: 'left',
-          label: 'SDK',
-        },
+        // {
+        //   type: 'doc',
+        //   docId: 'sdk/intro',
+        //   position: 'left',
+        //   label: 'SDK',
+        // },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -115,17 +116,30 @@ module.exports = {
           title: '文档',
           items: [
             {
-              label: '指南',
-              to: '/docs/guide/quick-start/overview',
+              label: 'DOCS',
+              to: '/docs/guide/overview',
             },
-            {
-              label: 'SDK',
-              to: '/docs/sdk/intro',
-            }
+            // {
+            //   label: 'SDK',
+            //   to: '/docs/sdk/intro',
+            // }
           ],
         },
         {
-          title: '社群',
+          title: 'GitHub',
+          items: [
+            {
+              label: 'docs',
+              href: 'https://github.com/everFinance/docs',
+            },
+            {
+              label: 'everpay-js',
+              href: 'https://github.com/everFinance/everpay-js',
+            },
+          ],
+        },
+        {
+          title: '社区',
           items: [
             {
               label: 'Twitter',
@@ -142,20 +156,16 @@ module.exports = {
           ],
         },
         {
-          title: 'GitHub',
+          title: '支持',
           items: [
             {
-              label: 'docs',
-              href: 'https://github.com/everFinance/docs',
-            },
-            {
-              label: 'everpay-js',
-              href: 'https://github.com/everFinance/everpay-js',
-            },
-          ],
-        },
+              label: '帮助中心',
+              href: 'https://everpay.zendesk.com/hc/zh-cn'
+            }
+          ]
+        }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} everFinance, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} everVision, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,

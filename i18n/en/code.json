@@ -5,14 +5,14 @@
   "了解、深入 everPay 协议": {
     "message": "Understand and dive into everPay protocol"
   },
-  "everPay 服务端接口与客户端 SDK": {
-    "message": "everPay server-side interface and client-side SDK"
+  "everPay 客户端 SDK": {
+    "message": "everPay client-side SDK"
   },
-  "everPay 文档": {
-    "message": "everPay Docs"
+  "everPay API 文档": {
+    "message": "everPay API Docs"
   },
-  "欢迎来的 everPay 开发者文档": {
-    "message": "Welcome to everPay developer documentation site"
+  "集成实时支付协议 everPay，探索更多可能": {
+    "message": "Explore more possibilities with everPay, the integrated real-time payment protocol"
   },
   "快速开始": {
     "message": "Quick Start"
