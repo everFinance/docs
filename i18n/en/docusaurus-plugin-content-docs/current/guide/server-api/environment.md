@@ -6,8 +6,16 @@ sidebar_position: 2
 
 ## Development environment
 
-* endpoint: <https://api-dev.everpay.io>
+- endpoint:
+
+```text
+https://api-dev.everpay.io
+```
 
 ## Production environment
 
-* endpoint: <https://api.everpay.io>
+- endpoint:
+
+```text
+https://api.everpay.io
+```

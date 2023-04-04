@@ -27,19 +27,19 @@ sidebar_position: 6
 ## 示例
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/fee/ethereum-eth-0x0000000000000000000000000000000000000000'
+curl --location --request GET 'https://api.everpay.io/fee/ethereum-eth-0x0000000000000000000000000000000000000000'
 ```
 
 ## 示例返回
 ```json
 {
-  "fee":{
-      "tokenTag":"ethereum-eth-0x0000000000000000000000000000000000000000",
-      "transferFee":"0",
-      "bundleFee":"0",
-      "burnFeeMap":{
-          "ethereum":"4368000000000000"
-      }
-  }
+    "fee":{
+        "tokenTag":"ethereum-eth-0x0000000000000000000000000000000000000000",
+        "transferFee":"0",
+        "bundleFee":"0",
+        "burnFeeMap":{
+            "ethereum":"2964000000000000"
+        }
+    }
 }
 ```

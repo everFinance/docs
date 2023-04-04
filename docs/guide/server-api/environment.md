@@ -6,8 +6,16 @@ sidebar_position: 2
 
 ## 测试环境
 
-* endpoint: <https://api-dev.everpay.io>
+- endpoint:
+
+```text
+https://api-dev.everpay.io
+```
 
 ## 正式环境
 
-* endpoint: <https://api.everpay.io>
+- endpoint:
+```text
+https://api.everpay.io
+```
+

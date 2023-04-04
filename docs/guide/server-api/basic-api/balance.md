@@ -31,7 +31,7 @@ sidebar_position: 4
 ## 示例
 
 ```bash
-curl --location --request GET 'https://api-dev.everpay.io/balance/ethereum-eth-0x0000000000000000000000000000000000000000/0x2ca81e1253f9426c62Df68b39a22A377164eec92'
+curl --location --request GET 'https://api.everpay.io/balance/ethereum-eth-0x0000000000000000000000000000000000000000/0x2ca81e1253f9426c62Df68b39a22A377164eec92'
 ```
 
 ## 示例返回
