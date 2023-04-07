@@ -4,6 +4,9 @@ sidebar_position: 4
 
 # withdraw
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created,
@@ -35,15 +38,53 @@ Any everPay account can withdraw assets on everPay to blockchain wallets that ev
 ## Parameter
 
 ```ts
-everpay.withdraw(withdrawParams: WithdrawParams)
+everpay.withdraw(withdrawParams: WithdrawParams):SendEverpayTxResult
 ```
-|Field|Type|
-|---|---|
-|withdrawParams| View [`WithdrawParams`](../types.md#withdrawparams) Type |
+
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|参数|是否必需|描述|
+|---|---|---|
+|chainType| YES | [ChainType](../types.md#chaintype), `chainType` must be the same as [info API](../../../server-api/basic-api/info.md) interface to get the `tokenSymbol` corresponding to the token `chainType` **consistent**.|
+|tag| YES| A unique identifier for the `token`, which can be viewed via the [`info`](../basic-api/info.md) interface.|
+|amount|YES|Withdrawal amount|
+|fee|NO|Handling fee.|
+|data|NO|Additional information, which developers can customize with JSON data, is passed after `JSON.stringify()` processing.|
+|to|NO| `to` is the address of the blockchain wallet to withdraw to.|
+
+[For more information, please move to System Overview - Withdrawals](../../../dive/withdraw.md).
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface WithdrawParams {
+  chainType: ChainType
+  tag: string
+  amount: string
+  fee?: string
+  quickMode?: boolean
+  data?: Record<string, unknown>
+  to?: string
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 
-[SendEverpayTxResult](../types#sendeverpaytxresult)
+```ts
+// Note: This type does not have an export
+interface PostEverpayTxResult {
+  status: string
+}
+export interface SendEverpayTxResult extends PostEverpayTxResult {
+  everpayTx: EverpayTx
+  everHash: string
+}
+```
 
 ## Example
 

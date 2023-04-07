@@ -4,6 +4,9 @@ sidebar_position: 6
 
 # bundle
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when make a bundle transaction,
@@ -18,12 +21,35 @@ Developers can visit the [DOCS - System overview - Bundle](../../../dive/bundle)
 ## Parameter
 
 ```ts
-everpay.bundle(bundleParams: BundleParams)
+everpay.bundle(bundleParams: BundleParams): SendEverpayTxResult
 ```
 
-|Field|Type|
-|---|---|
-|bundleParams| View [BundleParams](../types.md#bundleparams) Type |
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|parameters|required|description|
+|---|---|---|
+|tag| YES| A unique identifier for the `token`, which can be viewed via the [`info`](../basic-api/info.md) interface.|
+|amount|YES|Amount of assets.|
+|data|YES| Specific JSON format for bulk transfer function, see [data generation description](../../../dive/bundle.md#data-generated-description).|
+|to|YES| The everPay account ID representing the receipt of the external transfer, which can be any everPay account ID (including the current everPay account ID of the signed transaction)|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface BundleParams {
+  tag: string
+  amount: string
+  data: {
+    bundle: BundleDataWithSigs
+  }
+  to: string
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 

@@ -4,6 +4,9 @@ sidebar_position: 3
 
 # transfer
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when do transfering,
@@ -23,17 +26,48 @@ Any everPay account can transfer any of its assets on everPay to other everPay a
 :::
 
 ## Parameter
+
 ```ts
 everpay.transfer(transferParams: TransferParams)
 ```
 
-|Field|Type|
-|---|---|
-|transferParams| View [`TransferParams`](../types.md#transferparams) Type |
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|parameters|required|description|
+|---|---|---|
+|tag| YES| A unique identifier for the `token`, which can be viewed via the [`info`](../basic-api/info.md) interface.|
+|amount|YES|The amount of assets transferred.|
+|to|YES|The recipient ID of `everPay`.|
+|data|NO|For additional information, developers can customize the JSON data and pass it through `JSON.stringify()` processing. The `data` can be customized to achieve some complex functions, such as [bulk transfer](../../../dive/bundle.md).|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface TransferParams {
+  tag: string
+  amount: string
+  data?: Record<string, unknown>
+  to: string
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 
-[SendEverpayTxResult](../types#sendeverpaytxresult)
+```ts
+// Note: This type does not have an export
+interface PostEverpayTxResult {
+  status: string
+}
+export interface SendEverpayTxResult extends PostEverpayTxResult {
+  everpayTx: EverpayTx
+  everHash: string
+}
+```
 
 ## Example
 

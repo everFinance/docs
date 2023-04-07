@@ -4,18 +4,39 @@ sidebar_position: 2
 
 # deposit
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Call the corresponding (plugin) wallet transfer function to deposit to the everPay account according to the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created
 
 ## Parameter
+
 ```ts
-everpay.deposit(depositParams: DepositParams)
+everpay.deposit(depositParams: DepositParams): EthereumTransaction | ArweaveTransaction
 ```
 
-|Field|Type|
-|---|---|
-|depositParams| View [`DepositParams`](../types#depositparams) Type|
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|parameters|required|description|
+|---|---|---|
+|tag| YES| A unique identifier for the `token`, which can be viewed via the [`info`](../basic-api/info.md) interface.|
+|amount|YES|The amount of assets to be recharged.|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface DepositParams {
+  tag: string
+  amount: string
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 

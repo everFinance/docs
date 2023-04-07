@@ -3,22 +3,57 @@ sidebar_position: 7
 ---
 
 # sendEverpayTx
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
+
 Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithoutsig) into `messageData`, sign it according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation and send it to everPays server.
 
 ## Parameter
+
 ```ts
-everpay.sendEverpayTx(everpayTxWithoutSig: EverpayTxWithoutSig)
+everpay.sendEverpayTx(everpayTxWithoutSig: EverpayTxWithoutSig): SendEverpayTxResult
 ```
+
+<Tabs>
+<TabItem value="field" label="Parameters" default>
 
 |Field|Type|Description|
 |---|---|---|
 |everpayTxWithoutSig| [`EverpayTxWithoutSig`](../types#everpaytxwithoutsig) | Available via [`getEverpayTxWithoutSig Api`](../tool-api/getEverpayTxWithoutSig.md) |
 
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface EverpayTxWithoutSig {
+  tokenSymbol: string
+  action: EverpayAction
+  from: string
+  to: string
+  amount: string
+  fee: string
+  feeRecipient: string
+  nonce: string
+  tokenID: string
+  chainType: ChainType | string
+  chainID: string
+  data: string
+  version: string
+}
+```
+
+</TabItem>
+</Tabs>
+
 ## Return
+
 [SendEverpayTxResult](../types#sendeverpaytxresult)
 
 ## Example
+
 ```ts
 const everpayTxWithoutSig = {
   tokenSymbol: 'usdt',

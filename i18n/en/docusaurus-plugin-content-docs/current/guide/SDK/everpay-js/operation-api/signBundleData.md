@@ -3,6 +3,10 @@ sidebar_position: 5
 ---
 
 # signBundleData
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Sign `bundleData` according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation, generate [`BundleDataWithSigs`](../types#bundledatawithsigs) for everPay bundle transaction specific `data` generation.
@@ -10,15 +14,36 @@ Sign `bundleData` according to `account`, `ethConnectedSigner`, `arJWK` paramete
 ## Parameter
 
 ```ts
-everpay.signBundleData(bundleData:BundleData)
-
-everpay.signBundleData(bundleDataWithSigs:BundleDataWithSigs)
+everpay.signBundleData(params:BundleData | BundleDataWithSigs):BundleDataWithSigs
 ```
 
-|Field|Type|Description|
-|---|---|---|
-|bundleData| [BundleData](../types.md#bundledata) | Available via [getBundleData Api](../tool-api/getBundleData.md)|
+<Tabs>
+<TabItem value="field" label="Parameters" default>
 
+|parameters|required|description|
+|---|---|---|
+|params| YES | <ul><li>`'BundleData'` is generated based on the specified data structure, see [getBundleData API](../tool-api/getBundleData.md) for `BundleData` data.</li><li>`'BundleDataWithSigs'` specific `data` for everPay batch transfer transactions </li></ul>|
+
+</TabItem>
+<TabItem value="type" label="类型">
+
+```ts
+export interface BundleData {
+  items: BundleItem[]
+  expiration: number
+  salt: string
+  version: string
+}
+
+export interface BundleDataWithSigs extends BundleData {
+  sigs: {
+    [account: string]: string
+  }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 
@@ -33,10 +58,12 @@ export interface BundleDataWithSigs {
   }
 }
 ```
+
 [View BundleItem Type](../types.md#bundledata)
 :::info
 [Typescript Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
 :::
+
 ## Example
 
 ```ts
