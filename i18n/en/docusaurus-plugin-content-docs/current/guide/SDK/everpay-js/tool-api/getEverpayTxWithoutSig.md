@@ -4,22 +4,84 @@ sidebar_position: 1
 
 # getEverpayTxWithoutSig
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Generate everPay transaction structure
 
 ## Parameter
 
-```js
-everpay.getEverpayTxWithoutSig(type, params)
+```ts
+everpay.getEverpayTxWithoutSig(type: EverpayTxWithoutSigType, params: EverpayTxWithoutSigParams):EverpayTxWithoutSig
 ```
+
+<Tabs>
+<TabItem value="field" label="Parameters" default>
 
 |Field|Description|
 |---|---|
 |type|'transfer' or 'withdraw' or 'bundle'|
 |params|[TransferParams](../types#transferparams) or [WithdrawParams](../types#withdrawparams) or [BundleParams](../types#bundleparams)|
 
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+// Note: This type does not have an export
+type EverpayTxWithoutSigType = 'transfer' | 'withdraw' | 'bundle'
+type EverpayTxWithoutSigParams = TransferParams | WithdrawParams | BundleParams
+
+export interface TransferParams {
+  tag: string
+  amount: string
+  data?: Record<string, unknown>
+  to: string
+}
+
+export interface WithdrawParams {
+  chainType: ChainType
+  tag: string
+  amount: string
+  fee?: string
+  quickMode?: boolean
+  data?: Record<string, unknown>
+  to?: string
+}
+
+export interface BundleParams {
+  tag: string
+  amount: string
+  data: {
+    bundle: BundleDataWithSigs
+  }
+  to: string
+}
+```
+
+</TabItem>
+</Tabs>
+
 ## Return
+
+```ts
+export interface EverpayTxWithoutSig {
+  tokenSymbol: string
+  action: EverpayAction
+  from: string
+  to: string
+  amount: string
+  fee: string
+  feeRecipient: string
+  nonce: string
+  tokenID: string
+  chainType: ChainType | string
+  chainID: string
+  data: string
+  version: string
+}
+```
 
 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
 

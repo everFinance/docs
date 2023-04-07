@@ -11,13 +11,17 @@ Generate a `bundleData` based on a list of internal transfer transactions for th
 ## Parameter
 
 ```ts
-everpay.getBundleData(items: InternalTransferItem[], expiration?: number)
+everpay.getBundleData(items: InternalTransferItem[], expiration?: number):BundleData
 ```
 
-|Field|Type|Description|
+|parameters|required|description|
 |---|---|---|
-|items|[InternalTransferItem](../types#internaltransferitem)[] | List of internal transfers for bundle transaction, where `amount` is not uint type and has been processed by `decimals`|
-|expiration|number|Optional, expiration time of all internal transfers, unix timestamp. **Note: not millisecond timestamps**|
+|items|YES| List of internal transfer transactions for batch transfers.|
+|tag|YES| The parameters in `items`, the unique identifier of the `token`, can be viewed via the [`info` interface](../basic-api/info.md) interface.|
+|from|YES|The parameter in `items`, the current everPay account ID of the signed transaction.|
+|to|YES|The parameter in `items`, which represents the everPay account ID of the external transfer recipient, can be any everPay account ID (including the current everPay account ID of the signed transaction)|
+|amount|YES|The parameter in `items`, the amount of the asset. Non-uint type, already processed by `decimals`.|
+|expiration|YES|Expiration time of all internal transfer transactions, unix timestamp. **Note: Non-millisecond timestamp**.|
 
 ## Return
 
@@ -29,6 +33,7 @@ export interface BundleData {
   version: string
 }
 ```
+
 [View BundleItem Type](../types.md#bundledata)
 
 ## Example

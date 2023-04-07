@@ -21,7 +21,7 @@ everpay.getBundleData(items: InternalTransferItem[], expiration?: number):Bundle
 |from|YES|`items` 中参数，签名交易的当前 everPay 账户 ID。|
 |to|YES|`items` 中参数，代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|
 |amount|YES|`items` 中参数，资产数额。非 uint 类型，已经过 `decimals` 处理。|
-|expiration|NO|所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**。|
+|expiration|YES|所有内部转账事务的过期时间，unix 时间戳。**注：非毫秒时间戳**。|
 
 ## 返回
 
