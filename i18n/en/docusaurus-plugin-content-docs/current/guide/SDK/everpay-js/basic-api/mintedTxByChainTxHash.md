@@ -4,20 +4,41 @@ sidebar_position: 10
 
 # mintedTxByChainTxHash
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
+
 Get the everPay deposit transaction on everPay using `chainTxHash` which is the `txHash` of **deposit** transaction on the blockchain.
 
 For example, for an everPay deposit transaction, you can query the transaction record by `chainTxHash`, and if the everPay transaction record exists, you can assume that the deposit has arrived.
 
 ## Parameter
-string
 
-:::info
-This string is the `chainTxHash` string
-:::
+## 参数
+
+```ts
+everpay.mintedTxByChainTxHash(chainTxHash:string):EverpayTransaction
+```
+
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|query field|required|description|
+|---|---|---|
+|chainTxHash|YES|`chainTxHash` in the transaction record after topping up via blockchain.|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+`string`
+
+</TabItem>
+</Tabs>
 
 :::danger
 Only everPay transaction for deposit can be queryed by `chainTxHash`, but not everPay transaction for withdraw. For example
+
 * an ethereum deposit transaction, etherum txHash for etherum deposit is `0xf8eaba159cabbc1d6c4f1c502bb552b6c762dbb43c972ec2e28b32c31fd986ae`, this everPay deposit transaction record can be accessed through this API
 * everPay withdraw transaction, the txHash of the final withdraw to user ethereum wallet address is `0xd3d2d72c0906f92eb22f719434e1568e1db8f2735bf5bcf645a2a70e5c21b2f7`, this everPay withdraw transaction record cannot be accessed through This API
 :::
@@ -50,10 +71,12 @@ export interface EverpayTransaction {
   }
 }
 ```
+
 [View EverpayActionWithDeposit Type](../types.md#everpayactionwithdeposit)  
 [View EverpayTransactionStatus Type](../types.md#everpaytransactionstatus)
 
 ### Return Fields
+
 Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../../dive/transaction#transaction-record)
 
 ## Example
@@ -65,6 +88,7 @@ everpay.mintedTxByChainTxHash(chainTxHash).then(console.log)
 ```
 
 ## Example return
+
 ```js
 {
   "tx": {

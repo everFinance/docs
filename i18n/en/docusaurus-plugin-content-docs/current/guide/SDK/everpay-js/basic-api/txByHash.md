@@ -4,20 +4,40 @@ sidebar_position: 9
 
 # txByHash
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
+
 Each everPay transaction has a unique `everHash` string. Use `everHash` to look up the details of the transaction.
 
 For example, for a normal withdraw (not fast withdraw), you can query the transaction details via `everHash`
+
 * when the `id` is not an empty string, which means whether the transaction has been recorded on the arweave blockchain, **which ensures the correctness of the ledger**
 * when the `targetChainTxHash` is not empty, it means the transaction has been sent and packaged on the blockchain where the user wants to withdraw, **the assets withdrawn by the user have arrived**.
 
 ## Parameter
-string
 
-:::info
-This string is the `everHash` string
-:::
+```ts
+everpay.txByHash(everHash:string):EverpayTransaction
+```
+
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|query field|required|description|
+|---|---|---|
+|everHash|YES|The unique character generated after the everPay transaction is completed.|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+`string`
+</TabItem>
+</Tabs>
+
 ## Return
+
 ### Return Type
 
 ```ts
@@ -44,11 +64,12 @@ export interface EverpayTransaction {
   }
 }
 ```
+
 [View EverpayActionWithDeposit Type](../types.md#everpayactionwithdeposit)  
 [View EverpayTransactionStatus Type](../types.md#everpaytransactionstatus)
 
-
 ### Return Fields
+
 Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../../dive/transaction#transaction-record)
 
 ## Example
@@ -60,6 +81,7 @@ everpay.txByHash(everHash).then(console.log)
 ```
 
 ## Example return
+
 ```js
 {
   "tx": {

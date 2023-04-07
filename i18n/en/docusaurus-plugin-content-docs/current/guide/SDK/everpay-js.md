@@ -4,6 +4,9 @@ sidebar_position: 2
 
 # Quick integration with everpay-js
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 everpay-js encapsulates most of the interfaces of everPay protocol for developers, developers can use everpay-js to quickly integrate everPay protocol into application pages. Using everpay-js, you can quickly complete everPay payment settlement in your application.
 
 ## Requirements for use
@@ -13,44 +16,81 @@ everpay-js encapsulates most of the interfaces of everPay protocol for developer
 
 :::info
 
-- This section explains how to quickly install, introduce, create, top up, transfer and withdraw funds using everpay-js.
+* This section explains how to quickly install, introduce, create, top up, transfer and withdraw funds using everpay-js.
 :::
 
 ## Installation
 
 Use [yarn](https://www.yarnpkg.cn/getting-started/install) or npm to install and use, if not please check your network and try again.
 
+<Tabs>
+<TabItem value="yarn" label="yarn" default>
+
 ```bash
 yarn add everpay
+```
 
-# or
+</TabItem>
+<TabItem value="npm" label="npm">
 
+```bash
 npm install everpay
 ```
 
+</TabItem>
+</Tabs>
+
 ## Import
 
-```js
+<Tabs>
+<TabItem value="es_module" label="ES Modules" default>
+
+```ts
 import Everpay from 'everpay'
-
-// or
-
-const Everpay = require('everpay')
+const everpay = new Everpay()
 ```
+
+</TabItem>
+<TabItem value="commonjs" label="CommonJS">
+
+```js
+const Everpay = require('everpay')
+const everpay = new Everpay()
+```
+
+</TabItem>
+</Tabs>
 
 ## Initialization
 
 ### Connecting with an ethereum wallet
 
-To create an `ethConnectedSigner`, developers install and create it using [ethers.js](https://github.com/ethers-io/ethers.js).
+* Optional configuration items such as `ethConnectedSigner`, `chainType`, etc. can be injected during creation.
+* Developers need to install and use [ethers.js](https://github.com/ethers-io/ethers.js) to create it.
+* Please download [MetaMask](https://metamask.io/) or other Ether wallets.
 
-- Please download [MetaMask](https://metamask.io/) or other ethernet wallets
+#### 1. Using the Package Manager
+
+(1) Install [everpay-js](. /everpay-js.md#install) and [ethers.js](https://github.com/ethers-io/ethers.js).
+
+<Tabs>
+<TabItem value="yarn" label="yarn" default>
 
 ```bash
-yarn add ethers
-# or
-npm install ethers
+yarn add everpay ethers
 ```
+
+</TabItem>
+<TabItem value="npm" label="npm">
+
+```bash
+npm install everpay ethers
+```
+
+</TabItem>
+</Tabs>
+
+(2) Introduce everpay-js and ethers for creation.
 
 ```js
 import Everpay from 'everpay'
@@ -59,41 +99,40 @@ import { ethers } from 'ethers'
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
+  debug: true // 开启 everpay dev环境
   account: window.ethereum.selectedAddress,
   chainType: 'ethereum',
   ethConnectedSigner: signer
 })
 ```
-:::info
-- [chainType configuration item](./everpay-js/types#chaintype)
-- More ways to create `ethConnectedSigner` can be found at [SDK - everpay-js - Configuration Items - `ethConnectedSigner`](./everpay-js/configuration/ethConnectedSigner).
-:::
 
-### CDN way to connect Ethereum wallet
+#### 2. Connecting to an Ethernet wallet via CDN
 
-When creating, you need to introduce the everpay-js package and ethers package in the `head` of the `index.html` file.
+(1) Create `index.html` file and introduce [everpay-js](https://www.jsdelivr.com/package/npm/everpay?nav=config) and [ethers](https://www.jsdelivr.com/package/npm/ethers?nav=config&version=5.4.0) to the CDN link.
 
 ```html
 <script
-  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.js"
+  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.min.js"
   defer
   type="text/javascript"
 ></script>
 <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.4.0/ethers.umd.min.js"
   defer
+  src="https://cdn.jsdelivr.net/npm/ethers@5.4.0/dist/ethers.umd.min.js"
   type="application/javascript"
 ></script>
 ```
-After the import is successful, create a `script` tag again and fill it according to the following code.
+
+(2) Create `script` tags in the `index.html` file and populate them according to the following code.
 
 ```html
 <script type="text/javascript" defer>
 const ethRun = async () => {
-    // If you are not connected, you can connect to the wallet and connect to the site here
+    // 若未连接可在此处做连接钱包和连接站点操作
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
     const everpay = new window.Everpay.default({
+      debug: true // 开启 everpay dev环境
       account: window.ethereum.selectedAddress,
       chainType: 'ethereum',
       ethConnectedSigner: signer
@@ -103,52 +142,77 @@ ethRun()
 </script>
 ```
 
-:::danger
-- Make sure the wallet is connected and the current site is connected.
-- When creating an everpay application, you need to add `default`: `new window.Everpay.default({})`.
-- ethers CDN version Please use `umd` format, [View ethers CDN version](https://cdnjs.com/libraries/ethers/5.4.0).
-- Make sure `ethers CDN link` and `everpay CDN link` are loaded first, otherwise `ethers is not defined` or `Everpay is not defined`.
+:::info
+
+* Make sure the `wallet is connected` and `connected to the current site`.
+* [debug environment configuration](./everpay-js/configuration/debug.md).
+* [account configuration](../dive/account-model.md) & [chainType configuration item](./everpay-js/types.md#chaintype).
+* More ways to create `ethConnectedSigner` can be found in [SDK - everpay-js - configuration items - `ethConnectedSigner`](./everpay-js/configuration/ethConnectedSigner).
+* When creating Everpay instances in CDN way, you need to add `default` : `new window.Everpay.default({})`.
+* Make sure `ethers CDN link` and `everPay CDN link` are loaded first, otherwise `ethers is not defined` or `Everpay is not defined`.
 :::
 
+### Arweave Wallet Connection
 
-### Connecting with an arweave wallet
+* You need to inject `arJWK` when creating a browser [ArConnect](https://arconnect.io/) wallet, just inject `arJWK: 'use_wallet'`.
+* Download the [ArConnect](https://arconnect.io/) wallet.
 
-If the developer uses Arweave wallet connection, the initialization needs to inject `arJWK`. When using the browser [ArConnect](https://arconnect.io/) wallet, injecting `arJWK: 'use_wallet'` will do the trick.
+#### 1. Using package management
 
-- Download [ArConnect](https://arconnect.io/) Wallet
+(1) Install [everpay-js](./everpay-js.md#install).
+
+<Tabs>
+<TabItem value="yarn" label="yarn" default>
+
+```bash
+yarn add everpay
+```
+
+</TabItem>
+<TabItem value="npm" label="npm">
+
+```bash
+npm install everpay
+```
+
+</TabItem>
+</Tabs>
+
+(2) Introduce everpay-js for creation.
 
 ```ts
 import Everpay from 'everpay'
 
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
+  debug: true,
   account: arAddress,
   chainType: 'arweave',
   arJWK: 'use_wallet'
 })
 ```
-- [chainType configuration item](./everpay-js/types#chaintype)
-- `arJWK` also supports the private key format, you can browse [SDK - everpay-js - Configuration - `arJWK`](./everpay-js/configuration/arJWK) for configuration.
 
-### CDN way to connect Arweave wallet
+#### 2. Connect to Arweave wallet using CDN
 
-When creating, you need to introduce the everpay-js package in the `head` of the `index.html` file.
+(1) Create the `index.html` file and introduce the [everpay-js CDN](https://www.jsdelivr.com/package/npm/everpay?nav=config) link.
 
 ```html
 <script
-  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.js"
+  src="https://cdn.jsdelivr.net/npm/everpay@0.6.1/umd/index.umd.min.js"
   defer
   type="text/javascript"
 ></script>
 ```
-After the import is successful, create a `script` tag again and fill it according to the following code.
+
+(2) Create `script` tags in the `index.html` file and populate them according to the following code.
 
 ```html
 <script>
 const arRun = async () => {
-  // If you are not connected, you can connect to the wallet and connect to the site here
+  // 若未连接可在此处做连接钱包和连接站点操作
   const arAddress = await window.arweaveWallet.getActiveAddress()
   const everpay = new window.Everpay.default({
+    debug: true // 开启 everpay dev环境
     account: arAddress,
     chainType: 'arweave',
     arJWK: 'use_wallet'
@@ -157,17 +221,25 @@ const arRun = async () => {
 arRun()
 </script>
 ```
-:::danger
-* Make sure the wallet is connected and connected to the current site.
-* You need to add `default` when creating everpay application: `new window.Everpay.default({})`.
-* Make sure that the everpay CDN link is loaded first.
-:::
 
 :::info
 
-- Following the steps above, we have completed the creation of the Everpay application, so let's move on to top-up, transfer and withdraw funds.
+* Make sure the wallet is connected and authorized, [View authorization type](./everpay-js/configuration/arJWK.md#browser--arconnect), [View authorization type](https://github.com/arconnectio/ArConnect#connectpermissions-appinfo-gateway).
+* [debug environment configuration](./everpay-js/configuration/debug.md).
+* [chainType configuration item](./everpay-js/types#chaintype).
+* `arJWK` also supports private key format, you can browse [SDK - everpay-js - configuration items - `arJWK`](./everpay-js/configuration/arJWK) for configuration.
+* When creating Everpay instance in CDN way, you need to add `default` : `new window.Everpay.default({})`.
+* Make sure `everPay CDN link` is loaded first, otherwise `Everpay is not defined`.
+:::
+
+---
+
+:::info Success!
+
+* Following the steps above, we have completed the creation of the Everpay application, so let's move on to top-up, transfer and withdraw funds.
 
 :::
+
 ## Deposit
 
 Deposit your Arweave, Ethereum and other on-chain assets to everPay.
@@ -181,6 +253,7 @@ everpay.deposit({
 ```
 
 :::info
+
 * Wait patiently for the block verification to be completed and you will have the corresponding property in everPay.
 * Ethereum requires 6 blocks for recharge, Arweave requires 15 blocks for recharge
 * everPay supports AR cross-chain, initialization injection `ethConnectedSigner` will call WAR (ERC20) for recharge, initialization injection `arJWK` will call AR (native) for recharge
@@ -188,7 +261,13 @@ everpay.deposit({
 
 ## Transfer
 
-You can make an everPay transfer to a wallet that has a token that corresponds to an everPay account. Fill in the `token tag` and `amount` of the account to be transferred and the address `to` of the account to be transferred, and call the following interface to complete the transfer.
+After the everPay instance is created successfully, you can use the `transfer` method to transfer the `assets(token)` that the current `account` already owns to everPay.
+
+Fill in the `token tag` and `amount`, `to` required for the transfer and call the following interface to complete the transfer:
+
+* `tag` : the unique identifier of the `token`, which can be accessed via [`info`](./everpay-js/basic-api/info.md#example-return) interface to view.
+* `amount` : The amount.
+* `to` : The recipient address of `everPay`, see [account-model](../dive/account-model.md).
 
 ```js
 everpay.transfer({
@@ -197,12 +276,22 @@ everpay.transfer({
   to: '0x26361130d5d6E798E9319114643AF8c868412859'
 }).then(console.log)
 ```
+
 :::danger
+
 * Please note: You are operating a transfer of assets on the everPay network, please do not transfer to an exchange address, or a contract address, or your assets will not be recovered!
 :::
+
 ## Withdrawal
 
-Withdraw the assets from everPay and return them to the native chain. Withdrawals from everPay can be made to the wallets that have been credited and have tokens in their everPay accounts. Fill in the `token tag`, `amount`, `chainType` and `to` of the native chain to be withdrawn, and call the following interface to complete the withdrawal.
+After the everPay instance is created successfully, you can withdraw the `assets(token)` you have in your current `account` through the `withdraw` method. Withdraw the `token` from everPay to the native chain address.
+
+Fill in the `token tag`, `amount`, `chainType`, `to` that you want to withdraw, and call the following interface to complete the withdrawal:
+
+* `token tag` : a unique identifier that can be accessed via [`info`](./everpay-js/basic-api/info.md#example-return) interface.
+* `amount` : The amount.
+* `chainType` : [chainType native chain](./everpay-js/types.md#chaintype).
+* `to` : `everpay` Recipient address, details can be found in [account-model](../dive/account-model.md).
 
 ```js
 everpay.withdraw({
@@ -212,11 +301,13 @@ everpay.withdraw({
   to: '0x26361130d5d6E798E9319114643AF8c868412859'
 }).then(console.log)
 ```
+
 :::danger
 
 * Withdraw assets from everPay to target chains, such as Ethereum, etc.
- * Please do not withdraw to contract addresses, they cannot be recovered!
+* Please do not withdraw to contract addresses, they cannot be recovered!
 :::
+
 ## Example reference
 
 More examples can be found in [everpay-js unit test cases](https://github.com/everFinance/everpay-js/tree/main/test)

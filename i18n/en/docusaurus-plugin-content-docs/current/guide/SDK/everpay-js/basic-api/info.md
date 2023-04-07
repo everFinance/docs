@@ -4,21 +4,55 @@ sidebar_position: 2
 
 # info
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Get basic information about everPay service, e.g. `arLocker` represents arweave locking address, `ethLocker` represents etherum chain locking contract.
 
 ## Parameter
 
-None
-
-|Query Field|Description|
-|---|---|
-|Request method|GET|
+```ts
+everpay.info():EverpayInfo
+```
 
 ## Return
 
-### Return Type
+<Tabs>
+<TabItem value="field" label="Return Field" default>
+
+### Field Description
+
+|Field|Description|
+|---|---|
+|arLocker|everPay AR native token locked position address on arweave blockchain.|
+|ethChainID|Current Ethereum network ID.|
+|ethLocker|everPay locked position contract on ethereum blockchain.|
+|everRootHash| everPay system transaction fingerprint, obtained by keccak256 of all current transactions everHash on a per-transaction basis.|
+|feeRecipient|everPay fee collection account ID.|
+|owner|An everPay arweave address, responsible for storing everPay transaction records to the arweave blockchain.|
+|rootHash|everPay system transaction fingerprint, obtained by keccak256 of all current transactions everHash and id on a per-transaction basis.|
+|tokenList|The list of tokens supported by everPay. Single token fields, see below [Token field description](#token-field-description).|
+
+### Token Field Description
+
+|Field|Description|
+|---|---|
+|tag|The unique identifier of the token, combined by `chainType`, `symbol`, `id` via `-`.|
+|id|Token ID, usually the token erc20 contract address, separated by `,` if it supports multiple blockchain top-ups and withdrawals.|
+|symbol|Token symbol.|
+|decimals|Token decimals.|
+|totalSupply|The total amount of token assets on everPay.|
+|chainType|Supported blockchains to top-ups and withdrawals, separated by `,`.|
+|chainID|Supported blockchain network IDs to top-ups and withdrawals, separated by `,`.|
+|burnFees|The normal withdrawal fee for this Token needs to be paid.|
+|transferFee|The fee should to be paid for the everPay transfer.|
+|crossChainInfoList|Cross-Chain Information.|
+
+</TabItem>
+
+<TabItem value="type" label="Return Type">
 
 ```ts
 export interface EverpayInfo {
@@ -31,11 +65,23 @@ export interface EverpayInfo {
   rootHash: string
   tokenList: Token[]
 }
-```
-[View Token Type](../types.md#token)
-### Return Fields
 
-Field information can be viewed in [SDK - Server API - Basic Query API - info - Return Fields](../../../server-api/basic-api/info#return-fields)
+export interface Token {
+  tag: string
+  id: string
+  symbol: string
+  decimals: number
+  totalSupply: string
+  chainID: string
+  chainType: ChainType | string
+  crossChainInfoList: {
+    [propname: string]: CrossChainInfo
+  }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Example
 

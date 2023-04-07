@@ -1,8 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 # txs
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Function
 
@@ -10,7 +13,12 @@ Get all transactions on everPay accessed by paging
 
 ## Parameter
 
-[TxsParams](../types#txsparams)
+```ts
+everpay.txs(txsParams:TxsParams):TxsResult
+```
+
+<Tabs>
+<TabItem value="field" label="Parameters" default>
 
 |Query Field|Description|
 |---|---|
@@ -19,7 +27,29 @@ Get all transactions on everPay accessed by paging
 |action|Optional, note that **[Quick Withdrawals](../../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` for deposit transactions</li><li>`'transfer'` for transfer transactions</li><li>`'burn'` for withdraw transactions</li><li>`'bundle'` for bundle transactions</li></ul>|
 |withoutAction|Optional, exclusion of certain type of transactions, note that **[Quick Withdrawals](../../../dive/withdraw#quick-withdrawal)** are categorized in the `action: 'transfer'` filter. <ul><li>`'mint'` to deposit transactions</li><li>`'transfer'` to transfer transactions</li><li>`'burn'` to withdraw transactions</li><li>`'bundle'` to bundle transactions</li></ul>|
 
+</TabItem>
+<TabItem value="type" label="Type" default>
+
+[TxsParams](../types#txsparams)
+
+</TabItem>
+</Tabs>
+
 ## Return
+
+<Tabs>
+<TabItem value="field" label="Return Field" default>
+
+### Return Fields
+
+|Field|Description|
+|---|---|
+|currentPage|The current page number, consistent with the passed in `page` parameter.|
+|totalPages|The total number of pages of data you have.|
+|txs|Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../../dive/transaction#transaction-record)|
+
+</TabItem>
+<TabItem value="type" label="Return Type">
 
 ### Return Type
 
@@ -31,11 +61,11 @@ export interface TxsResult {
   txs: EverpayTransaction[]
 }
 ```
+
 [View EverpayTransaction Type](../types.md#everpaytransaction)
 
-### Return Fields
-
-Field information can be viewed in [DOCS - System overview - Transaction - Transaction Record](../../../dive/transaction#transaction-record)
+</TabItem>
+</Tabs>
 
 ## Example
 

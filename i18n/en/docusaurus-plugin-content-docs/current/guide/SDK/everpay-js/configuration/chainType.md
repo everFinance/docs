@@ -10,7 +10,7 @@ everPay supports the ethereum evm compatible chain. To top up, use the coins of 
 
 ## Configuration Type
 
-Currently support `ethereum`, `arweave`, `moon`.
+Currently support `ethereum`, `arweave`, `moon`,`bsc`,`conflux`, `platon`.
 
 ## moonbase Example
 

@@ -181,7 +181,7 @@ import Everpay from 'everpay'
 
 const arAddress = await window.arweaveWallet.getActiveAddress()
 const everpay = new Everpay({
-  debug: true // 开启 everpay dev环境
+  debug: true, // 开启 everpay dev环境
   account: arAddress,
   chainType: 'arweave',
   arJWK: 'use_wallet'

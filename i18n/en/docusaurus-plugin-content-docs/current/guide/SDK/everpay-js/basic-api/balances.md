@@ -4,22 +4,55 @@ sidebar_position: 3
 
 # balances
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Get all assets on everPay for the corresponding `account`.
 
 ## Parameter
 
-[BalancesParams](../types#balancesparams)
+```ts
+everpay.balances(balancesParams:BalancesParams):BalanceItem[]
+```
 
-|Query Field|Description|
-|---|---|
-|Request method|GET|
-|account|Optional,everpay account address, see account model for details|
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|query field|required|description|
+|---|---|---|
+|account|NO|everpay account ID, which defaults to the `account` parameter passed when the Everpay instance is created, see [Account Model](../../../dive/account-model.md).|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface BalancesParams {
+  account?: string
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 
-### Return Type
+<Tabs>
+<TabItem value="field" label="Return Field" default>
+
+### Field Description
+
+|Field|Description|
+|---|---|
+|chainType|Supported blockchains to top-ups and withdrawals, separated by `,`|
+|symbol|Token symbol|
+|address|The asset blockchain contract address, such as if supporting multiple blockchain top-ups and withdrawals, separated by `,`, in the same order as the blockchain name order in `chainType`.|
+|tag|Unique identification of the asset|
+|balance|Token balance, already processed by, not type uint|
+
+</TabItem>
+<TabItem value="type" label="Return Type">
 
 ```ts
 export interface BalanceItem {
@@ -31,14 +64,8 @@ export interface BalanceItem {
 }[]
 ```
 
-### Return Fields
-
-|Field|Description|
-|---|---|
-|chainType|Supported blockchains to top-ups and withdrawals, separated by `,`|
-|symbol|Token symbol|
-|tag|Unique identification of the asset|
-|balance|Token balance, already processed by, not type uint|
+</TabItem>
+</Tabs>
 
 ## Example
 

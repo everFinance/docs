@@ -4,19 +4,39 @@ sidebar_position: 4
 
 # balance
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Function
 
 Get the asset balance of the specified token on everPay for the corresponding `account`.
 
 ## Parameter
 
-[BalanceParams](../types#balanceparams)
+```ts
+everpay.balance(balanceParams:BalanceParams):string
+```
 
-|Query Field|Description|
-|---|---|
-|Request method|GET|
-|account|Optional, everpay account address, see [account model](../../../dive/account-model.md) for details. |
-|tag|A unique identifier for `token`, [info](./info.md) interface `tokenList` to see the unique `tag` for each `token`.|
+<Tabs>
+<TabItem value="field" label="Parameters" default>
+
+|query field|required|description|
+|---|---|---|
+|account|NO|everpay account ID, which defaults to the `account` parameter passed when the Everpay instance is created, see [Account Model](../../../dive/account-model.md).|
+|tag|YES|A unique identifier for the `token`, which can be viewed through the [`info`](./info.md) interface.|
+
+</TabItem>
+<TabItem value="type" label="Type">
+
+```ts
+export interface BalanceParams {
+  tag: string
+  account?: string
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Return
 
