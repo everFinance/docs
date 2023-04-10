@@ -19,8 +19,9 @@ everpay.getEverpayTxMessage(everpayTxWithoutSig: EverpayTxWithoutSig):string
 
 <Tabs>
 <TabItem value="field" label="Parameters" default>
-|Field|Description|
-|---|---|
+
+|Field|Type|Description|
+|---|---|---|
 |everpayTxWithoutSig| [EverpayTxWithoutSig](../types.md#everpaytxwithoutsig) | Available via [getEverpayTxWithoutSig Api](./getEverpayTxWithoutSig.md)|
 
 </TabItem>
