@@ -38,6 +38,11 @@ export interface DepositParams {
 </TabItem>
 </Tabs>
 
+:::caution
+* When depositing funds to your Everpay account, the corresponding chainType network must support the Token tag, otherwise the deposit will fail.
+* You can check if the current chainType network is supported for deposits by viewing the Token crossChainInfoList field in the TokenList response.
+:::
+
 ## Return
 
 ### ethereum wallet
@@ -61,6 +66,7 @@ const everpay = new Everpay({
   ethConnectedSigner: signer
 })
 
+// The corresponding chainType network needs to support the current Token tag in order for the deposit to proceed successfully.
 everpay.deposit({
   tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26'
