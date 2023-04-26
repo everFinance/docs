@@ -36,6 +36,11 @@ export interface DepositParams {
 </TabItem>
 </Tabs>
 
+:::caution
+  * 在进行 everPay 账户充值时，`chainType` 网络需要支持该 `Token tag`，否则无法充值成功。
+  * 可通过 [`TokenList`](../basic-api/info.md#示例返回) 查看该[`Token crossChainInfoList`](../basic-api/info.md#token-字段描述) 字段，是否包含当前 `chainType` 网络。
+:::
+
 ## 返回
 
 ### ethereum 钱包
@@ -59,6 +64,7 @@ const everpay = new Everpay({
   ethConnectedSigner: signer
 })
 
+// chainType 网络需要支持当前 token tag 才可正常进行充值
 everpay.deposit({
   tag: 'ethereum-usdt-0x923fcb255da521037385457fb549a51f78ef0af4',
   amount: '5.26'
