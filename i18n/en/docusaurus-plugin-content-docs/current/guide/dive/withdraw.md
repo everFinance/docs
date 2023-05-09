@@ -12,7 +12,7 @@ Withdrawal means withdrawing the valid `assets (token)` from everPay account, to
 
 |Field|Description|
 |---|---|
-|tokenSymbol|Token Symbol|
+|tokenSymbol|Token Symbol, AR,ETH,USDT,USDC etc.|
 |action|`'burn'` to withdraw.|
 |from|the current everPay account ID that signed the transaction.|
 |to|When withdrawing, `to` is the blockchain wallet address to withdraw to.|

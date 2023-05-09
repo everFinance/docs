@@ -12,7 +12,7 @@ everPay has its own separate transaction format, all everPay transactions follow
 
 |Field|Description|
 |---|---|
-|tokenSymbol|Token Symbol|
+|tokenSymbol|Token Symbol, AR,ETH,USDT,USDC etc.|
 |action|<ul><li>`'mint'` to deposit.</li><li>`'transfer'` to transfer.</li><li>`'burn'` to withdraw.</li><li>`'bundle'` to batch execute internal transfers.</li></ul>|
 |from|the current everPay account ID that signed the transaction.|
 |to|<ul><li>When transferring, `to` is another everPay account ID.</li><li>When withdrawing, `to` is the blockchain wallet address to withdraw to.</li><li>When using bundle transaction, `to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID. (including the current everPay account ID of the signed transaction)</li></ul>|

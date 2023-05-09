@@ -2,17 +2,17 @@
 sidebar_position: 1
 ---
 
-# Storage Based Computation Paradigm
+# Computation Paradigm Centered on Storage
 
-> Blockchain is a term used in the field of information technology. In essence, it is a shared database in which data or information is stored with characteristics such as "unforgeable", "traceable", "open and transparent" and "collectively maintained". Based on these features, blockchain technology has laid a solid foundation of "trust" and created a reliable "cooperation" mechanism, which has a broad application prospect.
+> Blockchain is a concept originating from the information technology sector. It essentially refers to a shared database where data or information is stored, possessing attributes such as "unforgeable," "traceable," "open and transparent," and "collectively maintained." Owing to these properties, blockchain technology establishes a strong foundation of "trust" and fosters a dependable "collaboration" mechanism, offering vast potential for applications.
 
-When we work with Excel on our own PCs, the computed books are not necessarily trustworthy because we can modify the Excel data records on our hard drives at will. Assuming that our PC hard drive replacement is called a blockchain, and all the adjustment records are traceable and cannot be falsified, we can assume that Excel on our personal PC is also traceable and trustworthy. If Alipay open source's all its code and all the data can be verified, it will then be another kind of decentralized "blockchain".
+Imagine working with Excel on our personal computers; the resulting files are not necessarily trustworthy since we can freely modify the Excel data records on our hard drives. If we consider our PC hard drive as a blockchain, where all adjustment records are traceable and tamper-proof, then Excel on our personal computer would also be considered traceable and reliable. If Alipay open-sources its entire code and all data becomes verifiable, it would represent a different kind of decentralized "blockchain."
 
-everPay is a decentralized and trusted application that stores all data in Arweave. Anyone can retrieve it, check and verify the consistency and correctness of the data, which has the transparency and trustworthiness of blockchain, but also reduces the consensus cost through Arweave storage and solves the disadvantages of high miner fees and time consuming of most / mainstream blockchain transfers.
+everPay is a decentralized, trust-based application that stores all data in Arweave, enabling anyone to access, examine, and validate the consistency and accuracy of the data. This provides the transparency and trustworthiness associated with blockchain while reducing consensus costs via Arweave storage and addressing the issues of high miner fees and lengthy transaction times common to most mainstream blockchain transfers.
 
-Using the storage based computation paradigm, combined with cryptographic signature verification, a variety of intricate applications can be built.
+By employing a computation paradigm focused on storage and integrating cryptographic signature verification, numerous complex applications can be developed.
 
-Built on the storage based computation paradigm, everPay has an Internet-level application experience and the ability to interoperate with various blockchains.
+everPay, constructed on the storage-centered computation paradigm, boasts an internet-level user experience and the capability to interact seamlessly with various blockchains.
 
 ## Further Reading
 * [A Storage-based Computation Paradigm Enabled by Arweave](https://news.ever.vision/a-storage-based-computation-paradigm-enabled-by-arweave-de799ae8c424)
