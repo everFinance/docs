@@ -99,7 +99,7 @@ import { ethers } from 'ethers'
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const everpay = new Everpay({
-  debug: true // 开启 everpay dev环境
+  debug: true // Enable everpay development environment.
   account: window.ethereum.selectedAddress,
   chainType: 'ethereum',
   ethConnectedSigner: signer
@@ -128,11 +128,11 @@ const everpay = new Everpay({
 ```html
 <script type="text/javascript" defer>
 const ethRun = async () => {
-    // 若未连接可在此处做连接钱包和连接站点操作
+    // You can connect your wallet or website here if not connected yet.
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
     const everpay = new window.Everpay.default({
-      debug: true // 开启 everpay dev环境
+      debug: true // Enable everpay development environment.
       account: window.ethereum.selectedAddress,
       chainType: 'ethereum',
       ethConnectedSigner: signer
@@ -209,10 +209,10 @@ const everpay = new Everpay({
 ```html
 <script>
 const arRun = async () => {
-  // 若未连接可在此处做连接钱包和连接站点操作
+  // You can connect your wallet or website here if not connected yet.
   const arAddress = await window.arweaveWallet.getActiveAddress()
   const everpay = new window.Everpay.default({
-    debug: true // 开启 everpay dev环境
+    debug: true // Enable everpay development environment.
     account: arAddress,
     chainType: 'arweave',
     arJWK: 'use_wallet'

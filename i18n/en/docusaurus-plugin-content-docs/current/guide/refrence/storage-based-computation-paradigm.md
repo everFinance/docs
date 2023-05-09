@@ -14,7 +14,7 @@ Using the storage based computation paradigm, combined with cryptographic signat
 
 Built on the storage based computation paradigm, everPay has an Internet-level application experience and the ability to interoperate with various blockchains.
 
-## Extended Readings
+## Further Reading
 * [A Storage-based Computation Paradigm Enabled by Arweave](https://news.ever.vision/a-storage-based-computation-paradigm-enabled-by-arweave-de799ae8c424)
 * [everPay: A Trusted Cross-chain Payment Protocol](https://news.ever.vision/everpay-a-trusted-cross-chain-payment-protocol-eba4a0af7d66)
 * [Evolution of the Blockchain Application Model along with Changing Consensus](https://news.ever.vision/evolution-of-the-blockchain-application-model-along-with-changing-consensus-755e4ae407a7)
