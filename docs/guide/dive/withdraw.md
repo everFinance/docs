@@ -12,7 +12,7 @@ sidebar_position: 6
 
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称。|
+|tokenSymbol|代币名称，AR,ETH,USDT,USDC 等。|
 |action|`'burn'`代表提现。|
 |from|签名交易的当前 everPay 账户 ID。|
 |to|提现时，`to` 为要提现至的区块链钱包地址。|

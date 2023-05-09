@@ -10,7 +10,7 @@ everPay 有自己独立的交易格式，所有的 everPay 交易都遵循相同
 
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称。|
+|tokenSymbol|代币名称，AR,ETH,USDT,USDC 等。|
 |action|<ul><li>`'mint'`代表充值。</li><li>`'transfer'`代表转账。</li><li>`'burn'`代表提现。</li><li>`'bundle'`代表批量转账。</li></ul>|
 |from|签名交易的当前 everPay 账户 ID。|
 |to|<ul><li>转账时，`to` 为收款方 everPay 账户 ID。</li><li>提现时，`to` 为要提现至的区块链钱包地址。</li><li>批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）</li></ul>|

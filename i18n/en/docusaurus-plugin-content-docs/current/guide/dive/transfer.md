@@ -12,7 +12,7 @@ everPay ensures the security of transfers through blockchain cryptographic signa
 ## Schema
 |Field|Description|
 |---|---|
-|tokenSymbol|Token Symbol|
+|tokenSymbol|Token Symbol, AR,ETH,USDT,USDC etc.|
 |action|`'transfer'` to transfer.|
 |from|the current everPay account ID that signed the transaction.|
 |to|When transferring, `to` is another everPay account ID.|

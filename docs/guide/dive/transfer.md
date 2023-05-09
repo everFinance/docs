@@ -12,7 +12,7 @@ everPay 通过区块链密码学签名验证来确保转账的安全性。
 
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称。|
+|tokenSymbol|代币名称，AR,ETH,USDT,USDC 等。|
 |action|`'transfer'`代表转账。|
 |from|签名交易的当前 everPay 账户 ID。|
 |to|转账时，`to` 为另一个 everPay 账户 ID。|

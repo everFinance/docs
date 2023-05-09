@@ -14,7 +14,7 @@ sidebar_position: 7
 
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称。|
+|tokenSymbol|代币名称，AR,ETH,USDT,USDC 等。|
 |action|`'bundle'`代表批量转账。|
 |from|签名交易的当前 everPay 账户 ID。|
 |to|批量转账时，`to` 代表外部转账收款的 everPay 账户 ID，可为任意 everPay 账户 ID。（包括签名交易的当前 everPay 账户 ID）|

@@ -13,7 +13,7 @@ All internal transfers in `data` must succeed, and if one fails, all internal tr
 ## Schema
 |Field|Description|
 |---|---|
-|tokenSymbol|Token Symbol.|
+|tokenSymbol|Token Symbol, AR,ETH,USDT,USDC etc.|
 |action|`'bundle'` to batch execute internal transfers.|
 |from|the current everPay account ID that signed the transaction.|
 |to|`to` represents the everPay account ID of the external transfer recipient, which can be any everPay account ID (including the current everPay account ID of the signed transaction).|

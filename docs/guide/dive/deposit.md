@@ -99,7 +99,7 @@ everpay-js 现已封装开源，内部集成了 arweave.js、arConnect，开发�
 ### Schema
 |字段|描述|
 |---|---|
-|tokenSymbol|代币名称。|
+|tokenSymbol|代币名称，AR,ETH,USDT,USDC 等。|
 |action|`'mint'`代表充值。|
 |from| everPay 签名钱包地址。|
 |to|用户进行充值的区块链转账钱包地址，即需要充值的 everPay 账户 ID。|
