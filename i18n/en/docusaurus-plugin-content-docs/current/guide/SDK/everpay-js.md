@@ -12,7 +12,7 @@ everpay-js encapsulates most of the interfaces of everPay protocol for developer
 ## Requirements for use
 
 * `Node Version >= 14` It is recommended to use [`nvm`](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (windows) to manage Node versions.
-* [ethers.js](https://docs.ethers.io/v5/) (only required when using the ethers wallet connection). Recommended to use [the same version within everpay-js ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
+* [ethers.js](https://docs.ethers.io/v5/) (only required when using the ethers wallet connection). Recommended to use [the same version(5.4.0) within everpay-js ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)
 
 :::info
 
@@ -77,14 +77,14 @@ const everpay = new Everpay()
 <TabItem value="yarn" label="yarn" default>
 
 ```bash
-yarn add everpay ethers
+yarn add everpay ethers@5.4.0
 ```
 
 </TabItem>
 <TabItem value="npm" label="npm">
 
 ```bash
-npm install everpay ethers
+npm install everpay ethers@5.4.0
 ```
 
 </TabItem>

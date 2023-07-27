@@ -12,7 +12,7 @@ everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可
 ## 使用要求
 
 - `Node Version >= 14` 推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 或 [nvm-windows](https://github.com/coreybutler/nvm-windows)（windows） 来管理 Node 版本。
-- 推荐使用 [everpay-js 内相同版本 ethers.js](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)。[ethers.js](https://docs.ethers.io/v5/) 只有在使用以太坊钱包连接时需要。
+- 推荐使用 [everpay-js 内相同版本 ethers.js @5.4.0](https://github.com/everFinance/everpay-js/blob/main/package.json#L57)。[ethers.js](https://docs.ethers.io/v5/) 只有在使用以太坊钱包连接时需要。
 
 :::tip
 
@@ -76,14 +76,14 @@ const everpay = new Everpay()
 <TabItem value="yarn" label="yarn" default>
 
 ```bash
-yarn add everpay ethers
+yarn add everpay ethers@5.4.0
 ```
 
 </TabItem>
 <TabItem value="npm" label="npm">
 
 ```bash
-npm install everpay ethers
+npm install everpay ethers@5.4.0
 ```
 
 </TabItem>
