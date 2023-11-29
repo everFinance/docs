@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # getEverpayTxWithoutSig
@@ -16,6 +16,7 @@ import TabItem from '@theme/TabItem';
 ```ts
 everpay.getEverpayTxWithoutSig(type: EverpayTxWithoutSigType, params: EverpayTxWithoutSigParams):EverpayTxWithoutSig
 ```
+
 <Tabs>
 <TabItem value="field" label="参数" default>
 
@@ -58,14 +59,14 @@ export interface BundleParams {
   to: string
 }
 ```
+
 </TabItem>
 </Tabs>
 
-
-
 ## 返回
 
-### 返回类型 
+### 返回类型
+
 ```ts
 export interface EverpayTxWithoutSig {
   tokenSymbol: string

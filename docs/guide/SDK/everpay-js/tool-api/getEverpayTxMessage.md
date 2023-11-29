@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # getEverpayTxMessage
@@ -8,9 +8,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## 功能
+
 将 everPay 交易结构 [EverpayTxWithoutSig](../types#everpaytxwithoutsig) 转化成 `messageData` 用于签名。
 
 ## 参数
+
 ```ts
 everpay.getEverpayTxMessage(everpayTxWithoutSig: EverpayTxWithoutSig):string
 ```
@@ -42,10 +44,9 @@ export interface EverpayTxWithoutSig {
   version: string
 }
 ```
+
 </TabItem>
 </Tabs>
-
-
 
 ## 返回
 

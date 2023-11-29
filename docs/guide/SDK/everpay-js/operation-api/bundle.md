@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，在批量转账时进行以下步骤：
 
 * 内部构建 [EverpayTxWithoutSig](../types#everpaytxwithoutsig)。
-* 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
+* 调用对应（插件）钱包/webauthn签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
 * 将信息发送给 everPay 后端服务器，进行签名验证。
 * 后端服务器验证通过，更新用户资产余额。并将该笔 everPay 交易记录存储在 arweave 区块链上。
 
@@ -50,8 +50,6 @@ export interface BundleParams {
 
 </TabItem>
 </Tabs>
-
-
 
 ## 返回
 

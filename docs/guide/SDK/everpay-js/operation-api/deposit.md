@@ -9,9 +9,14 @@ import TabItem from '@theme/TabItem';
 
 ## 功能
 
-根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包转账功能，对 everPay 账户进行充值。
+根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数，调用对应（插件）钱包/webauthn转账功能，对 everPay 账户进行充值。
+
+:::danger 私钥泄漏风险
+智能账户模型不支持充值
+:::
 
 ## 参数
+
 ```ts
 everpay.deposit(depositParams: DepositParams): EthereumTransaction | ArweaveTransaction
 ```
@@ -33,12 +38,14 @@ export interface DepositParams {
   amount: string
 }
 ```
+
 </TabItem>
 </Tabs>
 
 :::caution
-  * 在进行 everPay 账户充值时，`chainType` 网络需要支持该 `Token tag`，否则无法充值成功。
-  * 可通过 [`TokenList`](../basic-api/info.md#示例返回) 查看该[`Token crossChainInfoList`](../basic-api/info.md#token-字段描述) 字段，是否包含当前 `chainType` 网络。
+
+* 在进行 everPay 账户充值时，`chainType` 网络需要支持该 `Token tag`，否则无法充值成功。
+* 可通过 [`TokenList`](../basic-api/info.md#示例返回) 查看该[`Token crossChainInfoList`](../basic-api/info.md#token-字段描述) 字段，是否包含当前 `chainType` 网络。
 :::
 
 ## 返回

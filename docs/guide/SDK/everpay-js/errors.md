@@ -48,6 +48,17 @@ enum ERRORS {
 }
 ```
 
+## 智能账户模型
+
+```ts
+'ACCOUNT_NOT_RECEIVE'
+'MESSAGEDATA_NOT_RECEIVE'
+'ACCOUNT_NOT_MATCH'
+'CANCEL_SIGN'
+'POPUP_CLOSED'
+'AUTHORIZE_TIMEOUT'
+```
+
 :::danger
 因 arConnect 当前问题较多，当前在 arConnect 基础上，放置了一些错误
 :::

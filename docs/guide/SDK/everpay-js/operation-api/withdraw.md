@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 * 在普通提现时
   * 内部构建**普通提现** [Schema](../../../dive/withdraw#schema-说明)。
-  * 调用对应（插件）钱包签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
+  * 调用对应（插件）钱包/webauthn签名功能，生成 `sig`，组装 [EverpayTx](../types#everpaytx)。
   * 将信息发送给 everPay 后端服务器，进行签名验证。
   * 后端服务器验证通过，将该笔 everPay 交易记录存储在 arweave 区块链上。
   * 等待 arweave 区块链完成该笔 everPay 交易记录存储，确保账户的正确性后。
@@ -29,6 +29,7 @@ import TabItem from '@theme/TabItem';
 :::
 
 ## 参数
+
 ```ts
 everpay.withdraw(withdrawParams: WithdrawParams):SendEverpayTxResult
 ```
@@ -65,6 +66,7 @@ export interface WithdrawParams {
 </Tabs>
 
 ## 返回
+
 ```ts
 // Note: This type does not have an export
 interface PostEverpayTxResult {
