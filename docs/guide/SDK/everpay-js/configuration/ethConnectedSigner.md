@@ -1,12 +1,12 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # ethConnectedSigner
 
 ## 配置项功能
 
-此配置项用于通过 ethereum/moonbeam/moonbase 钱包，来操作 everPay `ethereum 账户模型` 的 账户，对该账户进行：
+此配置项用于通过 ethereum/moonbeam/moonbase 等 evm 钱包，来操作 everPay `ethereum 账户模型` 的 账户，对该账户进行：
 
 * 充值：使用 `ethConnectedSigner` 进行 ethereum 转账 至 everPay 多签合约地址。
 * 转账：使用 `ethConnectedSigner` 进行 ethereum `personalSign` 签名，来确保该 everPay 账户的操作权限。
@@ -52,9 +52,14 @@ const everpay = new Everpay({
 此方式在代码中明文传递私钥，存在安全风险
 :::
 
-## 与 arJWK 配置项的冲突
+## 与 isSmartAccount、arJWK 配置项的冲突
 
-`ethConnectedSigner` 用于 ethereum 账户模型的 everPay 账户操作，而 `arJWK` 用于 arweave 账户模型的 everPay 账户操作。同一个 Everpay 实例，**只能使用一个账户模型**，但开发者可以创建 多个 Everpay 实例，来进行更复杂应用的开发。
+`ethConnectedSigner` 用于 ethereum 账户模型的 everPay 账户操作，而
+
+* `isSmartAccount` 用于标识智能账户模型
+* `arJWK` 用于 arweave 账户模型的 everPay 账户操作。
+
+同一个 Everpay 实例，**只能使用一个账户模型**，但开发者可以创建 多个 Everpay 实例，来进行更复杂应用的开发。
 
 ```js
 const ethEverpay = new Everpay({

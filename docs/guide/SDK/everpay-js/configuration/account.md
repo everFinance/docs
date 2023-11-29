@@ -5,15 +5,21 @@ sidebar_position: 3
 # account
 
 ## 配置项功能
+
 * account 为 everPay 账户地址，详情可见[`账户模型`](../../../dive/account-model.md)。
 * 当调用 everpay-js [`基础查询API`](../basic-api/intro) 时，此 `account` 配置项作为默认的 account 参数，传递给 基础查询API。
-* 当调用 everpay-js [`操作类API`](../operation-api/intro) 、（everpay充值、转账、提现）时，此 `account` 配置项 **必须传递，并且满足如下钱包地址之一**。
+* 当调用 everpay-js [`操作类API`](../operation-api/intro) 、（everpay充值、转账、提现）时，此 `account` 配置项 **必须传递**。
+  * 智能账户模型：
+    * 必须通过 [`smartAccountAuth`](../tool-api/smartAccountAuth.md) 获取，确保与 <https://beta.everpay.io> 登录的账户一致。
+    * 必须配置 [`isSmartAccount`](./isSmartAccount.md) 为 `true`
+  * 区块链账户模型，必须满足如下钱包地址之一：
     * 与 ethConnectedSigner 对应的 ethereum 钱包地址一致。
     * 与 arJWK 对应的 arweave 钱包地址一致。
 
 ## 基础查询API 示例
 
 ### 默认查询 account 对应的基础信息
+
 ```js
 const everpay = new Everpay({
   debug: false, // 默认开启正式环境
@@ -26,6 +32,7 @@ everpay.balance({
 ```
 
 ### 查询另一个 account 对应的基础信息
+
 ```js
 const everpay = new Everpay({
   debug: false,
@@ -46,4 +53,5 @@ everpay.balance({
 ```
 
 ## 操作类API 示例
+
 详见 [ethConnectedSigner](./ethConnectedSigner) 或 [arJWK](./arJWK) 配置项。
