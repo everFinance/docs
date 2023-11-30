@@ -6,7 +6,7 @@ sidebar_position: 9
 
 ## 介绍
 
-内置了错误返回，包括部分 arConnect 特殊处理的错误。
+内置了错误返回，包括部分 ArConnect 特殊处理的错误。
 
 ## 错误信息
 
@@ -33,7 +33,7 @@ export enum ERRORS {
 }
 ```
 
-## arConnect 特殊处理的错误
+## ArConnect 特殊处理的错误
 
 ```ts
 enum ERRORS {
@@ -60,5 +60,5 @@ enum ERRORS {
 ```
 
 :::danger
-因 arConnect 当前问题较多，当前在 arConnect 基础上，放置了一些错误
+因 ArConnect 当前问题较多，当前在 ArConnect 基础上，放置了一些错误
 :::
