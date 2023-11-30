@@ -23,7 +23,7 @@ everpay-js 集成了 [arweave-js](https://github.com/ArweaveTeam/arweave-js) 用
 export type ArJWK = JWKInterface | 'use_wallet'
 ```
 
-使用 [arweave-js](https://github.com/ArweaveTeam/arweave-js) `JWKInterface` 作为其中之一的同时，也使用了一个 `'use_wallet'` 字符串作为参数，用于适配 Chrome 浏览器 arweave 插件钱包 [arconnect](https://arconnect.io/)（一个类似 MetaMask 的钱包工具）。
+使用 [arweave-js](https://github.com/ArweaveTeam/arweave-js) `JWKInterface` 作为其中之一的同时，也使用了一个 `'use_wallet'` 字符串作为参数，用于适配 Chrome 浏览器 arweave 插件钱包 [ArConnect](https://arconnect.io/)（一个类似 MetaMask 的钱包工具）。
 
 ## 如何配置
 
@@ -58,9 +58,9 @@ const everpay = new Everpay({
 此方式在代码中明文传递私钥（arJWK），存在安全风险。
 :::
 
-### 浏览器 + arconnect
+### 浏览器 + ArConnect
 
-当用户 浏览器安装了 [arconnect](https://arconnect.io/) 后，可以传递 `arJWK: 'use_wallet'` 来指定使用 [arconnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
+当用户 浏览器安装了 [ArConnect](https://arconnect.io/) 后，可以传递 `arJWK: 'use_wallet'` 来指定使用 [ArConnect](https://arconnect.io/) 进行 arweave 转账（对应 everPay 充值）、签名（对应 everPay 转账与提现） 操作。
 
 
 <Tabs>
@@ -166,7 +166,7 @@ const everpay = new Everpay({
 
 ## 为什么 要使用 'use_wallet'？
 
-1. [arweave-js](https://github.com/ArweaveTeam/arweave-js) 也支持在浏览器端使用 `'use_wallet'` 作为 `jwk` 参数，来使用 arconnect 获取 arweave 钱包地址，以及进行 arweave 转账、签名。详见[arweave-js Search · use_wallet](https://github.com/ArweaveTeam/arweave-js/search?q=use_wallet)
-2. everpay-js 集成了 [arweave-js](https://github.com/ArweaveTeam/arweave-js)，来进行 arweave 转账，使用 `'use_wallet'` 可让 [arweave-js](https://github.com/ArweaveTeam/arweave-js) 去调用 [arconnect](https://arconnect.io/)，从而减少开发者适配 [arconnect](https://arconnect.io/) 的成本。
-3. 在 Web 端，使用 `'use_wallet'` 代表的 [arconnect](https://arconnect.io/)，**更安全**。
+1. [arweave-js](https://github.com/ArweaveTeam/arweave-js) 也支持在浏览器端使用 `'use_wallet'` 作为 `jwk` 参数，来使用 ArConnect 获取 arweave 钱包地址，以及进行 arweave 转账、签名。详见[arweave-js Search · use_wallet](https://github.com/ArweaveTeam/arweave-js/search?q=use_wallet)
+2. everpay-js 集成了 [arweave-js](https://github.com/ArweaveTeam/arweave-js)，来进行 arweave 转账，使用 `'use_wallet'` 可让 [arweave-js](https://github.com/ArweaveTeam/arweave-js) 去调用 [ArConnect](https://arconnect.io/)，从而减少开发者适配 [ArConnect](https://arconnect.io/) 的成本。
+3. 在 Web 端，使用 `'use_wallet'` 代表的 [ArConnect](https://arconnect.io/)，**更安全**。
 

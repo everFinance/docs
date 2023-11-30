@@ -6,7 +6,7 @@ sidebar_position: 9
 
 ## Introduction
 
-Error returns are built in, including some arConnect special handling errors.
+Error returns are built in, including some ArConnect special handling errors.
 
 ## Error messages
 
@@ -33,7 +33,7 @@ export enum ERRORS {
 }
 ```
 
-## arConnect Special Handling Errors
+## ArConnect Special Handling Errors
 
 ```ts
 enum ERRORS {
@@ -49,5 +49,5 @@ enum ERRORS {
 ```
 
 :::danger
-Due to some current issues with arConnect, everPay team has customized some arConnect errors
+Due to some current issues with ArConnect, everPay team has customized some ArConnect errors
 :::

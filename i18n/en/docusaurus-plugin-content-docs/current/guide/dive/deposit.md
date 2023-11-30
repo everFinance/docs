@@ -60,7 +60,7 @@ To use everpay-js for top-ups, please refer to: [everpay-js deposit](../SDK/ever
 ## Fund your Arweave account
 ### Blockchain wallets such as ArConnect
 1. via [info API](../server-api/basic-api/info) to get everPay's gated signature managed wallet address `arLocker` on Arweave.
-2. transfer the assets and amount that you want to top up to the `arLocker` address, via a blockchain wallet like arConnect.
+2. transfer the assets and amount that you want to top up to the `arLocker` address, via a blockchain wallet like ArConnect.
 3. wait 15 blocks for the transaction to be confirmed.
 4. via [balances API](../server-api/basic-api/balances) to get the assets information.
 

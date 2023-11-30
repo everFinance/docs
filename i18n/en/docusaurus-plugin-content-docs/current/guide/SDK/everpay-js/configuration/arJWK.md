@@ -24,7 +24,7 @@ Configuration item type
 export type ArJWK = JWKInterface | 'use_wallet'
 ```
 
-Uses [arweave-js](https://github.com/ArweaveTeam/arweave-js) `JWKInterface` as one of the type, and with a `'use_wallet'` string as a parameter for adapting Chrome arweave Plugin wallet [arconnect](https://arconnect.io/) (a MetaMask-like wallet tool).
+Uses [arweave-js](https://github.com/ArweaveTeam/arweave-js) `JWKInterface` as one of the type, and with a `'use_wallet'` string as a parameter for adapting Chrome arweave Plugin wallet [ArConnect](https://arconnect.io/) (a MetaMask-like wallet tool).
 
 ## How to configure
 
@@ -59,9 +59,9 @@ const everpay = new Everpay({
 This method passes the private key explicitly in the code, which is a security risk
 :::
 
-### Browser + arconnect
+### Browser + ArConnect
 
-Once [arconnect](https://arconnect.io/) is installed in the user's browser, you can use the pass `arJWK: 'use_wallet'` to specify the use of [arconnect](https://arconnect.io/) for arweave transfers (corresponding to everPay deposit), and signature (for everPay transfer and withdraw) operations.
+Once [ArConnect](https://arconnect.io/) is installed in the user's browser, you can use the pass `arJWK: 'use_wallet'` to specify the use of [ArConnect](https://arconnect.io/) for arweave transfers (corresponding to everPay deposit), and signature (for everPay transfer and withdraw) operations.
 
 
 <!-- <Tabs>
@@ -204,6 +204,6 @@ const everpay = new Everpay({
 
 ## Why do I need to use `use_wallet`?
 
-1. [arweave-js](https://github.com/ArweaveTeam/arweave-js) also supports using `'use_wallet'` as a `jwk` parameter on the browser side to get the arweave wallet address using arconnect, and to do arweave transfer, signature. See [arweave-js Search - use_wallet](https://github.com/ArweaveTeam/arweave-js/search?q=use_wallet) for details
-2. everpay-js integrates with [arweave-js](https://github.com/ArweaveTeam/arweave-js) to do arweave transfer, using `'use_wallet'` allows [arweave-js](https://github.com/ArweaveTeam/arweave-js) to call [arconnect](https://arconnect.io/), thus reducing the cost of adapting [arconnect](https://arconnect.io/) for developers.
-3. On the web side, it is more **secure** to use [arconnect](https://arconnect.io/) represented by `'use_wallet'`.
+1. [arweave-js](https://github.com/ArweaveTeam/arweave-js) also supports using `'use_wallet'` as a `jwk` parameter on the browser side to get the arweave wallet address using ArConnect, and to do arweave transfer, signature. See [arweave-js Search - use_wallet](https://github.com/ArweaveTeam/arweave-js/search?q=use_wallet) for details
+2. everpay-js integrates with [arweave-js](https://github.com/ArweaveTeam/arweave-js) to do arweave transfer, using `'use_wallet'` allows [arweave-js](https://github.com/ArweaveTeam/arweave-js) to call [ArConnect](https://arconnect.io/), thus reducing the cost of adapting [ArConnect](https://arconnect.io/) for developers.
+3. On the web side, it is more **secure** to use [ArConnect](https://arconnect.io/) represented by `'use_wallet'`.
