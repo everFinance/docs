@@ -1,4 +1,7 @@
 {
   "label": "延伸",
-  "position": 3
+  "position": 7,
+  "collapsible": true,
+  "collapsed": true,
+  "className" : "marginTop-20px"
 }
