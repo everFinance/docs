@@ -1,5 +1,5 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 const trailingSlash = false
 
@@ -18,7 +18,6 @@ module.exports = {
   baseUrl: '/',
   trailingSlash,
 
-
   // 一般部署至托管商需要：结尾斜杠，不同的服务托管商需要
   // https://docusaurus.io/zh-CN/docs/deployment#trailing-slashes
   // https://docusaurus.io/zh-CN/docs/docusaurus.config.js#trailing-slash
@@ -31,15 +30,14 @@ module.exports = {
     localeConfigs: {
       en: {
         label: 'English',
-        direction: 'ltr',
+        direction: 'ltr'
       },
       'zh-cn': {
         label: '简体中文',
-        direction: 'ltr',
-      },
-    },
+        direction: 'ltr'
+      }
+    }
   },
-
 
   // 预设配置
   presets: [
@@ -47,37 +45,42 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.css')
         },
 
         // 传递至 @docusaurus/plugin-content-docs
         docs: {
           sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({locale, versionDocsDirPath, docPath}) => {
+          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
             if (locale === 'en') {
-              return `https://github.com/everFinance/docs/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
+              return `https://github.com/everFinance/docs/edit/master/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
             }
-            return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`;
-          },
+            return `https://github.com/everFinance/docs/edit/master/docs/${docPath}`
+          }
         },
         gtag: {
           trackingID: 'GTM-PZ2J4TP',
-          anonymizeIP: false,
+          anonymizeIP: false
         },
-        // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用） 
+        // 传递至 @docusaurus/plugin-content-blog（设置为 false 以禁用）
         blog: false,
         sitemap: {
           changefreq: 'weekly',
-          priority: 0.5,
+          priority: 0.5
         }
-      },
-    ],
+      }
+    ]
   ],
 
   // 主题
   // themes:
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false, // Don't show manual switch
+      respectPrefersColorScheme: true // But respect user preference!
+    },
     navbar: {
       title: 'everPay',
       logo: {
@@ -90,7 +93,7 @@ module.exports = {
           type: 'doc',
           docId: 'guide/overview',
           position: 'left',
-          label: 'DOCS',
+          label: 'DOCS'
         },
         // {
         //   type: 'doc',
@@ -100,14 +103,14 @@ module.exports = {
         // },
         {
           type: 'localeDropdown',
-          position: 'right',
+          position: 'right'
         },
         {
           href: 'https://github.com/everFinance/docs',
           label: 'GitHub',
-          position: 'right',
-        },
-      ],
+          position: 'right'
+        }
+      ]
     },
     footer: {
       style: 'dark',
@@ -117,43 +120,43 @@ module.exports = {
           items: [
             {
               label: 'DOCS',
-              to: '/docs/guide/overview',
-            },
+              to: '/docs/guide/overview'
+            }
             // {
             //   label: 'SDK',
             //   to: '/docs/sdk/intro',
             // }
-          ],
+          ]
         },
         {
           title: 'GitHub',
           items: [
             {
               label: 'docs',
-              href: 'https://github.com/everFinance/docs',
+              href: 'https://github.com/everFinance/docs'
             },
             {
               label: 'everpay-js',
-              href: 'https://github.com/everFinance/everpay-js',
-            },
-          ],
+              href: 'https://github.com/everFinance/everpay-js'
+            }
+          ]
         },
         {
           title: '社区',
           items: [
             {
               label: 'Twitter',
-              href: 'https://twitter.com/everVisionHQ',
+              href: 'https://twitter.com/everVisionHQ'
             },
             {
               label: 'Discord',
-              href: 'https://discord.gg/WM5MQZGVPF',
+              href: 'https://discord.gg/WM5MQZGVPF'
             },
             {
               label: 'Medium',
-              href: 'https://news.ever.vision',
-            },
-          ],
+              href: 'https://news.ever.vision'
+            }
+          ]
         },
         {
           title: '支持',
@@ -165,11 +168,11 @@ module.exports = {
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} everVision, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} everVision, Inc. Built with Docusaurus.`
     },
     prism: {
       theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      darkTheme: darkCodeTheme
     },
     algolia: {
       // 自己生成索引需要
@@ -178,5 +181,5 @@ module.exports = {
       indexName: 'docs',
       js_render: true
     }
-  },
-};
+  }
+}
