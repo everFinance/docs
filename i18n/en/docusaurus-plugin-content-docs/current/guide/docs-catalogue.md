@@ -26,7 +26,7 @@ sidebar_position: 3
   * GET [/txsByHash/{everHash}](./server-api/basic-api/txByHash.md)
   * GET [/mintedTxByChainTxHash/{chainTxHash}](./server-api/basic-api/mintedTxByChainTxHash.md)
 #### Operation API
-  * POST [/tx](./server-api//operation-api/tx.md)
+  * POST [/tx](./server-api/operation-api/tx.md)
 
 ## [SDK](./SDK/everpay-js.md)
 * 方便开发者使用 nodeJS、web 端来进行 everPay 集成，来进行 everPay 的支付等。
@@ -41,8 +41,9 @@ sidebar_position: 3
   * [/txsByHash](./SDK/everpay-js/basic-api/txByHash.md)
   * [/mintedTxByChainTxHash](./SDK/everpay-js/basic-api/mintedTxByChainTxHash.md)
 #### Tools API
+  * [/smartAccountAuth](./SDK/everpay-js/tool-api/smartAccountAuth.md)
   * [/getEverpayTxWithoutSig](./SDK/everpay-js/tool-api/getEverpayTxWithoutSig.md)
-  * [/getEverpayTxMessage](./SDK//everpay-js/tool-api/getEverpayTxMessage.md)
+  * [/getEverpayTxMessage](./SDK/everpay-js/tool-api/getEverpayTxMessage.md)
   * [/getBundleData](./SDK/everpay-js/tool-api/getBundleData.md)
 #### Operation API
   * [/deposit](./SDK/everpay-js/operation-api/deposit.md)
@@ -50,7 +51,7 @@ sidebar_position: 3
   * [/withdraw](./SDK/everpay-js/operation-api/withdraw.md)
   * [signBundleData](./SDK/everpay-js/operation-api/signBundleData.md)
   * [bundle](./SDK/everpay-js/operation-api/bundle.md)
-  * [sendEverpayTx](./SDK/everpay-js//operation-api/sendEverpayTx.md)
+  * [sendEverpayTx](./SDK/everpay-js/operation-api/sendEverpayTx.md)
 
 ## Refrence
 

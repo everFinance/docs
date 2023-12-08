@@ -4,11 +4,15 @@ sidebar_position: 2
 
 # Account Model
 
+The account system of the everPay protocol is diverse and flexible. In addition to supporting blockchain accounts, it also supports smart accounts, that is, Internet account systems.
+
+## Smart Account
+
+everPay already supports the smart account model, which allows users to use their email address as EverID to make transfers, withdrawals, and is fully connected to their blockchain account.
+
 ## Blockchain Account
 
-The everPay protocol has a diverse and flexible account system, supporting not only blockchain accounts but also smart accounts, i.e. the Internet account system, in the future.
-
-Currently Ethereum and Arweave addresses are supported. When a user connects with an Ethereum or Arweave wallet, the "blockchain address" is the same as the wallet used for the connection. This means that all Ethereum addresses and Arweave addresses are `valid` accounts on everPay.
+Blockchain accounts Currently Ethereum and Arweave addresses are supported. When a user connects with an Ethereum or Arweave wallet, the "blockchain address" is the same as the wallet used for the connection. This means that all Ethereum addresses and Arweave addresses are `valid` accounts on everPay.
 
 For example:
 * Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859, after connecting to EverPay via MetaMask, the corresponding account ID on everPay will be 0x26361130d5d6E798E9319114643AF8c868412859.

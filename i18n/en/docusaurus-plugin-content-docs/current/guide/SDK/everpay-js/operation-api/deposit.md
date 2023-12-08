@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 ## Function
 
-Call the corresponding (plugin) wallet transfer function to deposit to the everPay account according to the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created
+Call the corresponding (plugin) wallet/webauthn transfer function to deposit to the everPay account according to the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created
+
+:::danger Risk of private key leakage
+Smart account model does not support recharge
+:::
 
 ## Parameter
 
@@ -102,7 +106,7 @@ const everpay = new Everpay({
   arJWK: 'use_wallet',
 })
 
-everpay.deposit(
+everpay.deposit({
   tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8',
   amount: '0.01'
 }).then(console.log)

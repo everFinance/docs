@@ -31,7 +31,7 @@ sidebar_position: 3
 
 #### 操作类
 
-* POST [/tx](./server-api//operation-api/tx.md)
+* POST [/tx](./server-api/operation-api/tx.md)
 
 ## [SDK](./SDK/everpay-js.md)
 
@@ -51,9 +51,9 @@ sidebar_position: 3
 
 #### 工具类
 
-* [/smartAccountAuth](./SDK//everpay-js/tool-api/smartAccountAuth.md)
+* [/smartAccountAuth](./SDK/everpay-js/tool-api/smartAccountAuth.md)
 * [/getEverpayTxWithoutSig](./SDK/everpay-js/tool-api/getEverpayTxWithoutSig.md)
-* [/getEverpayTxMessage](./SDK//everpay-js/tool-api/getEverpayTxMessage.md)
+* [/getEverpayTxMessage](./SDK/everpay-js/tool-api/getEverpayTxMessage.md)
 * [/getBundleData](./SDK/everpay-js/tool-api/getBundleData.md)
 
 #### 操作类
@@ -63,7 +63,7 @@ sidebar_position: 3
 * [/withdraw](./SDK/everpay-js/operation-api/withdraw.md)
 * [signBundleData](./SDK/everpay-js/operation-api/signBundleData.md)
 * [bundle](./SDK/everpay-js/operation-api/bundle.md)
-* [sendEverpayTx](./SDK/everpay-js//operation-api/sendEverpayTx.md)
+* [sendEverpayTx](./SDK/everpay-js/operation-api/sendEverpayTx.md)
 
 ## 延伸
 

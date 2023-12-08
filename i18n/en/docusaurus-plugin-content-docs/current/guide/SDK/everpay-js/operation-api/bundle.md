@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 Based on the `account`, `ethConnectedSigner`, `arJWK` parameters passed when the Everpay instance is created, when make a bundle transaction,
 
 * Internal build [EverpayTxWithoutSig](../types#everpaytxwithoutsig)
-* Call the corresponding (plugin) wallet signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
+* Call the corresponding (plugin) wallet/webauthn signature function, generate `sig`, assemble [EverpayTx](../types#everpaytx)
 * Send the everpay tx to everPay backend server for signature verification
 * The backend server verifies it and updates the user's asset balance. And store the everPay transaction record on the arweave blockchain
 

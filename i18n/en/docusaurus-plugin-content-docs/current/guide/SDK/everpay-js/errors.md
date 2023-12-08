@@ -48,6 +48,17 @@ enum ERRORS {
 }
 ```
 
+## Smart Account Model
+
+```ts
+'ACCOUNT_NOT_RECEIVE'
+'MESSAGEDATA_NOT_RECEIVE'
+'ACCOUNT_NOT_MATCH'
+'CANCEL_SIGN'
+'POPUP_CLOSED'
+'AUTHORIZE_TIMEOUT'
+```
+
 :::danger
 Due to some current issues with ArConnect, everPay team has customized some ArConnect errors
 :::

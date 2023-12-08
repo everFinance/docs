@@ -56,6 +56,7 @@ export interface Config {
   chainType?: ChainType
   ethConnectedSigner?: Signer
   arJWK?: ArJWK
+  isSmartAccount?: boolean
 }
 ```
 

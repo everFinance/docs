@@ -107,7 +107,7 @@ const everpay = new Everpay({
   arJWK: 'use_wallet',
 })
 
-everpay.deposit(
+everpay.deposit({
   tag: 'arweave,ethereum-ar-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0x83ea4a2fe3ead9a7b204ab2d56cb0b81d71489c8',
   amount: '0.01'
 }).then(console.log)

@@ -1,12 +1,12 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # ethConnectedSigner
 
 ## Configuration item function
 
-This configuration item is used to operate the everPay ethereum account model account via ethereum/moonbeam/moonbase wallet and to do the following for the account
+This configuration item is used to operate the everPay ethereum account model account via ethereum/moonbeam/moonbase etc evm wallet and to do the following for the account
 
 * deposit: transfer assets on ethereum blockchain to everPay multi-signature contract address using `ethConnectedSigner`.
 * transfer: use `ethConnectedSigner` to call ethereum `personalSign` to secure access to the everPay account.
@@ -52,9 +52,14 @@ const everpay = new Everpay({
 This method passes the private key explicitly in the code, which is a security risk
 :::
 
-## Conflicts with arJWK configuration items
+## Conflicts with isSmartAccount, arJWK configuration items
 
-`ethConnectedSigner` is used for everPay account operations for the ethereum account model, while `arJWK` is used for everPay account operations for the arweave account model. **Only one account model can be used for the same Everpay instance**, but developers can create multiple Everpay instances for more complex applications.
+`ethConnectedSigner` is used for everPay account operations for the ethereum account model, while
+
+* `isSmartAccount` For labelling smart account models
+* `arJWK` is used for everPay account operations for the arweave account model. 
+
+**Only one account model can be used for the same Everpay instance**, but developers can create multiple Everpay instances for more complex applications.
 
 ```js
 const ethEverpay = new Everpay({
