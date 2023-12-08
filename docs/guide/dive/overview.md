@@ -7,100 +7,99 @@ sidebar_position: 1
 
 ## 存储计算范式探索：简析跨链支付协议 everPay 运行机制
 
-Due to the scarce computing resources and a high fee, Bitcoin and Ethereum blockchains can hardly support everyday transactions. To solve this problem, everVision adopts a storage-based computation paradigm to build everPay, which is a trusted cross-chain payment and settlement protocol.
+比特币 / 以太坊计算资源稀缺，转账费用高昂，难以满足普通转账需求。everVision 使用存储应用范式构建 everPay，一个可信跨链支付结算协议。
 
-everPay locks the assets of other public blockchains into a smart contract and maps them to corresponding assets, which enables users to make transfers and payments on its protocol. everPay has a very low cost in reaching a consensus on transactions. For example, it only costs 0.05 US dollars to make thousands of transactions. Besides, everPay has no limit in TPS, which only depends on the application architecture of its protocol and server performance. As long as it conforms to the storage-based computation paradigm, the everPay protocol can scale “unlimitedly” to rival a traditional internet application.
+everPay 协议将其他公链的资产锁入智能合约中，在协议上映射生成对应资产，资产生成后用户就可以在协议上进行任意的转账和支付。everPay 的交易的共识成本非常低，进行上万笔交易仅需要 0.5 美 金。everPay 的 TPS 没有固定的限制，仅取决于协议的应用架构和服务器性能。协议只要满足存储计算范式标准，即可以进行「无限」的拓展，性能可以媲美传统联网应用。
 
-### Mechanism
+<!-- ### Mechanism -->
 ![everPay 运行机制](../../../static/img/mechanism-banner.webp)
 
-### Roles
+<!-- ### Roles -->
 
-#### Coordinator
-
-
-Coordinators collect and verify transactions, and then package and add the valid ones onto the chain. They collect valid transactions from users with an API and put them into a serialized pending transaction pool. The pending transactions are packaged in batches and included on-chain every certain period of time. Coordinators generate a real-time global state according to both valid on-chain transactions and pending transactions.
-
-#### Detector
-
-Detectors download and verify on-chain data automatically to generate a global state and account balances. Detectors generate a state more slowly than coordinators because they only rely on on-chain data and do not count in pending transactions. Anyone can be a detector by downloading and running a detector program.
+<!-- #### Coordinator -->
 
 
-#### Watchmen
+负责交易采集、验证和上链。协调者通过 API 将用户的合法交易采集到序列化的 Pending 池中，并按照 一定的时间周期将 Pending 池中的交易批量 (Rollup) 打包上链。协调者会根据交易生成一个实时的全 局状态，这个状态所有合法的链上交易和 Pending 池中交易计算的最终结果。
 
-Watchmen are detectors that jointly manage assets. They can unlock assets with a multiSig or threshold signature scheme.
+<!-- #### Detector -->
 
+检测程序会自动下载和校验链上数据，生成全局状态和余额。检测程序的状态会比协调者慢一步，检测 程序只以链上数据为准，不加载协调者 Pending 池交易中还未打包的交易。任何人都可以下载和运行检 测者程序，成为检测者。
 
-### Cross-chain
+<!-- #### Watchmen -->
 
-The everPay protocol currently supports two cross-chain solutions, i.e, MultiSig and Threshold Signature Scheme.
+具备资产共管能力的检测者，发起多签或者⻔限签名解锁资产。
 
-#### MultiSig
+<!-- ### Cross-chain -->
 
-For the public blockchains that support smart contracts, everPay deploys a lockup contract with the MultiSig technology, and the keys are owned by different watchmen.
+everPay 协议目前支持两种跨链方案，分别是多签和⻔限签名。
 
-The everPay protocol listens for the asset transfer event and ensures that the transferred assets are mapped to corresponding assets after the transaction is confirmed.
+<!-- #### MultiSig -->
 
-When users send a transaction to burn assets, the transaction will be included onto a storage-oriented blockchain (Arweave) after it is verified. Watchmen listen for the events on the storage-oriented blockchain. When watchmen receive the burn transactions from the storage-oriented chain, they sign the validated transactions and send them to the corresponding public blockchains. After a burn transaction is signed by a certain number of asset managers, the original assets will be unlocked and returned to the user.
-
-#### Threshold Signature
-
-For the public blockchains that do not support smart contracts, everPay currently adopts the Threshold Signature technology, which is similar to MultiSig, to ensure the lockup of user assets.
+支持智能合约的公链，everPay 采用多签技术部署一个锁仓合约。多把密钥由不同的资产管理者持有。 
 
 
-### Consensus
+协议监听到资产转入事件，并确保交易确认后在 everPay 协议上映射出对应的资产。
 
-The consensus of the everPay protocol is secured by a storage-based computation paradigm. In the paradigm, all the computing processes are completed off-chain, and the inputs from the application are stored on a blockchain. Coordinators, detectors and watchmen run the same business verification component. Anyone can download and run the detector program to load the blockchain data for checking transaction state.
+
+当用户发起资产销毁交易，该交易经过验证后会打包到存储型区块链上 (Arweave)。资产管理者监听存储型区块链，对用户的销毁交易进行验证，然后签署有效的销毁交易发送到公链。当一定数量的资产管理者完成多签后，释放锁仓资产到用户。
+
+<!-- #### Threshold Signature -->
+
+对于不支持智能合约的公链，暂采用⻔限签名技术来保证用户资产锁定。机制与多签类似。
+
+
+<!-- ### Consensus -->
+
+协议共识通过存储计算范式进行保障。在存储计算范式中，所有计算过程在链下完成，应用的输入参数全部存储到区块链上。协调者、检测者和资产管理者都运行了相同的业务验证组件，任何人都可以下载和运行检测程序，加载区块链上的数据进行交易状态检查。
 ![everPay 运行机制](../../../static/img/Mechanism-banner2.webp)
-everPay packages all types of transactions, including mint/burn/transfer transactions, in the proper order and sends them to the storage-oriented blockchain. The third-party applications and individuals can check the transaction state with the detector program, which automatically downloads and verifies all the on-chain transaction records. If the states are respectively generated by a coordinator and a detector conflict, the application may have a risk of fraudulent consensus.
+everPay 将所有类型的交易，包括 mint/burn/transfer 按照正确的交易顺序打包到存储型区块链上。第三方应用和个人可以使用检测程序进行状态检查，程序会自动下载并验证所有在链上的交易记录。如果协调者和检测者状态不一致，则说明应用可能存在共识欺诈⻛险。
 
-### Resistance to malicious actors
+<!-- ### Resistance to malicious actors -->
 
-Transactions are packaged in a serialized way into blocks, which are added onto the blockchain. Anyone who loads the transactions according to the packaging order generates the same state.
+交易都会按照顺序被序列化打包到区块链上，只要按照区块链上的打包顺序加载交易，最后生成的状态都是一致的。
 
+<!-- #### Invalid Signature -->
 
-#### Invalid Signature
+将错误签名打包到链上是无意义的，所有检测者都会拒绝错误的签名。
 
-It makes no sense to include an invalid signature onto the blockchain. If an invalid signature is found, all the detectors will reject it.
+<!-- #### Attack on Balance -->
 
-#### Attack on Balance
+所有的交易都会序列化的执行，无法进行双花攻击。同时交易中包含 nonce 字段，用于保护交易唯一 性，防止用户进行重放。
 
-Because all the transactions are executed in a serialized way, everPay is resistant to double-spend attacks. Besides, any transaction contains a nonce field to ensure its uniqueness, so as to resist replay attacks.
+目前只有一个协调者进行交易处理，如果协调者作恶怎么办 ? 在用户仅有 1 ETH 的余额时，允许该用户 发送了 2 ETH 的转账交易并被打包到链上。此时任何检测者都加载来自区块链上的序列化数据，发现用 户仅有 1 ETH 余额，2 ETH 的转账被拒绝，交易打包后协调者的错误交易会被立即发现。另外一种情况 下，用户让然是 1 ETH 余额。协调者允许用户连续发送了两次 1 ETH 转账交易，第一笔交易被检测者获 得，用户余额从 1 变成 0，第二笔交易也被检测者获得，第二笔交易由于余额不足被拒绝。
 
-everPay only has a single coordinator to process transactions for now. What if the coordinator misbehaves? For example, when a user, who only owns 1 ETH, sends a transaction to transfer 2 ETH, the coordinator does not reject the transaction and includes it onto the blockchain. If any detector loads the serialized data from the blockchain and finds that the user only owns 1 ETH, they will reject the transaction. Hence, the invalid transaction will be found as soon as it is packaged and sent by the coordinator to the blockchain. Another case is that the coordinator allows the user to transfer 1 ETH twice in a row. The first transaction will be validated by a detector, turning the user’s account balance from 1 ETH to 0 ETH. But the second transaction will be rejected for the lack of funds in the user’s balance.
+<!-- #### Mint/Burn Assets -->
 
-#### Mint/Burn Assets
+在以太坊为用例中，会部署一个机器人 (EthBot) 用于监听 ETH 事件，用户将资产转入多签智能合约 后，机器人会确保交易已经经过 6 个区块后发起 Mint 交易到 everPay 协议，协议会对该以太坊交易进 行密码学校验，并再次查询以太坊节点该交易是否已经打包超过 6 个区块确认。资产成功 mint 后，交 易指纹会在协议中标记为「minted」，避免重复资产重复 mint。
 
-Take Ethereum as an example. everPay deploys a EthBot to listen for Ethereum events. When a user transfers some assets to the MultiSig smart contract, the EthBot will send a mint transaction to the everPay protocol after the transfer is confirmed in six blocks. Then the protocol will cryptographically verify the transfer and query an Ethereum node to ensure that the transfer is finalized with a minimum of 6 block confirmations. After the mint transaction is done, the transaction fingerprint will be labeled “minted” in the everPay protocol, so as to avoid repeated minting.
-
-:::tip Note
-* Note: EthBot is not required and only designed for better user experience. Anyone can send a valid Ethereum transaction to the everPay protocol for minting.
+:::tip 注意
+* 注意: EthBot 不是必须的，仅用于提升用户体验。任何人都可以把合法以太坊的交易发送到协议进行 资产 mint。
 :::
 
-When a user sends a burn transaction, the transaction will be packaged and added onto Arweave if it is validated by the everPay protocol. Watchmen who listen for Arweave events will verify the transaction and then send a multiSig transaction. Similarly, the Ethereum lockup contract will verify the transaction fingerprint to avoid the same transaction being repeatedly executed.
+如果用户发起 burn 交易，合法的 burn 会被协议验证后打包到 Arweave 上。资产管理者们监听 Arweave 事件，验证交易后发送多签交易。同样地，以太坊锁仓合约会验证交易指纹，保障交易唯一， 不被重复执行。
 
-All the above processes can be checked by the detector program of the everPay protocol. Anyone can download the detector program and become a detector. Besides, everPay also provides an explorer for users to view and check transactions.
+以上所有过程都可以通过 everPay 协议的检测程序进行检查，任何人都可以下载，成为检测者。同时， everPay 也会提供交易浏览器便于用户查看和检查交易。
 
-The consensus of everPay protocol is secured by a storage-oriented blockchain and checked by a detector program.
+协议的共识通过存储型区块链保障，由检测程序进行校验检查。
 
 
-### Interaction
-#### Easy to Use
-Transactions are collected and included in batches onto the chain by coordinators in the proper order. In this way, the transactions can be processed off-chain in real time. It means the state of a coordinator’s ledger is updated in real time.
+<!-- ### Interaction -->
+<!-- #### Easy to Use -->
+使用了协调者采集交易，交易会按照固有的顺序批量 (Rollup) 上链。批量上链就可以将用户交易在链 下实时处理，协调者的账本状态是实时更新的。
 
-Hence, everPay enables users to make real-time transfers and make multiple transactions in a row. It brings a fast and convenient user experience as an Internet application.
+因此，用户在使用应用时，可以得到实时的转账体验，也支持用户进行连续的多笔交易。体验非常的接 近互联网应用，快捷而便利。
 
-In the edge cases where users have doubts about coordinators, they can track if their transactions are packaged and included onto the chain with the transaction explorer. Generally, coordinators package all the transactions into blocks according to a fixed order and add the blocks to the chain.
+极端情况下用户对协调者存有疑惑，可以查看交易浏览器等待交易打包，再确认该笔交易。一般而言， 协调者会确保所有交易按照固定顺序打包上链。
 
-### Unrestricted by Signature Algorithms
-With the computation process moved off-chain, the storage-based computation paradigm supports arbitrary signature algorithms, which enables relatively flexible development. To be more specific, everPay can integrate more friendly internet signature algorithms, such as WebAuthn (R1), which totally removes key management (mnemonics) while ensuring security. In this case, users can sign their transactions in a secure and reliable way with a hardware device (e.g. a phone or computer).
+<!-- ### Unrestricted by Signature Algorithms -->
+存储计算范式仅在链下进行计算，开发上非常的灵活，可以使用任意的签名算法。更进一步，everPay 可以集成更友好的互联网签名算法。比如 Webauthn(R1)，在保证用户安全的同时将密钥管理 (助记 词) 完全去掉，此时用户只需要使用硬件设备 (手机、电脑) 即可完成安全可靠的交易签名。
 
-### Conclusion
-everVision is dedicated to improving user experience, lowering the threshold for development and providing trusted decentralized financial applications for everyone. everPay is an easy-to-use blockchain-based solution and application protocol, which enables users to make payments and settlements in a reliable way and as efficiently as an internet application.
+<!-- ### Conclusion -->
+everVision 的目标是提升用户体验，降低开发⻔槛，为所有人提供去中心化可信的金融应用。everPay 是一个区块链易用性的解决方案和应用协议，在保障可信的前提下，为用户提供接近互联网的支付结算体验。
 
 了解更多:
 * https://news.ever.vision/everpay-a-trusted-cross-chain-payment-protocol-eba4a0af7d66
-* https://medium.com/everfinance/a-storage-based-computation-paradigm-enabled-by-arweave-de799ae8c424
+* https://medium.com/everFinance/a-storage-based-computation-paradigm-enabled-by-arweave-de799ae8c424
 
 everVision website: https://ever.vision
 
