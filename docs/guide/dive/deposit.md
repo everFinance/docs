@@ -13,15 +13,15 @@ nn
 everPay 充值行为，即向 everPay DAO 管理的区块链钱包地址进行区块链转账。
 
 例如：
-* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 给 everPay 在 Ethereum 上的多签合约转账 0.1 USDT，everPay 的后端服务监测到该笔入账，并等待6个区块确认，即会在 everPay 上，标记此 0x26361130d5d6E798E9319114643AF8c868412859 everPay 账户 资产增加 0.1 USDT。
-* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 给 everPay 在 Arweave 管理的门限签名钱包地址转账 0.1 AR，everPay 的后端服务监测到该笔入账，并等待15个区块确认，即会在 everPay 上，标记此 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo everPay 账户 资产增加 0.1 AR。
+* Ethereum 钱包 0x26361130d5d6E798E9319114643AF8c868412859 给 everPay 在 Ethereum 上的多签合约转账 0.1 USDT，everPay 的后端服务监测到该笔入账，并等待20个区块确认，即会在 everPay 上，标记此 0x26361130d5d6E798E9319114643AF8c868412859 everPay 账户 资产增加 0.1 USDT。
+* Arweave 钱包 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo 给 everPay 在 Arweave 管理的门限签名钱包地址转账 0.1 AR，everPay 的后端服务监测到该笔入账，并等待20个区块确认，即会在 everPay 上，标记此 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo everPay 账户 资产增加 0.1 AR。
 
 
 ## 给 Ethereum 账户充值
 ### imToken / MetaMask 等区块链钱包
 1. 通过 [`info API`](../server-api/basic-api/info.md) 获取 everPay 在 Ethereum 的多签合约地址 `ethLocker`。
 2. 通过 imToken / MetaMask 等区块链钱包 工具，给该 `ethLocker` 多签合约地址转账想要充值的资产与数量。
-3. 等待 该笔交易需 6 个区块确认。
+3. 等待 该笔交易需 20 个区块确认。
 4. 通过 [`balances API`](../server-api/basic-api/balances.md) 获取此钱包对应的 everPay 账户，在 everPay 上的资产信息。
 
 ### 通过 ethers.js
@@ -62,7 +62,7 @@ everpay-js 现已封装开源，内部集成了 ethers.js，开发者无需关�
 ### ArConnect 等区块链钱包
 1. 通过 [`info API`](../server-api/basic-api/info.md) 获取 everPay 在 Arweave 上门限签名管理的钱包地址 `arLocker`。
 2. 通过 ArConnect 等区块链钱包 工具，给该 `arLocker` 地址转账想要充值的资产与数量。
-3. 等待 该笔交易需 15 个区块确认。
+3. 等待 该笔交易需 20 个区块确认。
 4. 通过 [`balances API`](../server-api/basic-api/balances.md) 获取此钱包对应的 everPay 账户，在everPay 上的资产信息。
 
 ### 通过 arweave.js

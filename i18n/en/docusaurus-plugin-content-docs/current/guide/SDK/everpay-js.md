@@ -296,7 +296,7 @@ everpay
 :::info
 
 - Wait patiently for the block verification to be completed and you will have the corresponding property in everPay.
-- Ethereum requires 6 blocks for recharge, Arweave requires 15 blocks for recharge
+- Ethereum requires 20 blocks for recharge, Arweave requires 20 blocks for recharge
 - everPay supports AR cross-chain, initialization injection `ethConnectedSigner` will call WAR (ERC20) for recharge, initialization injection `arJWK` will call AR (native) for recharge
   :::
 

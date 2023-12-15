@@ -13,14 +13,14 @@ For example
 The act of depositing, i.e. make a blockchain transfer to the everPay DAO managed blockchain wallet address.
 
 Example.
-* Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859 transfers 0.1 USDT to everPay's multisignature contract on Ethereum, everPay's backend service monitors the entry and waits for 6 blocks to confirm it, i.e. it will mark the assets on the account which will increase the amount to 0.1 USDT on everPay.
-* Arweave wallet 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo transfers 0.1 AR to everPay's threshold signature wallet address on Arweave, everPay's backend service monitors the entry and waits for 15 block confirmations, i.e. it will mark the assets on the account which will increase the amount to 0.1 AR on everPay.
+* Ethereum wallet 0x26361130d5d6E798E9319114643AF8c868412859 transfers 0.1 USDT to everPay's multisignature contract on Ethereum, everPay's backend service monitors the entry and waits for 20 blocks to confirm it, i.e. it will mark the assets on the account which will increase the amount to 0.1 USDT on everPay.
+* Arweave wallet 5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo transfers 0.1 AR to everPay's threshold signature wallet address on Arweave, everPay's backend service monitors the entry and waits for 20 blocks confirmations, i.e. it will mark the assets on the account which will increase the amount to 0.1 AR on everPay.
 
 ## Fund your Ethereum account
 ### Blockchain wallets like imToken / MetaMask
 1. via [info API](../server-api/basic-api/info) to get everPay's multi-signature contract address `ethLocker` on Ethereum.
 2. transfer the assets and the amount that you want to deposit to the `ethLocker` multi-signature contract address via blockchain wallet like imToken / MetaMask.
-3. wait for the transaction to be confirmed in 6 blocks.
+3. wait for the transaction to be confirmed in 20 blocks.
 4. via [balances API](../server-api/basic-api/balances) to get the assets information.
 
 ### Via ethers.js
@@ -61,7 +61,7 @@ To use everpay-js for top-ups, please refer to: [everpay-js deposit](../SDK/ever
 ### Blockchain wallets such as ArConnect
 1. via [info API](../server-api/basic-api/info) to get everPay's gated signature managed wallet address `arLocker` on Arweave.
 2. transfer the assets and amount that you want to top up to the `arLocker` address, via a blockchain wallet like ArConnect.
-3. wait 15 blocks for the transaction to be confirmed.
+3. wait 20 blocks for the transaction to be confirmed.
 4. via [balances API](../server-api/basic-api/balances) to get the assets information.
 
 ### Via arweave.js

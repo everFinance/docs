@@ -301,7 +301,7 @@ everpay
 :::info
 
 - 耐心等待区块验证完成，即可在 [everPay](https://app.everpay.io/) 中拥有对应财产。
-- Ethereum 充值需要等待 6 个区块，Arweave 充值需要等待 15 个区块。
+- Ethereum 充值需要等待 20 个区块，Arweave 充值需要等待 20 个区块。
 - everPay 支持 AR 跨链，初始化注入 `ethConnectedSigner` 则充值调用的是 WAR（ERC20），初始化注入 `arJWK` 则充值调用的是 AR（native）。
 :::
 

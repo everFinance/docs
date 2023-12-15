@@ -69,7 +69,7 @@ everPay only has a single coordinator to process transactions for now. What if t
 
 #### Mint/Burn Assets
 
-Take Ethereum as an example. everPay deploys a EthBot to listen for Ethereum events. When a user transfers some assets to the MultiSig smart contract, the EthBot will send a mint transaction to the everPay protocol after the transfer is confirmed in six blocks. Then the protocol will cryptographically verify the transfer and query an Ethereum node to ensure that the transfer is finalized with a minimum of 6 block confirmations. After the mint transaction is done, the transaction fingerprint will be labeled “minted” in the everPay protocol, so as to avoid repeated minting.
+Take Ethereum as an example. everPay deploys a EthBot to listen for Ethereum events. When a user transfers some assets to the MultiSig smart contract, the EthBot will send a mint transaction to the everPay protocol after the transfer is confirmed in 20 blocks. Then the protocol will cryptographically verify the transfer and query an Ethereum node to ensure that the transfer is finalized with a minimum of 20 block confirmations. After the mint transaction is done, the transaction fingerprint will be labeled “minted” in the everPay protocol, so as to avoid repeated minting.
 
 :::tip Note
 * Note: EthBot is not required and only designed for better user experience. Anyone can send a valid Ethereum transaction to the everPay protocol for minting.
