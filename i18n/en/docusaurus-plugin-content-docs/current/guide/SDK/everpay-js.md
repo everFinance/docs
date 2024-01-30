@@ -17,6 +17,7 @@ everpay-js encapsulates most of the interfaces of everPay protocol for developer
 :::info
 
 - This section explains how to quickly install, introduce, create, top up, transfer and withdraw funds using everpay-js.
+
   :::
 
 ## Installation
@@ -93,11 +94,11 @@ npm install everpay
 ```js
 import Everpay from 'everpay'
 
-const account = await new Everpay().smartAccountAuth(
+const authResult = await new Everpay().smartAccountAuth(
   'https://app-dev.permaswap.network/permalogo.svg'
 )
 const everpay = new Everpay({
-  account,
+  account: authResult.account,
   isSmartAccount: true
 })
 ```
@@ -189,6 +190,7 @@ const everpay = new Everpay({
 - More ways to create `ethConnectedSigner` can be found in [SDK - everpay-js - configuration items - `ethConnectedSigner`](./everpay-js/configuration/ethConnectedSigner).
 - When creating Everpay instances in CDN way, you need to add `default` : `new window.Everpay.default({})`.
 - Make sure `ethers CDN link` and `everPay CDN link` are loaded first, otherwise `ethers is not defined` or `Everpay is not defined`.
+
   :::
 
 ### Arweave Wallet Connection
@@ -269,6 +271,7 @@ const everpay = new Everpay({
 - `arJWK` also supports private key format, you can browse [SDK - everpay-js - configuration items - `arJWK`](./everpay-js/configuration/arJWK) for configuration.
 - When creating Everpay instance in CDN way, you need to add `default` : `new window.Everpay.default({})`.
 - Make sure `everPay CDN link` is loaded first, otherwise `Everpay is not defined`.
+
   :::
 
 ---
@@ -298,6 +301,7 @@ everpay
 - Wait patiently for the block verification to be completed and you will have the corresponding property in everPay.
 - Ethereum requires 20 blocks for recharge, Arweave requires 20 blocks for recharge
 - everPay supports AR cross-chain, initialization injection `ethConnectedSigner` will call WAR (ERC20) for recharge, initialization injection `arJWK` will call AR (native) for recharge
+
   :::
 
 ## Transfer
@@ -323,6 +327,7 @@ everpay
 :::danger
 
 - Please note: You are operating a transfer of assets on the everPay network, please do not transfer to an exchange address, or a contract address, or your assets will not be recovered!
+
   :::
 
 ## Withdrawal
@@ -351,6 +356,7 @@ everpay
 
 - Withdraw assets from everPay to target chains, such as Ethereum, etc.
 - Please do not withdraw to contract addresses, they cannot be recovered!
+
   :::
 
 ## Example reference

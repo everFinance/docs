@@ -39,31 +39,35 @@ sidebar_position: 3
 
 #### 基本查询类
 
-* [/info](./SDK/everpay-js/basic-api/info.md)
-* [/balances](./SDK/everpay-js/basic-api/balances.md)
-* [/balance](./SDK/everpay-js/basic-api/balance.md)
-* [/fees](./SDK/everpay-js/basic-api/fees.md)
-* [/fee](./SDK/everpay-js/basic-api/fee.md)
-* [/txs](./SDK/everpay-js/basic-api/txs.md)
-* [/txsByAccount](./SDK/everpay-js/basic-api/txsByAccount.md)
-* [/txsByHash](./SDK/everpay-js/basic-api/txByHash.md)
-* [/mintedTxByChainTxHash](./SDK/everpay-js/basic-api/mintedTxByChainTxHash.md)
+* [/info](./SDK/everpay-js/basic-api/info)
+* [/balances](./SDK/everpay-js/basic-api/balances)
+* [/balance](./SDK/everpay-js/basic-api/balance)
+* [/fees](./SDK/everpay-js/basic-api/fees)
+* [/fee](./SDK/everpay-js/basic-api/fee)
+* [/txs](./SDK/everpay-js/basic-api/txs)
+* [/txsByAccount](./SDK/everpay-js/basic-api/txsByAccount)
+* [/txsByHash](./SDK/everpay-js/basic-api/txByHash)
+* [/mintedTxByChainTxHash](./SDK/everpay-js/basic-api/mintedTxByChainTxHash)
 
 #### 工具类
 
-* [/smartAccountAuth](./SDK/everpay-js/tool-api/smartAccountAuth.md)
-* [/getEverpayTxWithoutSig](./SDK/everpay-js/tool-api/getEverpayTxWithoutSig.md)
-* [/getEverpayTxMessage](./SDK/everpay-js/tool-api/getEverpayTxMessage.md)
-* [/getBundleData](./SDK/everpay-js/tool-api/getBundleData.md)
+* [/smartAccountAuth](./SDK/everpay-js/tool-api/smartAccountAuth)
+* [/getEverpayTxWithoutSig](./SDK/everpay-js/tool-api/getEverpayTxWithoutSig)
+* [/getEverpayTxMessage](./SDK/everpay-js/tool-api/getEverpayTxMessage)
+* [/getBundleData](./SDK/everpay-js/tool-api/getBundleData)
+* [/genEverId](./SDK/everpay-js/tool-api/genEverId)
+* [/hashMessage](./SDK/everpay-js/tool-api/hashMessage)
+* [/verifyMessage](./SDK/everpay-js/tool-api/verifyMessage)
 
 #### 操作类
 
-* [/deposit](./SDK/everpay-js/operation-api/deposit.md)
-* [/transfer](./SDK/everpay-js/operation-api/transfer.md)
-* [/withdraw](./SDK/everpay-js/operation-api/withdraw.md)
-* [signBundleData](./SDK/everpay-js/operation-api/signBundleData.md)
-* [bundle](./SDK/everpay-js/operation-api/bundle.md)
-* [sendEverpayTx](./SDK/everpay-js/operation-api/sendEverpayTx.md)
+* [/deposit](./SDK/everpay-js/operation-api/deposit)
+* [/transfer](./SDK/everpay-js/operation-api/transfer)
+* [/withdraw](./SDK/everpay-js/operation-api/withdraw)
+* [/signBundleData](./SDK/everpay-js/operation-api/signBundleData)
+* [/bundle](./SDK/everpay-js/operation-api/bundle)
+* [/sendEverpayTx](./SDK/everpay-js/operation-api/sendEverpayTx)
+* [/signMessage](./SDK/everpay-js/operation-api/signMessage)
 
 ## 延伸
 

@@ -115,6 +115,7 @@ version:v1`
 ```
 
 ### Arweave 账户示例
+<!-- TODO: 更新 -->
 
 ```js
 const messageData = `tokenSymbol:ar
@@ -320,6 +321,7 @@ const signature = await signMessageAsync(config.arJWK as ArJWK, personalMessageH
 
 * 用于 以太坊 personalSign 签名的是 `messageData` string，得到的结果即为 `signature`
 * 用于 arweave RSA-PSS sha256 签名的是 `personalMessageHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string`，并拼接上 `,{{arOwner}}` 才是 `signature`。
+
 :::
 
 ## signature 校验

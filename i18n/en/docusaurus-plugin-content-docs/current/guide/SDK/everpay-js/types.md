@@ -388,3 +388,45 @@ export interface SendEverpayTxResult extends PostEverpayTxResult {
   everHash: string
 }
 ```
+
+## SignMessageResult
+
+```ts
+export interface SignMessageResult {
+  message: string
+  sig: string
+}
+```
+
+## VerifyMessageParams
+
+```ts
+export interface VerifyMessageParams {
+  account: string
+  type: 'register' | 'sign'
+  message: string
+  sig: string
+}
+```
+
+## VerifyMessageResult
+
+```ts
+export interface VerifyMessageResult {
+  publicId: string
+  public: string
+}
+```
+
+## SmartAccountAuthResult
+
+```ts
+export interface SmartAccountAuthResult {
+  account: string
+  publicId: string
+  public: string
+  type: 'sign' | 'register'
+  message: string
+  sig: string
+}
+```

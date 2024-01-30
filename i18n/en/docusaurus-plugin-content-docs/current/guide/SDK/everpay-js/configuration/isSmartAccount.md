@@ -19,9 +19,9 @@ boolean
 ## How to Configure
 
 ```ts
-const account = await new Everpay().smartAccountAuth('https://app-dev.permaswap.network/permalogo.svg')
+const authResult = await new Everpay().smartAccountAuth('https://app-dev.permaswap.network/permalogo.svg')
 const everpay = new Everpay({
-  account,
+  account: authResult.account,
   isSmartAccount: true
 })
 ```

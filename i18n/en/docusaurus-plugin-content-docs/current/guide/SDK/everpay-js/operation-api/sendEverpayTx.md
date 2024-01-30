@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ## Function
 
-Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithoutsig) into `messageData`, sign it according to `account`, `ethConnectedSigner`, `arJWK` parameters passed during Everpay instance creation and send it to everPays server.
+Converts the everPay transaction structure [EverpayTxWithoutSig](../types#everpaytxwithoutsig) into `messageData`, sign it according to `account`, `ethConnectedSigner`, `arJWK`, `isSmartAccount` parameters passed during Everpay instance creation and send it to everPays server.
 
 ## Parameter
 

@@ -17,6 +17,7 @@ everpay-js 为开发者封装了 everPay 协议的大部分接口，开发者可
 :::tip
 
 - 本章节将介绍如何使用 everpay-js 快速的进行安装、引入、创建、充值、转账、提现。
+
 :::
 
 ## 安装
@@ -93,9 +94,9 @@ npm install everpay
 ```js
 import Everpay from 'everpay'
 
-const account = await new Everpay().smartAccountAuth('https://app-dev.permaswap.network/permalogo.svg')
+const authResult = await new Everpay().smartAccountAuth('https://app-dev.permaswap.network/permalogo.svg')
 const everpay = new Everpay({
-  account,
+  account: authResult.account,
   isSmartAccount: true
 })
 ```
@@ -189,6 +190,7 @@ ethRun()
 - `ethConnectedSigner` 的更多创建方式，可浏览 [SDK - everpay-js - 配置项 - `ethConnectedSigner`](./everpay-js/configuration/ethConnectedSigner)。
 - CDN 方式创建 Everpay 实例时，需要添加 `default` : `new window.Everpay.default({})`。
 - 确保 `ethers CDN链接` 和 `everPay CDN链接` 优先加载完成，否则 `ethers is not defined` 或 `Everpay is not defined` 。
+
 :::
 
 ---
@@ -271,6 +273,7 @@ arRun()
 - `arJWK` 也支持私钥格式，可浏览 [SDK - everpay-js - 配置项 - `arJWK`](./everpay-js/configuration/arJWK) 进行配置。
 - CDN 方式创建 Everpay 实例时，需要添加 `default` : `new window.Everpay.default({})`。
 - 确保 `everPay CDN链接` 优先加载完成，否则 `Everpay is not defined` 。
+
 :::
 
 ---
@@ -303,6 +306,7 @@ everpay
 - 耐心等待区块验证完成，即可在 [everPay](https://app.everpay.io/) 中拥有对应财产。
 - Ethereum 充值需要等待 20 个区块，Arweave 充值需要等待 20 个区块。
 - everPay 支持 AR 跨链，初始化注入 `ethConnectedSigner` 则充值调用的是 WAR（ERC20），初始化注入 `arJWK` 则充值调用的是 AR（native）。
+
 :::
 
 ---
@@ -330,6 +334,7 @@ everpay
 :::danger
 
 - 请注意：你正在操作转账的是 everPay 网络上的资产，请不要转账到交易所地址，或合约地址，否则您的资产将无法找回！
+
 :::
 
 ---
@@ -360,6 +365,7 @@ everpay
 
 - 将 everPay 上的资产提现到目标链，如 Ethereum 等。
 - 请勿提现至合约地址，无法找回！
+
 :::
 
 ## 示例参考

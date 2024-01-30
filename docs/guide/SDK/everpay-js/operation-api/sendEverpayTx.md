@@ -8,12 +8,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## 功能
-将 everPay 交易结构 [(EverpayTxWithoutSig)](../types#everpaytxwithoutsig) 转化成 `messageData` 后，根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK` 参数进行签名，并发送至 everPay 服务器进行验证。
+
+将 everPay 交易结构 [(EverpayTxWithoutSig)](../types#everpaytxwithoutsig) 转化成 `messageData` 后，根据 Everpay 实例创建时，传递的 `account`, `ethConnectedSigner`, `arJWK`, `isSmartAccount` 参数进行签名，并发送至 everPay 服务器进行验证。
 
 ## 参数
+
 ```ts
 everpay.sendEverpayTx(everpayTxWithoutSig: EverpayTxWithoutSig): SendEverpayTxResult
 ```
+
 <Tabs>
 <TabItem value="field" label="参数" default>
 
@@ -45,8 +48,6 @@ export interface EverpayTxWithoutSig {
 </TabItem>
 </Tabs>
 
-
-
 ## 返回
 
 ```ts
@@ -61,6 +62,7 @@ export interface SendEverpayTxResult extends PostEverpayTxResult {
 ```
 
 ## 示例
+
 ```ts
 const everpayTxWithoutSig = {
   tokenSymbol: 'usdt',
