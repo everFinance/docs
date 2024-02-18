@@ -18,6 +18,12 @@ This method only works in the browser environment
 everpay.smartAccountAuth(logo: string): Promise<SmartAccountAuthResult>
 ```
 
+|parameters|required|description|
+|---|---|---|
+|logo|YES| app-side `logo` |
+|email|NO| The application can choose to pass the user's mailbox, which is an empty string by default|
+|emailEditable|NO|The application can choose whether the passed user's mailbox is editable or not, the default is editable, the mailbox is not editable if and only if `false` is passed in this parameter|
+
 ## Return
 
 ```ts

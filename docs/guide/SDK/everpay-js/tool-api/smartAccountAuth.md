@@ -15,8 +15,14 @@ sidebar_position: 1
 ## 参数
 
 ```ts
-everpay.smartAccountAuth(logo: string): Promise<SmartAccountAuthResult>
+everpay.smartAccountAuth(logo: string, email?: string, emailEditable?: boolean): Promise<SmartAccountAuthResult>
 ```
+
+|参数|是否必需|描述|
+|---|---|---|
+|logo|YES| 应用方 logo |
+|email|NO| 应用方可选择传递用户邮箱，默认为空字符串|
+|emailEditable|NO|应用方可选择传递的用户邮箱是否可编辑，默认为可编辑，当且仅当此参数传递 `false` 时，邮箱不可编辑|
 
 ## 返回
 
