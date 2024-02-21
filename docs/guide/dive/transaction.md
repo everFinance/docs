@@ -48,19 +48,39 @@ const everpayTxWithoutSig = {
 
 ```ts
 const everpayTxWithoutSig = {
-  tokenSymbol: 'ar',
-  action: 'transfer',
-  from: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
-  to: '0x26361130d5d6E798E9319114643AF8c868412859',
-  amount: '100',
-  fee: '0',
-  feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-  nonce: '1629276767583',
-  tokenID: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be',
-  chainType: 'arweave,ethereum',
-  chainID: '0,42',
-  data: '{"hello":"world","this":"is everpay"}',
-  version: 'v1'
+  "tokenSymbol": "TUSDC",
+  "action": "transfer",
+  "from": "5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo",
+  "to": "0x26361130d5d6E798E9319114643AF8c868412859",
+  "amount": "1000000",
+  "fee": "0",
+  "feeRecipient": "0xfAC49e12F19743FFc3A756294f1bf70C282E25fA",
+  "nonce": "1708507073627",
+  "tokenID": "0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712",
+  "chainType": "bsc",
+  "chainID": "97",
+  "data": "",
+  "version": "v1"
+}
+```
+
+### 智能账户示例
+
+```ts
+const everpayTxWithoutSig = {
+  "tokenSymbol": "TUSDC",
+  "action": "transfer",
+  "from": "eidd92c8451f8c5f1e4ab05ad75bfee0acfd5bbe5e3cf2f99e1fad5d4329fb650bc696b",
+  "to": "0x26361130d5d6E798E9319114643AF8c868412859",
+  "amount": "100000",
+  "fee": "0",
+  "feeRecipient": "0xfAC49e12F19743FFc3A756294f1bf70C282E25fA",
+  "nonce": "1708507959655",
+  "tokenID": "0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712",
+  "chainType": "bsc",
+  "chainID": "97",
+  "data": "",
+  "version": "v1"
 }
 ```
 
@@ -115,21 +135,38 @@ version:v1`
 ```
 
 ### Arweave 账户示例
-<!-- TODO: 更新 -->
 
 ```js
-const messageData = `tokenSymbol:ar
+const messageData = `tokenSymbol:TUSDC
 action:transfer
 from:5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo
 to:0x26361130d5d6E798E9319114643AF8c868412859
-amount:100
+amount:1000000
 fee:0
-feeRecipient:0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1
-nonce:1629276767583
-tokenID:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be
-chainType:arweave,ethereum
-chainID:0,42
-data:{"hello":"world","this":"is everpay"}
+feeRecipient:0xfAC49e12F19743FFc3A756294f1bf70C282E25fA
+nonce:1708507073627
+tokenID:0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712
+chainType:bsc
+chainID:97
+data:
+version:v1`
+```
+
+### 智能账户示例
+
+```js
+const messageData = `tokenSymbol:TUSDC
+action:transfer
+from:eidd92c8451f8c5f1e4ab05ad75bfee0acfd5bbe5e3cf2f99e1fad5d4329fb650bc696b
+to:0x26361130d5d6E798E9319114643AF8c868412859
+amount:100000
+fee:0
+feeRecipient:0xfAC49e12F19743FFc3A756294f1bf70C282E25fA
+nonce:1708507959655
+tokenID:0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712
+chainType:bsc
+chainID:97
+data:
 version:v1`
 ```
 
@@ -157,7 +194,7 @@ const getPersonalMessageHash = (messageData: string): string => {
 
 ## signature
 
-每一笔 everPay 交易，都需要通过 `发送者账户的钱包` 进行签名，everPay 服务器会校验所有签名的有效性。
+每一笔 everPay 交易，都需要通过 发送者账户的 **钱包** 或 **该智能账户的 webauthn 生物识别** 进行签名，everPay 服务器会校验所有签名的有效性。
 
 ### 以太坊账户模型
 
@@ -208,15 +245,46 @@ const signature = await signMessageAsync(ethConnectedSigner, messageData)
 
 ### Arweave 账户模型
 
-由 `messageData` 使用以太坊 `hashPersonalMessage` 生成的 `personalMessageHash`。通过 arweave RSA-PSS sha256 签名 `personalMessageHash` 对应的 `Uint8Array`（或者 `Buffer`），得到的签名结果，再通过 `Arweave.utils.bufferTob64Url`（与其他 base64 转换函数有差异） 进行 `base64` 转换，拼接上 `,{{arOwner}}` 后，得到 `signature`。
+由 `messageData` 使用 `sha256` 生成的 `messageDataHash`。通过 arweave RSA-PSS sha256 签名 `messageDataHash` 对应的 `Uint8Array`（或者 `Buffer`），得到的签名结果，再通过 `Arweave.utils.bufferTob64Url`（与其他 base64 转换函数有差异） 进行 `base64` 转换，拼接上 `,{{arOwner}}` 后，得到 `signature`。
 
 #### 通过 arweave.js 生成签名
 
 ```ts
-// RSA-PSS sha256
-const signMessageAsync = async (arJWK: ArJWK, address: string, personalMessageHash: string): Promise<string> => {
+
+const everpayTxWithoutSig = {
+  "tokenSymbol": "TUSDC",
+  "action": "transfer",
+  "from": "5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo",
+  "to": "0x26361130d5d6E798E9319114643AF8c868412859",
+  "amount": "1000000",
+  "fee": "0",
+  "feeRecipient": "0xfAC49e12F19743FFc3A756294f1bf70C282E25fA",
+  "nonce": "1708507073627",
+  "tokenID": "0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712",
+  "chainType": "bsc",
+  "chainID": "97",
+  "data": "",
+  "version": "v1"
+}
+
+// const messageData = getEverpayTxMessageData(everpayTxWithoutSig)
+const messageData = `tokenSymbol:TUSDC
+action:transfer
+from:5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo
+to:0x26361130d5d6E798E9319114643AF8c868412859
+amount:1000000
+fee:0
+feeRecipient:0xfAC49e12F19743FFc3A756294f1bf70C282E25fA
+nonce:1708507073627
+tokenID:0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712
+chainType:bsc
+chainID:97
+data:
+version:v1`
+
+const signMessageAsync = async (arJWK: ArJWK, messageData: string): Promise<string> => {
   const arweave = Arweave.init(options)
-  const personalMessageHashBuffer: Buffer = Buffer.from(personalMessageHash.slice(2), 'hex')
+  const msgDataBuffer = Buffer.from(messageData, 'utf-8')
   let arOwner = ''
   let signatureB64url = ''
   // web
@@ -227,7 +295,7 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, personalMessageHa
       throw new Error(ERRORS.ACCESS_PUBLIC_KEY_PERMISSION_NEEDED)
     }
     try {
-      arOwner = await (window.arweaveWallet as any).getActivePublicKey()
+      arOwner = await (window.arweaveWallet).getActivePublicKey()
     } catch {
       throw new Error(ERRORS.ACCESS_PUBLIC_KEY_FAILED)
     }
@@ -243,20 +311,35 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, personalMessageHa
       saltLength: 32
     }
 
-    try {
-      const signature = await (window.arweaveWallet as any).signature(
-        personalMessageHashBuffer,
-        algorithm
-      )
-      const buf = new Uint8Array(Object.values(signature))
-      signatureB64url = Arweave.utils.bufferTob64Url(buf)
-    } catch {
-      throw new Error(ERRORS.SIGNATURE_FAILED)
+    if ((window.arweaveWallet as any).signMessage !== undefined) {
+      try {
+        const signature = await (window.arweaveWallet as any).signMessage(
+          msgDataBuffer,
+          { hashAlgorithm: 'SHA-256' }
+        )
+        const buf = new Uint8Array(Object.values(signature))
+        signatureB64url = Arweave.utils.bufferTob64Url(buf)
+      } catch {
+        throw new Error(ERRORS.SIGNATURE_FAILED)
+      }
+    } else {
+      try {
+        const hash = sha256(messageData)
+        const signature = await (window.arweaveWallet).signature(
+          hexToUint8Array(hash.toString()),
+          algorithm
+        )
+        const buf = new Uint8Array(Object.values(signature))
+        signatureB64url = Arweave.utils.bufferTob64Url(buf)
+      } catch {
+        throw new Error(ERRORS.SIGNATURE_FAILED)
+      }
     }
 
   // node
   } else {
-    const buf = await arweave.crypto.sign(arJWK, personalMessageHashBuffer, {
+    const hash = sha256(messageData)
+    const buf = await arweave.crypto.sign(arJWK, hexToUint8Array(hash.toString()), {
       saltLength: 32
     })
     arOwner = arJWK.n
@@ -266,67 +349,128 @@ const signMessageAsync = async (arJWK: ArJWK, address: string, personalMessageHa
   return `${signatureB64url},${arOwner}`
 }
 
+const signature = await signMessageAsync(config.arJWK as ArJWK, messageData)
+```
+
+伪代码参考来源：[everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
+
+### 智能账户模型
+
+```ts
 const everpayTxWithoutSig = {
-  tokenSymbol: 'ar',
-  action: 'transfer',
-  from: '5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo',
-  to: '0x26361130d5d6E798E9319114643AF8c868412859',
-  amount: '100',
-  fee: '0',
-  feeRecipient: '0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1',
-  nonce: '1629276767583',
-  tokenID: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be',
-  chainType: 'arweave,ethereum',
-  chainID: '0,42',
-  data: '{"hello":"world","this":"is everpay"}',
-  version: 'v1'
+  "tokenSymbol": "TUSDC",
+  "action": "transfer",
+  "from": "eidd92c8451f8c5f1e4ab05ad75bfee0acfd5bbe5e3cf2f99e1fad5d4329fb650bc696b",
+  "to": "0x26361130d5d6E798E9319114643AF8c868412859",
+  "amount": "100000",
+  "fee": "0",
+  "feeRecipient": "0xfAC49e12F19743FFc3A756294f1bf70C282E25fA",
+  "nonce": "1708507959655",
+  "tokenID": "0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712",
+  "chainType": "bsc",
+  "chainID": "97",
+  "data": "",
+  "version": "v1"
 }
 
 // const messageData = getEverpayTxMessageData(everpayTxWithoutSig)
-const messageData = `tokenSymbol:ar
+const messageData = `tokenSymbol:TUSDC
 action:transfer
-from:5NPqYBdIsIpJzPeYixuz7BEH_W7BEk_mb8HxBD3OHXo
+from:eidd92c8451f8c5f1e4ab05ad75bfee0acfd5bbe5e3cf2f99e1fad5d4329fb650bc696b
 to:0x26361130d5d6E798E9319114643AF8c868412859
-amount:100
+amount:100000
 fee:0
-feeRecipient:0x6451eB7f668de69Fb4C943Db72bCF2A73DeeC6B1
-nonce:1629276767583
-tokenID:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,0xcc9141efa8c20c7df0778748255b1487957811be
-chainType:arweave,ethereum
-chainID:0,42
-data:{"hello":"world","this":"is everpay"}
+feeRecipient:0xfAC49e12F19743FFc3A756294f1bf70C282E25fA
+nonce:1708507959655
+tokenID:0xf17a50ecc5fe5f476de2da5481cdd0f0ffef7712
+chainType:bsc
+chainID:97
+data:
 version:v1`
 
-// cp from: https://github.com/ethereumjs/ethereumjs-util/blob/ebf40a0fba8b00ba9acae58405bca4415e383a0d/src/signature.ts#L168
-const hashPersonalMessage = function (message: Buffer): Buffer {
+const hashPersonalMessage = (message: Buffer): Buffer => {
   const prefix = Buffer.from(
     `\u0019Ethereum Signed Message:\n${message.length.toString()}`,
     'utf-8'
   )
   return keccak256(Buffer.concat([prefix, message]))
 }
-
 const getPersonalMessageHash = (messageData: string): string => {
   const personalMsgBuf = hashPersonalMessage(Buffer.from(messageData))
   const personalMessageHash = `0x${personalMsgBuf.toString('hex')}`
   return personalMessageHash
 }
-const personalMessageHash = getPersonalMessageHash(messageData)
-const signature = await signMessageAsync(config.arJWK as ArJWK, personalMessageHash)
-```
 
-伪代码参考来源：[everpay-js src/lib/sign.ts](https://github.com/everFinance/everpay-js/blob/main/src/lib/sign.ts)
+const signMessageAsync = async (debug: boolean, isSmartAccount: boolean, email: string, everHash: string, accountData?: any): Promise<string> => {
+  if (accountData == null) {
+    const everpayHost = getEverpayHost(debug)
+    const everId = genEverId(email)
+    accountData = await getAccountData(everpayHost, everId)
+  }
+  const arr = Object.entries(accountData.publicValues) as any
+  const publicKeyData = {
+    allowCredentials: arr.map((publicIdValueArr: any) => {
+      const id = publicIdValueArr[0]
+      return {
+        type: 'public-key',
+        id: Arweave.utils.b64UrlToBuffer(id),
+        transports: [
+          'internal',
+          'usb',
+          'nfc',
+          'ble'
+        ].concat(!isMobile ? ['hybrid'] : [])
+      }
+    })
+  }
+  const assertion = await navigator.credentials.get({
+    publicKey: {
+      ...publicKeyData,
+      timeout: 300000,
+      userVerification: 'required',
+      challenge: Arweave.utils.b64UrlToBuffer(window.btoa(everHash)),
+      rpId: getRpId()
+    } as any
+  }) as any
+
+  if (assertion === null) {
+    throw new Error('cancelled')
+  }
+  const authenticatorData = assertion.response.authenticatorData
+  const clientDataJSON = assertion.response.clientDataJSON
+  const rawId = assertion.rawId
+  const signature = assertion.response.signature
+  const userHandle = assertion.response.userHandle
+  const sigJson = {
+    id: assertion?.id,
+    rawId: Arweave.utils.bufferTob64Url(rawId),
+    clientDataJSON: Arweave.utils.bufferTob64Url(clientDataJSON),
+    authenticatorData: Arweave.utils.bufferTob64Url(authenticatorData),
+    signature: Arweave.utils.bufferTob64Url(signature),
+    userHandle: Arweave.utils.bufferTob64Url(userHandle)
+  }
+  const sig = window.btoa(JSON.stringify(sigJson))
+  return `${sig},${accountData.publicValues[assertion?.id]},FIDO2`
+}
+
+const signature = await signMessageAsync(true, true, 'fgva5gasf134@163.com', getPersonalMessageHash(messageData))
+```
 
 :::danger
 
 * 用于 以太坊 personalSign 签名的是 `messageData` string，得到的结果即为 `signature`
-* 用于 arweave RSA-PSS sha256 签名的是 `personalMessageHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string`，并拼接上 `,{{arOwner}}` 才是 `signature`。
+* 用于 arweave RSA-PSS sha256 签名的是 `messageDataHash` Buffer，得到的结果需要进一步通过 `Arweave.utils.bufferTob64Url` 转换得到的 `base64 string`，并拼接上 `,{{arOwner}}` 才是 `signature`。
+* 用于 智能账户 webauthn 的签名
+    1. 将 `messageData` 使用 `getPersonalMessageHash` 得到 `everHash`
+    2. 通过后端接口获取该邮箱账户对应的 eid 相对应的 公钥信息
+    3. 使用对应的公钥信息，调用 webauthn 对 `everHash` 进行签名
+    4. 组装最终的签名结果
 
 :::
 
 ## signature 校验
 
-每一笔 everPay 交易，通过 发送者账户的钱包进行签名后，将签名 everPay 交易一起提交 everPay 服务器，everPay 服务器会校验所有签名，来确保交易的有效性。
+每一笔 everPay 交易，都需要通过 发送者账户的 **钱包** 或 **该智能账户的 webauthn 生物识别** 进行签名后，将签名 everPay 交易一起提交 everPay 服务器，everPay 服务器会校验所有签名，来确保交易的有效性。
 
 ### 以太坊账户模型
 
@@ -338,15 +482,21 @@ const verified = ethers.utils.verifyMessage(messageData, signature).toLowerCase(
 ### Arweave 账户模型
 
 ```ts
-const signature = await signMessageAsync(config.arJWK as ArJWK, everHash)
+const signature = await signMessageAsync(config.arJWK as ArJWK, message)
+const hash = sha256(messageData)
+
 // arOwner 为 arweave 钱包 publicKey
 const [sigB64url, arOwner] = signature.split(',')
 const verified = arweave.crypto.verify(
   arOwner,
-  Buffer.from(everHash.slice(2)),
+  hexToUint8Array(hash.toString()),
   Arweave.utils.b64UrlToBuffer(sigB64url)
 )
 ```
+
+### 智能账户模型
+
+参考：[verifyMessage.test.ts#L45](https://github.com/everFinance/everpay-js/blob/main/test/%2BverifyMessage.test.ts#L45)
 
 ## 提交交易
 
