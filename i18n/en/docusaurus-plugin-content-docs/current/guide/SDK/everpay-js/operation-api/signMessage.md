@@ -83,7 +83,7 @@ describe('signMessage for Arweave', () => {
 })
 ```
 
-### email Account signMessage
+### Smart Account signMessage
 
 :::danger
 
