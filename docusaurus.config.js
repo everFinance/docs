@@ -163,7 +163,7 @@ module.exports = {
           items: [
             {
               label: '帮助中心',
-              href: 'https://everpay.zendesk.com/hc/zh-cn'
+              href: 'https://discord.gg/xGfYrNeqT8'
             }
           ]
         }

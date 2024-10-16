@@ -65,11 +65,11 @@
   },
   "link.item.label.Help Centre":{ 
     "message": "帮助中心",
-    "description": "The label of footer link with label=Help Centre linking to https://everpay.zendesk.com/hc/zh-cn"
+    "description": "The label of footer link with label=Help Centre linking to https://discord.gg/xGfYrNeqT8"
   },
   "link.item.label.帮助中心":{
     "message": "Help Centre",
-    "description": "The label of footer link with label=帮助中心 linking to https://everpay.zendesk.com/hc/zh-cn"
+    "description": "The label of footer link with label=帮助中心 linking to https://discord.gg/xGfYrNeqT8"
   },
   "link.title.文档": {
     "message": "Docs",
